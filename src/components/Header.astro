@@ -1,0 +1,362 @@
+---
+import { ChevronDown, ScanSearch, PenTool, Zap, Menu, X, Laptop, ShoppingBag, Package, Rocket, WandSparkles, MonitorCheck, TrendingUp, BookOpenText, Sparkles  } from '@lucide/astro';
+import Logo from '../assets/coreluminate.svg';
+import Container from '../components/ui/Container.astro';
+import Button from '../components/ui/Button.astro';
+
+const menuItems = [
+  {
+    label: 'Services',
+    items: [
+      {
+        label: 'Website Design & Development',
+        description: 'Crafting stunning designs using no-code platforms',
+        icon: Laptop,
+        href: '/services/website-design-development',
+      },
+      {
+        label: 'SEO & Analytics',
+        description: 'Search engine optimization and analytics setup to grow and track results',
+        icon: ScanSearch,
+        href: '/services/seo-analytics',
+      },
+      {
+        label: 'Brand & Logo Design',
+        description: 'Creating unique brands and logos that stand out',
+        icon: PenTool,
+        href: '/services/brand-logo-design',
+      },
+      {
+        label: 'E-commerce Solutions',
+        description: 'Building online stores with Shopify, WooCommerce, and more',
+        icon: ShoppingBag,
+        href: '/services/e-commerce-solutions',
+      },
+      {
+        label: 'Business Systems Setup',
+        description: 'Business email, software integration, and business tool configuration',
+        icon: Package,
+        href: '/services/business-systems-setup',
+      },
+      {
+        label: 'Website Updates & Add-Ons',
+        description: 'Individual enhancements for your existing website',
+        icon: Sparkles,
+        href: '/services/website-updates',
+      }
+    ] 
+  },
+  {
+    label: 'Solutions',
+    items: [
+      {
+        label: 'Complete Digital Launch',
+        description: 'Everything you need to launch your business online',
+        icon: Rocket,
+        href: '/solutions/complete-digital-launch',
+      },
+      {
+        label: 'Website Refresh & Modernization',
+        description: 'Breathe new life into your outdated website',
+        icon: WandSparkles,
+        href: '/solutions/website-refresh-modernization',
+      },
+      {
+        label: 'Platform Migration',
+        description: 'Seamlessly move your website to a better platform without losing content',
+        icon: MonitorCheck,
+        href: '/solutions/platform-migration',
+      },
+      {
+        label: 'Quick Launch Website',
+        description: 'Get your website up and running quickly',
+        icon: Zap,
+        href: '/solutions/quick-launch-website',
+      },
+      {
+        label: 'DIY Website with Expert Support',
+        description: 'Get expert guidance while building your own website',
+        icon: BookOpenText,
+        href: '/solutions/diy-website-support',
+      },
+      ]
+    },
+    {
+      label: 'Our Work',
+      href: '/work',
+    },
+    {
+      label: 'About Us',
+      href: '/about',
+    },
+    {
+      label: 'Contact',
+      href: '/contact',
+    },
+];
+---
+
+<header id="header" class="bg-white">
+
+  <Container class="relative z-50">
+  <nav role="navigation" 
+    class="flex justify-between items-center py-6" 
+    aria-label="Main Navigation">
+      
+    <!-- Logo -->
+    <div class="flex lg:flex-1">
+      <a href="/" class="flex items-center gap-2">
+        <Logo class="w-10 h-10" />
+        <span class="text-2xl text-blue-950">Core<span class="font-bold">Luminate</span></span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="lg:hidden">
+      <button
+        id="mobile-menu-button"
+        type="button"
+        aria-expanded="false" 
+        class="flex cursor-pointer items-center p-2 text-blue-950">
+        <span class="sr-only">Open main menu</span>
+        <Menu class="w-6 h-6" />
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="hidden lg:flex text-sm text-slate-800">
+      {menuItems.map((menu) => (
+        menu.items ? (
+          <!-- Dropdown Menu -->
+          <div class="relative nav-dropdown">
+            <button 
+              class="flex cursor-pointer items-center px-4 py-2 gap-x-2 rounded-lg hover:text-blue-600 hover:bg-slate-50 nav-dropdown-toggle"
+              type="button"
+              aria-expanded="false">
+              {menu.label}
+              <ChevronDown class="w-4 h-4 pointer-events-none" />
+            </button>
+            <div 
+              class="absolute hidden z-10 mt-3 p-1 overflow-hidden min-w-sm rounded-lg bg-white shadow-lg ring-1 ring-slate-900/5 nav-dropdown-menu">
+              {menu.items.map((item) => (
+                <div class="group relative flex items-center gap-x-4 rounded-lg px-3 py-4 hover:bg-slate-50">
+                  <div class="flex flex-none h-11 w-11 items-center justify-center rounded-lg bg-slate-50 group-hover:bg-white">
+                    <item.icon stroke-width={1.5} class="w-6 h-6 group-hover:text-blue-600" />
+                  </div>
+                  <div class="flex-auto">
+                    <a href={item.href} class="block font-semibold text-sm text-slate-900">{item.label}
+                    <span class="absolute inset-0"></span></a>
+                    <p class="mt-1 text-xs text-slate-600">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a href={menu.href} class="px-4 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-50">{menu.label}</a>
+        )
+      ))}
+    </div>
+
+    <!-- CTA Button -->
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <Button href="/contact" size="sm">Let's Talk!</Button>
+    </div>
+  </nav>
+</Container>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu" class="hidden lg:hidden relative z-60" role="dialog" aria-modal="true">
+    <div id="mobile-menu-backdrop" class="fixed inset-0 z-8 bg-blue-950/30 transition-opacity duration-300 ease-in-out opacity-0"></div>
+
+    <div id="mobile-menu-panel" class="fixed inset-y-1 right-1 z-10 w-full overflow-y-auto bg-white p-4 rounded-lg sm:max-w-sm sm:ring1 sm:ring-blue-950/10 transition-transform duration-300 translate-x-full">
+
+      <!-- Mobile Menu Header -->
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex">
+          <a href="/" class="flex items-center gap-2">
+            <Logo class="w-8 h-8" />
+            <span class="text-xl text-blue-950">Core<span class="font-bold">Luminate</span></span>
+          </a>
+        </div>
+
+        <!-- Close Button -->
+         <button
+          id="mobile-menu-close-button"
+          type="button"
+          aria-expanded="true" 
+          class="flex cursor-pointer items-center p-2 text-blue-950">
+          <span class="sr-only">Close main menu</span>
+          <X class="w-6 h-6" />
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-slate-500/10">
+          <div class="space-y-2 py-6 text-slate-800">
+            {menuItems.map((menu) => (
+              menu.items ? (
+                <!-- Dropdown Menu -->
+                <div class="nav-dropdown">
+                  <button 
+                    class="flex w-full cursor-pointer items-center justify-between px-4 py-2 gap-x-2 rounded-lg hover:text-blue-600 hover:bg-slate-50 nav-dropdown-toggle"
+                    aria-expanded="false"
+                  >
+                    {menu.label}
+                    <ChevronDown class="w-4 h-4 pointer-events-none" />
+                  </button>
+                  <div class="nav-dropdown-menu hidden">
+                    {menu.items.map((item) => (
+                      <a href={item.href} class="block pl-8 py-2 rounded-lg hover:text-blue-600 hover:bg-slate-50">{item.label}</a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a href={menu.href} class="block px-4 py-2 hover:text-blue-600 hover:bg-slate-50">{menu.label}</a>
+              )
+            ))}
+          </div>
+          <div class="py-6">
+            <Button href="/contact" size="sm">Let's Talk!</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+<script is:inline type="text/javascript">
+  const toggleDropdown = (toggle, menu) => {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isExpanded));
+    menu.classList.toggle('hidden');
+  };
+
+  const closeOpenDropdowns = () => {
+    document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      if (toggle && toggle.getAttribute('aria-expanded') === 'true') {
+        const menu = dropdown.querySelector('.nav-dropdown-menu');
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.add('hidden');
+      }
+    });
+  };
+
+  const openMobileMenu = () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    const panel = document.getElementById('mobile-menu-panel');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    
+    // Show the menu
+    mobileMenu.classList.remove('hidden');
+    
+    // Trigger reflow to enable transitions
+    mobileMenu.offsetHeight;
+    
+    // Fade in backdrop
+    backdrop.classList.remove('opacity-0');
+    backdrop.classList.add('opacity-100');
+    
+    // Slide in panel from right
+    panel.classList.remove('translate-x-full');
+    panel.classList.add('translate-x-0');
+    
+    mobileMenuButton.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMobileMenu = () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    const panel = document.getElementById('mobile-menu-panel');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+    // Fade out backdrop
+    backdrop.classList.remove('opacity-100');
+    backdrop.classList.add('opacity-0');
+
+    // Slide out panel to right
+    panel.classList.remove('translate-x-0');
+    panel.classList.add('translate-x-full');
+
+    // Hide after transition completes
+    setTimeout(() => {
+      mobileMenu.classList.add('hidden');
+    }, 300); // Match transition duration
+
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+
+    closeOpenDropdowns();
+  };
+
+
+  const initDropdowns = () => {
+    document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      const menu = dropdown.querySelector('.nav-dropdown-menu');
+
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isCurrentlyExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        
+        closeOpenDropdowns();
+
+        if(!isCurrentlyExpanded) {
+        toggleDropdown(toggle, menu);
+        }
+      });
+    });
+  };
+
+  const initMobileMenu = () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
+    const mobileMenubackdrop = document.getElementById('mobile-menu-backdrop');
+
+    mobileMenuButton.addEventListener('click', () => {
+      openMobileMenu();
+    });
+
+    mobileMenuCloseButton.addEventListener('click', () => {
+      closeMobileMenu();
+    });
+
+    if (mobileMenubackdrop) {
+      mobileMenubackdrop.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+    }
+  };
+
+  const initGlobalHandlers = () => {
+    document.addEventListener('click', (e) => {
+      const isToggleClick = e.target.closest('.nav-dropdown-toggle');
+      if (!isToggleClick) {
+        closeOpenDropdowns();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (!mobileMenu.classList.contains('hidden')) {
+          closeMobileMenu();
+        }
+        closeOpenDropdowns();
+      }
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initDropdowns();
+    initMobileMenu();
+    initGlobalHandlers();
+  });
+</script>

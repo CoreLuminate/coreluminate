@@ -1,0 +1,892 @@
+---
+import {
+  ArrowRight,
+  ArrowRightLeft,
+  Check,
+  Database,
+  Gauge,
+  Lock,
+  Mail,
+  Phone,
+  Rocket,
+  Search,
+  Shield,
+  Sparkles,
+  TrendingUp,
+  User,
+  Zap,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+// Import your illustrations
+import speedImage from "../../assets/images/app-benchmarks.svg";
+import contentImage from "../../assets/images/content-creator.svg";
+import migrationImage from "../../assets/images/duplicate.svg";
+import analyticsImage from "../../assets/images/real-time-analytics.svg";
+import testingImage from "../../assets/images/split-testing.svg";
+import trainingImage from "../../assets/images/teaching.svg";
+---
+
+<Layout
+  title="Platform Migration"
+  description="Move your website to a better platform without losing content, SEO, or customers. Expert migration from Wix, Squarespace, WordPress, and more.">
+  <!-- Hero - Full Screen -->
+  <Section
+    background="slate-blue"
+    pattern={{ type: "dots", visibility: "light" }}
+    fullHeight={true}
+    class="flex items-center">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <Badge variant="white" class="mb-8">
+          <ArrowRightLeft class="w-4 h-4" />
+          <span>Platform Migration</span>
+        </Badge>
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+          Outgrown Your<br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            Current Platform?
+          </span>
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-blue-100 leading-relaxed mb-12 max-w-3xl mx-auto">
+          Move your website to a better platform without losing content, SEO
+          rankings, or customers. Safe, seamless migration handled by experts.
+        </p>
+
+        <div class="flex flex-col items-center gap-6">
+          <div class="flex flex-wrap justify-center gap-4">
+            <Badge variant="blur">
+              <Shield class="w-5 h-5 text-blue-400" />
+              Zero Data Loss
+            </Badge>
+            <Badge variant="blur">
+              <Search class="w-5 h-5 text-blue-400" />
+              SEO Protected
+            </Badge>
+            <Badge variant="blur">
+              <Zap class="w-5 h-5 text-blue-400" />
+              No Downtime
+            </Badge>
+          </div>
+        </div>
+      </div>
+    </Container>
+
+    <!-- Scroll indicator -->
+    <div
+      slot="absolute"
+      class="absolute bottom-30 left-1/2 -translate-x-1/2 animate-bounce">
+      <div
+        class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
+        <div class="w-1 h-3 bg-white/50 rounded-full"></div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- The Problem -->
+  <Section size="2xl" background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Your Platform Is Holding You Back
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            What started as the right choice has become a limitation.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+              <Lock class="h-10 w-10 text-blue-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Limited by Platform
+            </h3>
+            <p class="text-slate-600">
+              Can't add the features you need. Platform restrictions prevent
+              your business from growing.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+              <TrendingUp class="h-10 w-10 text-blue-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Poor Performance
+            </h3>
+            <p class="text-slate-600">
+              Slow loading times, limited customization, and clunky admin
+              interface frustrate you and your visitors.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+              <Database class="h-10 w-10 text-blue-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Afraid to Switch
+            </h3>
+            <p class="text-slate-600">
+              Worried about losing content, breaking SEO, or having downtime
+              during the move.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transition -->
+      <div class="text-center py-12">
+        <div class="inline-flex items-center gap-3 text-blue-600">
+          <div class="h-px w-12 bg-linear-to-r from-transparent to-blue-600">
+          </div>
+          <Sparkles class="w-6 h-6" />
+          <div class="h-px w-12 bg-linear-to-l from-transparent to-blue-600">
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Common Migrations -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            We Migrate From Any Platform
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            Whether you're on a DIY builder or outdated CMS, we can help you
+            move.
+          </p>
+        </div>
+
+        <!-- Platform Cards Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <!-- Wix -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">From Wix</h3>
+            <p class="text-sm text-slate-600 mb-4">
+              Move to a platform with better SEO, faster speeds, and more
+              control over your site.
+            </p>
+            <Badge variant="green" size="sm">Popular Migration</Badge>
+          </div>
+
+          <!-- Squarespace -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              From Squarespace
+            </h3>
+            <p class="text-sm text-slate-600 mb-4">
+              Escape template limitations and get the custom functionality you
+              need.
+            </p>
+            <Badge variant="green" size="sm">Popular Migration</Badge>
+          </div>
+
+          <!-- Weebly -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">From Weebly</h3>
+            <p class="text-sm text-slate-600 mb-4">
+              Upgrade to modern technology with better performance and features.
+            </p>
+          </div>
+
+          <!-- GoDaddy -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              From GoDaddy Website Builder
+            </h3>
+            <p class="text-sm text-slate-600 mb-4">
+              Break free from basic builder limitations and own your platform.
+            </p>
+          </div>
+
+          <!-- Old WordPress -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              From Old WordPress
+            </h3>
+            <p class="text-sm text-slate-600 mb-4">
+              Modernize your WordPress site or move to a headless/JAMstack
+              solution.
+            </p>
+            <Badge variant="blue" size="sm">WordPress Modernization</Badge>
+          </div>
+
+          <!-- Custom/Legacy -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              From Custom/Legacy CMS
+            </h3>
+            <p class="text-sm text-slate-600 mb-4">
+              Migrate from outdated custom systems to modern, maintainable
+              platforms.
+            </p>
+          </div>
+        </div>
+
+        <!-- What We Migrate To -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-blue-200">
+          <h3 class="text-xl font-bold text-slate-900 mb-6 text-center">
+            What We Migrate To
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <h4 class="font-bold text-slate-900 mb-2">WordPress</h4>
+              <p class="text-sm text-slate-600">
+                Modern WordPress with custom themes, page builders, or headless
+                setup
+              </p>
+            </div>
+            <div class="text-center">
+              <h4 class="font-bold text-slate-900 mb-2">Webflow</h4>
+              <p class="text-sm text-slate-600">
+                Designer-friendly, powerful CMS with visual editing
+              </p>
+            </div>
+            <div class="text-center">
+              <h4 class="font-bold text-slate-900 mb-2">Custom Solutions</h4>
+              <p class="text-sm text-slate-600">
+                Next.js, Astro, or other modern frameworks for ultimate control
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What We'll Do -->
+  <Section size="2xl">
+    <Container>
+      <div>
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Safe, Seamless Migration<br />From Start to Finish
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            We handle every technical detail so your business keeps running
+            smoothly.
+          </p>
+        </div>
+
+        <!-- What's Included - Alternating Layout -->
+        <div class="space-y-20">
+          <!-- Platform Analysis - Visual Left -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="p-8 md:p-12 aspect-square">
+              <Image
+                src={migrationImage}
+                alt="Data migration illustration"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Complete Data Migration
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Every page, post, image, and piece of content moved safely to
+                your new platform. Nothing gets left behind.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="green">All Content</Badge>
+                <Badge variant="green">Images & Media</Badge>
+                <Badge variant="green">Database Records</Badge>
+                <Badge variant="green">Zero Loss</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEO Preservation - Visual Right -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                SEO & Ranking Protection
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Proper 301 redirects, URL structure preservation, and SEO
+                optimization ensure you don't lose search rankings.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge>301 Redirects</Badge>
+                <Badge>URL Mapping</Badge>
+                <Badge>Meta Data Transfer</Badge>
+                <Badge>Search Console Setup</Badge>
+              </div>
+            </div>
+
+            <div class="order-1 md:order-2 p-8 md:p-12 aspect-square">
+              <Image
+                src={analyticsImage}
+                alt="SEO analytics"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          <!-- Design Enhancement - Visual Left -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <Image
+              src={contentImage}
+              alt="Content creation"
+              class="w-full h-full object-contain"
+            />
+
+            <div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Design Improvement (Optional)
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Keep your existing design or upgrade to something better. Your
+                choice—we can match exactly or modernize during migration.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="purple">Match Current</Badge>
+                <Badge variant="purple">Modern Redesign</Badge>
+                <Badge variant="purple">Your Choice</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testing & QA - Visual Right -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Thorough Testing & QA
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                We test everything before launch—every link, form, page, and
+                feature. You review and approve before we go live.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="orange">Link Testing</Badge>
+                <Badge variant="orange">Form Verification</Badge>
+                <Badge variant="orange">Mobile Testing</Badge>
+                <Badge variant="orange">Client Review</Badge>
+              </div>
+            </div>
+
+            <div class="order-1 md:order-2 p-8 md:p-12 aspect-square">
+              <Image
+                src={testingImage}
+                alt="Security testing"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          <!-- Zero Downtime Launch - Visual Left -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <Image
+              src={speedImage}
+              alt="Fast performance"
+              class="w-full h-full object-contain"
+            />
+
+            <div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Zero-Downtime Launch
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                We build on a staging environment and switch over instantly.
+                Your site stays live throughout the entire process.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="green">Staging Environment</Badge>
+                <Badge variant="green">Instant Cutover</Badge>
+                <Badge variant="green">Always Online</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training & Support - Visual Right -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Platform Training & Support
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Learn your new platform with hands-on training. We'll support
+                you through the transition and beyond.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="pink">Live Training</Badge>
+                <Badge variant="pink">Documentation</Badge>
+                <Badge variant="pink">30 Days Support</Badge>
+              </div>
+            </div>
+
+            <div class="order-1 md:order-2 p-8 md:p-12 aspect-square">
+              <Image
+                src={trainingImage}
+                alt="Training illustration"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Add-Ons Callout -->
+        <div
+          class="mt-20 bg-linear-to-br from-slate-900 to-blue-900 rounded-2xl p-12 text-white text-center">
+          <Sparkles class="w-16 h-16 mx-auto mb-6 text-blue-600" />
+          <h3 class="text-2xl font-bold mb-4">Need More Than Migration?</h3>
+          <p class="text-lg text-blue-100 mb-2">
+            Add new features, redesign, improve performance, or integrate
+            third-party tools during your migration.
+          </p>
+          <p class="text-sm text-blue-300">
+            Every project is custom-quoted based on your specific needs.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Timeline -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Smooth Migration<br />in 4-6 Weeks
+          </h2>
+          <p class="text-xl text-slate-600">
+            A proven process that minimizes risk and maximizes results.
+          </p>
+        </div>
+
+        <!-- Timeline Cards -->
+        <div class="space-y-6">
+          <!-- Week 1 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 1</div>
+                <div class="text-sm text-slate-100">Analysis</div>
+              </div>
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Platform Analysis & Planning
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Audit your current site, create migration plan, choose new
+                  platform, and map out content structure and URLs.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <Badge variant="slate" size="sm">Site Audit</Badge>
+                  <Badge variant="slate" size="sm">Platform Selection</Badge>
+                  <Badge variant="slate" size="sm">Migration Plan</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="flex justify-center">
+            <div class="w-0.5 h-12 border-l-2 border-dashed border-slate-300">
+            </div>
+          </div>
+
+          <!-- Weeks 2-3 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 2-3</div>
+                <div class="text-sm text-slate-100">Setup</div>
+              </div>
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  New Platform Setup & Design
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Set up new platform, configure hosting, create design (match
+                  or improve), and prepare for content migration.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <Badge variant="slate" size="sm">Platform Setup</Badge>
+                  <Badge variant="slate" size="sm">Design Creation</Badge>
+                  <Badge variant="slate" size="sm">Staging Environment</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="flex justify-center">
+            <div class="w-0.5 h-12 border-l-2 border-dashed border-slate-300">
+            </div>
+          </div>
+
+          <!-- Weeks 4-5 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 4-5</div>
+                <div class="text-sm text-slate-100">Migration</div>
+              </div>
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Content Migration & SEO Setup
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Migrate all content, set up redirects, configure SEO, test
+                  everything, and prepare for launch.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <Badge variant="slate" size="sm">Content Migration</Badge>
+                  <Badge variant="slate" size="sm">301 Redirects</Badge>
+                  <Badge variant="slate" size="sm">SEO Setup</Badge>
+                  <Badge variant="slate" size="sm">Testing</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="flex justify-center">
+            <div class="w-0.5 h-12 border-l-2 border-dashed border-slate-300">
+            </div>
+          </div>
+
+          <!-- Week 6 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <Rocket class="w-12 h-12 mb-2" />
+                <div class="text-4xl font-bold mb-2">Week 6</div>
+                <div class="text-sm text-slate-100">Launch!</div>
+              </div>
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Launch & Support!
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Final review, DNS cutover, monitor for issues, train your
+                  team, and provide ongoing support.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <Badge variant="slate" size="sm">DNS Cutover</Badge>
+                  <Badge variant="slate" size="sm">Training</Badge>
+                  <Badge variant="slate" size="sm">Launch!</Badge>
+                  <Badge variant="slate" size="sm">30 Days Support</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Who This Is For -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Perfect For
+          </h2>
+          <p class="text-xl text-slate-600">
+            Businesses ready to move beyond platform limitations.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Limited Platform -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <Lock class="w-16 h-16 text-blue-600 mb-4" stroke-width="1.5" />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Outgrown Current Platform
+              </h3>
+              <p class="text-slate-600">
+                You need features or functionality that your current platform
+                can't provide.
+              </p>
+            </div>
+          </div>
+
+          <!-- Poor Performance -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <Gauge class="w-16 h-16 text-blue-600 mb-4" stroke-width="1.5" />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Performance Issues
+              </h3>
+              <p class="text-slate-600">
+                Your site is slow, clunky, or limited—and it's affecting your
+                business.
+              </p>
+            </div>
+          </div>
+
+          <!-- SEO Concerns -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <Search class="w-16 h-16 text-blue-600 mb-4" stroke-width="1.5" />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                SEO & Control Needed
+              </h3>
+              <p class="text-slate-600">
+                You want better SEO capabilities and more control over your
+                website.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cost Concerns -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <TrendingUp
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Rising Platform Costs
+              </h3>
+              <p class="text-slate-600">
+                Monthly fees keep increasing, and you'd rather own your
+                platform.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div
+          class="bg-linear-to-br from-blue-700 to-blue-800 rounded-3xl p-8 md:p-12 text-white text-center">
+          <h3 class="text-2xl font-bold mb-3">Don't Let Fear Hold You Back</h3>
+          <p class="text-lg text-blue-100 mb-6">
+            We've successfully migrated hundreds of websites. Your content, SEO,
+            and business are in safe hands.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <div class="flex items-center gap-2">
+              <Check class="w-5 h-5 text-blue-300" />
+              <span>Zero Data Loss</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Check class="w-5 h-5 text-blue-300" />
+              <span>SEO Protected</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Check class="w-5 h-5 text-blue-300" />
+              <span>No Downtime</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA Form -->
+  <Section
+    size="3xl"
+    background="slate-blue"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <!-- Migration arrows animation -->
+    <div
+      class="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+      <ArrowRightLeft
+        class="absolute top-20 left-10 w-40 h-40 text-slate-400"
+      />
+      <ArrowRightLeft
+        class="absolute bottom-20 right-10 w-40 h-40 text-slate-400"
+      />
+    </div>
+
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Make the Move?
+          </h2>
+          <p class="text-xl text-blue-100">
+            Let's migrate your website to a better platform—safely and
+            seamlessly.
+          </p>
+        </div>
+
+        <!-- Simple Lead Form -->
+        <form
+          class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20 shadow-md">
+          <div class="space-y-6">
+            <!-- Name -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-white mb-2">
+                Your Name *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <User class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="John Smith"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-white mb-2">
+                Email Address *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Mail class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-white mb-2">
+                Phone Number
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Phone class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+            </div>
+
+            <!-- Current Platform -->
+            <div>
+              <label
+                for="current-platform"
+                class="block text-sm font-medium text-white mb-2">
+                Current Platform *
+              </label>
+              <select
+                id="current-platform"
+                name="current-platform"
+                required
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <option value="" class="bg-slate-900"
+                  >Select your current platform...</option
+                >
+                <option value="wix" class="bg-slate-900">Wix</option>
+                <option value="squarespace" class="bg-slate-900"
+                  >Squarespace</option
+                >
+                <option value="weebly" class="bg-slate-900">Weebly</option>
+                <option value="godaddy" class="bg-slate-900"
+                  >GoDaddy Website Builder</option
+                >
+                <option value="wordpress" class="bg-slate-900">WordPress</option
+                >
+                <option value="shopify" class="bg-slate-900">Shopify</option>
+                <option value="custom" class="bg-slate-900">Custom/Other</option
+                >
+              </select>
+            </div>
+
+            <!-- Website URL -->
+            <div>
+              <label
+                for="website"
+                class="block text-sm font-medium text-white mb-2">
+                Current Website URL *
+              </label>
+              <input
+                type="url"
+                id="website"
+                name="website"
+                required
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="https://yourwebsite.com"
+              />
+            </div>
+
+            <!-- Migration Reasons -->
+            <div>
+              <label
+                for="reasons"
+                class="block text-sm font-medium text-white mb-2">
+                Why Do You Want to Migrate? *
+              </label>
+              <textarea
+                id="reasons"
+                name="reasons"
+                required
+                rows="4"
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                placeholder="e.g., Need more features, slow performance, outgrown platform, SEO limitations..."
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <Button
+              type="submit"
+              variant="gradient"
+              size="lg"
+              icon={ArrowRight}
+              class="w-full group">
+              <span>Start My Migration</span>
+            </Button>
+
+            <p class="text-sm text-blue-200 text-center">
+              We'll review your site and get back to you within 24 hours with a
+              migration plan.
+            </p>
+          </div>
+        </form>
+      </div>
+    </Container>
+  </Section>
+</Layout>

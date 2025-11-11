@@ -1,0 +1,1029 @@
+---
+import {
+  ArrowRight,
+  Box,
+  Check,
+  Clock,
+  CreditCard,
+  DollarSign,
+  Dot,
+  Globe,
+  Package,
+  Palette,
+  Settings,
+  ShoppingBag,
+  ShoppingCart,
+  Sparkles,
+  Store,
+  TrendingUp,
+  Truck,
+  Users,
+  Zap,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import Accordion from "../../components/ui/Accordion.astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import heroImage from "../../assets/images/editing-shopper-setup-on-laptop.jpg"; // Replace with your actual image
+
+// Platform logos
+import shopifyLogo from "../../assets/images/shopify-logo.svg";
+import squarespaceLogo from "../../assets/images/squarespace-logo.svg";
+import wixLogo from "../../assets/images/wix-logo.svg";
+import wordpressLogo from "../../assets/images/wordpress-logo.svg";
+
+// FAQ data
+const faqs = [
+  {
+    question: "Which e-commerce platform should I choose?",
+    answer:
+      "It depends on your needs and technical comfort level. Shopify is easiest to manage and great for most small businesses. WooCommerce (WordPress) offers more flexibility and control. Wix and Squarespace are good for simple stores with beautiful templates. During our consultation, I'll recommend the best fit for your specific situation.",
+  },
+  {
+    question: "Do I need to provide product photos and descriptions?",
+    answer:
+      "Yes, you'll need to provide your product photos, descriptions, prices, and any variants (sizes, colors, etc.). I'll set up the store structure and templates, then either upload your products for you or train you to do it yourself—whichever you prefer.",
+  },
+  {
+    question: "Will you handle taxes and legal compliance?",
+    answer:
+      "No, I don't provide tax setup or legal advice. You'll need to consult with an accountant or tax professional for sales tax configuration and compliance. I can point you to resources and implement the settings once you know what's required for your business.",
+  },
+  {
+    question: "How do payments work?",
+    answer:
+      "I'll set up payment processing through providers like Stripe, PayPal, or the platform's built-in payments. You'll create your own merchant accounts (I can guide you through this), and payments go directly to you. I never have access to your funds.",
+  },
+  {
+    question: "What about shipping?",
+    answer:
+      "I'll configure shipping based on your needs—flat rate, calculated rates, free shipping thresholds, etc. You'll need to decide on your shipping strategy, and I'll implement it in your store. For complex shipping, I can integrate with services like ShipStation.",
+  },
+  {
+    question: "Can I manage products myself after launch?",
+    answer:
+      "Absolutely! I'll train you on how to add, edit, and manage products yourself. All these platforms are designed for non-technical users. You'll get training documentation and video walkthroughs for reference.",
+  },
+  {
+    question: "What if I need help after the store launches?",
+    answer:
+      "I'm here to help! For ongoing needs like adding new products or making changes, I offer one-off services with simple scopes and pricing. Just reach out when you need assistance.",
+  },
+  {
+    question: "How long does it take to build an online store?",
+    answer:
+      "Most simple stores (5-20 products) take 2-3 weeks. Medium stores (20-100 products) typically take 3-5 weeks. Timeline depends on how quickly you provide content and feedback, and the complexity of your requirements.",
+  },
+  {
+    question: "Do I need to have an LLC or business license?",
+    answer:
+      "That depends on your location and business type. I recommend consulting with a business attorney or accountant about legal requirements. I can build your store whenever you're ready, regardless of your business structure.",
+  },
+  {
+    question: "Can I start on Etsy and move to my own store later?",
+    answer:
+      "Yes! Many successful businesses start on Etsy or Amazon to test the market, then launch their own store to avoid platform fees and have more control. I can help you make that transition when you're ready.",
+  },
+];
+---
+
+<Layout
+  title="E-commerce Solutions | Online Store Design & Setup"
+  description="Launch your online store without the tech headaches. Professional e-commerce setup on Shopify, WooCommerce, Wix, or Squarespace. Perfect for makers, crafters, and small businesses.">
+  <!-- Hero Section -->
+  <Section
+    size="xl"
+    background="dark"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 items-center py-12">
+        <!-- Left Column: Content -->
+        <div>
+          <Badge variant="white" class="mb-6 shadow-lg">
+            <ShoppingCart class="w-4 h-4" />
+            <span>E-commerce Solutions</span>
+          </Badge>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Sell Your Products Online—Without the Tech Headaches
+          </h1>
+
+          <p class="text-xl text-blue-100 leading-relaxed mb-8">
+            Get a professional online store set up and ready to take orders.
+            Perfect for makers, crafters, and small businesses ready to sell
+            online.
+          </p>
+
+          <!-- Key Benefits -->
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Complete store setup—payments, shipping, inventory</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Mobile-friendly checkout that converts</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Training so you can manage products yourself</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >No monthly retainers—one-time setup</span
+              >
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-4">
+            <Button icon={ArrowRight} href="/services/request"
+              >Start Your Store</Button
+            >
+            <Button variant="outline" href="#platforms">See Platforms</Button>
+          </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="relative">
+          <div
+            class="rounded-2xl overflow-hidden shadow-2xl bg-slate-700 aspect-4/3 flex items-center justify-center">
+            <Image
+              src={heroImage}
+              alt="Logo design using sketch pad and pencil"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
+            />
+          </div>
+
+          <!-- Floating Stats Cards -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 border border-slate-200">
+            <div class="flex items-center gap-2">
+              <TrendingUp class="w-5 h-5 text-green-600" />
+              <div>
+                <div class="text-2xl font-bold text-slate-900">24/7</div>
+                <div class="text-xs text-slate-600">Always Open</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4 border border-slate-200">
+            <div class="flex items-center gap-2">
+              <ShoppingCart class="w-5 h-5 text-blue-600" />
+              <div>
+                <div class="text-2xl font-bold text-slate-900">Easy</div>
+                <div class="text-xs text-slate-600">Checkout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Problem/Solution Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Ready to Sell Online But Don't Know Where to Start?
+        </h2>
+        <p class="text-lg text-slate-600">
+          You make great products, but setting up an online store feels
+          overwhelming. Platform fees are eating your profits, and tech setup
+          seems impossible.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Problem 1 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <DollarSign class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            High Platform Fees
+          </h3>
+          <p class="text-slate-600">
+            Etsy, Amazon, and marketplaces take 10-20% of every sale. Your own
+            store means keeping more profit.
+          </p>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Settings class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Tech Overwhelm</h3>
+          <p class="text-slate-600">
+            Payments, shipping, inventory—there's so much to configure. You just
+            want to sell your products.
+          </p>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Palette class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Brand Control</h3>
+          <p class="text-slate-600">
+            On marketplaces, you're just another seller. Your own store lets you
+            build your brand and customer relationships.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Store Types Section -->
+  <Section background="slate" pattern={{ type: "dots", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Choose Your Store Type
+        </h2>
+        <p class="text-lg text-slate-600">
+          Whether you're selling 5 products or 100, I'll set up the perfect
+          store for your needs.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Simple Store -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <ShoppingBag class="w-8 h-8 text-blue-600" />
+          </div>
+
+          <div class="text-sm font-semibold text-blue-600 mb-2">
+            SIMPLE STORE
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            Perfect for Getting Started
+          </h3>
+
+          <p class="text-slate-600 mb-6">
+            Ideal for makers, crafters, and hobbyists selling a focused product
+            line.
+          </p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">5-20 products</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Basic product variations</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Payment & shipping setup</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Mobile-friendly design</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Product management training</span
+              >
+            </li>
+          </ul>
+
+          <div class="text-sm text-slate-600 mb-4">
+            <strong>Great for:</strong> Etsy sellers, craft makers, side hustles
+          </div>
+        </div>
+
+        <!-- Growing Store -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-blue-600 relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <Badge class="shadow-md bg-blue-600 text-white">Most Popular</Badge>
+          </div>
+
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <Store class="w-8 h-8 text-blue-600" />
+          </div>
+
+          <div class="text-sm font-semibold text-blue-600 mb-2">
+            GROWING STORE
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            For Established Businesses
+          </h3>
+
+          <p class="text-slate-600 mb-6">
+            Perfect for local shops going online or makers expanding their
+            product lines.
+          </p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">20-100 products</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Product categories</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Advanced shipping options</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Inventory management</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Discount codes & promotions</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Email marketing integration</span
+              >
+            </li>
+          </ul>
+
+          <div class="text-sm text-slate-600 mb-4">
+            <strong>Great for:</strong> Local retailers, established makers, growing
+            brands
+          </div>
+        </div>
+
+        <!-- Custom Store -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <Sparkles class="w-8 h-8 text-blue-600" />
+          </div>
+
+          <div class="text-sm font-semibold text-blue-600 mb-2">
+            CUSTOM STORE
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            Tailored to Your Needs
+          </h3>
+
+          <p class="text-slate-600 mb-6">
+            Unique requirements? Let's discuss what you need and build it right.
+          </p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">100+ products</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Custom features</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Third-party integrations</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Wholesale/B2B features</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Advanced customization</span>
+            </li>
+          </ul>
+
+          <div class="text-sm text-slate-600 mb-4">
+            <strong>Great for:</strong> Unique business models, complex catalogs
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div
+        class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8 text-center max-w-3xl mx-auto mt-12">
+        <h3 class="text-2xl font-bold text-slate-900 mb-2">
+          Not Sure Which Is Right for You?
+        </h3>
+        <p class="text-slate-600 mb-6">
+          Let's talk about your products and goals. I'll recommend the best
+          setup for your business and provide a custom quote.
+        </p>
+        <Button variant="dark" size="lg" href="/services/request">
+          Schedule Free Consultation
+        </Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What's Included Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Everything You Need to Start Selling
+        </h2>
+        <p class="text-lg text-slate-600">
+          Complete store setup—from design to payments. You provide the
+          products, I handle the tech.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Feature 1 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Palette class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Store Design</h3>
+          <p class="text-sm text-slate-600">
+            Professional design that matches your brand and showcases your
+            products beautifully.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <CreditCard class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Payment Processing
+          </h3>
+          <p class="text-sm text-slate-600">
+            Secure payment setup with Stripe, PayPal, or platform payments.
+            Accept all major credit cards.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Truck class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Shipping Configuration
+          </h3>
+          <p class="text-sm text-slate-600">
+            Set up shipping rates, zones, and options. Flat rate, calculated, or
+            free shipping—your choice.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Box class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Product Page Templates
+          </h3>
+          <p class="text-sm text-slate-600">
+            Beautiful product pages with images, descriptions, variants, and
+            easy-to-use checkout.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Package class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Inventory Management
+          </h3>
+          <p class="text-sm text-slate-600">
+            Track stock levels, get low inventory alerts, and manage product
+            variants automatically.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Users class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Training & Documentation
+          </h3>
+          <p class="text-sm text-slate-600">
+            Learn to manage products, process orders, and run your store. Video
+            tutorials included.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Platforms Section -->
+  <Section
+    id="platforms"
+    background="slate"
+    pattern={{ type: "circuit", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Choose Your Platform
+        </h2>
+        <p class="text-lg text-slate-600">
+          I'll help you pick the best e-commerce platform for your business—or
+          work with one you already prefer.
+        </p>
+      </div>
+
+      <!-- Platform Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <!-- Shopify -->
+        <div
+          class="flex flex-col items-center bg-white rounded-2xl p-6 text-center shadow-md">
+          <div class="w-16 h-16 rounded-lg bg-[#95bf47] p-3 mb-4">
+            <Image
+              src={shopifyLogo}
+              alt="Shopify"
+              class="w-full h-full object-contain brightness-0 invert"
+              width={24}
+              height={24}
+            />
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2">Shopify</h3>
+          <p class="text-sm text-slate-600 mb-3">
+            Most popular and easiest to use. Great for all business sizes.
+          </p>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <Badge variant="blue"> User-Friendly </Badge>
+            <Badge variant="blue"> Reliable </Badge>
+          </div>
+        </div>
+
+        <!-- WooCommerce -->
+        <div
+          class="flex flex-col items-center bg-white rounded-2xl p-6 text-center shadow-md">
+          <div class="w-16 h-16 rounded-lg bg-violet-500 p-3 mb-4">
+            <Image
+              src={wordpressLogo}
+              alt="WooCommerce"
+              class="w-full h-full object-contain brightness-0 invert"
+              width={24}
+              height={24}
+            />
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2">WooCommerce</h3>
+          <p class="text-sm text-slate-600 mb-3">
+            WordPress plugin with maximum flexibility and customization.
+          </p>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <Badge variant="blue">Flexible</Badge>
+            <Badge variant="blue">Open Source</Badge>
+          </div>
+        </div>
+
+        <!-- Wix -->
+        <div
+          class="flex flex-col items-center bg-white rounded-2xl p-6 text-center shadow-md">
+          <div class="w-16 h-16 rounded-lg bg-[#0c6ebd] p-3 mb-4">
+            <Image
+              src={wixLogo}
+              alt="Wix"
+              class="w-full h-full object-contain brightness-0 invert"
+              width={24}
+              height={24}
+            />
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2">Wix</h3>
+          <p class="text-sm text-slate-600 mb-3">
+            Beautiful templates with easy drag-and-drop editing.
+          </p>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <Badge variant="blue">Simple</Badge>
+            <Badge variant="blue">Templates</Badge>
+          </div>
+        </div>
+
+        <!-- Squarespace -->
+        <div
+          class="flex flex-col items-center bg-white rounded-2xl p-6 text-center shadow-md">
+          <div class="w-16 h-16 rounded-lg bg-slate-950 p-3 mb-4">
+            <Image
+              src={squarespaceLogo}
+              alt="Squarespace"
+              class="w-full h-full object-contain brightness-0 invert"
+              width={24}
+              height={24}
+            />
+          </div>
+          <h3 class="font-bold text-slate-900 mb-2">Squarespace</h3>
+          <p class="text-sm text-slate-600 mb-3">
+            Gorgeous designs perfect for product-focused brands.
+          </p>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <Badge variant="blue">Beautiful</Badge>
+            <Badge variant="blue">Design First</Badge>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform Help -->
+      <div class="bg-blue-50 rounded-2xl p-8 max-w-3xl mx-auto">
+        <h3 class="text-xl font-bold text-slate-900 mb-4 text-center">
+          Need Help Choosing?
+        </h3>
+        <p class="text-slate-700 mb-4 text-center">
+          During our consultation, I'll ask about your:
+        </p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <Check class="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+              <span>Product types and quantity</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+              <span>Technical comfort level</span>
+            </li>
+          </ul>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <Check class="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+              <span>Budget and timeline</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+              <span>Future growth plans</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What You Provide Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            What You'll Need to Provide
+          </h2>
+          <p class="text-lg text-slate-600">
+            I handle all the technical setup, but you'll need to provide the
+            business content.
+          </p>
+        </div>
+
+        <div
+          class="bg-blue-50 rounded-2xl p-8 md:p-10 border-2 border-blue-200">
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- You Provide -->
+            <div>
+              <h3
+                class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span
+                  class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center shrink-0 text-sm font-bold">
+                  <Check class="w-5 h-5 text-white shrink-0 mt-0.5" />
+                </span>
+                <span>You Provide</span>
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Product photos (high quality)</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Product descriptions & prices</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Shipping rates & policies</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Return/refund policies</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Business/legal info</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- I Handle -->
+            <div>
+              <h3
+                class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span
+                  class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center shrink-0 text-sm font-bold">
+                  <Check class="w-5 h-5 text-white shrink-0 mt-0.5" />
+                </span>
+                <span>I Handle</span>
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                  <span>All technical setup & configuration</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                  <span>Store design & product templates</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                  <span>Payment & shipping integration</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                  <span>Product uploads (optional)</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                  <span>Testing & training</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-blue-200">
+            <p class="text-sm text-slate-600 flex items-start gap-2">
+              <span class="text-red-500 font-bold">Note:</span>
+              <span
+                >I don't provide tax setup or legal advice. Please consult with
+                an accountant or attorney for tax and compliance requirements.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Perfect For Section -->
+  <Section
+    background="dark"
+    pattern={{ type: "hexagons", visibility: "light" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">
+          Perfect For
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <!-- Persona 1 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <Sparkles class="w-8 h-8 text-blue-600 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">Etsy Sellers</h3>
+          <p class="text-sm text-slate-600">
+            Ready to have your own store and keep more of your profits.
+          </p>
+        </div>
+
+        <!-- Persona 2 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <Store class="w-8 h-8 text-blue-600 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">Local Shops</h3>
+          <p class="text-sm text-slate-600">
+            Brick-and-mortar businesses expanding to online sales.
+          </p>
+        </div>
+
+        <!-- Persona 3 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <Palette class="w-8 h-8 text-blue-600 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">Makers & Crafters</h3>
+          <p class="text-sm text-slate-600">
+            Artists, crafters, and creators selling handmade products.
+          </p>
+        </div>
+
+        <!-- Persona 4 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <TrendingUp class="w-8 h-8 text-blue-600 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">Growing Brands</h3>
+          <p class="text-sm text-slate-600">
+            Side hustles becoming real businesses that need to scale.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Process Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          How We'll Build Your Store
+        </h2>
+        <p class="text-lg text-slate-600">
+          From planning to launch in a few simple steps.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                1
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Discovery & Planning
+              </h3>
+              <p class="text-slate-600">
+                We discuss your products, business goals, and who you're selling
+                to. I'll recommend the best platform and create a project plan.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                2
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Store Setup & Design
+              </h3>
+              <p class="text-slate-600">
+                I set up your store, configure all the technical pieces
+                (payments, shipping, etc.), and design beautiful product pages
+                that match your brand.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                3
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Products & Testing
+              </h3>
+              <p class="text-slate-600">
+                Add your products (or I can help), test the checkout process,
+                and make sure everything works perfectly before launch.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                4
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Training & Launch
+              </h3>
+              <p class="text-slate-600">
+                I'll train you on managing products, processing orders, and
+                running your store. Then we launch and you start selling!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ Section -->
+  <Section
+    size="xl"
+    background="slate"
+    pattern={{ type: "dots", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <Accordion items={faqs} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA -->
+  <Section background="blue" pattern={{ type: "squares", visibility: "light" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl text-center">
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Ready to Launch Your Online Store?
+          </h2>
+
+          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            Stop paying high marketplace fees. Get your own professional online
+            store and start keeping more of your profits.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <Button
+              variant="primary"
+              icon={ArrowRight}
+              href="/services/request">
+              Get Your Custom Quote
+            </Button>
+            <Button
+              variant="secondary"
+              href="/services/website-design-development">
+              View Website Services
+            </Button>
+          </div>
+
+          <div class="pt-8 border-t border-slate-200">
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <Clock class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">2-5 Week Launch</span>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <Globe class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">Sell 24/7</span>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <Zap class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">Easy to Manage</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

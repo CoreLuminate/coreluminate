@@ -1,0 +1,685 @@
+---
+import {
+  ArrowRight,
+  Car,
+  Check,
+  Clock,
+  DollarSign,
+  Dot,
+  FlaskConical,
+  Gauge,
+  Mail,
+  MessageCircle,
+  Phone,
+  PiggyBank,
+  Rocket,
+  Sparkles,
+  User,
+  Wrench,
+  Zap,
+} from "@lucide/astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Quick Website Launch"
+  description="Need a website yesterday? Get a professional WordPress site live in 1-2 weeks. Perfect for businesses that need a basic online presence without the wait.">
+  <!-- Hero - Full Screen -->
+  <Section
+    background="slate-blue"
+    pattern={{ type: "dots", visibility: "light" }}
+    fullHeight={true}
+    class="flex items-center">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <Badge variant="white" class="mb-8 shadow-lg inline-flex">
+          <Zap class="w-4 h-4" />
+          <span>Quick Website Launch</span>
+        </Badge>
+
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+          Get Online<br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            This Week
+          </span>
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-blue-100 leading-relaxed mb-12 max-w-3xl mx-auto">
+          Need a website yesterday? Get a professional WordPress site live in
+          1-2 weeks. No branding delays, no endless revisions—just a clean,
+          functional website fast.
+        </p>
+
+        <div class="flex flex-col items-center gap-6">
+          <div class="flex flex-wrap justify-center gap-4">
+            <Badge variant="blur">
+              <Gauge class="w-5 h-5 text-green-400" />
+              1-2 Weeks
+            </Badge>
+            <Badge variant="blur">
+              <DollarSign class="w-5 h-5 text-green-400" />
+              Budget Friendly
+            </Badge>
+            <Badge variant="blur">
+              <Zap class="w-5 h-5 text-green-400" />
+              WordPress
+            </Badge>
+          </div>
+        </div>
+      </div>
+    </Container>
+
+    <!-- Scroll indicator -->
+    <div
+      slot="absolute"
+      class="absolute bottom-30 left-1/2 -translate-x-1/2 animate-bounce">
+      <div
+        class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
+        <div class="w-1 h-3 bg-white/50 rounded-full"></div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- The Problem -->
+  <Section size="2xl" background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            You Need a Website Now, Not Later
+          </h2>
+          <p class="text-xl text-slate-600">
+            Sometimes you don't need perfect, you just need something online so
+            people can find you.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-green-100 p-4 rounded-2xl mb-4">
+              <Clock class="h-10 w-10 text-green-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Need It Yesterday
+            </h3>
+            <p class="text-slate-600">
+              You're getting customers through word-of-mouth but they keep
+              asking "Do you have a website?"
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-green-100 p-4 rounded-2xl mb-4">
+              <DollarSign class="h-10 w-10 text-green-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Budget is Tight
+            </h3>
+            <p class="text-slate-600">
+              You need to save money for other parts of your business. A $10k
+              website isn't in the cards right now.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-green-100 p-4 rounded-2xl mb-4">
+              <Zap class="h-10 w-10 text-green-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Just Need Basics
+            </h3>
+            <p class="text-slate-600">
+              You don't need e-commerce or fancy features. Just a place to send
+              people with your info and contact form.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transition -->
+      <div class="text-center py-12">
+        <div class="inline-flex items-center gap-3 text-green-600">
+          <div class="h-px w-12 bg-linear-to-r from-transparent to-green-600">
+          </div>
+          <Sparkles class="w-6 h-6" />
+          <div class="h-px w-12 bg-linear-to-l from-transparent to-green-600">
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What You Get -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          What You Get
+        </h2>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          A clean, professional WordPress website that gets you online fast.
+        </p>
+      </div>
+
+      <!-- What's Included Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <!-- 5-Page Website -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <Check class="w-6 h-6 text-blue-700" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">5-Page Website</h3>
+          <p class="text-slate-600 mb-4">
+            Home, About, Services, Blog, Contact, everything you need to
+            establish a basic online presence.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="slate" size="sm">Mobile Responsive</Badge>
+            <Badge variant="slate" size="sm">WordPress</Badge>
+            <Badge variant="slate" size="sm">Easy to Update</Badge>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <Mail class="w-6 h-6 text-blue-700" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Working Contact Form
+          </h3>
+          <p class="text-slate-600 mb-4">
+            Let customers reach you easily with a functional contact form that
+            goes straight to your email.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="slate" size="sm">Spam Protection</Badge>
+            <Badge variant="slate" size="sm">Mobile Friendly</Badge>
+          </div>
+        </div>
+
+        <!-- Blog Setup -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <Sparkles class="w-6 h-6 text-blue-700" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Blog Ready</h3>
+          <p class="text-slate-600 mb-4">
+            WordPress blog set up and ready for you to add posts. Great for SEO
+            and keeping customers updated.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="slate" size="sm">Easy Posting</Badge>
+            <Badge variant="slate" size="sm">SEO Friendly</Badge>
+          </div>
+        </div>
+
+        <!-- Basic SEO -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <Gauge class="w-6 h-6 text-blue-700" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Basic SEO Setup</h3>
+          <p class="text-slate-600 mb-4">
+            Essential SEO plugin configured, meta descriptions, and sitemap—so
+            Google can find you.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="slate" size="sm">Meta Tags</Badge>
+            <Badge variant="slate" size="sm">Sitemap</Badge>
+          </div>
+        </div>
+
+        <!-- WordPress Training -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <User class="w-6 h-6 text-blue-700" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            WordPress Training
+          </h3>
+          <p class="text-slate-600 mb-4">
+            Quick training on how to update your site, add blog posts, and make
+            basic changes yourself.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="slate" size="sm">Video Walkthrough</Badge>
+            <Badge variant="slate" size="sm">Documentation</Badge>
+          </div>
+        </div>
+
+        <!-- Domain & Hosting Help -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+            <Rocket class="w-6 h-6 text-blue-700" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Domain & Hosting Guidance
+          </h3>
+          <p class="text-slate-600 mb-4">
+            Help choosing affordable hosting and setting up your domain—you own
+            everything.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <Badge variant="slate" size="sm">You Own It</Badge>
+            <Badge variant="slate" size="sm">Budget Friendly</Badge>
+          </div>
+        </div>
+      </div>
+
+      <!-- What's NOT Included -->
+      <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-8">
+        <h3 class="text-xl font-bold text-slate-900 mb-4 text-center">
+          What's NOT Included (To Keep It Fast & Affordable)
+        </h3>
+        <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+          <ul class="space-y-2 text-slate-700">
+            <li class="flex items-start gap-1">
+              <Dot class="text-rose-500" />
+              <span>Custom logo or branding design</span>
+            </li>
+            <li class="flex items-start gap-1">
+              <Dot class="text-rose-500" />
+              <span>Custom website design (uses theme)</span>
+            </li>
+            <li class="flex items-start gap-1">
+              <Dot class="text-rose-500" />
+              <span>E-commerce or online store</span>
+            </li>
+          </ul>
+          <ul class="space-y-2 text-slate-700">
+            <li class="flex items-start gap-1">
+              <Dot class="text-rose-500" />
+              <span>Advanced SEO or marketing strategy</span>
+            </li>
+            <li class="flex items-start gap-1">
+              <Dot class="text-rose-500" />
+              <span>Landing pages</span>
+            </li>
+            <li class="flex items-start gap-1">
+              <Dot class="text-rose-500" />
+              <span>Advanced forms or functionality</span>
+            </li>
+          </ul>
+        </div>
+        <p class="text-center text-sm text-slate-600 mt-4">
+          <strong>Want those things?</strong> Check out our <a
+            href="/solutions/complete-digital-launch"
+            class="text-blue-600 hover:underline">Complete Digital Launch</a
+          > instead.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Who This Is For -->
+  <Section>
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Perfect For
+          </h2>
+          <p class="text-xl text-slate-600">
+            This is ideal if you need a basic online presence without breaking
+            the bank or waiting months.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Word-of-Mouth Businesses -->
+          <div class="relative bg-white rounded-2xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Word-of-Mouth Businesses
+            </h3>
+            <p class="text-slate-600">
+              You get most customers through referrals, but they keep asking for
+              your website. You just need something to point them to.
+            </p>
+          </div>
+
+          <!-- Tight Budget -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Budget-Conscious Startups
+            </h3>
+            <p class="text-slate-600">
+              You need to save money for inventory, equipment, or other
+              essential costs. A fancy website can wait—you just need the basics
+              now.
+            </p>
+          </div>
+
+          <!-- Testing Ideas -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Testing the Waters
+            </h3>
+            <p class="text-slate-600">
+              You're validating your business idea and don't want to invest
+              heavily in a website until you know it'll work. Start simple,
+              upgrade later.
+            </p>
+          </div>
+
+          <!-- Service Providers -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Local Service Providers
+            </h3>
+            <p class="text-slate-600">
+              Contractors, consultants, coaches—you do great work but your
+              business doesn't depend on a fancy website. You just need contact
+              info online.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Who This Is For -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Perfect For
+          </h2>
+          <p class="text-xl text-slate-600">
+            This is ideal if you need a basic online presence without breaking
+            the bank or waiting months.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Word-of-Mouth Businesses -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <MessageCircle
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Word-of-Mouth Businesses
+              </h3>
+              <p class="text-slate-600">
+                You get most customers through referrals, but they keep asking
+                for your website. You just need something to point them to.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tight Budget -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <PiggyBank
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Budget-Conscious Startups
+              </h3>
+              <p class="text-slate-600">
+                You need to save money for inventory, equipment, or other
+                essential costs. A fancy website can wait—you just need the
+                basics now.
+              </p>
+            </div>
+          </div>
+
+          <!-- Testing Ideas -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <FlaskConical
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Testing the Waters
+              </h3>
+              <p class="text-slate-600">
+                You're validating your business idea and don't want to invest
+                heavily in a website until you know it'll work. Start simple,
+                upgrade later.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service Providers -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <Wrench class="w-16 h-16 text-blue-600 mb-4" stroke-width="1.5" />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Local Service Providers
+              </h3>
+              <p class="text-slate-600">
+                Contractors, consultants, coaches—you do great work but your
+                business doesn't depend on a fancy website. You just need
+                contact info online.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upgrade Path -->
+        <div
+          class="bg-linear-to-br from-blue-700 to-indigo-900 rounded-3xl p-8 md:p-12 text-white text-center">
+          <Sparkles
+            stroke-width="1.33"
+            class="w-16 h-16 mx-auto mb-6 text-blue-400"
+          />
+          <h3 class="text-2xl font-bold mb-4">Want to Upgrade Later?</h3>
+          <p class="text-lg text-blue-100 mb-6">
+            Start here and upgrade to our Complete Digital Launch when you're
+            ready for custom branding, advanced features, and a full digital
+            strategy.
+          </p>
+          <Button href="/solutions/complete-digital-launch" variant="outline">
+            Learn about our Complete Digital Launch
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA Form -->
+  <Section
+    size="3xl"
+    background="slate-blue"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <!-- Race car speeding from bottom right -->
+    <div class="absolute bottom-20 right-10 opacity-20 pointer-events-none">
+      <div class="relative">
+        <!-- Speed lines behind the car -->
+        <div class="absolute top-1/2 -translate-y-1/2 right-full mr-4">
+          <div class="flex flex-col gap-3">
+            <div
+              class="h-1 w-32 bg-linear-to-l from-green-400 to-transparent rounded-full">
+            </div>
+            <div
+              class="h-1 w-40 bg-linear-to-l from-green-400 to-transparent rounded-full">
+            </div>
+            <div
+              class="h-1 w-36 bg-linear-to-l from-green-400 to-transparent rounded-full">
+            </div>
+            <div
+              class="h-1 w-44 bg-linear-to-l from-green-400 to-transparent rounded-full">
+            </div>
+          </div>
+        </div>
+        <!-- Race car icon -->
+        <Car
+          class="w-80 h-80 text-white transform -rotate-12"
+          stroke-width="1"
+        />
+      </div>
+    </div>
+
+    <!-- Additional speed lines scattered around -->
+    <div
+      slot="absolute"
+      class="absolute top-20 left-10 w-40 h-1 bg-green-400/30 rounded-full transform -rotate-12">
+    </div>
+    <div
+      slot="absolute"
+      class="absolute top-40 right-20 w-32 h-1 bg-green-400/30 rounded-full transform rotate-12">
+    </div>
+    <div
+      slot="absolute"
+      class="absolute bottom-40 left-20 w-48 h-1 bg-green-400/30 rounded-full transform -rotate-6">
+    </div>
+
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Get Online Fast?
+          </h2>
+          <p class="text-xl text-blue-100">
+            Tell us about your business and we'll have you online in 1-2 weeks.
+          </p>
+        </div>
+
+        <!-- Simple Lead Form -->
+        <form
+          class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20 shadow-md">
+          <div class="space-y-6">
+            <!-- Name -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-white mb-2">
+                Your Name *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <User class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="John Smith"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-white mb-2">
+                Email Address *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Mail class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-white mb-2">
+                Phone Number
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Phone class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+            </div>
+
+            <!-- Business Type -->
+            <div>
+              <label
+                for="business"
+                class="block text-sm font-medium text-white mb-2">
+                What Type of Business? *
+              </label>
+              <input
+                type="text"
+                id="business"
+                name="business"
+                required
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="e.g., Plumbing, Consulting, Coaching"
+              />
+            </div>
+
+            <!-- Brief Description -->
+            <div>
+              <label
+                for="description"
+                class="block text-sm font-medium text-white mb-2">
+                Anything Else We Should Know?
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                rows="3"
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                placeholder="Optional: Any specific features you need or questions you have?"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <Button
+              type="submit"
+              variant="gradient"
+              size="lg"
+              icon={ArrowRight}
+              class="w-full group">
+              <span>Get My Quick Website</span>
+            </Button>
+
+            <p class="text-sm text-blue-200 text-center">
+              We'll get back to you within 24 hours to discuss your project and
+              timeline.
+            </p>
+          </div>
+        </form>
+      </div>
+    </Container>
+  </Section>
+</Layout>

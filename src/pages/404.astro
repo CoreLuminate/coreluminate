@@ -1,0 +1,49 @@
+---
+import { House } from "@lucide/astro";
+import Button from "../components/ui/Button.astro";
+import Container from "../components/ui/Container.astro";
+import Section from "../components/ui/Section.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Page Not Found"
+  description="The page you're looking for doesn't exist or has been moved.">
+  <Section
+    size="3xl"
+    background="dark"
+    pattern={{ type: "dots", visibility: "subtle" }}>
+    <Container>
+      <div class="flex flex-col items-center text-center">
+        <h1
+          class="text-[10rem] md:text-[14rem] lg:text-[16rem] font-black text-blue-500">
+          404
+        </h1>
+        <!-- Error Message -->
+        <div class="mb-10 space-y-4">
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+            UH OH!
+          </h2>
+          <p class="text-base md:text-lg text-slate-300 max-w-md mx-auto">
+            The page you're looking for does not exist or cannot be found!
+          </p>
+        </div>
+
+        <!-- Action Button -->
+        <div class="flex flex-row items-center gap-4 max-auto">
+          <Button
+            variant="primary"
+            size="lg"
+            href="/"
+            icon={House}
+            title="Go Back Home"
+          />
+          <Button variant="outline" size="lg" href="/contact">
+            Contact Us
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

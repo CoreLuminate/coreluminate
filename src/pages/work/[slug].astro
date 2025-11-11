@@ -1,0 +1,237 @@
+---
+import { ArrowRight, Calendar, ExternalLink } from "@lucide/astro";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import { formatDate } from "../../lib/helpers";
+import { getAllWorkProjects } from "../../lib/work";
+
+export async function getStaticPaths() {
+  const allProjects = await getAllWorkProjects();
+
+  return allProjects.map((work: CollectionEntry<"work">) => ({
+    params: { slug: work.slug },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props as { work: CollectionEntry<'work'> };
+const { Content } = await render(work);
+const {
+  title,
+  company,
+  description,
+  services,
+  industry,
+  projectUrl,
+  featuredImage,
+  images,
+  stats,
+  testimonial,
+  publishDate,
+} = work.data;
+
+// Format date
+const formattedDate = formatDate(publishDate);
+---
+
+<Layout title={`${title}`} description={description}>
+  
+  <!-- Hero Section with Split Layout -->
+  <Section size="lg" background="white">
+    <Container>
+      <!-- Split Layout: Content Left, Image Right -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left Column: Content -->
+        <div>
+          <!-- Meta Info -->
+          <div class="flex flex-wrap items-center gap-4 mb-6">
+            <!-- Service Tags -->
+            <div class="flex flex-wrap gap-2">
+              {services.map((service: string) => (
+                <Badge variant="blue">{service}</Badge>
+              ))}
+            </div>
+            
+            <!-- Industry Badge -->
+            <Badge variant="slate">{industry}</Badge>
+            
+            <!-- Date -->
+            <div class="flex items-center gap-2 text-sm text-slate-600">
+              <Calendar class="w-4 h-4" />
+              <span>{formattedDate}</span>
+            </div>
+          </div>
+
+          <!-- Title & Description -->
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            {title}
+          </h1>
+          <p class="text-xl text-slate-600 leading-relaxed mb-8">
+            {description}
+          </p>
+        </div>
+
+        <!-- Right Column: Featured Image with Button Overlay -->
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden shadow-xs">
+            <Image
+              src={featuredImage}
+              alt={`${title} website screenshot`}
+              class="w-full h-auto"
+              widths={[600, 800, 1000]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={90}
+            />
+          </div>
+          
+          <!-- View Live Site Button (Circular, Overlaid) -->
+          {projectUrl && (
+            <a
+              href={projectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View Live Site"
+              class="absolute bottom-4 left-4 w-18 h-18 bg-blue-600 hover:bg-blue-700 text-white rounded-full ring-1 ring-blue-500 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+              aria-label="View Live Site"
+            >
+              <ExternalLink class="w-7 h-7 group-hover:scale-105 transition-transform" />
+            </a>
+          )}
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Stats Cards Section -->
+  {stats && stats.length > 0 && (
+    <Section size="sm" background="slate" pattern={{type: 'grid', visibility: 'light'}}>
+      <Container>
+        <div class="flex flex-wrap justify-center gap-6 relative z-10">
+          {stats.map((stat: { value: string; label: string }) => (
+            <div class="bg-white rounded-2xl p-8 shadow-sm ring-1 ring-slate-200 text-center hover:shadow-md transition-shadow flex-1 min-w-[200px] max-w-[280px]">
+              <div class="text-3xl font-bold text-blue-600 mb-2">
+                {stat.value}
+              </div>
+              <div class="text-slate-600 font-medium">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- Main Content -->
+  <Section size="sm" background="white">
+    <Container>
+      <article class="max-w-6xl mx-auto">
+        <!-- Prose Content with Smaller Images -->
+        <div class="prose prose-lg prose-slate max-w-none
+          prose-headings:font-bold prose-headings:text-slate-900 prose-headings:tracking-tight
+          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+          prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4
+          prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+          prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-slate-900 prose-strong:font-semibold
+          prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+          prose-li:text-slate-700 prose-li:mb-2
+          prose-img:rounded-xl prose-img:ring-1 prose-img:ring-slate-200 prose-img:my-8 prose-img:max-w-2xl prose-img:mx-auto">
+          <Content />
+        </div>
+
+        <!-- Additional Images Grid -->
+        {images && images.length > 0 && (
+          <div class="mt-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Project Gallery</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              {images.map((image: ImageMetadata) => (
+                <div class="rounded-xl overflow-hidden shadow-lg bg-slate-100 group">
+                  <Image
+                    src={image}
+                    alt={`${title} screenshot`}
+                    class="w-full h-auto transform group-hover:scale-105 transition-transform duration-300"
+                    widths={[400, 600, 800]}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    quality={85}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </article>
+    </Container>
+  </Section>
+
+  <!-- Testimonial Section - Gray with Pattern, White Card -->
+  {testimonial && (
+    <Section size="lg" background="slate" pattern={{type: 'dots'}}>
+      <Container>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+            <!-- Quote Icon -->
+            <div class="mb-6">
+              <svg class="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+            
+            <!-- Testimonial Content -->
+            <blockquote>
+              <p class="text-2xl text-slate-800 font-medium leading-relaxed mb-8 italic">
+                "{testimonial.quote}"
+              </p>
+              <footer>
+                <div class="font-semibold text-slate-700 text-lg">{testimonial.author}</div>
+                <div class="text-slate-600">{testimonial.role}</div>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </Container>
+    </Section>
+  )}
+
+  <!-- CTA Section - Dark Blue with Graphics -->
+  <Section size="xl" background="dark" pattern={{type: 'grid'}}>
+    <Container>
+      <div class="max-w-4xl mx-auto text-center py-16">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          Ready for Similar Results?
+        </h2>
+        <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+          Let's discuss how we can help your business grow online with a custom solution tailored to your needs.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button 
+            variant="primary" 
+            size="lg" 
+            href="/services/request"
+          >
+            Start Your Project
+            <ArrowRight class="w-5 h-5 ml-2" />
+          </Button>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            href="/work">
+            View More Work
+          </Button>
+        </div>
+        <p class="text-sm text-blue-200 mt-6">
+          Free consultation available.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+</Layout>

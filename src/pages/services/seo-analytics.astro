@@ -1,0 +1,926 @@
+---
+import {
+  ArrowRight,
+  Building2,
+  ChartBar,
+  ChartColumn,
+  Check,
+  CircleCheck,
+  Clock,
+  FileText,
+  Lightbulb,
+  PencilRuler,
+  Rocket,
+  Search,
+  Settings,
+  Shield,
+  Target,
+  TrendingUp,
+  Zap,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import Accordion from "../../components/ui/Accordion.astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import heroImage from "../../assets/images/analytics-dashboard-on-laptop.jpg";
+
+// Import your hero image
+
+// FAQ data
+const faqs = [
+  {
+    question: "What's the difference between an SEO audit and ongoing SEO?",
+    answer:
+      "An SEO audit is a one-time deep dive into your website to identify issues and opportunities. I'll give you a prioritized list of improvements you can make. Ongoing SEO involves continuous content creation, link building, and monthly optimization - which I don't offer. Instead, I can recommend tools like Blaze.AI if you want to manage content yourself.",
+  },
+  {
+    question: "Do I need to hire you to fix the issues you find?",
+    answer:
+      "Not at all! The audit report includes clear, actionable instructions so you (or your team) can make the changes yourself. However, if you'd prefer me to handle the implementation, we can discuss that as a separate project with clear pricing.",
+  },
+  {
+    question: "How is this different from an SEO agency?",
+    answer:
+      "SEO agencies typically charge $1,000-5,000+/month for ongoing services like content creation, link building, and monthly reporting. I focus on the technical foundation and one-time improvements that make the biggest impact. It's perfect for small businesses that need expert guidance without the agency price tag.",
+  },
+  {
+    question: "Will you write blog posts or manage my social media?",
+    answer:
+      "No - I focus on technical SEO and analytics, not content marketing or social media management. However, I can create digital assets like landing pages, ad graphics, and other one-off design work when you need them.",
+  },
+  {
+    question: "What if I don't understand Google Analytics?",
+    answer:
+      "That's exactly why I offer the Analytics Setup & Training service! I'll not only set everything up correctly but also teach you what the numbers mean and which metrics actually matter for your business. You'll get recordings and documentation to reference later.",
+  },
+  {
+    question: "How long does an SEO audit take?",
+    answer:
+      "Most audits are completed within 5-7 business days. You'll receive a detailed PDF report with screenshots, explanations, and prioritized recommendations ranked by impact and difficulty.",
+  },
+  {
+    question: "Can you help with my Google Ads or Facebook Ads?",
+    answer:
+      "Currently, I don't manage advertising campaigns. My focus is on organic search (SEO) and analytics. However, I can create landing pages and ad graphics for your campaigns as one-off projects.",
+  },
+  {
+    question: "What if my website needs another audit in 6 months?",
+    answer:
+      "No problem! Just reach out when you're ready. Many clients come back for a follow-up audit after they've implemented changes, or when they've made significant updates to their site. There's no ongoing commitment required.",
+  },
+];
+---
+
+<Layout
+  title="SEO & Analytics Services"
+  description="Get expert SEO audits and analytics setup without the agency price tag. Perfect for small businesses who want to improve their Google visibility and understand their data.">
+  <!-- Hero Section -->
+  <Section
+    size="xl"
+    background="dark"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 items-center py-12">
+        <!-- Left Column: Content -->
+        <div>
+          <Badge variant="white" class="mb-6 shadow-lg">
+            <Search class="w-4 h-4" />
+            <span>SEO & Analytics</span>
+          </Badge>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            SEO & Analytics That Make Sense
+          </h1>
+
+          <p class="text-xl text-blue-100 leading-relaxed mb-8">
+            Stop guessing if your website is working. Get expert SEO
+            recommendations and analytics insights you can actually understand
+            and use.
+          </p>
+
+          <!-- Key Benefits -->
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Expert review of what's holding your site back</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Clear, actionable steps to improve Google visibility</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Analytics setup that shows what's helping your business</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >No confusing jargon or expensive monthly retainers</span
+              >
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-4">
+            <Button icon={ArrowRight} href="/services/request"
+              >Get Your Audit</Button
+            >
+            <Button variant="outline" href="#services">See Services</Button>
+          </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="relative">
+          <div
+            class="rounded-2xl overflow-hidden shadow-2xl bg-slate-700 aspect-4/3 flex items-center justify-center">
+            <Image
+              src={heroImage}
+              alt="Laptop on table with a analytics dashboard web page open"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
+            />
+          </div>
+
+          <!-- Floating Stats Cards -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 border border-slate-200">
+            <div class="flex items-center gap-2">
+              <TrendingUp class="w-5 h-5 text-green-600" />
+              <div>
+                <div class="text-2xl font-bold text-slate-900">+150%</div>
+                <div class="text-xs text-slate-600">Avg. Traffic Increase</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4 border border-slate-200">
+            <div class="flex items-center gap-2">
+              <Search class="w-5 h-5 text-blue-600" />
+              <div>
+                <div class="text-2xl font-bold text-slate-900">Top 3</div>
+                <div class="text-xs text-slate-600">Google Rankings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Problem/Solution Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Your Website Looks Great, But Is Anyone Finding It?
+        </h2>
+        <p class="text-lg text-slate-600">
+          You invested in a website, but if it's not showing up on Google or you
+          don't understand your analytics, you're missing opportunities.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Problem 1 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Search class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Not Showing Up on Google
+          </h3>
+          <p class="text-slate-600">
+            Your website exists, but potential customers can't find you when
+            they search.
+          </p>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <ChartBar class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Analytics Confusion
+          </h3>
+          <p class="text-slate-600">
+            You have Google Analytics but have no idea what the numbers mean or
+            what to do.
+          </p>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Target class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Wasting Money</h3>
+          <p class="text-slate-600">
+            You're getting traffic but can't tell if it's actually helping your
+            business grow.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Services Section -->
+  <Section
+    id="services"
+    background="slate"
+    pattern={{ type: "dots", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Services Designed for Small Businesses
+        </h2>
+        <p class="text-lg text-slate-600">
+          No complicated packages or confusing retainers. Just clear, actionable
+          services that improve your online presence.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <!-- Service 1: SEO Audit -->
+        <div
+          class="flex flex-col bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <FileText class="w-8 h-8 text-blue-600" />
+          </div>
+
+          <div class="text-sm font-semibold text-blue-600 mb-2">
+            ONE-TIME SERVICE
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            SEO Audit & Recommendations
+          </h3>
+
+          <p class="text-slate-600 mb-6">
+            Comprehensive review of your website's SEO with a detailed action
+            plan to improve your search rankings.
+          </p>
+
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Technical SEO analysis</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Content optimization review</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Site structure & navigation</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Mobile & page speed check</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Detailed PDF report</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Prioritized action items</span
+              >
+            </li>
+          </ul>
+
+          <Button variant="secondary" href="/services/request">
+            Request Audit
+          </Button>
+        </div>
+
+        <!-- Service 2: Analytics Setup -->
+        <div
+          class="flex flex-col bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <ChartBar class="w-8 h-8 text-blue-600" />
+          </div>
+
+          <div class="text-sm font-semibold text-blue-600 mb-2">
+            ONE-TIME + TRAINING
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            Analytics Setup & Training
+          </h3>
+
+          <p class="text-slate-600 mb-6">
+            Complete Google Analytics 4 and Tag Manager setup with personalized
+            training so you understand your data.
+          </p>
+
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">GA4 & GTM installation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Goal & conversion tracking</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Custom dashboard creation</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">1-hour training session</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Recorded walkthrough</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Written documentation</span>
+            </li>
+          </ul>
+
+          <Button variant="secondary" href="/services/request">
+            Get Started
+          </Button>
+        </div>
+
+        <!-- Service 3: SEO Foundation (Add-on) -->
+        <div
+          class="flex flex-col bg-white rounded-2xl p-8 shadow-sm border-2 border-blue-600 relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <Badge class="shadow-md bg-blue-600 text-white"
+              >Website Add-On</Badge
+            >
+          </div>
+
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <Zap class="w-8 h-8 text-blue-600" />
+          </div>
+
+          <div class="text-sm font-semibold text-blue-600 mb-2">
+            WEBSITE PROJECT ADD-ON
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            SEO Foundation Package
+          </h3>
+
+          <p class="text-slate-600 mb-6">
+            Build SEO into your new website from day one. Perfect addition to
+            any website project.
+          </p>
+
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Semantic HTML structure</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Meta tags for all pages</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Image optimization & alt text</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">XML sitemap setup</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Schema markup basics</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Speed optimization</span>
+            </li>
+          </ul>
+
+          <Button variant="primary" href="/services/website-design-development">
+            View Website Services
+          </Button>
+        </div>
+      </div>
+
+      <!-- Bundle Discount Callout -->
+      <div
+        class="flex flex-col items-center gap-4 bg-blue-50 border-2 border-blue-200 rounded-2xl p-8 text-center max-w-3xl mx-auto">
+        <Badge variant="white">
+          <Zap class="w-4 h-4" />
+          <span>BUNDLE & SAVE</span>
+        </Badge>
+        <h3 class="text-2xl font-bold text-slate-900 mb-2">
+          Get Both Audit + Analytics for a discount
+        </h3>
+        <p class="text-slate-600 mb-6">
+          Save when you bundle the SEO Audit with Analytics Setup & Training.
+          Perfect for getting a complete picture of your website's performance.
+        </p>
+        <Button variant="dark" href="/services/request">
+          Get the Bundle
+        </Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What's Included in SEO Audit -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          What's Included in Your SEO Audit
+        </h2>
+        <p class="text-lg text-slate-600">
+          A comprehensive review delivered in a clear, actionable report you can
+          implement yourself or have us help with.
+        </p>
+      </div>
+
+      <div
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+        <!-- Item 1 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Settings class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Technical SEO Analysis
+          </h3>
+          <p class="text-sm text-slate-600">
+            Site structure, URL optimization, robots.txt, XML sitemap, canonical
+            tags, and indexing issues.
+          </p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <FileText class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Content Review</h3>
+          <p class="text-sm text-slate-600">
+            Headline structure (H1-H6), meta titles & descriptions, keyword
+            opportunities, and content gaps.
+          </p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Zap class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Page Speed Check
+          </h3>
+          <p class="text-sm text-slate-600">
+            Load time analysis, image optimization opportunities, and specific
+            recommendations to improve speed.
+          </p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Target class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Mobile-Friendliness
+          </h3>
+          <p class="text-sm text-slate-600">
+            Responsive design check, mobile usability issues, and touch element
+            sizing.
+          </p>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Shield class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Security & Accessibility
+          </h3>
+          <p class="text-sm text-slate-600">
+            HTTPS status, broken links, accessibility issues, and schema markup
+            opportunities.
+          </p>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Lightbulb class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Prioritized Action Plan
+          </h3>
+          <p class="text-sm text-slate-600">
+            Clear recommendations ranked by impact vs. effort, so you know what
+            to tackle first.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sample Report Preview -->
+      <div
+        class="bg-blue-50 rounded-2xl p-8 border-2 border-blue-200 max-w-6xl mx-auto">
+        <div class="flex items-start gap-6">
+          <div class="shrink-0">
+            <div
+              class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center">
+              <FileText class="w-8 h-8 text-white" />
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              You'll Receive
+            </h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex items-center gap-2">
+                <CircleCheck class="w-5 h-5 text-blue-600 shrink-0" />
+                <span>Detailed PDF report with screenshots</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <CircleCheck class="w-5 h-5 text-blue-600 shrink-0" />
+                <span>Prioritized recommendations (High/Medium/Low impact)</span
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <CircleCheck class="w-5 h-5 text-blue-600 shrink-0" />
+                <span>Clear explanations in plain English (no jargon)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <CircleCheck class="w-5 h-5 text-blue-600 shrink-0" />
+                <span>Follow-up call to answer questions</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What I DON'T Do Section (Setting Boundaries) -->
+  <Section
+    size="lg"
+    background="slate"
+    pattern={{ type: "waves", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            What I Don't Offer (And Why That's Good)
+          </h2>
+          <p class="text-lg text-slate-600">
+            I focus on technical SEO and analytics, not full-service marketing.
+            This keeps costs down and deliverables clear.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 md:p-10">
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Don't Do List -->
+            <div>
+              <h3
+                class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span
+                  class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center shrink-0">
+                  <span class="text-red-600 text-xl">×</span>
+                </span>
+                <span>Not Included</span>
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-slate-700">
+                  <span class="text-slate-400 mt-1">•</span>
+                  <span>Ongoing monthly SEO retainers</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <span class="text-slate-400 mt-1">•</span>
+                  <span>Content writing or blog management</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <span class="text-slate-400 mt-1">•</span>
+                  <span>Link building campaigns</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <span class="text-slate-400 mt-1">•</span>
+                  <span>Social media management</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <span class="text-slate-400 mt-1">•</span>
+                  <span>Google Ads or Facebook Ads management</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Alternative Solutions -->
+            <div>
+              <h3
+                class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span
+                  class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
+                  <Lightbulb class="w-4 h-4 text-blue-600" />
+                </span>
+                <span>What I Can Do Instead</span>
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Recommend tools for copywriting</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Create landing pages for your campaigns</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Design ad graphics and digital assets</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Follow-up audits when you're ready</span>
+                </li>
+                <li class="flex items-start gap-2 text-slate-700">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Implement the fixes we identify (separate quote)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Process Section -->
+  <Section size="xl" background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          How It Works
+        </h2>
+        <p class="text-lg text-slate-600">
+          Simple process from request to recommendations.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                1
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                You Request an Audit
+              </h3>
+              <p class="text-slate-600">
+                Fill out a brief form telling me about your website and business
+                goals. I'll confirm which service is the best fit.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                2
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                I Analyze Your Site
+              </h3>
+              <p class="text-slate-600">
+                I'll dive deep into your website - reviewing technical SEO,
+                content, performance, and finding opportunities for improvement.
+                Takes 5-7 business days.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                3
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                You Get Your Report
+              </h3>
+              <p class="text-slate-600">
+                Receive a detailed PDF with prioritized recommendations,
+                screenshots, and clear explanations. Everything ranked by impact
+                and difficulty.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                4
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Follow-Up Call
+              </h3>
+              <p class="text-slate-600">
+                30-minute call to walk through the report, answer questions, and
+                discuss implementation. You can tackle changes yourself or hire
+                me to help.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Who This Is For Section -->
+  <Section
+    size="lg"
+    background="dark"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">
+          Perfect For
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <!-- Persona 1 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <Building2 class="w-8 h-8 text-blue-800 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">Local Businesses</h3>
+          <p class="text-sm text-slate-600">
+            Restaurants, contractors, service providers who need local
+            visibility.
+          </p>
+        </div>
+
+        <!-- Persona 2 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <Rocket class="w-8 h-8 text-blue-800 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">Startups</h3>
+          <p class="text-sm text-slate-600">
+            New companies with limited budgets who need expert guidance without
+            agency prices.
+          </p>
+        </div>
+
+        <!-- Persona 3 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <PencilRuler class="w-8 h-8 text-blue-800 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">DIY Website Owners</h3>
+          <p class="text-sm text-slate-600">
+            Business owners who built their own site and need an expert review.
+          </p>
+        </div>
+
+        <!-- Persona 4 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <ChartColumn class="w-8 h-8 text-blue-800 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">Data-Curious Owners</h3>
+          <p class="text-sm text-slate-600">
+            Anyone who wants to understand their website analytics and make
+            data-driven decisions.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ Section -->
+  <Section size="xl" background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <Accordion items={faqs} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA -->
+  <Section background="blue" pattern={{ type: "grid", visibility: "light" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl text-center">
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Ready to Improve Your SEO?
+          </h2>
+
+          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            Get expert insights and actionable recommendations without the
+            agency price tag.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <Button
+              variant="primary"
+              icon={ArrowRight}
+              href="/services/request">
+              Request Your Audit
+            </Button>
+            <Button
+              variant="secondary"
+              href="/services/website-design-development">
+              View Website Services
+            </Button>
+          </div>
+
+          <div class="pt-8 border-t border-slate-200">
+            <div class="grid md:grid-cols-3 gap-4 text-center">
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <Clock class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">7-9 Day Delivery</span>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <FileText class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">PDF Report</span>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <CircleCheck class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">No Ongoing Commitment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

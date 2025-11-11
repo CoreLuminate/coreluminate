@@ -1,0 +1,53 @@
+---
+import { ArrowRight, Signature } from '@lucide/astro';
+import type { CollectionEntry } from 'astro:content';
+import Badge from './ui/Badge.astro';
+import Button from './ui/Button.astro';
+import WorkCard from './ui/WorkCard.astro';
+import { getFeaturedWorkProjects, sortWorkProjects } from '../lib/work';
+
+interface Props {
+  showViewAll?: boolean;
+}
+
+const { showViewAll = true } = Astro.props;
+
+// Get featured projects only
+const featuredWork = await getFeaturedWorkProjects();
+
+// Sort by order
+const sortedFeatured = sortWorkProjects(featuredWork, 'publishDate', 'desc');
+---
+
+{sortedFeatured.length > 0 && (
+  <!-- Section Header -->
+  <div class="text-center mb-12">
+    <Badge variant="white">
+      <Signature class="w-4 h-4" />
+      Our Work
+    </Badge>
+
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+      Recent Projects We're Proud Of
+    </h2>
+    <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+      See how we've helped businesses like yours succeed online with professional websites and digital solutions.
+    </p>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+    {sortedFeatured.map((project: CollectionEntry<'work'>) => (
+      <WorkCard project={project} showStats={true} />
+    ))}
+  </div>
+
+  <!-- View All Button -->
+  {showViewAll && (
+    <div class="flex justify-center">
+      <Button variant="primary" icon={ArrowRight} href="/work">
+        View All Projects
+      </Button>
+    </div>
+  )}
+)}

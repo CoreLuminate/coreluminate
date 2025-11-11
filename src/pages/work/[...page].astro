@@ -1,0 +1,150 @@
+---
+import { ArrowRight, Briefcase } from "@lucide/astro";
+import type { GetStaticPathsOptions, Page } from "astro";
+import { type CollectionEntry } from "astro:content";
+import FeaturedWork from "../../components/FeaturedWork.astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Pagination from '../../components/ui/Pagination.astro';
+import Section from "../../components/ui/Section.astro";
+import WorkCard from "../../components/ui/WorkCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getAllWorkProjects } from '../../lib/work';
+import { siteConfig } from '../../site.config';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const allProjects = await getAllWorkProjects();
+
+  return paginate(allProjects, { pageSize: siteConfig.pagination.itemsPerPage || 2});
+}
+
+type Props = { page: Page<CollectionEntry<'work'>> };
+
+const { page } = Astro.props;
+const allProjects = page.data;
+
+const title = page.currentPage === 1 ? 'Our Work' : `Our Work Page ${page.currentPage}`;
+---
+
+<Layout
+  title={title}
+  description="See how we've helped small businesses succeed online with professional websites, branding, and digital solutions.">
+
+  <!-- Hero Section - Dark with Accent -->
+  <Section size="md" background="dark" pattern={{type: 'grid', visibility: 'light'}}>
+    
+    <Container>
+      <div>
+        <!-- Badge and Title -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <Badge variant="white" class="mb-4">
+              <Briefcase class="w-4 h-4" />
+              <span>Portfolio</span>
+            </Badge>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-3">
+              Our Work
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl">
+              Real results for real businesses. Browse our portfolio of successful projects.
+            </p>
+          </div>
+          
+          <!-- Quick Stats (Vertical on Right) -->
+          <div class="flex md:flex-col gap-6 md:gap-3 md:text-right">
+            <div>
+              <div class="text-3xl font-bold text-white">8+</div>
+              <div class="text-xs text-blue-300">Projects</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-white">100%</div>
+              <div class="text-xs text-blue-300">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+
+  <Section background="slate" pattern={{type:'dots'}}>
+    <Container>
+      <!-- Featured Work Component -->
+      <FeaturedWork showViewAll={false} />
+    </Container>
+  </Section>
+
+  <!-- All Projects Section -->
+  {allProjects.length > 0 && (
+    <Section size="xl" background="white">
+      <Container>
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            More Projects
+          </h2>
+          <p class="text-lg text-slate-600">
+            Additional examples of our work helping small businesses establish and grow their online presence.
+          </p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {allProjects.map((project) => (
+            <WorkCard project={project} showStats={false} />
+          ))}
+        </div>
+        {page.lastPage > 1 && (
+          <div class="mt-12">
+            <Pagination page={page} />
+          </div>
+        )}
+      </Container>
+    </Section>
+  )}
+
+  <!-- CTA Section - Centered with Background Graphics (Variant 3) -->
+  <Section size="xl" background="slate" pattern={{type: 'circuit', visibility: 'light'}}>
+
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <!-- Card Container -->
+        <div
+          class="bg-white rounded-2xl p-6 md:p-8 shadow-md ring-1 ring-slate-200 text-center">
+          <!-- Heading -->
+          <h2
+            class="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Ready to Start Your Project?
+          </h2>
+
+          <!-- Description -->
+          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            Let's create something amazing together. Schedule a free
+            consultation to discuss your goals and how we can help your business
+            grow online.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap justify-center gap-4">
+            <Button variant="primary" href="/services/request">
+              Get Started Today
+              <ArrowRight class="w-5 h-5 ml-2" />
+            </Button>
+            <Button variant="secondary" href="/services">
+              View Our Services
+            </Button>
+          </div>
+
+          <!-- Trust Badge -->
+          <div class="mt-8 pt-8 border-t border-slate-200">
+            <p class="text-sm text-slate-600">
+              <span class="font-semibold text-slate-900">Free consultation</span
+              > • Flexible payment plans available
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

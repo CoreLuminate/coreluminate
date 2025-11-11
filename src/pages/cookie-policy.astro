@@ -1,0 +1,370 @@
+---
+import Container from "../components/ui/Container.astro";
+import Section from "../components/ui/Section.astro";
+import Layout from "../layouts/Layout.astro";
+
+const lastUpdated = "November 2025";
+---
+
+<Layout title="Cookie Policy - CoreLuminate">
+  <!-- Hero Section -->
+  <Section
+    size="sm"
+    background="slate"
+    pattern={{ type: "dots", visibility: "light" }}>
+    <Container>
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          Cookie Policy
+        </h1>
+        <p class="text-lg text-slate-600">
+          Last Updated: {lastUpdated}
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Content Section -->
+  <Section size="lg" background="white">
+    <Container size="reading">
+      <article>
+        <!-- Prose Content -->
+        <div
+          class="prose prose-lg prose-slate max-w-none
+          prose-headings:font-bold prose-headings:text-slate-900 prose-headings:tracking-tight
+          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:first:mt-0
+          prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4
+          prose-h4:text-xl prose-h4:mt-8 prose-h4:mb-3 prose-h4:font-semibold
+          prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+          prose-a:text-blue-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-slate-900 prose-strong:font-semibold
+          prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+          prose-li:text-slate-700 prose-li:mb-3 prose-li:leading-relaxed">
+          <section>
+            <h2>Introduction</h2>
+            <p>
+              This Cookie Policy explains how CoreLuminate ("we," "our," or
+              "us") uses cookies and similar tracking technologies when you
+              visit our website. This policy should be read in conjunction with
+              our <a href="/privacy-policy">Privacy Policy</a>.
+            </p>
+          </section>
+
+          <section>
+            <h2>What Are Cookies?</h2>
+            <p>
+              Cookies are small text files that are placed on your device
+              (computer, smartphone, or tablet) when you visit a website. They
+              are widely used to make websites work more efficiently and provide
+              information to website owners.
+            </p>
+            <p>
+              Cookies can be "persistent" (remaining on your device until
+              deleted or until they expire) or "session" (deleted when you close
+              your browser).
+            </p>
+          </section>
+
+          <section>
+            <h2>How We Use Cookies</h2>
+            <p>
+              We use cookies and similar technologies for the following
+              purposes:
+            </p>
+
+            <h3>Necessary Cookies</h3>
+            <p>
+              These cookies are essential for our website to function properly.
+              They enable core functionality such as security, network
+              management, and accessibility. Without these cookies, services you
+              have requested cannot be provided.
+            </p>
+            <p><strong>Cookies we use:</strong></p>
+            <ul>
+              <li>
+                <strong>Cookie Consent:</strong> Stores your cookie preferences (localStorage:
+                'cookie-consent')
+              </li>
+            </ul>
+
+            <h3>Analytics Cookies</h3>
+            <p>
+              These cookies help us understand how visitors interact with our
+              website by collecting and reporting information anonymously. We
+              use this information to improve our website and user experience.
+            </p>
+            <p><strong>Service we use:</strong></p>
+            <ul>
+              <li>
+                <strong>Google Analytics:</strong> We use Google Analytics to analyze
+                website traffic and usage patterns. Google Analytics uses cookies
+                to collect information such as pages visited, time spent on pages,
+                and how you arrived at our site. The IP addresses collected are anonymized.
+              </li>
+            </ul>
+            <p>
+              <strong>Note:</strong> Analytics cookies are only activated after you
+              provide consent through our cookie consent banner.
+            </p>
+          </section>
+
+          <section>
+            <h2>Cookies We Use</h2>
+            <p>
+              Below is a detailed list of cookies and tracking technologies used
+              on our website:
+            </p>
+          </section>
+        </div>
+
+        <!-- Cookie Details Cards -->
+        <div class="space-y-6 my-8">
+          <!-- Cookie 1 -->
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+            <h4 class="text-xl font-bold text-slate-900 mb-4">
+              Cookie Consent Preference
+            </h4>
+            <div class="space-y-2 text-slate-700">
+              <p>
+                <strong class="text-slate-900">Name:</strong> cookie-consent (localStorage)
+              </p>
+              <p>
+                <strong class="text-slate-900">Purpose:</strong> Stores your cookie
+                consent choice (accepted/declined)
+              </p>
+              <p><strong class="text-slate-900">Duration:</strong> 365 days</p>
+              <p><strong class="text-slate-900">Type:</strong> Necessary</p>
+            </div>
+          </div>
+
+          <!-- Cookie 2 -->
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+            <h4 class="text-xl font-bold text-slate-900 mb-4">
+              Google Analytics (_ga, _ga_*, _gid)
+            </h4>
+            <div class="space-y-2 text-slate-700">
+              <p>
+                <strong class="text-slate-900">Name:</strong> _ga, _ga_[container-id],
+                _gid
+              </p>
+              <p>
+                <strong class="text-slate-900">Purpose:</strong> Used to distinguish
+                users and track website usage for analytics
+              </p>
+              <p>
+                <strong class="text-slate-900">Duration:</strong> _ga: 2 years, _gid:
+                24 hours
+              </p>
+              <p>
+                <strong class="text-slate-900">Type:</strong> Analytics (requires
+                consent)
+              </p>
+              <p>
+                <strong class="text-slate-900">Provider:</strong> Google LLC
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="prose prose-lg prose-slate max-w-none
+          prose-headings:font-bold prose-headings:text-slate-900 prose-headings:tracking-tight
+          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+          prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4
+          prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+          prose-a:text-blue-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-slate-900 prose-strong:font-semibold
+          prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+          prose-li:text-slate-700 prose-li:mb-3 prose-li:leading-relaxed">
+          <section>
+            <h2>Third-Party Cookies</h2>
+            <p>
+              We use Google Analytics, a web analytics service provided by
+              Google LLC. Google Analytics uses cookies to help us analyze how
+              users use our website. The information generated by these cookies
+              about your use of the website will be transmitted to and stored by
+              Google.
+            </p>
+            <p>
+              For more information about how Google uses data collected through
+              Google Analytics, please visit: <a
+                href="https://policies.google.com/technologies/partner-sites"
+                target="_blank"
+                rel="noopener noreferrer"
+                >How Google uses data when you use our partners' sites or apps</a
+              >
+            </p>
+          </section>
+
+          <section>
+            <h2>Your Cookie Choices</h2>
+
+            <h3>Cookie Consent Banner</h3>
+            <p>
+              When you first visit our website, you will see a cookie consent
+              banner that allows you to choose whether to accept or decline
+              cookies. You can:
+            </p>
+            <ul>
+              <li>
+                <strong>Accept All:</strong> Allow all cookies, including analytics
+                cookies
+              </li>
+              <li>
+                <strong>Necessary Only:</strong> Only allow essential cookies required
+                for the website to function
+              </li>
+            </ul>
+            <p>
+              Your choice will be remembered for 365 days. You can change your
+              cookie preferences at any time by clearing your browser's
+              localStorage and refreshing the page, which will display the
+              cookie banner again.
+            </p>
+
+            <h3>Browser Settings</h3>
+            <p>
+              Most web browsers allow you to control cookies through their
+              settings. You can set your browser to refuse cookies or to alert
+              you when cookies are being sent. However, please note that if you
+              disable cookies, some features of our website may not function
+              properly.
+            </p>
+            <p>Here's how to manage cookies in common browsers:</p>
+            <ul>
+              <li>
+                <a
+                  href="https://support.google.com/chrome/answer/95647"
+                  target="_blank"
+                  rel="noopener noreferrer">Google Chrome</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop"
+                  target="_blank"
+                  rel="noopener noreferrer">Mozilla Firefox</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac"
+                  target="_blank"
+                  rel="noopener noreferrer">Safari</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09"
+                  target="_blank"
+                  rel="noopener noreferrer">Microsoft Edge</a
+                >
+              </li>
+            </ul>
+
+            <h3>Opting Out of Google Analytics</h3>
+            <p>
+              You can opt out of Google Analytics by installing the Google
+              Analytics Opt-out Browser Add-on, available at: <a
+                href="https://tools.google.com/dlpage/gaoptout"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Google Analytics Opt-out Browser Add-on</a
+              >
+            </p>
+          </section>
+
+          <section>
+            <h2>Do Not Track Signals</h2>
+            <p>
+              Some browsers have a "Do Not Track" feature that signals to
+              websites that you do not want to have your online activities
+              tracked. At this time, we do not respond to browser "Do Not Track"
+              signals. However, you can use our cookie consent banner to decline
+              analytics cookies.
+            </p>
+          </section>
+
+          <section>
+            <h2>Changes to This Cookie Policy</h2>
+            <p>
+              We may update this Cookie Policy from time to time to reflect
+              changes in our practices or for other operational, legal, or
+              regulatory reasons. When we make changes, we will update the "Last
+              Updated" date at the top of this page.
+            </p>
+            <p>
+              We encourage you to review this Cookie Policy periodically to stay
+              informed about how we use cookies.
+            </p>
+          </section>
+
+          <section>
+            <h2>Contact Us</h2>
+            <p>
+              If you have questions about this Cookie Policy or our use of
+              cookies, please contact us:
+            </p>
+          </section>
+        </div>
+
+        <!-- Contact Info Card -->
+        <div class="mt-8 bg-slate-50 rounded-2xl p-8 border border-slate-200">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">CoreLuminate</h3>
+          <div class="space-y-2 text-slate-700">
+            <p>
+              <span class="font-medium">Email:</span>
+              <a
+                href="mailto:privacy@coreluminate.com"
+                class="text-blue-600 hover:text-blue-700 hover:underline">
+                hello@coreluminate.com
+              </a>
+            </p>
+            <p>
+              <span class="font-medium">Website:</span>
+              <a
+                href="https://www.coreluminate.com"
+                class="text-blue-600 hover:text-blue-700 hover:underline">
+                www.coreluminate.com
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="prose prose-lg prose-slate max-w-none mt-12
+          prose-headings:font-bold prose-headings:text-slate-900 prose-headings:tracking-tight
+          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+          prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+          prose-a:text-blue-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+          prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+          prose-li:text-slate-700 prose-li:mb-3 prose-li:leading-relaxed">
+          <section>
+            <h2>Additional Resources</h2>
+            <p>
+              For more information about cookies and how they work, you can
+              visit:
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://www.allaboutcookies.org/"
+                  target="_blank"
+                  rel="noopener noreferrer">All About Cookies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ico.org.uk/for-organisations/guide-to-pecr/cookies-and-similar-technologies/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >UK ICO: Cookies and Similar Technologies</a
+                >
+              </li>
+            </ul>
+          </section>
+        </div>
+      </article>
+    </Container>
+  </Section>
+</Layout>

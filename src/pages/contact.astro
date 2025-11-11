@@ -1,0 +1,304 @@
+---
+import {
+  Clock,
+  Mail,
+  MapPin,
+  MessageCircle,
+  MessageCircleMore,
+  Send,
+} from "@lucide/astro";
+import Badge from "../components/ui/Badge.astro";
+import Button from "../components/ui/Button.astro";
+import Container from "../components/ui/Container.astro";
+import Section from "../components/ui/Section.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Contact Us | CoreLuminate"
+  description="Get in touch with CoreLuminate. We're here to answer your questions and help you bring your digital vision to life.">
+  <!-- Hero Section -->
+  <Section
+    background="slate-blue"
+    pattern={{ type: "dots", visibility: "light" }}
+    size="sm">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <Badge variant="white" class="mb-8">
+          <MessageCircle class="w-4 h-4" />
+          <span>Get in Touch</span>
+        </Badge>
+
+        <h1
+          class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Let's Start a<br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            Conversation
+          </span>
+        </h1>
+
+        <p class="text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto">
+          Have a question or want to discuss your project? We're here to help
+          and typically respond within 24 hours.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Contact Form & Info Section -->
+  <Section size="3xl" background="white">
+    <Container>
+      <div class="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+        <!-- Contact Information Sidebar -->
+        <div class="lg:col-span-1 space-y-8">
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">
+              Contact Information
+            </h2>
+            <p class="text-slate-600 mb-8">
+              Prefer to reach out directly? Here's how you can get in touch.
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start gap-4">
+            <Mail class="w-6 h-6 text-blue-600" />
+            <div>
+              <h3 class="font-semibold text-slate-900 mb-1">Email</h3>
+              <a
+                href="mailto:hello@coreluminate.com"
+                class="text-blue-600 hover:text-blue-700 transition-colors">
+                hello@coreluminate.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="flex items-start gap-4">
+            <MessageCircleMore class="w-6 h-6 text-blue-600" />
+            <div>
+              <h3 class="font-semibold text-slate-900 mb-1">Text</h3>
+              <a
+                href="tel:+1234567890"
+                class="text-blue-600 hover:text-blue-700 transition-colors">
+                (480) 818-5759
+              </a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="flex items-start gap-4">
+            <MapPin class="w-6 h-6 text-blue-600" />
+            <div>
+              <h3 class="font-semibold text-slate-900 mb-1">Location</h3>
+              <p class="text-slate-600">Gilbert, Arizona</p>
+            </div>
+          </div>
+
+          <!-- Response Time -->
+          <div class="bg-blue-50 rounded-2xl p-6 border-2 border-blue-200">
+            <div class="flex items-start gap-3 mb-3">
+              <Clock class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <div>
+                <h3 class="font-semibold text-slate-900 mb-1">Response Time</h3>
+                <p class="text-sm text-slate-600">
+                  We typically respond to all inquiries within 24 to 48 hours
+                  during business days.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-2">
+          <div
+            class="bg-slate-50 rounded-3xl p-8 md:p-12 border-2 border-slate-200">
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">
+              Send us a message
+            </h2>
+            <p class="text-slate-600 mb-8">
+              Fill out the form below and we'll get back to you as soon as
+              possible.
+            </p>
+
+            <!-- Toast Notification -->
+            <div
+              id="contact-toast"
+              class="hidden mb-6 p-4 rounded-xl border-2 transition-all">
+              <p id="contact-message" class="text-sm font-medium"></p>
+            </div>
+
+            <form id="contact-form" class="space-y-6">
+              <!-- Name -->
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-semibold text-slate-900 mb-2">
+                  Full Name <span class="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  class="w-full px-4 py-3 bg-white border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors text-slate-900"
+                />
+              </div>
+
+              <!-- Email & Phone Grid -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold text-slate-900 mb-2">
+                    Email Address <span class="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="john@example.com"
+                    class="w-full px-4 py-3 bg-white border-2 border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors text-slate-900"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-sm font-semibold text-slate-900 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="(555) 123-4567"
+                    class="w-full px-4 py-3 border-2 bg-white border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors text-slate-900"
+                  />
+                </div>
+              </div>
+
+              <!-- Company -->
+              <div>
+                <label
+                  for="company"
+                  class="block text-sm font-semibold text-slate-900 mb-2">
+                  Company Name
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Acme Inc."
+                  class="w-full px-4 py-3 border-2 bg-white border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors text-slate-900"
+                />
+              </div>
+
+              <!-- Subject -->
+              <div>
+                <label
+                  for="subject"
+                  class="block text-sm font-semibold text-slate-900 mb-2">
+                  Subject <span class="text-red-600">*</span>
+                </label>
+                <select
+                  id="subject"
+                  name="subject"
+                  required
+                  class="w-full px-4 py-3 border-2 bg-white border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors text-slate-900">
+                  <option value="">Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="project">New Project</option>
+                  <option value="quote">Request a Quote</option>
+                  <option value="existing-project">Existing Project</option>
+                  <option value="partnership">Partnership Opportunity</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-semibold text-slate-900 mb-2">
+                  Message <span class="text-red-600">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                  placeholder="Tell us about your inquiry..."
+                  class="w-full px-4 py-3 border-2 bg-white border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors resize-none text-slate-900"
+                ></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="flex items-center justify-between pt-4">
+                <p class="text-sm text-red-600">* Required fields</p>
+                <Button type="submit" id="submit-btn" icon={Send}>
+                  Send Message
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Alternative CTAs -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">
+            Not sure where to start?
+          </h2>
+          <p class="text-lg text-slate-600">
+            We have resources to help you find the right solution.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <a
+            href="/services/request"
+            class="group bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              Request Services
+            </h3>
+            <p class="text-slate-600 mb-4">
+              Know what you need? Fill out our detailed service request form for
+              a custom proposal.
+            </p>
+            <span class="text-blue-600 font-semibold group-hover:underline">
+              Get Started →
+            </span>
+          </a>
+
+          <a
+            href="/solutions"
+            class="group bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">
+              Browse Solutions
+            </h3>
+            <p class="text-slate-600 mb-4">
+              Explore our pre-packaged solutions designed for specific business
+              needs and timelines.
+            </p>
+            <span class="text-blue-600 font-semibold group-hover:underline">
+              View Solutions →
+            </span>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>
+
+<script src="../scripts/forms/contact/index.ts"></script>

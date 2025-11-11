@@ -1,0 +1,24 @@
+---
+interface Props {
+  size?: "narrow" | "reading" | "content" | "full";
+  class?: string;
+  [key: string]: any;
+}
+
+const { size = "content", class: className = "", ...rest } = Astro.props;
+
+// Max width options
+const widthStyles = {
+  narrow: "max-w-3xl",
+  reading: "max-w-4xl",
+  content: "max-w-7xl",
+  full: "max-w-full",
+};
+
+const maxWidthClass = widthStyles[size] || widthStyles.content;
+const classes = `${maxWidthClass} mx-auto px-4 sm:px-6 ${className}`;
+---
+
+<div class={classes} {...rest}>
+  <slot />
+</div>

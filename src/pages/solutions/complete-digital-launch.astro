@@ -1,0 +1,982 @@
+---
+import {
+  AlarmClock,
+  ArrowRight,
+  CircleCheck,
+  Clock,
+  Frown,
+  Handshake,
+  Key,
+  Mail,
+  Phone,
+  PiggyBank,
+  Rocket,
+  Sparkles,
+  Target,
+  User,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import buildImage from "../../assets/images/code-review.svg";
+import businessListingImage from "../../assets/images/delivery-location.svg";
+import designImage from "../../assets/images/designer.svg";
+import emailImage from "../../assets/images/email.svg";
+import analyticsImage from "../../assets/images/real-time-analytics.svg";
+import signImage from "../../assets/images/road-sign.svg";
+import trainingImage from "../../assets/images/teaching.svg";
+---
+
+<Layout
+  title="Complete Digital Launch"
+  description="Launch your business online with everything you need in one package. Professional branding, website, business email, SEO, and more. Perfect for startups and new businesses.">
+  <!-- Hero - Full Screen -->
+  <Section
+    background="slate-blue"
+    pattern={{ type: "dots", visibility: "light" }}
+    fullHeight={true}
+    class="flex items-center">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <Badge variant="white" class="mb-8 shadow-lg inline-flex">
+          <Rocket class="w-4 h-4" />
+          <span>Complete Digital Launch</span>
+        </Badge>
+
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+          Launch Your Business<br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            The Right Way
+          </span>
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-blue-100 leading-relaxed mb-12 max-w-3xl mx-auto">
+          Everything you need to start strong—professional branding, website,
+          business email, and all the technical setup—delivered in one
+          coordinated package.
+        </p>
+
+        <div class="flex flex-col items-center gap-6">
+          <div class="flex flex-wrap justify-center gap-4">
+            <Badge variant="blur">
+              <Clock class="w-5 h-5 text-blue-400" />
+              4-6 Weeks
+            </Badge>
+            <Badge variant="blur">
+              <CircleCheck class="w-5 h-5 text-blue-400" />
+              All Inclusive
+            </Badge>
+            <Badge variant="blur">
+              <Key class="w-5 h-5 text-blue-400" />
+              Turnkey Solution
+            </Badge>
+          </div>
+        </div>
+      </div>
+    </Container>
+
+    <!-- Scroll indicator -->
+    <div
+      slot="absolute"
+      class="absolute bottom-30 left-1/2 -translate-x-1/2 animate-bounce">
+      <div
+        class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
+        <div class="w-1 h-3 bg-white/50 rounded-full"></div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- The Problem -->
+  <Section size="2xl" background="white">
+    <Container id="learn-more">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Starting a Business Is Hard Enough
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            You shouldn't have to become a brand designer, web developer, and IT
+            specialist just to get online.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-red-100 p-4 rounded-2xl mb-4">
+              <Frown class="h-10 w-10 text-blue-800" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Overwhelming Choices
+            </h3>
+            <p class="text-slate-600">
+              Logo designers, web developers, hosting companies—where do you
+              even start?
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-red-100 p-4 rounded-2xl mb-4">
+              <AlarmClock class="h-10 w-10 text-blue-800" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              No Time to Learn
+            </h3>
+            <p class="text-slate-600">
+              You're starting a business, not training for a career in web
+              development.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-red-100 p-4 rounded-2xl mb-4">
+              <PiggyBank class="h-10 w-10 text-blue-800" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Expensive & Inconsistent
+            </h3>
+            <p class="text-slate-600">
+              Hiring different people for each piece means nothing looks
+              cohesive.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transition -->
+      <div class="text-center py-12">
+        <div class="inline-flex items-center gap-3 text-blue-600">
+          <div class="h-px w-12 bg-linear-to-r from-transparent to-blue-600">
+          </div>
+          <Sparkles class="w-6 h-6" />
+          <div class="h-px w-12 bg-linear-to-l from-transparent to-blue-600">
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- The Solution -->
+  <Section size="2xl">
+    <Container>
+      <div>
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            One Package.<br />Everything You Need.
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            We handle every detail of your digital launch so you can focus on
+            what matters—building your business.
+          </p>
+        </div>
+
+        <!-- What's Included - Alternating Layout -->
+        <div class="space-y-20">
+          <!-- Brand Identity - Visual Left -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <!-- Left: Visual -->
+            <div class="p-8 md:p-12 aspect-square">
+              <Image
+                src={designImage}
+                alt="Designer illustration"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Professional Brand Identity
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                A cohesive brand that makes you look established from day one.
+                Custom logo, color palette, typography, and brand guidelines—all
+                working together perfectly.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="purple">Custom Logo</Badge>
+                <Badge variant="purple">Color Palette</Badge>
+                <Badge variant="purple">Typography</Badge>
+                <Badge variant="purple">Brand Guide</Badge>
+                <Badge variant="purple">All File Formats</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- Website - Visual Right -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <!-- Left: Content -->
+            <div class="order-2 md:order-1">
+              <div class="flex items-center gap-3 mb-4">
+                <h3 class="text-3xl font-bold text-slate-900">
+                  5-Page Professional Website
+                </h3>
+                <Badge class="bg-blue-600 text-white">Core</Badge>
+              </div>
+              <p class="text-lg text-slate-600 mb-6">
+                Modern, mobile-responsive, and optimized for conversions. Built
+                on the platform that's right for you, with AI-assisted
+                copywriting and lightning-fast performance.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge>Mobile Responsive</Badge>
+                <Badge>5 Pages + Form</Badge>
+                <Badge>AI Assisted Copy</Badge>
+                <Badge>Fast Loading</Badge>
+                <Badge>SSL Secure</Badge>
+              </div>
+            </div>
+
+            <!-- Right: Visual -->
+            <div class="order-1 md:order-2 p-8 md:p-12 aspect-square">
+              <Image
+                src={buildImage}
+                alt="Illustration of website code on monitor"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          <!-- SEO & Analytics - Visual Left -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <!-- Left: Visual -->
+            <div class="p-8 md:p-12 aspect-square">
+              <Image
+                src={analyticsImage}
+                alt="Illustration of web analytics"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                SEO Foundation & Analytics
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Get found on Google from day one with proper SEO setup and
+                tracking. Know exactly how visitors find and interact with your
+                website.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="green">Meta Tags</Badge>
+                <Badge variant="green">Google Analytics</Badge>
+                <Badge variant="green">XML Sitemap</Badge>
+                <Badge variant="green">Search Console</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- Domain & Email - Visual Right -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <!-- Left: Content -->
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Domain & Business Email Setup
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Guidance on purchasing your domain and business email
+                (you@yourbusiness.com), plus complete setup and configuration.
+                You own everything.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="orange">Domain Setup</Badge>
+                <Badge variant="orange">Professional Email</Badge>
+                <Badge variant="orange">DNS Config</Badge>
+                <Badge variant="orange">You Own Everything</Badge>
+              </div>
+            </div>
+
+            <!-- Right: Visual -->
+            <div class="order-1 md:order-2">
+              <div class="p-8 mg:p-12 aspect-square">
+                <Image
+                  src={emailImage}
+                  alt="Illustration of email"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Local Listings - Visual Left -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <!-- Left: Visual -->
+            <div class="p-8 md:p-12 aspect-square">
+              <Image
+                src={businessListingImage}
+                alt="Map location illustration"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Local Business Listings
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Get found locally with Google My Business and Yelp setup.
+                Essential for any business serving a local area.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="yellow">Google My Business</Badge>
+                <Badge variant="yellow">Yelp Profile</Badge>
+                <Badge variant="yellow">Local SEO</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training - Visual Right -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <!-- Left: Content -->
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Training & Support
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Learn to manage everything yourself with comprehensive training,
+                documentation, and support as you get started.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="pink">Live Training</Badge>
+                <Badge variant="pink">Documentation</Badge>
+                <Badge variant="pink">Go Live Support</Badge>
+              </div>
+            </div>
+
+            <!-- Right: Visual -->
+            <div class="order-1 md:order-2">
+              <div class="p-8 md:p-12 aspect-square">
+                <Image
+                  src={trainingImage}
+                  alt="Illustration of a man teaching"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Add-Ons Callout -->
+        <div
+          class="mt-20 bg-linear-to-br from-slate-900 to-blue-900 rounded-2xl p-12 text-white text-center">
+          <Sparkles class="w-16 h-16 mx-auto mb-6 text-blue-600" />
+          <h3 class="text-2xl font-bold mb-4">Need More?</h3>
+          <p class="text-lg text-blue-100 mb-2">
+            Customize your package with additional pages, e-commerce, business
+            cards, social media setup, and more.
+          </p>
+          <p class="text-sm text-blue-300">
+            We'll discuss your specific needs during our consultation.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Timeline Story -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            From Idea to Launch<br />in 4-6 Weeks
+          </h2>
+          <p class="text-xl text-slate-600">
+            Here's exactly how we'll bring your business to life online.
+          </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="relative">
+          <!-- Week 1 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <!-- Left: Week -->
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 1</div>
+                <div class="text-sm text-blue-100">Discovery</div>
+              </div>
+
+              <!-- Right: Content -->
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Discovery & Strategy
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  We dive deep into your business, audience, competitors, and
+                  vision. This is where we lay the foundation for everything.
+                </p>
+                <div class="flex flex-wrap items-start gap-2">
+                  <Badge variant="slate" size="sm">Discovery Call</Badge>
+                  <Badge variant="slate" size="sm">Research</Badge>
+                  <Badge variant="slate" size="sm">Strategy Session</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="flex justify-center my-6">
+            <div class="w-0.5 h-12 border-l-2 border-dashed border-slate-300">
+            </div>
+          </div>
+
+          <!-- Weeks 2-3 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <!-- Left: Week -->
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 2-3</div>
+                <div class="text-sm text-blue-100">Design</div>
+              </div>
+
+              <!-- Right: Content -->
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Design & Refinement
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Logo concepts, brand colors, typography, and website mockups.
+                  You provide feedback, and we refine until it meets your
+                  expectations.
+                </p>
+                <div class="flex flex-wrap items-start gap-2">
+                  <Badge variant="slate" size="sm">Logo Design</Badge>
+                  <Badge variant="slate" size="sm">Brand Colors</Badge>
+                  <Badge variant="slate" size="sm">Website Mockups</Badge>
+                  <Badge variant="slate" size="sm">Revisions</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="flex justify-center my-6">
+            <div class="w-0.5 h-12 border-l-2 border-dashed border-slate-300">
+            </div>
+          </div>
+
+          <!-- Weeks 4-5 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <!-- Left: Week -->
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 4-5</div>
+                <div class="text-sm text-blue-100">Build</div>
+              </div>
+
+              <!-- Right: Content -->
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Build & Setup
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Website development, copywriting, domain configuration, email,
+                  SEO, and analytics integration. All the technical heavy
+                  lifting happens here.
+                </p>
+                <div class="flex flex-wrap items-start gap-2">
+                  <Badge variant="slate" size="sm">Website Build</Badge>
+                  <Badge variant="slate" size="sm">AI Copywriting</Badge>
+                  <Badge variant="slate" size="sm">Technical Setup</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="flex justify-center my-6">
+            <div class="w-0.5 h-12 border-l-2 border-dashed border-slate-300">
+            </div>
+          </div>
+
+          <!-- Week 6 - Launch -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <!-- Left: Week -->
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 6</div>
+                <div class="text-sm text-blue-100">Launch!</div>
+              </div>
+
+              <!-- Right: Content -->
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Launch!</h3>
+                <p class="text-slate-600 mb-4">
+                  Final review and testing, any training, and you're live! Plus
+                  support to make sure everything runs smoothly over the next
+                  few weeks.
+                </p>
+                <div class="flex flex-wrap items-start gap-2">
+                  <Badge variant="slate" size="sm">Testing</Badge>
+                  <Badge variant="slate" size="sm">Training</Badge>
+                  <Badge variant="slate" size="sm">Support</Badge>
+                  <Badge variant="slate" size="sm">Go Live</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Who This Is For + You're Not Alone (Combined) -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div>
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            You're Not Alone
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            Every business owner I work with feels the same way you do right
+            now.
+          </p>
+        </div>
+
+        <!-- Emotional Connection Section -->
+        <div class="grid lg:grid-cols-2 gap-20 items-center mb-20">
+          <!-- Left: Visual/Illustration -->
+          <div class="relative">
+            <div class="bg-white rounded-3xl p-12 aspect-square">
+              <Image
+                src={signImage}
+                alt="Illustration of a man teaching"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            <!-- Floating stat cards for visual interest -->
+            <div
+              class="absolute -bottom-6 -left-6 bg-white rounded-xl px-6 py-4 shadow-sm border border-slate-200">
+              <div class="text-2xl font-bold text-slate-900">100+</div>
+              <div class="text-sm text-slate-600">Decisions to Make</div>
+            </div>
+
+            <div
+              class="absolute -top-6 -right-6 bg-white rounded-xl px-6 py-4 shadow-sm border border-slate-200">
+              <div class="text-2xl font-bold text-slate-900">0</div>
+              <div class="text-sm text-slate-600">Time to Spare</div>
+            </div>
+          </div>
+
+          <!-- Right: Content Cards -->
+          <div class="space-y-6">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl p-6 shadow-xs">
+              <div class="flex items-start gap-3 mb-3">
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900 mb-1">
+                    "I don't know where to start..."
+                  </h3>
+                  <p class="text-sm text-slate-600">
+                    Logo? Website? Domain? Email? The list feels endless and
+                    you're not even sure what order to do things in.
+                  </p>
+                </div>
+              </div>
+              <div class="text-xs text-blue-600 font-medium">
+                → We handle everything in the right order
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl p-6 shadow-xs">
+              <div class="flex items-start gap-3 mb-3">
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900 mb-1">
+                    "I don't have time to learn all this..."
+                  </h3>
+                  <p class="text-sm text-slate-600">
+                    You're trying to launch a business, not become a web
+                    developer. Who has time for WordPress, DNS records, and SEO?
+                  </p>
+                </div>
+              </div>
+              <div class="text-xs text-purple-600 font-medium">
+                → You focus on your business, we handle the tech
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl p-6 shadow-xs">
+              <div class="flex items-start gap-3 mb-3">
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900 mb-1">
+                    "I'm worried about expensive mistakes..."
+                  </h3>
+                  <p class="text-sm text-slate-600">
+                    Hiring the wrong designer. Choosing the wrong platform. What
+                    if you invest thousands and it doesn't work?
+                  </p>
+                </div>
+              </div>
+              <div class="text-xs text-green-600 font-medium">
+                → Get it right the first time
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white rounded-2xl p-6 shadow-xs">
+              <div class="flex items-start gap-3 mb-3">
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900 mb-1">
+                    "I need to look professional..."
+                  </h3>
+                  <p class="text-sm text-slate-600">
+                    Your competitors have polished websites and cohesive
+                    branding. First impressions matter.
+                  </p>
+                </div>
+              </div>
+              <div class="text-xs text-orange-600 font-medium">
+                → Launch with established company polish
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transition -->
+        <div class="text-center my-20">
+          <div class="inline-flex items-center gap-3 text-blue-600">
+            <div class="h-px w-12 bg-linear-to-r from-transparent to-blue-600">
+            </div>
+            <Sparkles class="w-6 h-6" />
+            <div class="h-px w-12 bg-linear-to-l from-transparent to-blue-600">
+            </div>
+          </div>
+        </div>
+
+        <!-- Who This Is Perfect For Section -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            This Solution Is Perfect For
+          </h2>
+          <p class="text-lg text-slate-600">See yourself in any of these?</p>
+        </div>
+
+        <!-- Persona Cards -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <!-- New Startups -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border-y border-x-6 border-slate-300">
+            <div class="flex items-start gap-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  New Startups
+                </h3>
+                <p class="text-slate-600">
+                  You're launching your first business and want to do it right
+                  from day one. No DIY website builders—you need something
+                  professional that positions you as established.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corporate Escapees -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border-y border-x-6 border-slate-300">
+            <div class="flex items-start gap-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Corporate Escapees
+                </h3>
+                <p class="text-slate-600">
+                  Leaving your job to start your own thing. You know what
+                  professional looks like from the corporate world—you want that
+                  same polish for your business.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Hustle to Full-Time -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border-y border-x-6 border-slate-300">
+            <div class="flex items-start gap-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Side Hustle to Full-Time
+                </h3>
+                <p class="text-slate-600">
+                  Making your passion project official with a proper online
+                  presence. Time to stop looking like a hobby and start looking
+                  like a real business.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offline to Online -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border-y border-x-6 border-slate-300">
+            <div class="flex items-start gap-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Offline to Online
+                </h3>
+                <p class="text-slate-600">
+                  Existing business establishing a digital presence. You've been
+                  successful offline—now you need to reach customers who search
+                  online.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Social Proof / Reassurance -->
+  <Section size="xl" background="white">
+    <Container>
+      <!-- Bottom: Combined CTA + Key Points -->
+      <div
+        class="bg-linear-to-br from-blue-700 to-indigo-700 rounded-3xl p-8 md:p-12 text-white text-center mb-8">
+        <p class="text-xl md:text-2xl font-bold mb-3">
+          Here's the truth: You don't need to figure this out alone.
+        </p>
+        <p class="text-lg text-blue-100 mb-8">
+          In 4-6 weeks, you'll have everything you need to launch confidently—no
+          stress, no overwhelm, no expensive mistakes.
+        </p>
+
+        <!-- Key Points Inside CTA -->
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div
+            class="flex flex-col items-center bg-slate-900/60 rounded-xl p-6">
+            <Target stroke-width="1.5" class="h-10 w-10 mb-3" />
+            <h4 class="font-bold text-white mb-2">Done Right</h4>
+            <p class="text-sm text-blue-100">
+              Strategic approach with proper research and planning—not rushed
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col items-center bg-slate-900/60 rounded-xl p-6">
+            <Handshake stroke-width="1.5" class="h-10 w-10 mb-3" />
+            <h4 class="font-bold text-white mb-2">One Person</h4>
+            <p class="text-sm text-blue-100">
+              Everything coordinated by one expert—no juggling multiple vendors
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col items-center bg-slate-900/60 rounded-xl p-6">
+            <Sparkles stroke-width="1.5" class="h-10 w-10 mb-3" />
+            <h4 class="font-bold text-white mb-2">Professional</h4>
+            <p class="text-sm text-blue-100">
+              Launch with confidence knowing it's built to grow with you
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA Form Section - Dark -->
+  <Section
+    size="3xl"
+    background="slate-blue"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <!-- Rocket launching from bottom corner -->
+    <div class="absolute bottom-20 right-20 opacity-25 pointer-events-none">
+      <div class="relative">
+        <!-- Rocket trail/exhaust -->
+        <div
+          class="absolute -bottom-80 left-1/2 -translate-x-1/2 w-20 h-96 bg-linear-to-b from-red-400 via-orange-400 to-yellow-400 blur-xl">
+        </div>
+        <div
+          class="absolute -bottom-80 left-1/2 -translate-x-1/2 w-80 h-30 bg-white/50 blur-xl">
+        </div>
+        <!-- Rocket -->
+        <Rocket
+          stroke-width="1.33"
+          class="w-80 h-80 text-white transform -rotate-45"
+        />
+      </div>
+    </div>
+
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Launch?
+          </h2>
+          <p class="text-xl text-blue-100">
+            Tell us about your business and we'll create a plan just for you.
+          </p>
+        </div>
+
+        <!-- Simple Lead Form -->
+        <form
+          class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20 shadow-md">
+          <div class="space-y-6">
+            <!-- Name -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-white mb-2">
+                Your Name *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <User class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="John Smith"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-white mb-2">
+                Email Address *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Mail class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-white mb-2">
+                Phone Number
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Phone class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+            </div>
+
+            <!-- Business Name -->
+            <div>
+              <label
+                for="business"
+                class="block text-sm font-medium text-white mb-2">
+                Business Name *
+              </label>
+              <input
+                type="text"
+                id="business"
+                name="business"
+                required
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Your Business Name"
+              />
+            </div>
+
+            <!-- Brief Description -->
+            <div>
+              <label
+                for="description"
+                class="block text-sm font-medium text-white mb-2">
+                Tell Us About Your Business *
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                required
+                rows="4"
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                placeholder="What does your business do? Who are your customers? What are your goals?"
+              ></textarea>
+            </div>
+
+            <!-- Timeline -->
+            <div>
+              <label
+                for="timeline"
+                class="block text-sm font-medium text-white mb-2">
+                When Do You Want to Launch? *
+              </label>
+              <select
+                id="timeline"
+                name="timeline"
+                required
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <option value="" class="bg-slate-900"
+                  >Select a timeline...</option
+                >
+                <option value="asap" class="bg-slate-900"
+                  >As soon as possible</option
+                >
+                <option value="1-2months" class="bg-slate-900"
+                  >1-2 months</option
+                >
+                <option value="2-3months" class="bg-slate-900"
+                  >2-3 months</option
+                >
+                <option value="flexible" class="bg-slate-900"
+                  >Flexible / Just exploring</option
+                >
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <Button
+              type="submit"
+              variant="gradient"
+              size="lg"
+              icon={ArrowRight}
+              class="w-full group">
+              <span>Start My Launch</span>
+            </Button>
+
+            <p class="text-sm text-blue-200 text-center">
+              We'll review your information and get back to you within 24 hours
+              with next steps.
+            </p>
+          </div>
+        </form>
+      </div>
+    </Container>
+  </Section>
+</Layout>

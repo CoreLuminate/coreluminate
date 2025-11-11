@@ -1,0 +1,26 @@
+---
+import { ArrowLeft, ArrowRight } from "@lucide/astro";
+import Button from "./Button.astro";
+
+const { page, class: className } = Astro.props;
+---
+
+<nav
+  class:list={["flex justify-between items-center pt-12", className]}
+  aria-label="Pagination">
+  <Button
+    href={page.url.prev}
+    aria-label={`Go to page ${page.currentPage - 1} of ${page.lastPage}`}
+    disabled={!page.url.prev}
+    icon={ArrowLeft}
+  />
+  <span class="text-sm" aria-current="page">
+    Page {page.currentPage} of {page.lastPage}
+  </span>
+  <Button
+    href={page.url.next}
+    aria-label={`Go to page ${page.currentPage + 1} of ${page.lastPage}`}
+    disabled={!page.url.next}
+    icon={ArrowRight}
+  />
+</nav>

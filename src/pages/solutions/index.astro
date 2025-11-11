@@ -1,0 +1,396 @@
+---
+import {
+  ArrowRight,
+  ArrowRightLeft,
+  Calendar,
+  Check,
+  DollarSign,
+  Gauge,
+  Headphones,
+  RefreshCw,
+  Rocket,
+  Sparkles,
+  Zap,
+} from "@lucide/astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+// Solution cards data
+const solutions = [
+  {
+    icon: Rocket,
+    badge: "Most Comprehensive",
+    name: "Complete Digital Launch",
+    tagline: "Everything you need to launch your business online",
+    description:
+      "Professional branding, website, email, SEO, and all technical setup in one coordinated package. Perfect for new businesses that want to do it right from day one.",
+    timeline: "4-6 Weeks",
+    startingPrice: "$2,500+",
+    bestFor: ["New Startups", "Corporate Escapees", "Offline to Online"],
+    features: [
+      "Professional brand identity & logo",
+      "5-page custom website",
+      "Domain & business email setup",
+      "SEO foundation & analytics",
+      "Training & documentation",
+    ],
+    href: "/solutions/complete-digital-launch",
+    color: "blue",
+  },
+  {
+    icon: Zap,
+    badge: "Fastest",
+    name: "Quick Website Launch",
+    tagline: "Get online fast without breaking the bank",
+    description:
+      "Professional WordPress website built quickly for businesses that need an online presence ASAP. Perfect for word-of-mouth businesses or tight budgets.",
+    timeline: "1-2 Weeks",
+    startingPrice: "$500+",
+    bestFor: ["Word-of-Mouth Businesses", "Budget-Conscious", "Testing Ideas"],
+    features: [
+      "5-page WordPress website",
+      "Mobile-responsive design",
+      "Contact form & basic SEO",
+      "Blog setup & training",
+      "Domain & hosting guidance",
+    ],
+    href: "/solutions/quick-website-launch",
+    color: "green",
+  },
+  {
+    icon: RefreshCw,
+    badge: "Modernize",
+    name: "Website Refresh & Modernization",
+    tagline: "Transform your outdated website",
+    description:
+      "Update your aging website with modern design, mobile optimization, and improved performance. Keep what works, upgrade what doesn't.",
+    timeline: "4-6 Weeks",
+    startingPrice: "$1,500+",
+    bestFor: [
+      "Outdated Sites (5+ Years)",
+      "Not Mobile-Friendly",
+      "Slow Performance",
+    ],
+    features: [
+      "Modern, professional redesign",
+      "Mobile-first responsive design",
+      "Content migration & improvement",
+      "SEO optimization & redirects",
+      "Speed & performance tuning",
+    ],
+    href: "/solutions/website-refresh-modernization",
+    color: "blue",
+  },
+  {
+    icon: ArrowRightLeft,
+    badge: "Safe Migration",
+    name: "Platform Migration",
+    tagline: "Move to a better platform seamlessly",
+    description:
+      "Migrate your website from Wix, Squarespace, or any platform to a better solution. Zero data loss, SEO protected, no downtime.",
+    timeline: "4-6 Weeks",
+    startingPrice: "$1,800+",
+    bestFor: ["Outgrown Platform", "Performance Issues", "Need More Control"],
+    features: [
+      "Complete data migration",
+      "SEO & ranking protection",
+      "Zero-downtime launch",
+      "Design matching or improvement",
+      "Platform training & support",
+    ],
+    href: "/solutions/platform-migration",
+    color: "emerald",
+  },
+  {
+    icon: Headphones,
+    badge: "Most Affordable",
+    name: "DIY with Expert Support",
+    tagline: "Build yourself with expert backup",
+    description:
+      "Want to build your own website but need expert guidance? Get support when you're stuck, technical help, and peace of mind.",
+    timeline: "Your Pace",
+    startingPrice: "$200+",
+    bestFor: ["DIY Enthusiasts", "Budget-Conscious", "Want to Learn"],
+    features: [
+      "Platform consultation & setup",
+      "On-demand email/message support",
+      "Screen share troubleshooting",
+      "Technical setup assistance",
+      "Pre-launch review & feedback",
+    ],
+    href: "/solutions/diy-website-support",
+    color: "amber",
+  },
+];
+---
+
+<Layout
+  title="Website Solutions | Choose the Right Package for Your Business"
+  description="From quick launches to complete digital transformations, find the perfect website solution for your business. Fixed pricing, clear timelines, expert guidance.">
+  <!-- Hero Section -->
+  <Section
+    background="slate-blue"
+    pattern={{ type: "dots", visibility: "light" }}
+    size="2xl">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <Badge variant="white" class="mb-8">
+          <Sparkles class="w-4 h-4" />
+          <span>All Solutions</span>
+        </Badge>
+
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+          Website Solutions for<br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            Every Business
+          </span>
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-blue-100 leading-relaxed mb-12 max-w-3xl mx-auto">
+          Whether you're launching a new business, updating an existing site, or
+          switching platforms—we have a solution designed for your specific
+          needs.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <Badge variant="blur">
+            <Check class="w-5 h-5 text-blue-400" />
+            Fixed Pricing
+          </Badge>
+          <Badge variant="blur">
+            <Calendar class="w-5 h-5 text-blue-400" />
+            Clear Timelines
+          </Badge>
+          <Badge variant="blur">
+            <Sparkles class="w-5 h-5 text-blue-400" />
+            Expert Guidance
+          </Badge>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Solutions Grid -->
+  <Section size="3xl" background="white">
+    <Container>
+      <div>
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Choose Your Solution
+          </h2>
+          <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+            Each solution is designed for specific business needs. Pick the one
+            that matches where you are and where you want to go.
+          </p>
+        </div>
+
+        <!-- Solutions Cards -->
+        <div class="space-y-20">
+          {
+            solutions.map((solution, index) => {
+              const Icon = solution.icon;
+              const isEven = index % 2 === 0;
+
+              return (
+                <div
+                  class={`rounded-3xl p-8 md:p-12 border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all ${isEven ? "bg-slate-50" : "bg-blue-50"}`}>
+                  <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    {/* Left Column - Content */}
+                    <div class={isEven ? "" : "lg:order-2"}>
+                      <div class="flex items-center gap-3 mb-4">
+                        <div
+                          class={`w-14 h-14 rounded-2xl flex items-center justify-center ${isEven ? "bg-blue-50" : "bg-white"}`}>
+                          <Icon class="w-7 h-7 text-blue-700" />
+                        </div>
+                        {solution.badge && (
+                          <Badge
+                            variant={`${isEven ? "blue" : "white"}`}
+                            size="sm">
+                            {solution.badge}
+                          </Badge>
+                        )}
+                      </div>
+
+                      <h3 class="text-3xl font-bold text-slate-900 mb-2">
+                        {solution.name}
+                      </h3>
+                      <p class="text-lg text-blue-600 font-medium mb-4">
+                        {solution.tagline}
+                      </p>
+                      <p class="text-slate-600 mb-6 leading-relaxed">
+                        {solution.description}
+                      </p>
+
+                      {/* Timeline & Price */}
+                      <div class="flex flex-wrap gap-4 mb-6">
+                        <div class="flex items-center gap-2 text-slate-700">
+                          <Calendar class="w-5 h-5 text-blue-600" />
+                          <span class="font-medium">{solution.timeline}</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-700">
+                          <DollarSign class="w-5 h-5 text-blue-600" />
+                          <span class="font-medium">
+                            {solution.startingPrice}
+                          </span>
+                        </div>
+                      </div>
+
+                      <Button
+                        href={solution.href}
+                        variant="primary"
+                        icon={ArrowRight}
+                        class="mb-6">
+                        Learn More
+                      </Button>
+                    </div>
+
+                    {/* Right Column - Details */}
+                    <div class={isEven ? "" : "lg:order-1"}>
+                      {/* Best For */}
+                      <div class="bg-white rounded-2xl p-6 mb-6 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-3">
+                          Perfect For:
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                          {solution.bestFor.map((item) => (
+                            <Badge size="sm">{item}</Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* What's Included */}
+                      <div class="bg-white rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-bold text-slate-900 mb-4">
+                          What's Included:
+                        </h4>
+                        <ul class="space-y-2">
+                          {solution.features.map((feature) => (
+                            <li class="flex items-start gap-2">
+                              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                              <span class="text-slate-700 text-sm">
+                                {feature}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-30">
+        <div
+          class="bg-linear-to-br from-blue-700 to-blue-900 rounded-3xl p-8 md:p-12 text-center text-white">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Not Sure Which Solution is Right?
+          </h2>
+          <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+            Every business is unique. Let's talk about your specific needs and
+            goals, and I'll help you choose the perfect solution (or create a
+            custom package).
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/contact" variant="secondary" icon={ArrowRight}>
+              Schedule Free Consultation
+            </Button>
+            <Button href="/services" variant="outline">
+              View Individual Services
+            </Button>
+          </div>
+          <p class="text-sm text-blue-100 mt-6">
+            <strong>No pressure, no obligation.</strong> Just a friendly chat about
+            your business.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Why Choose Us -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4">
+            Why CoreLuminate?
+          </h2>
+          <p class="text-lg text-slate-600">
+            We do things differently—and better.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl p-8 text-center">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <Gauge class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Clear Timelines
+            </h3>
+            <p class="text-slate-600">
+              Know exactly when your project will be done. No vague "we'll get
+              back to you" or endless delays.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 text-center">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <DollarSign class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Fixed Pricing</h3>
+            <p class="text-slate-600">
+              Get a detailed quote upfront with no hidden fees or surprise
+              charges. You'll know exactly what you're paying.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 text-center">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <Headphones class="w-8 h-8 text-blue-600" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Direct Access</h3>
+            <p class="text-slate-600">
+              Work directly with me—no account managers, no outsourcing. You get
+              expert service from start to finish.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA -->
+  <Section
+    size="2xl"
+    background="slate-blue"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Ready to Get Started?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8">
+          Let's discuss your project and find the perfect solution for your
+          business.
+        </p>
+        <Button href="/contact" variant="secondary" icon={ArrowRight}>
+          Schedule Your Free Consultation
+        </Button>
+      </div>
+    </Container>
+  </Section>
+</Layout>

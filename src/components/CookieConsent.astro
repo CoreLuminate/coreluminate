@@ -1,0 +1,133 @@
+---
+import { Image } from "astro:assets";
+import cookieImg from "../assets/cookie.svg";
+// Cookie Consent Banner Component
+---
+
+<div
+  id="cookie-consent-banner"
+  class="fixed bottom-0 left-0 z-50 flex justify-center p-4 pointer-events-none"
+  style="display: none;">
+  <div
+    class="bg-blue-950 w-full sm:max-w-md rounded-xl shadow-lg px-6 py-4 sm:px-8 sm:py-5 flex flex-col gap-6 pointer-events-auto">
+    <div class="flex flex-row items-start gap-6">
+      <Image src={cookieImg} alt="Cookie" class="w-10 h-10" />
+      <div class="flex flex-col gap-3">
+        <p class="text-sm text-slate-50 leading-relaxed">
+          We use cookies to improve your browsing experience on CoreLuminate, we
+          use cookies for analytics, personalization, and secure transactions.
+        </p>
+
+        <div class="flex gap-4">
+          <a
+            href="/privacy-policy"
+            class="text-xs font-medium text-blue-400 hover:text-blue-600 underline">
+            Privacy Policy
+          </a>
+          <a
+            href="/cookie-policy"
+            class="text-xs font-medium text-blue-400 hover:text-blue-600 underline">
+            Cookie Policy
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row gap-4">
+      <button
+        id="cookie-decline"
+        class="text-sm font-medium w-full text-blue-500 border border-blue-500 hover:text-blue-700 hover:border-blue-700 shadow-sm rounded-lg py-2.5 px-5 cursor-pointer"
+        aria-label="Close and deny all non-necessary cookies">
+        Close & Deny
+      </button>
+
+      <!-- Accept Button (Primary look) -->
+      <button
+        id="cookie-accept"
+        class="text-sm w-full font-medium text-white hover:bg-blue-700 shadow-sm rounded-lg bg-blue-500 py-2.5 px-5 cursor-pointer"
+        aria-label="Allow all cookies">
+        Allow All
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cookie consent functionality
+  const CONSENT_KEY = "cookie-consent";
+  const CONSENT_TIMESTAMP_KEY = "cookie-consent-timestamp";
+  const CONSENT_EXPIRY_DAYS = 365;
+
+  function hasValidConsent(): boolean {
+    const consent = localStorage.getItem(CONSENT_KEY);
+    const timestamp = localStorage.getItem(CONSENT_TIMESTAMP_KEY);
+
+    if (!consent || !timestamp) return false;
+
+    const consentDate = new Date(parseInt(timestamp));
+    const expiryDate = new Date(consentDate);
+    expiryDate.setDate(expiryDate.getDate() + CONSENT_EXPIRY_DAYS);
+
+    return new Date() < expiryDate;
+  }
+
+  function showBanner(): void {
+    const banner = document.getElementById("cookie-consent-banner");
+    if (banner) {
+      banner.style.display = "block";
+    }
+  }
+
+  function hideBanner(): void {
+    const banner = document.getElementById("cookie-consent-banner");
+    if (banner) {
+      banner.style.display = "none";
+    }
+  }
+
+  function setConsent(accepted: boolean): void {
+    localStorage.setItem(CONSENT_KEY, accepted ? "accepted" : "declined");
+    localStorage.setItem(CONSENT_TIMESTAMP_KEY, Date.now().toString());
+
+    // Dispatch custom event for GA initialization
+    window.dispatchEvent(
+      new CustomEvent("cookieConsentChange", {
+        detail: { accepted },
+      })
+    );
+
+    hideBanner();
+  }
+
+  function getConsent(): "accepted" | "declined" | null {
+    if (!hasValidConsent()) return null;
+    return localStorage.getItem(CONSENT_KEY) as "accepted" | "declined" | null;
+  }
+
+  // Check consent on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const consent = getConsent();
+
+    if (consent === null) {
+      // No valid consent, show banner
+      showBanner();
+    } else if (consent === "accepted") {
+      // Trigger GA initialization
+      window.dispatchEvent(
+        new CustomEvent("cookieConsentChange", {
+          detail: { accepted: true },
+        })
+      );
+    }
+
+    // Button handlers
+    const acceptBtn = document.getElementById("cookie-accept");
+    const declineBtn = document.getElementById("cookie-decline");
+
+    acceptBtn?.addEventListener("click", () => setConsent(true));
+    declineBtn?.addEventListener("click", () => setConsent(false));
+  });
+
+  // Export function for checking consent status
+  (window as any).getCookieConsent = getConsent;
+</script>

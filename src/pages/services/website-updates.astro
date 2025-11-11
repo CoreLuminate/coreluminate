@@ -1,0 +1,674 @@
+---
+import {
+  ArrowRight,
+  BookOpen,
+  ChartBar,
+  Check,
+  FileText,
+  Gauge,
+  Lightbulb,
+  Mail,
+  Search,
+  Settings,
+  ShoppingCart,
+  Target,
+  Wrench,
+  Zap,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import heroImage from "../../assets/images/website-updates-hero.jpg"; // You'll need an appropriate image
+import Accordion from "../../components/ui/Accordion.astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+// FAQ data
+const faqs = [
+  {
+    question: "Can I get multiple services done at once?",
+    answer:
+      "Absolutely! Many clients bundle multiple services together. We often provide a discount when combining services, and it's more efficient to do related work at the same time. Just let us know everything you need, and we'll create a package quote.",
+  },
+  {
+    question: "How long does each service take?",
+    answer:
+      "Most individual services take 1-3 weeks depending on complexity. Landing pages typically take 1 week, blog setup takes 1-2 weeks, and more complex features may take 2-3 weeks. We'll provide specific timelines when we quote your project.",
+  },
+  {
+    question: "What if my site is on a platform you don't usually work with?",
+    answer:
+      "We work with most major platforms including WordPress, Wix, Squarespace, Shopify, Webflow, Framer, and custom HTML/CSS sites. If you're on something unique, reach out and we'll let you know if we can help or recommend someone who can.",
+  },
+  {
+    question: "Do you require access to my website?",
+    answer:
+      "Yes, we'll need admin access to your website to make updates. We use secure methods to receive credentials and never store them permanently. You can change your passwords after we complete the work if you prefer.",
+  },
+  {
+    question: "Can you work with my existing designer or developer?",
+    answer:
+      "Yes! We're happy to collaborate with your existing team. Whether you need us to implement designs from your designer or work alongside your developer, we can coordinate to get the job done efficiently.",
+  },
+  {
+    question: "What if I need ongoing updates regularly?",
+    answer:
+      "For clients who need regular updates and support, we offer monthly retainer packages (coming soon). This gives you a set number of hours each month at a discounted rate. Ask about this during your consultation.",
+  },
+  {
+    question: "Do you offer a guarantee on your work?",
+    answer:
+      "Yes! All services include 30 days of support after completion. If something isn't working as expected or you need small adjustments, we'll fix it at no additional cost during this period.",
+  },
+  {
+    question: "How much do these services cost?",
+    answer:
+      "Pricing varies based on complexity and scope. Landing pages start around $300-500, blog setup is $400-600, forms are $200-400, and larger projects like e-commerce can be $1,000+. Contact us for a detailed quote specific to your needs.",
+  },
+];
+---
+
+<Layout
+  title="Website Updates & Add-Ons"
+  description="Individual website services and enhancements. From landing pages to SEO optimization, get exactly what your website needs without a complete redesign.">
+  <!-- Hero Section - Dark Background -->
+  <Section
+    size="xl"
+    background="dark"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 items-center py-12">
+        <!-- Left Column: Content -->
+        <div>
+          <Badge variant="white" class="mb-6 shadow-lg">
+            <Wrench class="w-4 h-4" />
+            <span>Website Updates & Add-Ons</span>
+          </Badge>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Enhance Your Existing Website
+          </h1>
+
+          <p class="text-xl text-blue-100 leading-relaxed mb-8">
+            Already have a website but need specific improvements? Get
+            individual services to add features, improve performance, or update
+            content without a full redesign.
+          </p>
+
+          <!-- Key Benefits -->
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200">
+                Individual services—pick exactly what you need
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200">
+                Quick turnaround—most services done in 1-2 weeks
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200">
+                Fixed pricing—know the cost upfront
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200">
+                Works with any platform—WordPress, Wix, Squarespace, custom
+                sites
+              </span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-4">
+            <Button icon={ArrowRight} href="/services/request"
+              >Get a Quote</Button
+            >
+            <Button variant="outline" href="/work">View Our Work</Button>
+          </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden shadow-2xl bg-slate-700">
+            <!-- Placeholder - replace with actual image -->
+            <div class="aspect-4/3 flex items-center justify-center">
+              <Image
+                src={heroImage}
+                alt="Website design example"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                widths={[400, 600, 800]}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={80}
+              />
+            </div>
+          </div>
+
+          <!-- Floating Stats Cards -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-md p-4 border border-slate-200">
+            <div class="text-2xl font-bold text-blue-600">1-2</div>
+            <div class="text-xs text-slate-600">Weeks Average</div>
+          </div>
+
+          <div
+            class="absolute -top-6 -right-6 bg-white rounded-xl shadow-md p-4 border border-slate-200">
+            <div class="text-2xl font-bold text-blue-600">50+</div>
+            <div class="text-xs text-slate-600">Services Done</div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Services Grid -->
+  <Section size="xl" background="white">
+    <Container>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Available Services
+        </h2>
+        <p class="text-lg text-slate-600">
+          Choose the services you need to improve your website.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Landing Pages -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+              <Target class="w-7 h-7 text-blue-700" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Landing Pages
+            </h3>
+            <p class="text-slate-600 mb-6 flex-1">
+              High-converting landing pages for campaigns, ads, or specific
+              offers. Optimized for conversions with clear calls-to-action.
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Custom design & copywriting</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Mobile-responsive</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Form integration</span>
+              </div>
+            </div>
+            <Badge variant="blue">1-2 Weeks</Badge>
+          </div>
+        </div>
+
+        <!-- Blog Setup -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+              <BookOpen class="w-7 h-7 text-blue-700" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Blog Setup & Migration
+            </h3>
+            <p class="text-slate-600 mb-6 flex-1">
+              Add a blog to your website or migrate existing content. Includes
+              design, setup, and training on how to create posts.
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Blog design & layout</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Categories & tags setup</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Content migration</span>
+              </div>
+            </div>
+            <Badge variant="blue">1-2 Weeks</Badge>
+          </div>
+        </div>
+
+        <!-- SEO Optimization -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+              <Search class="w-7 h-7 text-blue-700" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              SEO Optimization
+            </h3>
+            <p class="text-slate-600 mb-6 flex-1">
+              Improve your search engine rankings with technical SEO
+              improvements, meta tags, schema markup, and content optimization.
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Technical SEO audit</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Meta tags & descriptions</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Schema markup</span>
+              </div>
+            </div>
+            <Badge variant="blue">2-3 Weeks</Badge>
+          </div>
+        </div>
+
+        <!-- Speed Optimization -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+              <Gauge class="w-7 h-7 text-blue-700" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Speed & Performance
+            </h3>
+            <p class="text-slate-600 mb-6 flex-1">
+              Make your website blazing fast. Image optimization, code cleanup,
+              caching, and performance tuning for better user experience.
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Image optimization</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Code minification</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Caching setup</span>
+              </div>
+            </div>
+            <Badge variant="blue">1 Week</Badge>
+          </div>
+        </div>
+
+        <!-- Forms & Features -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+              <FileText class="w-7 h-7 text-blue-700" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Custom Forms & Features
+            </h3>
+            <p class="text-slate-600 mb-6 flex-1">
+              Add custom contact forms, quote calculators, booking systems, or
+              other interactive features to your website.
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Custom form design</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Spam protection</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Email notifications</span>
+              </div>
+            </div>
+            <Badge variant="blue">1-2 Weeks</Badge>
+          </div>
+        </div>
+
+        <!-- Email Marketing -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+              <Mail class="w-7 h-7 text-blue-700" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Email Marketing Setup
+            </h3>
+            <p class="text-slate-600 mb-6 flex-1">
+              Connect your website to email marketing tools like Mailchimp,
+              ConvertKit, or ActiveCampaign with signup forms and automation.
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Platform integration</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Signup forms & popups</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>List segmentation</span>
+              </div>
+            </div>
+            <Badge variant="blue">1 Week</Badge>
+          </div>
+        </div>
+
+        <!-- E-commerce Features -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+              <ShoppingCart class="w-7 h-7 text-blue-700" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              E-commerce Add-ons
+            </h3>
+            <p class="text-slate-600 mb-6 flex-1">
+              Add shopping functionality to your existing site. Product pages,
+              cart, checkout, and payment processing integration.
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Product catalog setup</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Shopping cart integration</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Payment gateway setup</span>
+              </div>
+            </div>
+            <Badge variant="blue">2-4 Weeks</Badge>
+          </div>
+        </div>
+
+        <!-- Analytics -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+              <ChartBar class="w-7 h-7 text-blue-700" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Analytics & Tracking
+            </h3>
+            <p class="text-slate-600 mb-6 flex-1">
+              Comprehensive analytics setup with Google Analytics, conversion
+              tracking, heatmaps, and custom dashboards.
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Google Analytics setup</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Goal & event tracking</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Conversion tracking</span>
+              </div>
+            </div>
+            <Badge variant="blue">1 Week</Badge>
+          </div>
+        </div>
+
+        <!-- Content Updates -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+              <Settings class="w-7 h-7 text-blue-700" />
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Content & Design Updates
+            </h3>
+            <p class="text-slate-600 mb-6 flex-1">
+              Need changes to existing content, images, or design? We handle
+              updates big and small to keep your site fresh.
+            </p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Text & copy updates</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Image replacement</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-700">
+                <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                <span>Layout adjustments</span>
+              </div>
+            </div>
+            <Badge variant="blue">Varies</Badge>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- How It Works -->
+  <Section size="xl" background="slate" pattern={{ type: "circuit" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Simple, Straightforward Process
+        </h2>
+        <p class="text-lg text-slate-600">
+          From request to completion in just a few steps.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                1
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Tell Us What You Need
+              </h3>
+              <p class="text-slate-600">
+                Contact us with your requirements. Be specific about what you
+                want to add or change on your website.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                2
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Get Your Quote
+              </h3>
+              <p class="text-slate-600">
+                We'll review your website and provide a fixed-price quote with a
+                clear timeline. No hidden fees or surprises.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                3
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                We Build & Test
+              </h3>
+              <p class="text-slate-600">
+                We complete the work, test everything thoroughly, and keep you
+                updated on progress throughout.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                4
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Review & Launch
+              </h3>
+              <p class="text-slate-600">
+                You review and approve the work. Once you're happy, we launch it
+                and provide 30 days of support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Why Choose Us -->
+  <Section size="xl" background="white">
+    <Container>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Why Choose Us for Website Updates?
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <Zap class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Fast Turnaround</h3>
+          <p class="text-slate-600">
+            Most services completed within 1-2 weeks. We work efficiently
+            without sacrificing quality.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <Lightbulb class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Expert Guidance</h3>
+          <p class="text-slate-600">
+            We'll recommend the best approach and let you know if something
+            won't work as expected.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <Check class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Quality Guaranteed
+          </h3>
+          <p class="text-slate-600">
+            All work includes 30 days of support. If something's not right,
+            we'll fix it at no extra cost.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ Section -->
+  <Section size="xl" background="slate">
+    <Container size="reading">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <Accordion items={faqs} />
+    </Container>
+  </Section>
+
+  <!-- Final CTA -->
+  <Section size="xl" background="blue" pattern={{ type: "grid" }}>
+    <Container size="reading">
+      <div
+        class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-xl text-center">
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Ready to Improve Your Website?
+        </h2>
+
+        <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+          Tell us what you need and we'll provide a custom quote with a clear
+          timeline and fixed price.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button variant="primary" href="/services/request" icon={ArrowRight}>
+            Request a Quote
+          </Button>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-slate-200">
+          <p class="text-sm text-slate-600">
+            <strong>Need a full website redesign?</strong> Check out our
+            <a href="/solutions" class="text-blue-600 hover:underline"
+              >complete solutions</a
+            >.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

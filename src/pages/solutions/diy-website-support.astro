@@ -1,0 +1,700 @@
+---
+import {
+  ArrowRight,
+  Check,
+  DollarSign,
+  Gauge,
+  Headphones,
+  Lightbulb,
+  Mail,
+  MessageSquare,
+  Phone,
+  Rocket,
+  Sparkles,
+  Target,
+  ThumbsUp,
+  User,
+  Video,
+  Wrench,
+} from "@lucide/astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="DIY Website with Support"
+  description="Build your own website with expert guidance when you need it. Perfect for hands-on business owners who want to learn but need backup support.">
+  <!-- Hero - Full Screen -->
+  <Section
+    background="slate-blue"
+    pattern={{ type: "dots", visibility: "light" }}
+    fullHeight={true}
+    class="flex items-center">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <Badge variant="white" class="mb-8">
+          <Wrench class="w-4 h-4" />
+          <span>DIY with Expert Support</span>
+        </Badge>
+
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+          Build It Yourself,<br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            We've Got Your Back
+          </span>
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-blue-100 leading-relaxed mb-12 max-w-3xl mx-auto">
+          Want to build your own website but nervous about getting stuck? Get
+          expert guidance, technical support, and answers when you need them.
+        </p>
+
+        <div class="flex flex-col items-center gap-6">
+          <div class="flex flex-wrap justify-center gap-4">
+            <Badge variant="blur">
+              <DollarSign class="w-5 h-5 text-blue-400" />
+              Most Affordable
+            </Badge>
+            <Badge variant="blur">
+              <Lightbulb class="w-5 h-5 text-blue-400" />
+              Learn as You Build
+            </Badge>
+            <Badge variant="blur">
+              <Headphones class="w-5 h-5 text-blue-400" />
+              Expert Backup
+            </Badge>
+          </div>
+        </div>
+      </div>
+    </Container>
+
+    <!-- Scroll indicator -->
+    <div
+      slot="absolute"
+      class="absolute bottom-30 left-1/2 -translate-x-1/2 animate-bounce">
+      <div
+        class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
+        <div class="w-1 h-3 bg-white/50 rounded-full"></div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- The Problem -->
+  <Section size="2xl" background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            You Want to Build It, But...
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            DIY website builders look easy until you actually start building.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+              <MessageSquare class="h-10 w-10 text-blue-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">You Get Stuck</h3>
+            <p class="text-slate-600">
+              "How do I make this form work?" "Why isn't my menu showing on
+              mobile?" You need answers but Google isn't helping.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+              <Target class="h-10 w-10 text-blue-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Not Sure If It's Right
+            </h3>
+            <p class="text-slate-600">
+              You're making progress, but is it actually good? Will it work on
+              all devices? Are you making rookie mistakes?
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+              <Gauge class="h-10 w-10 text-blue-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Technical Stuff is Scary
+            </h3>
+            <p class="text-slate-600">
+              Domain setup, email configuration, SSL certificates—you're
+              capable, but one wrong move feels risky.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transition -->
+      <div class="text-center py-12">
+        <div class="inline-flex items-center gap-3 text-blue-600">
+          <div class="h-px w-12 bg-linear-to-r from-transparent to-blue-600">
+          </div>
+          <Sparkles class="w-6 h-6" />
+          <div class="h-px w-12 bg-linear-to-l from-transparent to-blue-600">
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- How It Works -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            How It Works
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            You build, we support. Simple as that.
+          </p>
+        </div>
+
+        <!-- Process Steps -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <!-- Step 1 -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+              <span class="text-2xl font-bold text-blue-700">1</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Choose Your Platform
+            </h3>
+            <p class="text-slate-600">
+              We'll help you pick the right platform for your needs—WordPress,
+              Wix, Squarespace, or whatever makes sense for you.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+              <span class="text-2xl font-bold text-blue-700">2</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Start Building
+            </h3>
+            <p class="text-slate-600">
+              You do the work—choose templates, add content, customize design.
+              Learn as you go and build exactly what you want.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-white rounded-2xl p-8 shadow-sm">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+              <span class="text-2xl font-bold text-blue-700">3</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Get Help When Stuck
+            </h3>
+            <p class="text-slate-600">
+              Hit a wall? Message or call us. We'll walk you through it, fix
+              technical issues, or jump in to help if needed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What's Included -->
+  <Section size="2xl">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            What's Included
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            Everything you need to build confidently on your own.
+          </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Platform Consultation -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <Lightbulb class="w-6 h-6 text-blue-700" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Platform Consultation
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  30-minute consultation to help you choose the right platform
+                  and get started with a solid plan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Support -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <Headphones class="w-6 h-6 text-blue-700" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  On-Demand Support
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Email and message us when you're stuck or have question and
+                  get answers quickly.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen Share Sessions -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <Video class="w-6 h-6 text-blue-700" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Screen Share Help
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Schedule screen share sessions when you need real-time help.
+                  We'll walk you through problems step-by-step.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Setup -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <Wrench class="w-6 h-6 text-blue-700" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Technical Setup Help
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  We'll handle or guide you through scary technical stuff—domain
+                  setup, email, SSL, DNS, etc.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quality Review -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <Check class="w-6 h-6 text-blue-700" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Pre-Launch Review
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Before you launch, we'll review your site and give feedback on
+                  what needs improvement.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Launch Support -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <Rocket class="w-6 h-6 text-blue-700" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Launch Day Support
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  We'll be available when you go live to make sure everything
+                  works smoothly and fix any issues.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing Options -->
+        <div
+          class="bg-linear-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12">
+          <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+            Flexible Support Plans
+          </h3>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- One-Time -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm">
+              <h4 class="font-bold text-slate-900 mb-2">One-Time Setup</h4>
+              <p class="text-sm text-slate-600 mb-4">
+                Initial consultation, platform setup help, and 30 days of
+                support
+              </p>
+              <Badge variant="blue" size="sm">Best for Simple Sites</Badge>
+            </div>
+
+            <!-- Monthly -->
+            <div
+              class="bg-white rounded-2xl p-6 shadow-sm border-2 border-blue-400">
+              <div class="flex items-center gap-2 mb-2">
+                <h4 class="font-bold text-slate-900">Monthly Support</h4>
+                <Badge variant="dark" size="sm">Popular</Badge>
+              </div>
+              <p class="text-sm text-slate-600 mb-4">
+                Ongoing support as you build—perfect for taking your time
+              </p>
+              <Badge variant="blue" size="sm">Cancel Anytime</Badge>
+            </div>
+
+            <!-- Project-Based -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm">
+              <h4 class="font-bold text-slate-900 mb-2">Project Package</h4>
+              <p class="text-sm text-slate-600 mb-4">
+                Fixed price support from start to launch—typically 4-8 weeks
+              </p>
+              <Badge variant="blue" size="sm">Best Value</Badge>
+            </div>
+          </div>
+
+          <p class="text-center text-sm text-slate-600 mt-6">
+            <strong>All plans include:</strong> Email/message support, screen share
+            sessions, technical help, and pre-launch review
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Who This Is For -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Perfect For
+          </h2>
+          <p class="text-xl text-slate-600">
+            Hands-on business owners who want to learn and save money.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- DIY-ers -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <ThumbsUp
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                DIY Enthusiasts
+              </h3>
+              <p class="text-slate-600">
+                You like doing things yourself and learning new skills, but want
+                expert backup when things get tricky.
+              </p>
+            </div>
+          </div>
+
+          <!-- Budget Conscious -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <DollarSign
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Budget-Conscious Startups
+              </h3>
+              <p class="text-slate-600">
+                You need to watch expenses but don't want to risk making costly
+                mistakes or building something unprofessional.
+              </p>
+            </div>
+          </div>
+
+          <!-- Want to Learn -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <Lightbulb
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Want to Manage It Yourself
+              </h3>
+              <p class="text-slate-600">
+                You want to own and update your site yourself long-term, not
+                depend on a developer for every little change.
+              </p>
+            </div>
+          </div>
+
+          <!-- Capable but Nervous -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <Headphones
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Tech-Capable but Want Safety Net
+              </h3>
+              <p class="text-slate-600">
+                You're pretty tech-savvy but want someone to lean on when you
+                hit technical roadblocks or need validation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div
+          class="mt-20 bg-linear-to-br from-slate-900 to-blue-900 rounded-2xl p-12 text-white text-center">
+          <h3 class="text-2xl font-bold mb-4">Build with Confidence</h3>
+          <p class="text-lg text-blue-100 mb-2">
+            You don't need to figure everything out alone. Build your site the
+            way you want it with expert support when you need it.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <div class="flex items-center gap-2">
+              <Check class="w-5 h-5 text-blue-200" />
+              <span>Save Money</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Check class="w-5 h-5 text-blue-200" />
+              <span>Learn Skills</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Check class="w-5 h-5 text-blue-200" />
+              <span>Get Expert Help</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA Form -->
+  <Section
+    size="3xl"
+    background="slate-blue"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <!-- Helping hands illustration concept -->
+    <div
+      class="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+      <Wrench
+        class="absolute top-20 left-20 w-32 h-32 text-blue-400 transform rotate-12"
+      />
+      <Lightbulb class="absolute bottom-20 right-20 w-40 h-40 text-blue-400" />
+      <Headphones
+        class="absolute top-1/2 right-40 w-28 h-28 text-blue-400 transform -rotate-12"
+      />
+    </div>
+
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Build Your Website?
+          </h2>
+          <p class="text-xl text-blue-100">
+            Let's set you up for success with the right support plan.
+          </p>
+        </div>
+
+        <!-- Simple Lead Form -->
+        <form
+          class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20 shadow-md">
+          <div class="space-y-6">
+            <!-- Name -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-white mb-2">
+                Your Name *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <User class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="John Smith"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-white mb-2">
+                Email Address *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Mail class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-white mb-2">
+                Phone Number
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Phone class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+            </div>
+
+            <!-- Experience Level -->
+            <div>
+              <label
+                for="experience"
+                class="block text-sm font-medium text-white mb-2">
+                Your Experience Level *
+              </label>
+              <select
+                id="experience"
+                name="experience"
+                required
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <option value="" class="bg-slate-900"
+                  >Select your experience...</option
+                >
+                <option value="beginner" class="bg-slate-900"
+                  >Complete Beginner</option
+                >
+                <option value="some" class="bg-slate-900"
+                  >Some Website Experience</option
+                >
+                <option value="comfortable" class="bg-slate-900"
+                  >Pretty Comfortable with Tech</option
+                >
+                <option value="experienced" class="bg-slate-900"
+                  >Experienced but Want Help</option
+                >
+              </select>
+            </div>
+
+            <!-- Platform Preference -->
+            <div>
+              <label
+                for="platform"
+                class="block text-sm font-medium text-white mb-2">
+                Platform Preference (if any)
+              </label>
+              <input
+                type="text"
+                id="platform"
+                name="platform"
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="e.g., WordPress, Wix, Squarespace, or 'Not sure yet'"
+              />
+            </div>
+
+            <!-- What They Need Help With -->
+            <div>
+              <label
+                for="help-needed"
+                class="block text-sm font-medium text-white mb-2">
+                What Do You Need Help With? *
+              </label>
+              <textarea
+                id="help-needed"
+                name="help-needed"
+                required
+                rows="4"
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                placeholder="e.g., Choosing a platform, technical setup, design feedback, troubleshooting..."
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <Button
+              type="submit"
+              variant="gradient"
+              size="lg"
+              icon={ArrowRight}
+              class="w-full group">
+              <span>Get Started with Support</span>
+            </Button>
+
+            <p class="text-sm text-blue-200 text-center">
+              We'll get back to you within 24 hours to discuss the best support
+              plan for your needs.
+            </p>
+          </div>
+        </form>
+      </div>
+    </Container>
+  </Section>
+</Layout>

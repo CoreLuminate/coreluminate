@@ -1,0 +1,935 @@
+---
+import {
+  ArrowRight,
+  Calendar,
+  ChartBarIncreasing,
+  Check,
+  Clock,
+  FileText,
+  Mail,
+  MessageSquare,
+  Puzzle,
+  Repeat,
+  Settings,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Users,
+  Wrench,
+  Zap,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import Accordion from "../../components/ui/Accordion.astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import heroImage from "../../assets/images/team-working-at-table-with-laptops.jpg"; // Replace with your actual image
+
+// FAQ data
+const faqs = [
+  {
+    question: "Which business tools can you help me set up?",
+    answer:
+      "I've worked with a wide range of tools including CRMs (HubSpot, Salesforce), accounting software (QuickBooks, Xero), email marketing (Mailchimp, Constant Contact), project management (Asana, Trello, Monday), communication tools (Slack, Microsoft Teams), and more. Even if I haven't used a specific tool before, my experience with complex enterprise systems means I can quickly learn and configure most business software.",
+  },
+  {
+    question: "How is this different from hiring IT support?",
+    answer:
+      "I focus on one-time setup and configuration projects, not ongoing IT support. Think of me as the expert who gets everything configured correctly from the start, trains your team, and then hands it off to you. For ongoing technical issues or monthly support contracts, you'd need dedicated IT support.",
+  },
+  {
+    question: "Do you provide ongoing support after setup?",
+    answer:
+      "I offer one-time setups and training. If you need help down the road with additional configuration or new tools, just reach out and we can discuss a new project. I don't offer monthly retainers or on-call support, as this is a side business and I have limited availability during business hours.",
+  },
+  {
+    question: "Can you migrate data from our old system?",
+    answer:
+      "It depends on the complexity. Simple data migrations (like contacts or basic records) are usually fine. For complex enterprise data migrations, I'll assess if it's within scope or recommend a specialist. I'm upfront about what I can handle.",
+  },
+  {
+    question: "What if we need help with a system you haven't used?",
+    answer:
+      "My experience with complex enterprise systems (Oracle ERP, ServiceNow, and others) means I can quickly learn new tools. Small business software is typically much simpler. If you have a specific tool in mind, let's discuss it during our consultation.",
+  },
+  {
+    question: "How much does business systems setup cost?",
+    answer:
+      "Pricing depends on the complexity and number of systems. A simple tool setup might be a few hundred dollars, while configuring multiple integrated systems could be more. I provide custom quotes after understanding your specific needs—no hidden fees or surprise charges.",
+  },
+  {
+    question: "Do you help with choosing which tools to use?",
+    answer:
+      "Absolutely! If you're not sure which CRM, project management tool, or other software to use, I can provide recommendations based on your business needs, budget, and team size. I'll explain the pros and cons of different options.",
+  },
+  {
+    question: "Can you connect different tools together?",
+    answer:
+      "Yes! I can set up integrations between your tools using platforms like Zapier or Make (formerly Integromat), or built-in integrations. For example, automatically adding new customers from your CRM to your email marketing list.",
+  },
+  {
+    question: "What if something breaks after you set it up?",
+    answer:
+      "I thoroughly test everything before handoff and provide documentation. For minor issues within 30 days, I'm happy to help troubleshoot. For more significant changes or new requirements, we can discuss a separate project.",
+  },
+  {
+    question: "Do you provide training for our team?",
+    answer:
+      "Yes! Training is included in most projects. I'll create documentation, record video walkthroughs, and do live training sessions (if needed) so your team knows how to use the systems effectively. The goal is to make you self-sufficient.",
+  },
+];
+---
+
+<Layout
+  title="Business Systems Setup"
+  description="Get your business software set up right without the tech stress. Professional configuration for CRM, accounting, email marketing, project management, and more. Perfect for small businesses.">
+  <!-- Hero Section -->
+  <Section
+    size="xl"
+    background="dark"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 items-center py-12">
+        <!-- Left Column: Content -->
+        <div>
+          <Badge variant="white" class="mb-6 shadow-lg">
+            <Settings class="w-4 h-4" />
+            <span>Business Systems Setup</span>
+          </Badge>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Get Your Business Systems Set Up Right
+          </h1>
+
+          <p class="text-xl text-blue-100 leading-relaxed mb-8">
+            Stop struggling with software setup. I'll configure your business
+            tools, integrate them together, and train your team—so you can focus
+            on running your business.
+          </p>
+
+          <!-- Key Benefits -->
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Expert configuration without the enterprise price tag</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Connect your tools so they work together</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Training and documentation for your team</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >One-time projects, not ongoing retainers</span
+              >
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-4">
+            <Button icon={ArrowRight} href="/services/request"
+              >Get Started</Button
+            >
+            <Button variant="outline" href="#systems"
+              >See What I Can Setup</Button
+            >
+          </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="relative">
+          <div
+            class="rounded-2xl overflow-hidden shadow-2xl bg-slate-700 aspect-4/3 flex items-center justify-center">
+            <Image
+              src={heroImage}
+              alt="Logo design using sketch pad and pencil"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
+            />
+          </div>
+
+          <!-- Floating Stats Cards -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 border border-slate-200">
+            <div class="flex items-center gap-2">
+              <Zap class="w-5 h-5 text-blue-600" />
+              <div>
+                <div class="text-2xl font-bold text-slate-900">Fast</div>
+                <div class="text-xs text-slate-600">Setup & Training</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4 border border-slate-200">
+            <div class="flex items-center gap-2">
+              <Puzzle class="w-5 h-5 text-blue-600" />
+              <div>
+                <div class="text-2xl font-bold text-slate-900">Any</div>
+                <div class="text-xs text-slate-600">System</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Problem/Solution Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Business Software Shouldn't Be This Hard
+        </h2>
+        <p class="text-lg text-slate-600">
+          You bought the right tools, but setting them up correctly feels
+          impossible. You're wasting time on manual tasks that should be
+          automated.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Problem 1 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Settings class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Setup Overwhelm</h3>
+          <p class="text-slate-600">
+            You bought CRM/accounting/marketing software but have no idea how to
+            configure it properly.
+          </p>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Puzzle class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Disconnected Tools
+          </h3>
+          <p class="text-slate-600">
+            Your tools don't talk to each other. You're manually copying data
+            between systems daily.
+          </p>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Clock class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Wasted Time</h3>
+          <p class="text-slate-600">
+            Your team spends hours on manual tasks that could be automated if
+            systems were set up right.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Systems I Can Setup Section -->
+  <Section
+    id="systems"
+    background="slate"
+    pattern={{ type: "dots", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Systems I Can Set Up & Configure
+        </h2>
+        <p class="text-lg text-slate-600">
+          From CRMs to project management—I'll get your business tools working
+          for you.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <!-- CRM & Sales -->
+        <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Users class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            CRM & Sales Tools
+          </h3>
+          <p class="text-sm text-slate-600 mb-3">
+            Customer relationship management, sales pipelines, contact
+            management.
+          </p>
+          <div class="text-xs text-slate-500">
+            HubSpot, Salesforce, Pipedrive, Zoho, and more
+          </div>
+        </div>
+
+        <!-- Accounting & Invoicing -->
+        <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <FileText class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Accounting & Invoicing
+          </h3>
+          <p class="text-sm text-slate-600 mb-3">
+            Financial tracking, invoicing, expense management, payment
+            processing.
+          </p>
+          <div class="text-xs text-slate-500">
+            QuickBooks, Xero, FreshBooks, Wave, Square
+          </div>
+        </div>
+
+        <!-- Email Marketing -->
+        <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Mail class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Email Marketing</h3>
+          <p class="text-sm text-slate-600 mb-3">
+            Email campaigns, automation, subscriber management, templates.
+          </p>
+          <div class="text-xs text-slate-500">
+            Mailchimp, Constant Contact, ConvertKit, ActiveCampaign
+          </div>
+        </div>
+
+        <!-- Project Management -->
+        <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <ChartBarIncreasing class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Project Management
+          </h3>
+          <p class="text-sm text-slate-600 mb-3">
+            Task tracking, team collaboration, workflows, deadlines.
+          </p>
+          <div class="text-xs text-slate-500">
+            Asana, Trello, Monday, ClickUp, Basecamp
+          </div>
+        </div>
+
+        <!-- Communication Tools -->
+        <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <MessageSquare class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Team Communication
+          </h3>
+          <p class="text-sm text-slate-600 mb-3">
+            Chat, video calls, file sharing, team channels.
+          </p>
+          <div class="text-xs text-slate-500">
+            Slack, Microsoft Teams, Google Workspace, Zoom
+          </div>
+        </div>
+
+        <!-- Scheduling & Calendar -->
+        <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Calendar class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Scheduling & Calendar
+          </h3>
+          <p class="text-sm text-slate-600 mb-3">
+            Appointment booking, calendar sync, availability management.
+          </p>
+          <div class="text-xs text-slate-500">
+            Calendly, Acuity, Google Calendar, Microsoft 365
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Services -->
+      <div
+        class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8 max-w-4xl mx-auto">
+        <h3 class="text-xl font-bold text-slate-900 mb-4 text-center">
+          Plus More...
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <ul class="space-y-2 text-slate-700">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Domain & email DNS setup</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Business email configuration</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Google Workspace / Microsoft 365</span>
+            </li>
+          </ul>
+          <ul class="space-y-2 text-slate-700">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Tool integrations (Zapier/Make)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Workflow automation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Custom system recommendations</span>
+            </li>
+          </ul>
+        </div>
+        <p class="text-center text-sm text-slate-600 mt-6">
+          <strong>Don't see what you need?</strong> If I haven't used a specific
+          tool, my enterprise systems experience means I can quickly learn it.
+        </p>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What's Included Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          What's Included in Setup
+        </h2>
+        <p class="text-lg text-slate-600">
+          Complete configuration from start to finish—customized for your
+          business.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Item 1 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Target class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Discovery & Planning
+          </h3>
+          <p class="text-sm text-slate-600">
+            Understanding your business needs, workflows, and goals before
+            touching any software.
+          </p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Settings class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Complete Configuration
+          </h3>
+          <p class="text-sm text-slate-600">
+            Account setup, user management, permissions, custom fields, and all
+            the technical details.
+          </p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Puzzle class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Tool Integration
+          </h3>
+          <p class="text-sm text-slate-600">
+            Connect your systems so data flows automatically—no more manual
+            copying and pasting.
+          </p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Repeat class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Workflow Automation
+          </h3>
+          <p class="text-sm text-slate-600">
+            Automate repetitive tasks so your team can focus on what matters
+            most.
+          </p>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Users class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Team Training</h3>
+          <p class="text-sm text-slate-600">
+            Live training sessions, video walkthroughs, and documentation so
+            your team knows how to use everything.
+          </p>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Check class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Testing & Handoff
+          </h3>
+          <p class="text-sm text-slate-600">
+            Thorough testing to make sure everything works, then a smooth
+            handoff so you're ready to go.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Why Me Section -->
+  <Section
+    background="light"
+    pattern={{ type: "topography", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Why Work With Me?
+        </h2>
+        <p class="text-lg text-slate-600">
+          Enterprise experience, small business focus, and fair pricing.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Benefit 1 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Sparkles class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Enterprise Experience
+          </h3>
+          <p class="text-sm text-slate-600">
+            I work with complex systems like Oracle ERP and ServiceNow daily.
+            Small business tools are straightforward by comparison.
+          </p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Zap class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Quick Learner</h3>
+          <p class="text-sm text-slate-600">
+            Even if I haven't used your specific tool, I can learn it quickly.
+            My technical background means I understand how systems work.
+          </p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Target class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Small Business Focus
+          </h3>
+          <p class="text-sm text-slate-600">
+            I understand your budget constraints and time limitations. No
+            enterprise consulting fees or overcomplicated solutions.
+          </p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Wrench class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Practical Approach
+          </h3>
+          <p class="text-sm text-slate-600">
+            I configure systems based on how you actually work, not some
+            theoretical "best practice" that doesn't fit your business.
+          </p>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <FileText class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Clear Documentation
+          </h3>
+          <p class="text-sm text-slate-600">
+            You'll get documentation and training materials so you're not
+            dependent on me for every little question.
+          </p>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Check class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">No Lock-In</h3>
+          <p class="text-sm text-slate-600">
+            One-time project-based work. No monthly retainers or ongoing
+            commitments. Come back when you need more help.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Process Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          How It Works
+        </h2>
+        <p class="text-lg text-slate-600">
+          From consultation to configured systems in a few simple steps.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                1
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Discovery Call
+              </h3>
+              <p class="text-slate-600">
+                We discuss what systems you need, your current pain points, and
+                your business workflows. I'll recommend the best tools and
+                approach for your situation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                2
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Custom Proposal
+              </h3>
+              <p class="text-slate-600">
+                You'll get a detailed scope of work and pricing based on your
+                specific needs. No surprises—you'll know exactly what's included
+                and what it costs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                3
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Setup & Configuration
+              </h3>
+              <p class="text-slate-600">
+                I'll configure your systems, set up integrations, and test
+                everything thoroughly. You'll get regular updates on progress.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                4
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Training & Handoff
+              </h3>
+              <p class="text-slate-600">
+                Your team gets training on how to use the systems, plus
+                documentation and video walkthroughs for reference. Then you're
+                off and running!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- À La Carte Approach Section -->
+  <Section background="slate" pattern={{ type: "waves", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            À La Carte Services
+          </h2>
+          <p class="text-lg text-slate-600">
+            Only pay for what you need. No packages, no forced bundles.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 md:p-10">
+          <div class="text-center mb-8">
+            <p class="text-slate-700 text-lg">
+              Tell me what you need, and I'll provide a custom quote based on
+              complexity and effort.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Example Requests -->
+            <div>
+              <h3 class="font-bold text-slate-900 mb-4">Example Requests:</h3>
+              <ul class="space-y-3 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 mt-1">→</span>
+                  <span>"Set up HubSpot CRM for my team"</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 mt-1">→</span>
+                  <span>"Configure QuickBooks + connect to my bank"</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 mt-1">→</span>
+                  <span>"Set up business email with custom domain"</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 mt-1">→</span>
+                  <span>"Connect Mailchimp to my website forms"</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 mt-1">→</span>
+                  <span>"Automate leads from CRM to email marketing"</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- What Affects Price -->
+            <div>
+              <h3 class="font-bold text-slate-900 mb-4">
+                What Affects Pricing:
+              </h3>
+              <ul class="space-y-3 text-slate-700">
+                <li class="flex items-start gap-2">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Number of systems to configure</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Complexity of workflows/automations</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Number of integrations needed</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Data migration requirements</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Training needs for your team</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Perfect For Section -->
+  <Section background="dark" pattern={{ type: "mesh", visibility: "light" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">
+          Perfect For
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <!-- Persona 1 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <Sparkles class="w-8 h-8 text-blue-600 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">New Businesses</h3>
+          <p class="text-sm text-slate-600">
+            Getting your first business systems in place the right way from day
+            one.
+          </p>
+        </div>
+
+        <!-- Persona 2 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <TrendingUp class="w-8 h-8 text-blue-600 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">Growing Teams</h3>
+          <p class="text-sm text-slate-600">
+            Outgrowing spreadsheets and email—ready for proper business systems.
+          </p>
+        </div>
+
+        <!-- Persona 3 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <Repeat class="w-8 h-8 text-blue-600 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">System Switchers</h3>
+          <p class="text-sm text-slate-600">
+            Moving from one tool to another and need help with the transition.
+          </p>
+        </div>
+
+        <!-- Persona 4 -->
+        <div
+          class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
+          <Users class="w-8 h-8 text-blue-600 mb-4" />
+          <h3 class="font-bold text-slate-900 mb-2">Small Teams</h3>
+          <p class="text-sm text-slate-600">
+            Businesses without dedicated IT staff who need expert help.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ Section -->
+  <Section size="xl" background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <Accordion items={faqs} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA -->
+  <Section background="blue" pattern={{ type: "circuit", visibility: "light" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl text-center">
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Ready to Get Your Systems Working?
+          </h2>
+
+          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            Stop struggling with software setup. Let's get your business tools
+            configured, connected, and working for you.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <Button
+              variant="primary"
+              size="lg"
+              icon={ArrowRight}
+              href="/services/request">
+              Schedule Consultation
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              href="/services/website-design-development">
+              View Other Services
+            </Button>
+          </div>
+
+          <div class="pt-8 border-t border-slate-200">
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <Zap class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">Fast Setup</span>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <Check class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">No Retainers</span>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <FileText class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">Full Training Included</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

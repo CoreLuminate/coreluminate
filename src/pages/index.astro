@@ -1,11 +1,813 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import {
+  ArrowRight,
+  BadgeCheck,
+  Check,
+  CircleCheck,
+  Globe,
+  ListChecks,
+  Mail,
+  MonitorCloud,
+  Search,
+  ShoppingBag,
+  SwatchBook,
+  Vote,
+  Workflow,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import FeaturedWork from "../components/FeaturedWork.astro";
+import Badge from "../components/ui/Badge.astro";
+import Button from "../components/ui/Button.astro";
+import Container from "../components/ui/Container.astro";
+import Section from "../components/ui/Section.astro";
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import whyUsImage from "../assets/images/artisanal-shopkeepers-welcome.jpg";
+import whyCoreImage from "../assets/images/man-working-at-desk.jpg";
+import ctaImage from "../assets/images/women-sitting-at-desk.jpg";
+
+const title = "CoreLuminate - Empowering Your Digital Transformation";
+const description =
+  "CoreLuminate partners with businesses to deliver innovative software solutions that drive growth and efficiency.";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title} description={description}>
+  <!-- Hero Section -->
+  <Section size="2xl" background="dark" pattern={{ type: "grid" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-slate-50 mb-6">
+          Your Complete Digital Partner for Business Growth
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto">
+          From stunning websites to business software setup, we handle
+          everything digital so you can focus on what you do best—running your
+          business.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/contact" icon={ArrowRight} variant="primary">
+            Let's Talks
+          </Button>
+          <Button href="/services" variant="secondary">View Services</Button>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div
+          class="mt-12 flex flex-wrap justify-center gap-8 text-sm text-slate-200">
+          <div class="flex items-center gap-2">
+            <CircleCheck class="w-5 h-5 text-blue-400" />
+            <span>Fast turnaround</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <CircleCheck class="w-5 h-5 text-blue-400" />
+            <span>Affordable pricing</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <CircleCheck class="w-5 h-5 text-blue-400" />
+            <span>Ongoing support</span>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Problem/Solution Section -->
+  <Section>
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left Content -->
+        <div>
+          <!-- Pill Badge -->
+          <Badge variant="blue" class="mb-4">
+            <Vote class="w-4 h-4" />
+            Why Choose CoreLuminate
+          </Badge>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            Running a Business Shouldn't Mean Struggling With Technology
+          </h2>
+
+          <p class="text-lg text-slate-600 mb-8">
+            You're great at what you do, but managing websites, email setup,
+            software subscriptions, and online presence can be overwhelming.
+            That's where we come in.
+          </p>
+
+          <!-- Benefits List -->
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3">
+              <div
+                class="shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
+                <Check class="w-4 h-4 text-blue-600" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-slate-900 mb-1">
+                  One Partner for Everything Digital
+                </h3>
+                <p class="text-slate-600">
+                  No more juggling multiple freelancers and agencies. We handle
+                  it all.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div
+                class="shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
+                <Check class="w-4 h-4 text-blue-600" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-slate-900 mb-1">
+                  Focus on Your Business
+                </h3>
+                <p class="text-slate-600">
+                  Spend your time serving customers, not fixing tech problems.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div
+                class="shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
+                <Check class="w-4 h-4 text-blue-600" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-slate-900 mb-1">
+                  Transparent Pricing
+                </h3>
+                <p class="text-slate-600">
+                  No hidden fees or surprise charges. You know what you're
+                  paying upfront.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div
+                class="shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
+                <Check class="w-4 h-4 text-blue-600" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-slate-900 mb-1">
+                  Ongoing Support
+                </h3>
+                <p class="text-slate-600">
+                  We don't disappear after launch. Get help whenever you need
+                  it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <Button variant="primary" href="/about"> Learn More About Us </Button>
+        </div>
+
+        <!-- Right Image -->
+        <div class="relative">
+          <!-- Main Image -->
+          <div class="relative rounded-2xl overflow-hidden shadow-md">
+            <Image
+              src={whyCoreImage}
+              alt="Happy business owner"
+              class="w-full h-full object-cover object-top"
+              loading="eager"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
+            />
+          </div>
+
+          <!-- Optional: Floating Stats Card -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-md p-6 max-w-[200px]">
+            <div class="text-3xl font-bold text-blue-500 mb-1">20+</div>
+            <div class="text-sm text-slate-600">Years of Experience</div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Services Overview -->
+  <Section size="2xl" background="slate" pattern={{ type: "circuit" }}>
+    <Container>
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <!-- Pill Badge -->
+        <Badge variant="white" class="mb-4">
+          <ListChecks class="w-4 h-4" />
+          Our Services
+        </Badge>
+        <h2 class="text-4xl md:text-4xl font-bold text-slate-900 mb-4">
+          Everything You Need to Succeed Online
+        </h2>
+        <p class="text-lg text-slate-600 max-w-4xl mx-auto">
+          From your first website to ongoing tech support, we're with you every
+          step of the way.
+        </p>
+      </div>
+
+      <!-- Bento Grid -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 auto-rows-fr gap-4 mb-8">
+        <!-- Large Card - Website Design (Spans 2 columns, 2 rows) -->
+        <div
+          class="md:col-span-2 lg:col-span-4 lg:row-span-2 bg-linear-to-br from-blue-800 to-blue-900 rounded-2xl p-8 text-white relative overflow-hidden">
+          <!-- Decorative Background Graphics -->
+          <div class="absolute inset-0 opacity-5 lg:opacity-50">
+            <!-- Browser Window Illustration -->
+            <svg
+              class="absolute bottom-0 lg:bottom-20 right-1 lg:right-8 w-84 h-68"
+              viewBox="0 0 256 192"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect
+                x="8"
+                y="8"
+                width="240"
+                height="176"
+                rx="8"
+                stroke="white"
+                stroke-width="2"></rect>
+              <line
+                x1="8"
+                y1="32"
+                x2="248"
+                y2="32"
+                stroke="white"
+                stroke-width="2"></line>
+              <circle cx="24" cy="20" r="4" fill="white"></circle>
+              <circle cx="40" cy="20" r="4" fill="white"></circle>
+              <circle cx="56" cy="20" r="4" fill="white"></circle>
+              <!-- Content lines -->
+              <rect x="24" y="48" width="120" height="8" rx="4" fill="white"
+              ></rect>
+              <rect x="24" y="72" width="208" height="4" rx="2" fill="white"
+              ></rect>
+              <rect x="24" y="88" width="160" height="4" rx="2" fill="white"
+              ></rect>
+              <rect x="24" y="112" width="80" height="48" rx="4" fill="white"
+              ></rect>
+              <rect x="120" y="112" width="80" height="48" rx="4" fill="white"
+              ></rect>
+            </svg>
+          </div>
+
+          <div class="relative z-10 flex flex-col h-full items-start">
+            <!-- Icon -->
+            <div
+              class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+              <Globe class="w-7 h-7 text-blue-800" />
+            </div>
+
+            <h3 class="text-2xl font-bold mb-3">
+              Website Design & Development
+            </h3>
+            <p class="text-slate-100 mb-6 leading-relaxed">
+              Beautiful, fast websites that work on all devices. From simple
+              business sites to complex online stores. We build with modern
+              technology for speed, security, and search engine visibility.
+            </p>
+
+            <!-- Features List -->
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-center gap-2 text-sm">
+                <Check class="w-4 h-4" />
+                <span>Custom Design</span>
+              </li>
+              <li class="flex items-center gap-2 text-sm">
+                <Check class="w-4 h-4" />
+                <span>Mobile Responsive</span>
+              </li>
+              <li class="flex items-center gap-2 text-sm">
+                <Check class="w-4 h-4" />
+                <span>SEO Optimized</span>
+              </li>
+            </ul>
+
+            <!-- Spacer to push button to bottom -->
+            <div class="flex-1"></div>
+
+            <Button
+              variant="secondary"
+              size="md"
+              href="/services/website-design-development">
+              Learn More
+            </Button>
+          </div>
+        </div>
+
+        <!-- Medium Card - Brand Design -->
+        <div
+          class="md:col-span-2 lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm hover:ring-2 ring-slate-200 flex flex-col items-start">
+          <div
+            class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+            <SwatchBook class="w-6 h-6 text-blue-800" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Brand & Design</h3>
+          <p class="text-sm text-slate-600 mb-4">
+            Stand out with professional branding. We create memorable logos,
+            cohesive brand guidelines, and marketing materials that make your
+            business look polished and trustworthy.
+          </p>
+
+          <!-- Spacer to push button to bottom -->
+          <div class="flex-1"></div>
+
+          <Button variant="text" size="sm" href="/services/brand-logo-design">
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Medium Card - SEO -->
+        <div
+          class="md:col-span-2 lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm hover:ring-2 ring-slate-200 flex flex-col items-start">
+          <div
+            class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+            <Search class="h-6 w-6 text-blue-800" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            SEO & Online Presence
+          </h3>
+          <p class="text-sm text-slate-600 mb-4">
+            Get found by customers searching for your services. We optimize your
+            website, manage your Google Business Profile, and help you build a
+            strong online reputation that drives traffic.
+          </p>
+
+          <!-- Spacer to push button to bottom -->
+          <div class="flex-1"></div>
+
+          <Button variant="text" size="sm" href="/services/seo-analytics">
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Wide Card - E-commerce (Spans 2 columns) -->
+        <div
+          class="md:col-span-2 lg:col-span-4 bg-blue-50 rounded-2xl p-6 shadow-sm hover:ring-2 ring-blue-100 flex flex-col items-start">
+          <div class="flex flex-col items-start gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center shrink-0">
+              <ShoppingBag class="h-6 w-6 text-blue-800" />
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                E-commerce Solutions
+              </h3>
+              <p class="text-sm text-slate-700">
+                Start selling online with a custom store built on Shopify,
+                WooCommerce, or other platforms. We handle product setup,
+                payment processing, shipping integration, and everything you
+                need to start generating revenue online.
+              </p>
+            </div>
+          </div>
+
+          <!-- Spacer to push button to bottom -->
+          <div class="flex-1"></div>
+
+          <Button
+            variant="text"
+            size="sm"
+            href="/services/e-commerce-solutions">
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Tall Card - Email Setup (Spans 2 cols) -->
+        <div
+          class="md:col-span-2 lg:col-span-4 bg-white rounded-2xl p-6 shadow-sm hover:ring-2 ring-slate-200 flex flex-col items-start">
+          <div
+            class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+            <Mail class="h-6 w-6 text-blue-800" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Business Email & Workspace
+          </h3>
+          <p class="text-sm text-slate-600 mb-4">
+            Professional email addresses with your domain name look credible and
+            build trust. We set up Google Workspace or Microsoft 365 with
+            everything configured correctly.
+          </p>
+          <div class="space-y-2 mb-6 text-sm text-slate-600">
+            <div class="flex items-center gap-2">
+              <Check class="w-4 h-4 text-blue-600" />
+              <span>Custom Domain Email</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Check class="w-4 h-4 text-blue-600" />
+              <span>Complete Setup & Migration</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Check class="w-4 h-4 text-blue-600" />
+              <span>Training & Documentation</span>
+            </div>
+          </div>
+
+          <!-- Spacer to push button to bottom -->
+          <div class="flex-1"></div>
+
+          <Button
+            variant="text"
+            size="sm"
+            href="/services/business-systems-setup">
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Medium Card - Software Setup (Spans 2 cols) -->
+        <div
+          class="md:col-span-2 lg:col-span-4 bg-white rounded-2xl p-6 shadow-sm hover:ring-2 ring-slate-200 flex flex-col items-start">
+          <div
+            class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+            <MonitorCloud class="h-6 w-6 text-blue-800" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Software Setup & Support
+          </h3>
+          <p class="text-sm text-slate-600 mb-4">
+            Stop wasting hours trying to figure out business software. We'll set
+            up and configure HubSpot, QuickBooks, Calendly, Slack, or any other
+            tools you need, then train your team on how to use them effectively.
+          </p>
+
+          <!-- Spacer to push button to bottom -->
+          <div class="flex-1"></div>
+
+          <Button
+            variant="text"
+            size="sm"
+            href="/services/business-systems-setup">
+            Learn More
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Why Choose Us -->
+  <Section size="2xl">
+    <Container>
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <!-- Pill Badge -->
+        <Badge variant="blue" class="mb-4">
+          <BadgeCheck class="w-4 h-4" />
+          Why Choose Us
+        </Badge>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Why Small Businesses Choose CoreLuminate
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          We understand the challenges of running a small business because we
+          are one too.
+        </p>
+      </div>
+
+      <!-- Content Grid -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left Image -->
+        <div class="relative">
+          <!-- Main Image -->
+          <div class="relative rounded-2xl overflow-hidden shadow-md">
+            <Image
+              src={whyUsImage}
+              alt="Happy business owner"
+              class="w-full h-full object-cover object-top"
+              loading="lazy"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
+            />
+          </div>
+
+          <!-- Optional: Floating Badge -->
+          <div
+            class="hidden lg:block absolute -bottom-6 -right-6 bg-blue-600 text-white rounded-2xl p-6 shadow-md">
+            <div class="text-3xl font-bold mb-1">100%</div>
+            <div class="text-sm text-blue-100">Client Satisfaction</div>
+          </div>
+        </div>
+
+        <!-- Right Features -->
+        <div>
+          <div class="grid gap-6">
+            <!-- Feature 1 -->
+            <div class="flex gap-4">
+              <div class="shrink-0">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                  <svg
+                    class="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">
+                  Fast Turnaround Times
+                </h3>
+                <p class="text-slate-600">
+                  Most projects completed in 1-2 weeks. We know you need to get
+                  online quickly, so we work efficiently without sacrificing
+                  quality.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex gap-4">
+              <div class="shrink-0">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                  <svg
+                    class="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">
+                  Transparent Pricing
+                </h3>
+                <p class="text-slate-600">
+                  No hidden fees or surprise charges. You'll know exactly what
+                  you're paying before we start, with clear project scopes and
+                  timelines.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex gap-4">
+              <div class="shrink-0">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                  <svg
+                    class="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">
+                  Ongoing Support
+                </h3>
+                <p class="text-slate-600">
+                  We don't disappear after launch. Get help whenever you need it
+                  with our responsive support and maintenance plans.
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="flex gap-4">
+              <div class="shrink-0">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                  <svg
+                    class="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">
+                  Small Business Focused
+                </h3>
+                <p class="text-slate-600">
+                  We understand your budget constraints and growth goals. Our
+                  solutions are designed specifically for small business needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Services Overview -->
+  <Section size="2xl">
+    <Container>
+      <!-- Our Work</Container> Section -->
+      <FeaturedWork />
+    </Container>
+  </Section>
+
+  <!-- How It Works -->
+  <Section size="2xl" background="slate" pattern={{ type: "dots" }}>
+    <Container>
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <!-- Pill Badge -->
+        <Badge variant="blue" class="mb-4">
+          <Workflow class="w-4 h-4" />
+          Simple Process
+        </Badge>
+
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Getting Started is Easy
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          From first contact to launch, we make the process simple and
+          stress-free.
+        </p>
+      </div>
+
+      <!-- Steps Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Step 1 -->
+        <div
+          class="bg-white rounded-2xl p-8 relative shadow-sm ring-1 ring-slate-200">
+          <!-- Step Number -->
+          <div class="text-slate-400 font-bold text-sm mb-4">001</div>
+
+          <!-- Icon -->
+          <div
+            class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 shadow-xs">
+            <svg
+              class="w-6 h-6 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+              ></path>
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Tell Us Your Needs
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Schedule a free consultation to discuss your goals, challenges, and
+            what you need to succeed online.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="bg-white rounded-2xl p-8 relative shadow-sm ring-1 ring-slate-200">
+          <div class="text-slate-400 font-bold text-sm mb-4">002</div>
+
+          <div
+            class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 shadow-xs">
+            <svg
+              class="w-6 h-6 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Get a Custom Proposal
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Receive a detailed proposal with clear pricing, timeline, and
+            deliverables. No surprises or hidden fees.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="bg-white rounded-2xl p-8 relative shadow-sm ring-1 ring-slate-200">
+          <div class="text-slate-400 font-bold text-sm mb-4">003</div>
+
+          <div
+            class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 shadow-xs">
+            <svg
+              class="w-6 h-6 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            We Build Your Solution
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Our team gets to work creating your website, brand, or digital
+            solution with regular updates along the way.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div
+          class="bg-white rounded-2xl p-8 relative shadow-sm ring-1 ring-slate-200">
+          <div class="text-slate-400 font-bold text-sm mb-4">004</div>
+
+          <div
+            class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 shadow-xs">
+            <svg
+              class="w-6 h-6 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Launch & Support
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We launch your project and provide training. Plus, we're here for
+            ongoing support whenever you need us.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- CTA Section -->
+  <Section size="2xl">
+    <Container>
+      <div
+        class="relative bg-linear-to-br from-blue-800 to-blue-950 rounded-3xl overflow-hidden shadow-md">
+        <div class="grid lg:grid-cols-5 items-center">
+          <div
+            class="lg:col-span-3 p-8 lg:p-16 relative z-10 flex flex-col items-start">
+            <h2
+              class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              Ready to Grow Your Business Online?
+            </h2>
+            <p class="text-lg text-blue-100 mb-8 max-w-xl">
+              Schedule a free consultation today. No obligation, just expert
+              advice tailored to your business needs.
+            </p>
+
+            <Button
+              variant="secondary"
+              icon={ArrowRight}
+              href="/services/request">
+              Get Started
+            </Button>
+          </div>
+
+          <div class="lg:col-span-2 relative h-64 lg:h-[500px]">
+            <Image
+              src={ctaImage}
+              alt="Happy business owner"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
 </Layout>

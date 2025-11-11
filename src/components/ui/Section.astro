@@ -1,0 +1,178 @@
+---
+import Pattern from "../ui/Pattern.astro";
+
+interface Props {
+  size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
+  background?: "white" | "slate" | "blue" | "light" | "dark" | "transparent" | "slate-blue";
+  pattern?: {
+    type?:
+      | "dots"
+      | "grid"
+      | "diagonal"
+      | "plus"
+      | "hexagons"
+      | "circuit"
+      | "triangles"
+      | "waves"
+      | "zigzag"
+      | "crosses"
+      | "squares"
+      | "circles"
+      | "stars"
+      | "mesh"
+      | "topography";
+    visibility?: "subtle" | "light" | "medium" | "prominent";
+  };
+  gradient?: "blue-purple" | "slate-blue" | "blue-cyan" | "purple-pink" | "none";
+  fullHeight?: boolean;
+  class?: string;
+  [key: string]: any;
+}
+
+const {
+  size = "2xl",
+  background = "white",
+  pattern = undefined,
+  gradient = "none",
+  fullHeight = false,
+  class: className = "",
+  ...rest
+} = Astro.props;
+
+// Padding sizes
+const paddingSizes = {
+  xs: "py-14 md:py-18",
+  sm: "py-18 md:py-22",
+  md: "py-22 md:py-26",
+  lg: "py-26 md:py-30",
+  xl: "py-30 md:py-38",
+  "2xl": "py-34 md:py-42",
+  "3xl": "py-42 md:py-50",
+};
+
+// Background styles
+const backgroundStyles = {
+  white: "bg-white",
+  slate: "bg-slate-50",
+  blue: "bg-blue-600",
+  light: "bg-radial from-blue-50 from-10% to-white",
+  dark: "bg-linear-to-br from-slate-950 via-blue-950 to-slate-950",
+  transparent: "bg-transparent",
+  "slate-blue": "bg-linear-to-br from-slate-900 via-blue-900 to-slate-900",
+};
+
+// Gradient overlays for solution pages
+const gradientStyles = {
+  "blue-purple": "bg-linear-to-br from-slate-900 via-blue-900 to-slate-900",
+  "slate-blue": "bg-linear-to-br from-slate-900 via-blue-900 to-slate-900",
+  "blue-cyan": "bg-linear-to-r from-blue-500 to-cyan-500",
+  "purple-pink": "bg-linear-to-br from-purple-500 to-pink-500",
+  "none": "",
+};
+
+// Pattern configuration based on background
+const patternConfig = {
+  white: {
+    color: "text-slate-900",
+    opacityMap: {
+      subtle: 0.03,
+      light: 0.05,
+      medium: 0.08,
+      prominent: 0.12,
+    },
+  },
+  slate: {
+    color: "text-slate-700",
+    opacityMap: {
+      subtle: 0.04,
+      light: 0.06,
+      medium: 0.09,
+      prominent: 0.13,
+    },
+  },
+  blue: {
+    color: "text-white",
+    opacityMap: {
+      subtle: 0.08,
+      light: 0.12,
+      medium: 0.16,
+      prominent: 0.22,
+    },
+  },
+  light: {
+    color: "text-blue-900",
+    opacityMap: {
+      subtle: 0.05,
+      light: 0.08,
+      medium: 0.12,
+      prominent: 0.16,
+    },
+  },
+  dark: {
+    color: "text-slate-400",
+    opacityMap: {
+      subtle: 0.06,
+      light: 0.10,
+      medium: 0.14,
+      prominent: 0.20,
+    },
+  },
+  transparent: {
+    color: "text-slate-900",
+    opacityMap: {
+      subtle: 0.03,
+      light: 0.05,
+      medium: 0.08,
+      prominent: 0.12,
+    },
+  },
+  "slate-blue": {
+    color: "text-slate-400",
+    opacityMap: {
+      subtle: 0.06,
+      light: 0.10,
+      medium: 0.14,
+      prominent: 0.20,
+    },
+  }
+};
+
+const needsPattern = pattern !== undefined;
+
+// Get pattern props with smart defaults
+const getPatternProps = () => {
+  if (!needsPattern) return null;
+  
+  const config = patternConfig[background];
+  const opacity = pattern.visibility || "subtle";
+  
+  return {
+    type: pattern.type || "dots",
+    opacity: config.opacityMap[opacity],
+    color: config.color,
+  };
+};
+
+const patternProps = getPatternProps();
+
+// Build section classes
+const bgClass = gradient !== "none" ? gradientStyles[gradient] : backgroundStyles[background];
+const heightClass = fullHeight ? "min-h-screen" : "";
+const sectionClasses = `${paddingSizes[size]} ${bgClass} ${heightClass} ${needsPattern ? "relative overflow-hidden" : ""} ${className}`;
+---
+
+<section class={sectionClasses} {...rest}>
+  {needsPattern && patternProps ? (
+    <Pattern
+        type={patternProps.type}
+        opacity={patternProps.opacity}
+        color={patternProps.color}
+      />
+    <div class="relative z-10 w-full h-full">
+      <slot />
+    </div>
+  ) :
+    <slot />
+  }
+  <slot name="absolute" />
+</section>

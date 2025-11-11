@@ -1,0 +1,772 @@
+---
+import {
+  ArrowRight,
+  Check,
+  Gauge,
+  Mail,
+  Palette,
+  Phone,
+  RefreshCw,
+  Smartphone,
+  Sparkles,
+  TrendingUp,
+  User,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+// Import your illustrations
+import speedImage from "../../assets/images/app-benchmarks.svg";
+import contentImage from "../../assets/images/content-creator.svg";
+import mobileOptimizedImage from "../../assets/images/mobile-design-stats.svg";
+import analyticsImage from "../../assets/images/real-time-analytics.svg";
+import trainingImage from "../../assets/images/teaching.svg";
+import modernDesignImage from "../../assets/images/web-design-showcase.svg";
+---
+
+<Layout
+  title="Website Refresh & Modernization"
+  description="Transform your outdated website into a modern, mobile-friendly powerhouse. Keep what works, upgrade what doesn't. Perfect for businesses with aging websites.">
+  <!-- Hero - Full Screen -->
+  <Section
+    background="slate-blue"
+    pattern={{ type: "dots", visibility: "light" }}
+    fullHeight={true}
+    class="flex items-center">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <Badge variant="white" class="mb-8">
+          <RefreshCw class="w-4 h-4" />
+          <span>Website Refresh & Modernization</span>
+        </Badge>
+
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+          Your Website<br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            Deserves Better
+          </span>
+        </h1>
+        <p
+          class="text-xl
+            md:text-2xl
+            text-blue-100
+            leading-relaxed
+            mb-12
+            max-w-3xl
+            mx-auto">
+          Transform your outdated website into a modern, mobile-friendly
+          powerhouse. Keep what works, upgrade what doesn't—without starting
+          from scratch.
+        </p>
+
+        <div class="flex flex-col items-center gap-6">
+          <div class="flex flex-wrap justify-center gap-4">
+            <Badge variant="blur">
+              <Smartphone class="w-5 h-5 text-blue-400" />
+              Mobile-First
+            </Badge>
+            <Badge variant="blur">
+              <Gauge class="w-5 h-5 text-blue-400" />
+              Fast Performance
+            </Badge>
+            <Badge variant="blur">
+              <Palette class="w-5 h-5 text-blue-400" />
+              Modern Design
+            </Badge>
+          </div>
+        </div>
+      </div>
+    </Container>
+
+    <!-- Scroll indicator -->
+    <div
+      slot="absolute"
+      class="absolute bottom-30 left-1/2 -translate-x-1/2 animate-bounce">
+      <div
+        class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
+        <div class="w-1 h-3 bg-white/50 rounded-full"></div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- The Problem -->
+  <Section size="2xl" background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Your Website Is Costing You Customers
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            An outdated website sends the wrong message about your business.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+              <Smartphone class="h-10 w-10 text-blue-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Not Mobile-Friendly
+            </h3>
+            <p class="text-slate-600">
+              Over 60% of web traffic is mobile. If your site doesn't work on
+              phones, you're losing customers every day.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+              <Gauge class="h-10 w-10 text-blue-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Slow & Outdated
+            </h3>
+            <p class="text-slate-600">
+              Built years ago with old technology. Slow loading times and clunky
+              navigation frustrate visitors.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center text-center p-6">
+            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+              <TrendingUp class="h-10 w-10 text-blue-700" />
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">
+              Hurting Your Brand
+            </h3>
+            <p class="text-slate-600">
+              Your website looks unprofessional compared to competitors.
+              Customers judge your business by it.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transition -->
+      <div class="text-center py-12">
+        <div class="inline-flex items-center gap-3 text-blue-600">
+          <div class="h-px w-12 bg-linear-to-r from-transparent to-blue-600">
+          </div>
+          <Sparkles class="w-6 h-6" />
+          <div class="h-px w-12 bg-linear-to-l from-transparent to-blue-600">
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What We'll Do -->
+  <Section size="2xl">
+    <Container>
+      <div>
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            A Fresh Start,<br />Built on What Already Works
+          </h2>
+          <p class="text-xl text-slate-600 leading-relaxed">
+            We'll modernize your website while keeping your existing content,
+            brand, and what's working.
+          </p>
+        </div>
+
+        <!-- What's Included - Alternating Layout -->
+        <div class="space-y-20">
+          <!-- Modern Design - Visual Left -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="p-8 md:p-12 aspect-square">
+              <Image
+                src={modernDesignImage}
+                alt="Modern website design"
+                class="w-full h-full object-contain"
+              />
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Modern, Professional Design
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Clean, contemporary design that reflects current web standards.
+                Your website will look professional and trustworthy—not like it
+                was built in 2010.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="purple">Contemporary Layout</Badge>
+                <Badge variant="purple">Professional Look</Badge>
+                <Badge variant="purple">Brand Aligned</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Optimization - Visual Right -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Mobile-First Responsive Design
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Perfect experience on every device—phones, tablets, and
+                desktops. No more pinching and zooming for mobile users.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge>Mobile Optimized</Badge>
+                <Badge>Tablet Friendly</Badge>
+                <Badge>Desktop Perfect</Badge>
+                <Badge>Touch Optimized</Badge>
+              </div>
+            </div>
+
+            <div class="order-1 md:order-2 p-8 md:p-12 aspect-square">
+              <Image
+                src={mobileOptimizedImage}
+                alt="Mobile responsive design"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          <!-- Speed & Performance - Visual Left -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <Image
+              src={speedImage}
+              alt="Website speed metrics"
+              class="w-full h-full object-contain"
+            />
+
+            <div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Lightning-Fast Performance
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Modern code, optimized images, and fast hosting. Your visitors
+                won't wait around for slow pages to load.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="green">Fast Loading</Badge>
+                <Badge variant="green">Optimized Images</Badge>
+                <Badge variant="green">Clean Code</Badge>
+                <Badge variant="green">Better SEO</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Migration - Visual Right -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Content Migration & Improvement
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                We'll move your existing content to the new site, improving it
+                along the way. Keep what works, enhance what doesn't.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="orange">Content Transfer</Badge>
+                <Badge variant="orange">Copy Improvement</Badge>
+                <Badge variant="orange">Image Optimization</Badge>
+                <Badge variant="orange">SEO Enhancement</Badge>
+              </div>
+            </div>
+
+            <div class="order-1 md:order-2 p-8 md:p-12 aspect-square">
+              <Image
+                src={contentImage}
+                alt="Website content"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          <!-- SEO & Analytics - Visual Left -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <Image
+              src={analyticsImage}
+              alt="Mobile responsive design"
+              class="w-full h-full object-contain"
+            />
+
+            <div>
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                SEO Optimization & Analytics
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                Improved SEO foundation, proper redirects from old pages, and
+                analytics setup so you can track performance.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="blue">SEO Optimized</Badge>
+                <Badge variant="blue">Proper Redirects</Badge>
+                <Badge variant="blue">Analytics Setup</Badge>
+                <Badge variant="blue">Search Friendly</Badge>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training & Handoff - Visual Right -->
+          <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1">
+              <h3 class="text-3xl font-bold text-slate-900 mb-4">
+                Training & Smooth Transition
+              </h3>
+              <p class="text-lg text-slate-600 mb-6">
+                We'll train you on the new system, ensure everything works
+                perfectly, and provide support during the transition.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="pink">Live Training</Badge>
+                <Badge variant="pink">Documentation</Badge>
+                <Badge variant="pink">30 Days Support</Badge>
+              </div>
+            </div>
+
+            <div class="order-1 md:order-2 p-8 md:p-12 aspect-square">
+              <Image
+                src={trainingImage}
+                alt="Training illustration"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Add-Ons Callout -->
+        <div
+          class="mt-20 bg-linear-to-br from-slate-900 to-blue-900 rounded-2xl p-12 text-white text-center">
+          <Sparkles class="w-16 h-16 mx-auto mb-6 text-blue-600" />
+          <h3 class="text-2xl font-bold mb-4">Need More Than a Refresh?</h3>
+          <p class="text-lg text-blue-100 mb-2">
+            We can add e-commerce, advanced features, custom functionality, new
+            branding—whatever your business needs.
+          </p>
+          <p class="text-sm text-blue-300">
+            Every project is custom-quoted based on your specific requirements.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Timeline -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            From Outdated to Outstanding<br />in 4-6 Weeks
+          </h2>
+          <p class="text-xl text-slate-600">
+            A structured process that transforms your website without disrupting
+            your business.
+          </p>
+        </div>
+
+        <!-- Timeline Cards -->
+        <div class="space-y-6">
+          <!-- Week 1 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 1</div>
+                <div class="text-sm text-slate-100">Audit</div>
+              </div>
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Website Audit & Planning
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  We analyze your current site—what's working, what's not, and
+                  what needs to be improved. Create a modernization roadmap.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <Badge variant="slate" size="sm">Site Audit</Badge>
+                  <Badge variant="slate" size="sm">Content Review</Badge>
+                  <Badge variant="slate" size="sm">Planning</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="flex justify-center">
+            <div class="w-0.5 h-12 border-l-2 border-dashed border-slate-300">
+            </div>
+          </div>
+
+          <!-- Weeks 2-3 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 2-3</div>
+                <div class="text-sm text-slate-100">Design</div>
+              </div>
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Modern Design & Development
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Create the new design, rebuild with modern technology,
+                  optimize for mobile and speed. You'll see progress updates.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <Badge variant="slate" size="sm">Design Mockups</Badge>
+                  <Badge variant="slate" size="sm">Development</Badge>
+                  <Badge variant="slate" size="sm">Mobile Optimization</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="flex justify-center">
+            <div class="w-0.5 h-12 border-l-2 border-dashed border-slate-300">
+            </div>
+          </div>
+
+          <!-- Weeks 4-5 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 4-5</div>
+                <div class="text-sm text-slate-100">Migration</div>
+              </div>
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Content Migration & SEO
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Transfer and improve your content, set up proper redirects,
+                  optimize for SEO, and configure analytics.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <Badge variant="slate" size="sm">Content Migration</Badge>
+                  <Badge variant="slate" size="sm">SEO Setup</Badge>
+                  <Badge variant="slate" size="sm">Redirects</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="flex justify-center">
+            <div class="w-0.5 h-12 border-l-2 border-dashed border-slate-300">
+            </div>
+          </div>
+
+          <!-- Week 6 -->
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div class="grid md:grid-cols-4 gap-6">
+              <div
+                class="bg-linear-to-br from-slate-700 to-slate-800 p-2 flex flex-col items-center justify-center text-white rounded-l-2xl">
+                <div class="text-4xl font-bold mb-2">Week 6</div>
+                <div class="text-sm text-slate-100">Launch!</div>
+              </div>
+              <div class="p-5 col-span-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">
+                  Testing, Training & Launch!
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Thorough testing, team training, final review, and launch.
+                  Your new website goes live with ongoing support.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <Badge variant="slate" size="sm">Testing</Badge>
+                  <Badge variant="slate" size="sm">Training</Badge>
+                  <Badge variant="slate" size="sm">Launch!</Badge>
+                  <Badge variant="slate" size="sm">30 Days Support</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Who This Is For -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Perfect For
+          </h2>
+          <p class="text-xl text-slate-600">
+            Businesses with websites that no longer serve them well.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Outdated Website -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <RefreshCw
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Outdated Website (5+ Years Old)
+              </h3>
+              <p class="text-slate-600">
+                Your website was built years ago and looks dated. Technology has
+                changed, and your site needs to catch up.
+              </p>
+            </div>
+          </div>
+
+          <!-- Not Mobile Friendly -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <Smartphone
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Not Mobile-Friendly
+              </h3>
+              <p class="text-slate-600">
+                Your site doesn't work well on phones and tablets. You're losing
+                mobile visitors every day.
+              </p>
+            </div>
+          </div>
+
+          <!-- Slow Performance -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <Gauge class="w-16 h-16 text-blue-600 mb-4" stroke-width="1.5" />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Slow & Clunky
+              </h3>
+              <p class="text-slate-600">
+                Pages load slowly, navigation is confusing, and the user
+                experience frustrates visitors.
+              </p>
+            </div>
+          </div>
+
+          <!-- Growing Business -->
+          <div
+            class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex flex-col items-center text-center">
+              <TrendingUp
+                class="w-16 h-16 text-blue-600 mb-4"
+                stroke-width="1.5"
+              />
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                Business Has Evolved
+              </h3>
+              <p class="text-slate-600">
+                Your business has grown or changed, but your website still
+                reflects who you were years ago.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div
+          class="bg-linear-to-br from-slate-700 to-slate-900 rounded-3xl p-8 md:p-12 text-white text-center">
+          <h3 class="text-2xl font-bold mb-3">Don't Start From Scratch</h3>
+          <p class="text-lg text-purple-100 mb-6">
+            You've invested in your website. Let's modernize what you have
+            instead of rebuilding everything from zero.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <div class="flex items-center gap-2">
+              <Check class="w-5 h-5 text-blue-400" />
+              <span>Keep Your Content</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Check class="w-5 h-5 text-blue-400" />
+              <span>Maintain SEO Value</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Check class="w-5 h-5 text-blue-400" />
+              <span>Modern Technology</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA Form -->
+  <Section
+    size="3xl"
+    background="slate-blue"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <!-- Refresh/cycle icon animation -->
+    <div class="absolute bottom-20 right-20 opacity-15 pointer-events-none">
+      <RefreshCw
+        class="w-96 h-96 text-white animate-spin-slow"
+        stroke-width="0.5"
+      />
+    </div>
+
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Modernize Your Website?
+          </h2>
+          <p class="text-xl text-blue-100">
+            Let's transform your outdated website into something you're proud to
+            share.
+          </p>
+        </div>
+
+        <!-- Simple Lead Form -->
+        <form
+          class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20 shadow-md">
+          <div class="space-y-6">
+            <!-- Name -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-white mb-2">
+                Your Name *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <User class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="John Smith"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-white mb-2">
+                Email Address *
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Mail class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-white mb-2">
+                Phone Number
+              </label>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Phone class="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+            </div>
+
+            <!-- Current Website -->
+            <div>
+              <label
+                for="website"
+                class="block text-sm font-medium text-white mb-2">
+                Your Current Website URL *
+              </label>
+              <input
+                type="url"
+                id="website"
+                name="website"
+                required
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="https://yourwebsite.com"
+              />
+            </div>
+
+            <!-- Main Concerns -->
+            <div>
+              <label
+                for="concerns"
+                class="block text-sm font-medium text-white mb-2">
+                What Are Your Main Concerns? *
+              </label>
+              <textarea
+                id="concerns"
+                name="concerns"
+                required
+                rows="4"
+                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                placeholder="e.g., Not mobile-friendly, looks outdated, too slow, need better SEO..."
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <Button
+              type="submit"
+              variant="gradient"
+              size="lg"
+              icon={ArrowRight}
+              class="w-full group">
+              <span>Get My Website Audit</span>
+            </Button>
+
+            <p class="text-sm text-blue-200 text-center">
+              We'll review your website and get back to you within 24 hours with
+              recommendations.
+            </p>
+          </div>
+        </form>
+      </div>
+    </Container>
+  </Section>
+</Layout>
+
+<style>
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+</style>

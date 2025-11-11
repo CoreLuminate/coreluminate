@@ -1,0 +1,136 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface CustomProps {
+  variant?:
+    | "primary"
+    | "secondary"
+    | "dark"
+    | "ghost"
+    | "text"
+    | "outline"
+    | "gradient";
+  size?: "sm" | "md" | "lg";
+  icon?: any;
+  iconPosition?: "left" | "right";
+  disabled?: boolean;
+}
+
+type AnchorProps = HTMLAttributes<"a"> &
+  CustomProps & {
+    href: string;
+    type?: never;
+  };
+
+type ButtonProps = HTMLAttributes<"button"> &
+  CustomProps & {
+    href?: never;
+  };
+
+export type Props = ButtonProps | AnchorProps;
+
+const {
+  variant = "primary",
+  size = "md",
+  icon: Icon,
+  iconPosition = "right",
+  class: className = "",
+  disabled = false,
+  ...rest
+} = Astro.props as Props;
+
+// Base styles
+const baseStyles =
+  "flex items-center justify-center cursor-pointer font-medium focus:outline-none focus:ring-2 focus:ring-offset-2";
+
+// Variant styles
+const variantStyles = {
+  primary: "bg-blue-500 text-white hover:bg-blue-700 focus:ring-blue-500",
+  secondary:
+    "bg-white text-slate-900 hover:bg-slate-800 hover:text-slate-50 focus:ring-slate-300 border border-slate-200",
+  dark: "bg-linear-to-t from-blue-800 to-blue-900 text-white hover:from-blue-900 hover:to-blue-950 focus:ring-blue-700",
+  outline:
+    "border border-slate-50 text-slate-50 hover:bg-slate-100 hover:text-slate-800 focus:ring-slate-100",
+  ghost: "text-slate-700 hover:bg-slate-100 focus:ring-slate-300",
+  text: "text-blue-600 hover:text-blue-700 focus:ring-blue-500 underline-offset-4 hover:underline",
+  gradient:
+    "bg-linear-to-r from-blue-700 to-blue-600 hover:from-blue-800 hover:to-blue-700 text-white",
+};
+
+const sizeConfig = {
+  sm: {
+    padding: "px-4 py-2",
+    iconOnlyPadding: "p-3",
+    iconSize: "w-4 h-4",
+    gap: "gap-2",
+  },
+  md: {
+    padding: "px-6 py-3",
+    iconOnlyPadding: "p-4",
+    iconSize: "w-4 h-4",
+    gap: "gap-3",
+  },
+  lg: {
+    padding: "px-10 py-4",
+    iconOnlyPadding: "p-5",
+    iconSize: "w-4 h-4",
+    gap: "gap-4",
+  },
+};
+
+// Determine element type
+const hasContent = Astro.slots.has("default");
+const isIconOnly = Icon && !hasContent;
+const hasHref = "href" in Astro.props;
+const isLink = hasHref && !disabled;
+const href = isLink ? (Astro.props as AnchorProps).href : undefined;
+const buttonType = (Astro.props as ButtonProps).type || "button";
+const isText = variant === "text";
+
+// Text variant has no padding
+const paddingClasses = isText
+  ? ""
+  : isIconOnly
+    ? sizeConfig[size].iconOnlyPadding
+    : sizeConfig[size].padding;
+const shadowClasses = isText ? "shadow-none" : "shadow-sm hover:shadow-md";
+const roundedClasses = isText ? "rounded-none" : "rounded-full";
+const disabledClasses = disabled ? "opacity-50 pointer-events-none" : "";
+const gapClasses = Icon && hasContent ? sizeConfig[size].gap : "";
+
+// Classes for element
+const classes = [
+  baseStyles,
+  variantStyles[variant],
+  paddingClasses,
+  shadowClasses,
+  roundedClasses,
+  disabledClasses,
+  gapClasses,
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+
+// Classes for icon
+const iconClasses = sizeConfig[size].iconSize;
+---
+
+{
+  isLink ? (
+    <a href={href} class={classes} {...rest}>
+      {Icon && iconPosition === "left" && <Icon class={iconClasses} />}
+      <slot />
+      {Icon && iconPosition === "right" && <Icon class={iconClasses} />}
+    </a>
+  ) : (
+    <button
+      type={buttonType as "button" | "submit" | "reset"}
+      class={classes}
+      {...rest}>
+      {Icon && iconPosition === "left" && <Icon class={iconClasses} />}
+      <slot />
+      {Icon && iconPosition === "right" && <Icon class={iconClasses} />}
+    </button>
+  )
+}

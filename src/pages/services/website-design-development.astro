@@ -1,0 +1,1162 @@
+---
+import {
+  ArrowRight,
+  Check,
+  DollarSign,
+  LayoutPanelLeft,
+  Settings,
+  Shield,
+  Smartphone,
+  TrendingUp,
+  Users,
+  Zap,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import heroImage from "../../assets/images/ipad-beside-coffee-mug.jpg";
+import Accordion from "../../components/ui/Accordion.astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import framerLogo from "../../assets/images/framer-logo.svg";
+import shopifyLogo from "../../assets/images/shopify-logo.svg";
+import squarespaceLogo from "../../assets/images/squarespace-logo.svg";
+import webflowLogo from "../../assets/images/webflow-logo.svg";
+import wixLogo from "../../assets/images/wix-logo.svg";
+import wordpressLogo from "../../assets/images/wordpress-logo.svg";
+
+// FAQ data
+const faqs = [
+  {
+    question: "How long does it take to build a website?",
+    answer:
+      "Most websites are completed within 2-4 weeks, depending on the complexity and how quickly you provide content and feedback. Simple 5-page sites can be done in 2 weeks, while more complex sites with custom features may take 3-4 weeks.",
+  },
+  {
+    question: "Do I need to provide content and images?",
+    answer:
+      "Yes, you'll need to provide your text content, photos, and logo. I can help with content guidance and recommend stock photo resources if needed. If you need copywriting services, we can discuss adding that to your project.",
+  },
+  {
+    question: "Will I be able to update the website myself?",
+    answer:
+      "Absolutely! I build websites on user-friendly platforms and provide training so you can easily update text, images, and pages yourself. I'll also provide video tutorials and documentation for reference.",
+  },
+  {
+    question: "What if I need help after the website launches?",
+    answer:
+      "All packages include 30-60 days of support after launch. After that, I offer ongoing support packages or help on an hourly basis. Many clients prefer a monthly retainer for peace of mind.",
+  },
+  {
+    question: "Which platform should I choose?",
+    answer:
+      "During our discovery call, I'll recommend the best platform based on your needs, budget, technical comfort level, and future plans. Each platform has its strengths - I'll help you choose the right one.",
+  },
+  {
+    question: "Do you offer payment plans?",
+    answer:
+      "Yes! I offer flexible payment plans. Typically, you pay 50% upfront and 50% at launch. For larger projects, we can discuss monthly payment options that fit your budget.",
+  },
+  {
+    question: "Will my website be mobile-friendly?",
+    answer:
+      "Yes, every website I build is fully responsive and optimized for mobile devices. With over 60% of web traffic coming from mobile, this is essential for every modern website.",
+  },
+  {
+    question: "Can you help with SEO?",
+    answer:
+      "Yes! All websites include basic SEO setup (meta tags, sitemap, site structure). For more advanced SEO services, check out our SEO & Analytics service or ask about adding it to your package.",
+  },
+];
+---
+
+<Layout
+  title="Website Design & Development"
+  description="Professional website design and development on WordPress, Webflow, Framer, and no-code platforms. Get a beautiful, fast website that grows your business.">
+  <!-- Hero Section - Dark Background -->
+  <Section
+    size="xl"
+    background="dark"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 items-center py-12">
+        <!-- Left Column: Content -->
+        <div>
+          <Badge variant="white" class="mb-6 shadow-lg">
+            <LayoutPanelLeft class="w-4 h-4" />
+            <span>Website Design & Development</span>
+          </Badge>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Beautiful Websites That Grow Your Business
+          </h1>
+
+          <p class="text-xl text-blue-100 leading-relaxed mb-8">
+            Get a professional, mobile-friendly website built on the platform
+            that's right for your business. No technical knowledge required.
+          </p>
+
+          <!-- Key Benefits -->
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Professional design that reflects your brand</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Mobile-responsive and fast-loading</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Easy to update yourself (or we can help)</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Built for search engines and conversions</span
+              >
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-4">
+            <Button
+              icon={ArrowRight}
+              href="/services/request?service=web-design-develpment">
+              Get Started
+            </Button>
+            <Button variant="outline" href="/work">View Our Work</Button>
+          </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden shadow-2xl">
+            <!-- Replace with actual screenshot -->
+            <Image
+              src={heroImage}
+              alt="Website design example"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              widths={[400, 600, 800]}
+              loading="eager"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
+            />
+          </div>
+
+          <!-- Floating Stats Cards -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-md p-4 border border-slate-200">
+            <div class="text-2xl font-bold text-blue-600">100%</div>
+            <div class="text-xs text-slate-600">Mobile Friendly</div>
+          </div>
+
+          <div
+            class="absolute -top-6 -right-6 bg-white rounded-xl shadow-md p-4 border border-slate-200">
+            <div class="text-2xl font-bold text-blue-600">&lt;2s</div>
+            <div class="text-xs text-slate-600">Load Time</div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Platforms Section -->
+  <Section size="xl">
+    <Container>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Built on the Platform That's Right for You
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          I specialize in the most popular, user-friendly platforms. Not sure
+          which is best? I'll help you choose during our free consultation.
+        </p>
+      </div>
+
+      <!-- Platform Grid - 2 Rows of 3 -->
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+        <!-- WordPress -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border border-slate-200 group-hover:ring-2 ring-offset-2 group-hover:ring-blue-200 transition-all h-full flex flex-col">
+            <div class="flex items-start gap-4 flex-1">
+              <!-- Logo - WordPress Blue -->
+              <div
+                class="w-16 h-16 rounded-lg bg-[#21759b] p-3 flex items-center justify-center shrink-0">
+                <Image
+                  src={wordpressLogo}
+                  alt="WordPress"
+                  class="w-full h-full object-contain brightness-0 invert"
+                  width={64}
+                  height={64}
+                />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">WordPress</h3>
+                <p class="text-sm text-slate-600 mb-4">
+                  The world's most popular CMS. Powers 43% of all websites with
+                  unmatched flexibility.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >Flexible</span
+                  >
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >SEO-Friendly</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Webflow -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border border-slate-200 group-hover:ring-2 ring-offset-2 group-hover:ring-blue-200 transition-all h-full flex flex-col">
+            <div class="flex items-start gap-4 flex-1">
+              <!-- Logo - Webflow Blue -->
+              <div
+                class="w-16 h-16 rounded-lg bg-[#4353ff] p-3 flex items-center justify-center shrink-0">
+                <Image
+                  src={webflowLogo}
+                  alt="Webflow"
+                  class="w-full h-full object-contain brightness-0 invert"
+                  width={64}
+                  height={64}
+                />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Webflow</h3>
+                <p class="text-sm text-slate-600 mb-4">
+                  Professional design platform with clean code. Perfect for
+                  modern, high-performance sites.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >Modern</span
+                  >
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >Fast</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Framer -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border border-slate-200 group-hover:ring-2 ring-offset-2 group-hover:ring-blue-200 transition-all h-full flex flex-col">
+            <div class="flex items-start gap-4 flex-1">
+              <!-- Logo - Framer Black -->
+              <div
+                class="w-16 h-16 rounded-lg bg-[#0055ff] p-3 flex items-center justify-center shrink-0">
+                <Image
+                  src={framerLogo}
+                  alt="Framer"
+                  class="w-full h-full object-contain brightness-0 invert"
+                  width={64}
+                  height={64}
+                />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Framer</h3>
+                <p class="text-sm text-slate-600 mb-4">
+                  Interactive websites with smooth animations. Ideal for
+                  startups and modern brands.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >Interactive</span
+                  >
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >Animated</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wix -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border border-slate-200 group-hover:ring-2 ring-offset-2 group-hover:ring-blue-200 transition-all h-full flex flex-col">
+            <div class="flex items-start gap-4 flex-1">
+              <!-- Logo - Wix Black -->
+              <div
+                class="w-16 h-16 rounded-lg bg-[#0c6ebd] p-3 flex items-center justify-center shrink-0">
+                <Image
+                  src={wixLogo}
+                  alt="Wix"
+                  class="w-full h-full object-contain brightness-0 invert"
+                  width={64}
+                  height={64}
+                />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Wix</h3>
+                <p class="text-sm text-slate-600 mb-4">
+                  Drag-and-drop website builder with hundreds of templates.
+                  Great for quick launches.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >Easy</span
+                  >
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >Quick Setup</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Squarespace -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border border-slate-200 group-hover:ring-2 ring-offset-2 group-hover:ring-blue-200 transition-all h-full flex flex-col">
+            <div class="flex items-start gap-4 flex-1">
+              <!-- Logo - Squarespace Black -->
+              <div
+                class="w-16 h-16 rounded-lg bg-[#000000] p-3 flex items-center justify-center shrink-0">
+                <Image
+                  src={squarespaceLogo}
+                  alt="Squarespace"
+                  class="w-full h-full object-contain brightness-0 invert"
+                  width={64}
+                  height={64}
+                />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Squarespace
+                </h3>
+                <p class="text-sm text-slate-600 mb-4">
+                  Beautiful templates with all-in-one platform. Perfect for
+                  creatives and portfolios.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >Beautiful</span
+                  >
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >All-in-One</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shopify -->
+        <div class="group relative h-full">
+          <div
+            class="relative bg-white rounded-2xl p-8 shadow-sm border border-slate-200 group-hover:ring-2 ring-offset-2 group-hover:ring-blue-200 transition-all h-full flex flex-col">
+            <div class="flex items-start gap-4 flex-1">
+              <!-- Logo - Shopify Green -->
+              <div
+                class="w-16 h-16 rounded-lg bg-[#95bf47] p-3 flex items-center justify-center shrink-0">
+                <Image
+                  src={shopifyLogo}
+                  alt="Shopify"
+                  class="w-full h-full object-contain brightness-0 invert"
+                  width={64}
+                  height={64}
+                />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Shopify</h3>
+                <p class="text-sm text-slate-600 mb-4">
+                  Leading e-commerce platform. Sell online with built-in
+                  payments, inventory, and shipping.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >E-commerce</span
+                  >
+                  <span
+                    class="text-xs px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
+                    >Sales-Ready</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform Comparison CTA -->
+      <div class="text-center bg-blue-50 rounded-2xl p-8 max-w-6xl mx-auto">
+        <h3 class="text-xl font-bold text-slate-900 mb-2">
+          Not sure which platform is right for you?
+        </h3>
+        <p class="text-slate-600 mb-6">
+          I'll help you choose based on your needs, budget, and goals during our
+          free consultation.
+        </p>
+        <Button
+          variant="primary"
+          size="md"
+          href="/services/request?service=web-design-development">
+          Schedule Free Consultation
+        </Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Investment Section -->
+  <Section size="xl" background="slate" pattern={{ type: "circuit" }}>
+    <Container>
+      <div class="max-w-6xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Invest in Your Business Growth
+          </h2>
+          <p class="text-lg text-slate-600">
+            A professional website isn't an expense, it's an investment that
+            pays for itself by attracting customers and growing your business.
+          </p>
+        </div>
+
+        <!-- Starting From Callout -->
+        <div
+          class="bg-linear-to-br from-blue-700 to-blue-800 rounded-3xl p-8 md:p-12 text-center text-white mb-12">
+          <div class="mb-4">
+            <div class="text-sm font-semibold text-blue-200 mb-2">
+              STARTING FROM
+            </div>
+            <div class="text-5xl md:text-6xl font-bold mb-2">$500</div>
+            <p class="text-blue-100 text-lg">
+              For a professional 5-page WordPress website
+            </p>
+          </div>
+          <p class="text-blue-100 max-w-2xl mx-auto">
+            Final pricing depends on your specific needs, platform choice, and
+            features. Get your custom quote during our free consultation.
+          </p>
+        </div>
+
+        <!-- Package Types -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <!-- Starter Package -->
+          <div
+            class="flex flex-col bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 transition-colors">
+            <div class="text-sm font-semibold text-blue-600 mb-2">STARTER</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">
+              Perfect for New Businesses
+            </h3>
+
+            <ul class="space-y-3 mb-8 flex-1">
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">Up to 5 pages</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700"
+                  >Mobile responsive design</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700"
+                  >Contact form integration</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">Basic SEO setup</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">30 days support</span>
+              </li>
+            </ul>
+
+            <Button
+              variant="secondary"
+              href="/services/request?service=web-design-development&package=starter"
+              class="w-full">
+              Let's Discuss
+            </Button>
+          </div>
+
+          <!-- Professional Package (Popular) -->
+          <div
+            class="flex flex-col bg-white rounded-2xl p-8 border-2 border-blue-600 relative shadow-lg">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <Badge class="shadow-md bg-blue-600 text-white"
+                >Most Popular</Badge
+              >
+            </div>
+
+            <div class="text-sm font-semibold text-blue-600 mb-2">
+              PROFESSIONAL
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">
+              For Growing Businesses
+            </h3>
+
+            <ul class="space-y-3 mb-8 flex-1">
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">Up to 10 pages</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700"
+                  >Advanced SEO optimization</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700"
+                  >Google Analytics setup</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">Email integration</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700"
+                  >Content management training</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">60 days support</span>
+              </li>
+            </ul>
+
+            <Button
+              variant="primary"
+              size="md"
+              href="/services/request?service=website-design-development&package=pro"
+              class="w-full">
+              Get Your Quote
+            </Button>
+          </div>
+
+          <!-- Custom Package -->
+          <div
+            class="flex flex-col bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 transition-colors">
+            <div class="text-sm font-semibold text-blue-600 mb-2">CUSTOM</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">
+              Tailored to Your Needs
+            </h3>
+
+            <ul class="space-y-3 mb-8 flex-1">
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">Unlimited pages</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700"
+                  >Custom features & functionality</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">Advanced integrations</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700"
+                  >E-commerce capabilities</span
+                >
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span class="text-sm text-slate-700">Priority support</span>
+              </li>
+            </ul>
+
+            <Button
+              variant="secondary"
+              href="/services/request?service=web-design-development&package=custom"
+              class="w-full">
+              Let's Discuss
+            </Button>
+          </div>
+        </div>
+
+        <!-- What Affects Pricing -->
+        <div class="p-8 md:p-10 mb-8">
+          <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+            What Affects the Final Price?
+          </h3>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Factor 1 -->
+            <div class="text-center">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <LayoutPanelLeft class="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 class="font-bold text-slate-900 mb-2">Project Scope</h4>
+              <p class="text-sm text-slate-600">
+                Number of pages and complexity of design
+              </p>
+            </div>
+
+            <!-- Factor 2 -->
+            <div class="text-center">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Zap class="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 class="font-bold text-slate-900 mb-2">Platform Choice</h4>
+              <p class="text-sm text-slate-600">
+                Some platforms take longer to build than others
+              </p>
+            </div>
+
+            <!-- Factor 3 -->
+            <div class="text-center">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Settings class="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 class="font-bold text-slate-900 mb-2">Custom Features</h4>
+              <p class="text-sm text-slate-600">
+                Special functionality or third-party integrations
+              </p>
+            </div>
+
+            <!-- Factor 4 -->
+            <div class="text-center">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <TrendingUp class="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 class="font-bold text-slate-900 mb-2">Additional Services</h4>
+              <p class="text-sm text-slate-600">
+                Branding, copywriting, or advanced SEO
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment & Guarantee Info -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Payment Options -->
+          <div class="bg-blue-50 rounded-2xl p-6 text-center">
+            <div
+              class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <DollarSign class="w-6 h-6 text-white" />
+            </div>
+            <h4 class="font-bold text-slate-900 mb-2">
+              Flexible Payment Plans
+            </h4>
+            <p class="text-sm text-slate-600">
+              Pay 50% upfront, 50% at launch. Or ask about our monthly payment
+              options to make your investment more manageable.
+            </p>
+          </div>
+
+          <!-- No Obligation -->
+          <div class="bg-blue-50 rounded-2xl p-6 text-center">
+            <div
+              class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <Shield class="w-6 h-6 text-white" />
+            </div>
+            <h4 class="font-bold text-slate-900 mb-2">No Obligation Quote</h4>
+            <p class="text-sm text-slate-600">
+              Get a detailed, transparent quote with no hidden fees. You'll know
+              exactly what you're paying for before we start.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Process Section -->
+  <Section size="xl" background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Simple, Straightforward Process
+        </h2>
+        <p class="text-lg text-slate-600">
+          From first call to launch in 4 weeks or less.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                1
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Discovery Call
+              </h3>
+              <p class="text-slate-600">
+                We discuss your business, goals, target audience, and what you
+                want your website to achieve.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                2
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Design & Development
+              </h3>
+              <p class="text-slate-600">
+                I create your website using your brand colors, logo, and
+                content. You'll get regular updates and can provide feedback.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                3
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Review & Revisions
+              </h3>
+              <p class="text-slate-600">
+                You review the website and request any changes. We'll make
+                revisions until you're completely happy.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                4
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Launch & Training
+              </h3>
+              <p class="text-slate-600">
+                We launch your site and I'll train you on how to update content.
+                Plus, you get 30 days of support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What's Included Section -->
+  <Section size="xl" background="slate" pattern={{ type: "grid" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          What's Included in Every Website
+        </h2>
+        <p class="text-lg text-slate-600">
+          Everything you need to launch a professional online presence.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature Cards -->
+        <div class="bg-white rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-4">
+            <Smartphone class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Mobile-Responsive Design
+          </h3>
+          <p class="text-sm text-slate-600">
+            Your site looks perfect on every device - phones, tablets, and
+            desktops.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-4">
+            <Zap class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Fast Performance
+          </h3>
+          <p class="text-sm text-slate-600">
+            Optimized for speed to keep visitors engaged and improve search
+            rankings.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-4">
+            <TrendingUp class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">SEO Foundation</h3>
+          <p class="text-sm text-slate-600">
+            Basic search engine optimization to help customers find you online.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-4">
+            <Shield class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Security & SSL</h3>
+          <p class="text-sm text-slate-600">
+            Secure hosting with SSL certificate to protect your visitors' data.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-4">
+            <Users class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Contact Forms</h3>
+          <p class="text-sm text-slate-600">
+            Easy ways for customers to reach you with integrated contact forms.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <div
+            class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-4">
+            <LayoutPanelLeft class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Easy Content Updates
+          </h3>
+          <p class="text-sm text-slate-600">
+            Simple editor so you can update text and images yourself (with
+            training).
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Managed Hosting Section -->
+  <Section size="xl" background="dark">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <Badge variant="blue" class="mb-4">
+            <Shield class="w-4 h-4" />
+            <span>Worry-Free Hosting</span>
+          </Badge>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">
+            Managed Hosting Services
+          </h2>
+          <p class="text-lg text-slate-400">
+            Focus on your business while we handle the technical details. No
+            hosting headaches, no surprise bills, no technical expertise
+            required.
+          </p>
+        </div>
+
+        <!-- Two-Column Layout -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- What's Included -->
+          <div class="bg-white rounded-2xl p-8">
+            <h3 class="text-xl font-bold text-slate-900 mb-6">
+              What's Included
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check class="w-3 h-3 text-blue-600" />
+                </div>
+                <div>
+                  <strong class="text-slate-900">99.9% Uptime Guarantee</strong>
+                  <p class="text-sm text-slate-600 mt-1">
+                    Your site stays online, always.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check class="w-3 h-3 text-blue-600" />
+                </div>
+                <div>
+                  <strong class="text-slate-900">Automatic Updates</strong>
+                  <p class="text-sm text-slate-600 mt-1">
+                    WordPress, plugins, and security patches handled for you.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check class="w-3 h-3 text-blue-600" />
+                </div>
+                <div>
+                  <strong class="text-slate-900">Daily Backups</strong>
+                  <p class="text-sm text-slate-600 mt-1">
+                    Your data is safe and recoverable.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check class="w-3 h-3 text-blue-600" />
+                </div>
+                <div>
+                  <strong class="text-slate-900">SSL Certificate</strong>
+                  <p class="text-sm text-slate-600 mt-1">
+                    Secure connection with HTTPS included.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check class="w-3 h-3 text-blue-600" />
+                </div>
+                <div>
+                  <strong class="text-slate-900">Email Support</strong>
+                  <p class="text-sm text-slate-600 mt-1">
+                    Quick responses when you need help.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check class="w-3 h-3 text-blue-600" />
+                </div>
+                <div>
+                  <strong class="text-slate-900">Performance Monitoring</strong>
+                  <p class="text-sm text-slate-600 mt-1">
+                    We keep your site fast and optimized.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pricing & Platforms -->
+          <div class="space-y-6">
+            <!-- Pricing Card -->
+            <div
+              class="bg-linear-to-br from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+              <div class="text-sm font-semibold opacity-90 mb-2">
+                STARTING FROM
+              </div>
+              <div class="text-5xl font-bold mb-2">
+                $29<span class="text-2xl font-normal">/mo</span>
+              </div>
+              <p class="opacity-90 mb-6">Billed monthly, cancel anytime</p>
+              <Button
+                variant="secondary"
+                href="/services/request?service=website-design-development&hosting=true"
+                class="w-full">
+                Get Started
+                <ArrowRight class="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+
+            <!-- Platforms Supported -->
+            <div class="bg-white rounded-2xl p-8">
+              <h4 class="text-lg font-bold text-slate-900 mb-4">
+                Platforms We Support
+              </h4>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-slate-800 p-2 flex items-center justify-center">
+                    <Image
+                      src={wordpressLogo}
+                      alt="WordPress"
+                      class="w-full h-full object-contain brightness-0 invert"
+                      width={24}
+                      height={24}
+                    />
+                  </div>
+                  <span class="font-medium text-slate-900">WordPress</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-slate-800 p-2 flex items-center justify-center">
+                    <Image
+                      src={webflowLogo}
+                      alt="Webflow"
+                      class="w-full h-full object-contain brightness-0 invert"
+                      width={64}
+                      height={64}
+                    />
+                  </div>
+                  <span class="font-medium text-slate-900">Webflow</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-slate-800 p-1 flex items-center justify-center">
+                    <Image
+                      src={framerLogo}
+                      alt="Framer"
+                      class="w-full h-full object-contain brightness-0 invert"
+                      width={64}
+                      height={64}
+                    />
+                  </div>
+                  <span class="font-medium text-slate-900">Framer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Choose Managed Hosting -->
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-6 text-center">
+            Why Choose Managed Hosting?
+          </h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                <Zap class="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 class="font-semibold text-slate-900 mb-2">Save Time</h4>
+              <p class="text-sm text-slate-600">
+                No need to learn hosting, deal with technical issues, or manage
+                updates yourself.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                <Shield class="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 class="font-semibold text-slate-900 mb-2">Stay Secure</h4>
+              <p class="text-sm text-slate-600">
+                We handle security updates, malware scanning, and protect your
+                site from threats.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                <Users class="w-6 h-6 text-blue-600" />
+              </div>
+              <h4 class="font-semibold text-slate-900 mb-2">Expert Support</h4>
+              <p class="text-sm text-slate-600">
+                Get help from someone who built your site and knows it inside
+                and out.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ Section -->
+  <Section size="xl" background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-4xl font-bold text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <Accordion items={faqs} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA -->
+  <Section size="xl" background="blue" pattern={{ type: "grid" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-xl text-center">
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Ready to Get Started?
+          </h2>
+
+          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            Let's create a website that helps your business grow. Schedule a
+            free consultation to discuss your project.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4">
+            <Button
+              variant="primary"
+              size="lg"
+              href="/services/request?service=website-design-development">
+              Schedule Free Consultation
+              <ArrowRight class="w-5 h-5 ml-2" />
+            </Button>
+            <Button variant="secondary" size="lg" href="/work">
+              View Portfolio
+            </Button>
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-slate-200">
+            <p class="text-sm text-slate-600">
+              <strong>No pressure, no obligation.</strong> Just a friendly conversation
+              about your goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

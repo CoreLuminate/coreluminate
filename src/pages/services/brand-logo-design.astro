@@ -1,0 +1,790 @@
+---
+import {
+  ArrowRight,
+  Check,
+  Clock,
+  FileText,
+  Layers,
+  Lightbulb,
+  Palette,
+  Sparkles,
+  Target,
+  Users,
+  Zap,
+} from "@lucide/astro";
+import { Image } from "astro:assets";
+import Accordion from "../../components/ui/Accordion.astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import heroImage from "../../assets/images/logo-design-sketching.jpg";
+
+// FAQ data
+const faqs = [
+  {
+    question: "How long does the design process take?",
+    answer:
+      "Timeline varies based on project scope and your responsiveness. A basic logo can be completed in 1-2 weeks, while a full brand identity typically takes 2-4 weeks. I prioritize quick turnarounds while maintaining quality.",
+  },
+  {
+    question: "How many logo concepts will I receive?",
+    answer:
+      "You'll typically receive 2-3 initial concepts to choose from. Too many options can actually make the decision harder! We focus on quality over quantity, creating concepts based on our discovery conversation about your business and goals.",
+  },
+  {
+    question: "What if I don't like any of the initial concepts?",
+    answer:
+      "That's rare, but if it happens, we'll discuss what's not working and why. I'll create new directions based on your feedback. The key is clear communication about what you're looking for during our discovery phase.",
+  },
+  {
+    question: "How many revisions are included?",
+    answer:
+      "The number of revisions depends on your specific project and package. We'll agree on this upfront. Most clients are happy after 1-2 rounds of refinements, as we spend time getting the direction right from the start.",
+  },
+  {
+    question: "What file formats will I receive?",
+    answer:
+      "You'll receive your logo in all the formats you need: SVG (vector), PNG (transparent background), PDF, and JPG. For full brand packages, you'll also get a brand style guide PDF and any additional assets we create together.",
+  },
+  {
+    question: "Can you redesign my existing logo?",
+    answer:
+      "Yes! Many businesses need logo refreshes or modernization. Whether you're rebranding completely or just updating your look, I can help. We'll discuss your current brand and goals during our consultation.",
+  },
+  {
+    question: "Do you create business cards and other materials?",
+    answer:
+      "Absolutely! I can design business cards, letterhead, social media templates, and other brand materials. Just let me know what you need, and we'll include it in your custom quote.",
+  },
+  {
+    question: "How is this different from using Fiverr or 99designs?",
+    answer:
+      "You're working directly with me throughout the entire process - not competing designers or random freelancers. You get personalized service, strategic thinking about your brand, and someone who cares about your business success. Plus, clear communication and faster turnarounds.",
+  },
+  {
+    question: "What if I need changes after the project is complete?",
+    answer:
+      "Minor tweaks within 30 days are usually no problem. For larger changes or new materials down the road, we can discuss a new project. I'm here to support your brand as your business grows.",
+  },
+  {
+    question: "Do I own the rights to my logo and brand?",
+    answer:
+      "Yes! Once the project is complete and paid in full, you own all rights to your logo and brand materials. You're free to use them however you like for your business.",
+  },
+];
+---
+
+<Layout
+  title="Brand & Logo Design Services"
+  description="Get professional logo and brand design without the agency price tag. Perfect for small businesses, startups, and entrepreneurs who need quality branding fast.">
+  <!-- Hero Section -->
+  <Section
+    size="xl"
+    background="dark"
+    pattern={{ type: "grid", visibility: "light" }}>
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 items-center py-12">
+        <!-- Left Column: Content -->
+        <div>
+          <Badge variant="white" class="mb-6 shadow-lg">
+            <Palette class="w-4 h-4" />
+            <span>Brand & Logo Design</span>
+          </Badge>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Your Brand Identity, Professionally Designed
+          </h1>
+
+          <p class="text-xl text-blue-100 leading-relaxed mb-8">
+            Get the professional brand and logo you need to stand out—without
+            the agency price tag or long timelines.
+          </p>
+
+          <!-- Key Benefits -->
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Professional designs that reflect your business</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Fast turnarounds for busy entrepreneurs</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Affordable pricing that fits small business budgets</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="w-6 h-6 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200"
+                >Direct communication—no middlemen or committees</span
+              >
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-4">
+            <Button icon={ArrowRight} href="/services/request"
+              >Start Your Project</Button
+            >
+            <Button variant="outline" href="#services"
+              >See What's Included</Button
+            >
+          </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="relative">
+          <div
+            class="rounded-2xl overflow-hidden shadow-2xl bg-slate-700 aspect-4/3 flex items-center justify-center">
+            <Image
+              src={heroImage}
+              alt="Logo design using sketch pad and pencil"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
+            />
+          </div>
+
+          <!-- Floating Stat Cards -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 border border-slate-200">
+            <div class="flex items-center gap-2">
+              <Zap class="w-5 h-5 text-blue-600" />
+              <div>
+                <div class="text-2xl font-bold text-slate-900">2-4</div>
+                <div class="text-xs text-slate-600">Week Turnaround</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4 border border-slate-200">
+            <div class="flex items-center gap-2">
+              <Sparkles class="w-5 h-5 text-blue-600" />
+              <div>
+                <div class="text-2xl font-bold text-slate-900">100%</div>
+                <div class="text-xs text-slate-600">Custom Designs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Problem/Solution Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Your Brand Is Your First Impression
+        </h2>
+        <p class="text-lg text-slate-600">
+          You know you need professional branding, but agency prices are out of
+          reach and DIY options don't cut it.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Problem 1 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Target class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Looking Unprofessional
+          </h3>
+          <p class="text-slate-600">
+            DIY logos and generic templates make your business look amateurish,
+            costing you credibility.
+          </p>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Clock class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            No Time or Skills
+          </h3>
+          <p class="text-slate-600">
+            You're running a business—you don't have time to learn design
+            software or brand strategy.
+          </p>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Zap class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Agency Sticker Shock
+          </h3>
+          <p class="text-slate-600">
+            Design agencies charge thousands for branding, with long timelines
+            and endless meetings.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- What I Offer Section -->
+  <Section
+    id="services"
+    background="slate"
+    pattern={{ type: "dots", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          What I Can Design for You
+        </h2>
+        <p class="text-lg text-slate-600">
+          From simple logos to complete brand identities—tailored to what your
+          business actually needs.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <!-- Service 1: Logo Design -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <Sparkles class="w-8 h-8 text-blue-600" />
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">Logo Design</h3>
+
+          <p class="text-slate-600 mb-6">
+            A professional logo that represents your business and works
+            everywhere—from business cards to billboards.
+          </p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">2-3 initial concepts</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Revisions included</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >All file formats (SVG, PNG, PDF)</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Color & B&W versions</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 2: Brand Identity -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-blue-600 relative">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <Badge class="shadow-md bg-blue-600 text-white">Most Popular</Badge>
+          </div>
+
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <Palette class="w-8 h-8 text-blue-600" />
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">Brand Identity</h3>
+
+          <p class="text-slate-600 mb-6">
+            Complete visual identity with logo, colors, fonts, and style
+            guidelines for consistent branding.
+          </p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Professional logo design</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Brand color palette</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Typography system</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Brand style guide PDF</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Usage guidelines</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 3: Brand Materials -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <Layers class="w-8 h-8 text-blue-600" />
+          </div>
+
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            Brand Materials
+          </h3>
+
+          <p class="text-slate-600 mb-6">
+            Additional branded assets to support your business—business cards,
+            social templates, and more.
+          </p>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Business card design</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Letterhead & email signature</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Social media templates</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Print-ready files</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Custom as needed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div
+        class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8 text-center max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold text-slate-900 mb-2">
+          Every Project Is Custom
+        </h3>
+        <p class="text-slate-600 mb-6">
+          I don't believe in one-size-fits-all pricing. Let's discuss your needs
+          and I'll create a custom quote that fits your budget and timeline.
+        </p>
+        <Button variant="dark" size="lg" href="/services/request">
+          Get Your Custom Quote
+        </Button>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Why Choose Me Section -->
+  <Section background="white">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Why Work With Me?
+        </h2>
+        <p class="text-lg text-slate-600">
+          You get the quality of a design agency with the speed and
+          affordability of working directly with a designer.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Benefit 1 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Zap class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Fast Turnaround</h3>
+          <p class="text-sm text-slate-600">
+            Most projects completed in 2-4 weeks, not months. Perfect for
+            businesses that need to move quickly.
+          </p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Target class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Small Business Focus
+          </h3>
+          <p class="text-sm text-slate-600">
+            I understand small business budgets and timelines. Great value
+            without compromising quality.
+          </p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Users class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Direct Communication
+          </h3>
+          <p class="text-sm text-slate-600">
+            Work directly with me throughout the entire process—no account
+            managers or middlemen.
+          </p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Lightbulb class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Strategic Thinking
+          </h3>
+          <p class="text-sm text-slate-600">
+            Not just pretty designs—thoughtful branding that reflects your
+            business values and goals.
+          </p>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <FileText class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            All Files Included
+          </h3>
+          <p class="text-sm text-slate-600">
+            You get every format you need and full ownership rights. Use your
+            brand however you want.
+          </p>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Sparkles class="w-8 h-8 text-blue-600" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Quality Focused</h3>
+          <p class="text-sm text-slate-600">
+            2-3 strong concepts, not 20 mediocre options. Quality over quantity,
+            every time.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Process Section -->
+  <Section
+    background="light"
+    pattern={{ type: "topography", visibility: "subtle" }}>
+    <Container>
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Simple, Collaborative Process
+        </h2>
+        <p class="text-lg text-slate-600">
+          From initial conversation to final files in just a few steps.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                1
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Discovery Call
+              </h3>
+              <p class="text-slate-600">
+                We discuss your business, target audience, competitors, and
+                design preferences. I'll ask questions to understand what makes
+                your business unique.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                2
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Research & Concepts
+              </h3>
+              <p class="text-slate-600">
+                I research your industry, competitors, and design trends. Then
+                create 2-3 initial logo concepts for you to review.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                3
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Feedback & Refinement
+              </h3>
+              <p class="text-slate-600">
+                You choose your favorite direction and provide feedback. I
+                refine the design based on your input until it's perfect.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex gap-6">
+            <div class="shrink-0">
+              <div
+                class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                4
+              </div>
+            </div>
+            <div class="flex-1 pt-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Final Delivery
+              </h3>
+              <p class="text-slate-600">
+                You receive all final files in every format you need, plus any
+                brand guidelines or additional materials included in your
+                package.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Comparison Section -->
+  <Section>
+    <Container>
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            How I'm Different
+          </h2>
+          <p class="text-lg text-slate-600">
+            The quality you want, without the downsides of other options.
+          </p>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+          <div class="grid md:grid-cols-4 gap-px bg-slate-200">
+            <!-- Header Row -->
+            <div class="bg-slate-50 p-4 md:p-6">
+              <div class="font-bold text-slate-900"></div>
+            </div>
+            <div class="bg-blue-50 p-4 md:p-6 text-center">
+              <div class="font-bold text-blue-900">CoreLuminate</div>
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <div class="font-bold text-slate-700">Design Agency</div>
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <div class="font-bold text-slate-700">Fiverr/99designs</div>
+            </div>
+
+            <!-- Price Row -->
+            <div class="bg-slate-50 p-4 md:p-6">
+              <div class="font-semibold text-slate-700">Price</div>
+            </div>
+            <div class="bg-blue-50 p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-700">Affordable</div>
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-700">$3,000-10,000+</div>
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-700">$5-500</div>
+            </div>
+
+            <!-- Timeline Row -->
+            <div class="bg-slate-50 p-4 md:p-6">
+              <div class="font-semibold text-slate-700">Timeline</div>
+            </div>
+            <div class="bg-blue-50 p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-700">2-4 weeks</div>
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-700">4-12 weeks</div>
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-700">1-7 days</div>
+            </div>
+
+            <!-- Quality Row -->
+            <div class="bg-slate-50 p-4 md:p-6">
+              <div class="font-semibold text-slate-700">Quality</div>
+            </div>
+            <div class="bg-blue-50 p-4 md:p-6 text-center">
+              <Check class="w-6 h-6 text-green-600 mx-auto" />
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <Check class="w-6 h-6 text-green-600 mx-auto" />
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-500">Hit or miss</div>
+            </div>
+
+            <!-- Communication Row -->
+            <div class="bg-slate-50 p-4 md:p-6">
+              <div class="font-semibold text-slate-700">Communication</div>
+            </div>
+            <div class="bg-blue-50 p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-700">Direct & fast</div>
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-700">Through reps</div>
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <div class="text-sm text-slate-700">Minimal</div>
+            </div>
+
+            <!-- Strategy Row -->
+            <div class="bg-slate-50 p-4 md:p-6">
+              <div class="font-semibold text-slate-700">Strategic Input</div>
+            </div>
+            <div class="bg-blue-50 p-4 md:p-6 text-center">
+              <Check class="w-6 h-6 text-green-600 mx-auto" />
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <Check class="w-6 h-6 text-green-600 mx-auto" />
+            </div>
+            <div class="bg-white p-4 md:p-6 text-center">
+              <span class="text-slate-400">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- FAQ Section -->
+  <Section size="xl" background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <Accordion items={faqs} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Final CTA -->
+  <Section background="blue" pattern={{ type: "mesh", visibility: "light" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl text-center">
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+            Ready to Build Your Brand?
+          </h2>
+
+          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+            Let's create a professional brand identity that helps your business
+            stand out and attract the right customers.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <Button
+              variant="primary"
+              size="lg"
+              icon={ArrowRight}
+              href="/services/request">
+              Get Your Custom Quote
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              href="/services/website-design-development">
+              View Website Services
+            </Button>
+          </div>
+
+          <div class="pt-8 border-t border-slate-200">
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <Clock class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">2-4 Week Turnaround</span>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <Sparkles class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">100% Custom Designs</span>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center justify-center gap-2 text-slate-700">
+                  <FileText class="w-5 h-5 text-blue-600" />
+                  <span class="font-semibold">All Rights Included</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

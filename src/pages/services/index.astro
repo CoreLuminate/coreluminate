@@ -1,0 +1,514 @@
+---
+import {
+  ArrowRight,
+  Check,
+  Globe,
+  Palette,
+  Settings,
+  ShoppingCart,
+  Sparkles,
+  TrendingUp,
+  Wrench,
+} from "@lucide/astro";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Our Services">
+  <!-- Hero Section -->
+  <Section
+    background="dark"
+    pattern={{ type: "grid", visibility: "light" }}
+    size="2xl">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <Badge variant="white" class="mb-8">
+          <Sparkles class="w-4 h-4" />
+          <span>Professional Digital Services</span>
+        </Badge>
+
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+          Everything Your Business Needs to
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            Succeed Online
+          </span>
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-blue-100 leading-relaxed mb-12 max-w-3xl mx-auto">
+          From stunning websites to powerful marketing tools, we provide the
+          services small businesses need without the agency price tag.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/services/request" variant="primary" icon={ArrowRight}>
+            Start Your Project
+          </Button>
+          <Button href="/solutions" variant="secondary">
+            View Solutions
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Services Grid -->
+  <Section size="3xl" background="white">
+    <Container>
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          Our Core Services
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Choose individual services or combine them into a complete solution
+          tailored to your needs.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Web Design & Development -->
+        <div
+          class="bg-white rounded-3xl border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all p-8 flex flex-col">
+          <div
+            class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+            <Globe class="w-7 h-7 text-blue-600" />
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">
+            Web Design & Development
+          </h3>
+          <p class="text-slate-600 mb-6 grow">
+            Custom websites built with modern technology, optimized for
+            performance, and designed to convert visitors into customers.
+          </p>
+
+          <div class="space-y-2 mb-6">
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Responsive, mobile-first design</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Lightning-fast performance</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Easy-to-update content</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>SEO-ready architecture</span>
+            </div>
+          </div>
+
+          <Button
+            href="/services/web-design-development"
+            variant="secondary"
+            icon={ArrowRight}>
+            Learn More
+          </Button>
+        </div>
+
+        <!-- SEO & Analytics -->
+        <div
+          class="bg-white rounded-3xl border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all p-8 flex flex-col">
+          <div
+            class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+            <TrendingUp class="w-7 h-7 text-blue-600" />
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">
+            SEO & Analytics
+          </h3>
+          <p class="text-slate-600 mb-6 grow">
+            Get found online and understand your customers with comprehensive
+            search optimization and analytics setup.
+          </p>
+
+          <div class="space-y-2 mb-6">
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Technical SEO optimization</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Google Analytics 4 setup</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Search Console integration</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Performance tracking</span>
+            </div>
+          </div>
+
+          <Button
+            href="/services/seo-analytics"
+            variant="secondary"
+            icon={ArrowRight}>
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Brand & Logo Design -->
+        <div
+          class="bg-white rounded-3xl border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all p-8 flex flex-col">
+          <div
+            class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+            <Palette class="w-7 h-7 text-blue-600" />
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">
+            Brand & Logo Design
+          </h3>
+          <p class="text-slate-600 mb-6 grow">
+            Create a memorable brand identity that connects with your audience
+            and sets you apart from competitors.
+          </p>
+
+          <div class="space-y-2 mb-6">
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Custom logo design</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Brand style guide</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Color palette & typography</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>All file formats included</span>
+            </div>
+          </div>
+
+          <Button
+            href="/services/brand-logo-design"
+            variant="secondary"
+            icon={ArrowRight}>
+            Learn More
+          </Button>
+        </div>
+
+        <!-- E-commerce Solutions -->
+        <div
+          class="bg-white rounded-3xl border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all p-8 flex flex-col">
+          <div
+            class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+            <ShoppingCart class="w-7 h-7 text-blue-600" />
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">
+            E-commerce Solutions
+          </h3>
+          <p class="text-slate-600 mb-6 grow">
+            Sell online with confidence using secure, user-friendly e-commerce
+            platforms designed to maximize conversions.
+          </p>
+
+          <div class="space-y-2 mb-6">
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Secure payment processing</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Inventory management</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Mobile-optimized checkout</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Shipping & tax automation</span>
+            </div>
+          </div>
+
+          <Button
+            href="/services/ecommerce-solutions"
+            variant="secondary"
+            icon={ArrowRight}>
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Business Systems Setup -->
+        <div
+          class="bg-white rounded-3xl border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all p-8 flex flex-col md:col-span-2 lg:col-span-1">
+          <div
+            class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+            <Settings class="w-7 h-7 text-blue-600" />
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">
+            Business Systems Setup
+          </h3>
+          <p class="text-slate-600 mb-6 grow">
+            Streamline operations with professional software setup and
+            integration for CRM, accounting, and more.
+          </p>
+
+          <div class="space-y-2 mb-6">
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>HubSpot CRM setup</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>QuickBooks configuration</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Workflow automation</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Team training included</span>
+            </div>
+          </div>
+
+          <Button
+            href="/services/business-systems-setup"
+            variant="secondary"
+            icon={ArrowRight}>
+            Learn More
+          </Button>
+        </div>
+
+        <!-- Website Updates & Add-Ons -->
+        <div
+          class="bg-white rounded-3xl border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all p-8 flex flex-col">
+          <div
+            class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+            <Wrench class="w-7 h-7 text-blue-600" />
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">
+            Website Updates & Add-Ons
+          </h3>
+          <p class="text-slate-600 mb-6 grow">
+            Keep your existing website fresh and functional with ongoing
+            updates, new features, and content additions.
+          </p>
+
+          <div class="space-y-2 mb-6">
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Content updates & changes</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>New page or section creation</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Feature additions & integrations</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Bug fixes & maintenance</span>
+            </div>
+          </div>
+
+          <Button
+            href="/services/website-updates-add-ons"
+            variant="secondary"
+            icon={ArrowRight}
+            class="w-full">
+            Learn More
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- How It Works -->
+  <Section size="2xl" background="slate">
+    <Container>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <Badge class="mb-6">
+            <Sparkles class="w-4 h-4" />
+            <span>Simple Process</span>
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            How We Work Together
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
+            <div
+              class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
+              1
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Consultation</h3>
+            <p class="text-slate-600">
+              We discuss your needs, goals, and timeline to determine the right
+              services for your business.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
+            <div
+              class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
+              2
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Custom Proposal
+            </h3>
+            <p class="text-slate-600">
+              Receive a detailed proposal with scope, timeline, and transparent
+              pricing tailored to your project.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
+            <div
+              class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-4">
+              3
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Delivery</h3>
+            <p class="text-slate-600">
+              We build your solution with regular updates, then launch and
+              provide training on everything you need.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Why Choose Individual Services -->
+  <Section size="2xl" background="white">
+    <Container>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <Badge class="mb-6">
+            <Sparkles class="w-4 h-4" />
+            <span>Flexibility</span>
+          </Badge>
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Build Your Own Solution
+          </h2>
+          <p class="text-xl text-slate-600 mb-8">
+            Not every business needs a full website launch. Sometimes you just
+            need a specific service to fill a gap or enhance your existing
+            digital presence.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 bg-blue-100 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                <Check class="w-5 h-5 text-blue-600" />
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 mb-1">
+                  À la Carte Pricing
+                </h4>
+                <p class="text-slate-600">
+                  Pay only for the services you need, when you need them.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 bg-blue-100 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                <Check class="w-5 h-5 text-blue-600" />
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 mb-1">
+                  No Long-Term Contracts
+                </h4>
+                <p class="text-slate-600">
+                  One-time projects with clear deliverables and timelines.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div
+                class="w-8 h-8 bg-blue-100 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                <Check class="w-5 h-5 text-blue-600" />
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 mb-1">Scale as You Grow</h4>
+                <p class="text-slate-600">
+                  Start with one service and add more as your business evolves.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-linear-to-br from-blue-50 to-blue-100 rounded-3xl p-8 lg:p-12 border-2 border-blue-200">
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            Looking for a Complete Solution?
+          </h3>
+          <p class="text-slate-700 mb-6">
+            If you need multiple services working together, check out our
+            bundled solutions designed for common business scenarios.
+          </p>
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center gap-3 text-slate-700">
+              <div class="w-2 h-2 bg-blue-600 rounded-full shrink-0"></div>
+              <span>Complete Digital Launch</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-700">
+              <div class="w-2 h-2 bg-blue-600 rounded-full shrink-0"></div>
+              <span>Quick Website Launch</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-700">
+              <div class="w-2 h-2 bg-blue-600 rounded-full shrink-0"></div>
+              <span>Website Refresh & Modernization</span>
+            </div>
+          </div>
+          <Button
+            href="/solutions"
+            variant="primary"
+            icon={ArrowRight}
+            class="w-full">
+            View All Solutions
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- CTA Section -->
+  <Section
+    size="2xl"
+    background="slate-blue"
+    pattern={{ type: "dots", visibility: "light" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Ready to Get Started?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8">
+          Let's discuss which services are right for your business and create a
+          custom plan that fits your budget.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            href="/services/request"
+            variant="secondary"
+            icon={ArrowRight}>
+            Schedule Free Consultation
+          </Button>
+          <Button href="/solutions" variant="outline">
+            Browse Solutions
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

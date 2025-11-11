@@ -1,0 +1,263 @@
+---
+import { ArrowLeft, ArrowRight, Calendar, Clock, User } from "@lucide/astro";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import Badge from "../../components/ui/Badge.astro";
+import Button from "../../components/ui/Button.astro";
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getAllBlogPosts, getRelatedBlogPosts } from "../../lib/blog";
+import { formatDate } from "../../lib/helpers";
+
+export async function getStaticPaths() {
+  const allPosts = await getAllBlogPosts();
+
+  return allPosts.map((post: CollectionEntry<"blog">) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<"blog"> };
+const { Content } = await render(post);
+const {
+  title,
+  description,
+  publishDate,
+  author,
+  readTime,
+  featuredImage,
+  categories,
+  tags,
+} = post.data;
+
+// Get related posts
+const relatedPosts = await getRelatedBlogPosts(post, 3);
+
+// Format date
+const formattedDate = formatDate(publishDate);
+---
+
+<Layout title={title} description={description}>
+  <!-- Article Header Section -->
+  <Section size="lg" background="white">
+    <Container>
+      <div class="max-w-4xl mx-auto flex flex-col items-start">
+        <!-- Back Link -->
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-blue-600 mb-8 group">
+          <ArrowLeft class="w-4 h-4" />
+          All Posts
+        </a>
+
+        <!-- Categories -->
+        {
+          categories.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-6">
+              {categories.map((category: string) => (
+                <a
+                  href={`/blog/category/${category.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <Badge variant="blue" class="hover:shadow-sm">
+                    {category}
+                  </Badge>
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        <!-- Title -->
+        <h1
+          class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+          {title}
+        </h1>
+
+        <!-- Meta Info -->
+        <div
+          class="flex flex-wrap items-center gap-6 text-slate-600 mb-8 pb-8 text-sm">
+          <div class="flex items-center gap-2">
+            <User class="w-5 h-5" />
+            <span class="font-medium">{author}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Calendar class="w-5 h-5" />
+            <time datetime={publishDate.toISOString()}>
+              {formattedDate}
+            </time>
+          </div>
+          {
+            readTime && (
+              <div class="flex items-center gap-2">
+                <Clock class="w-5 h-5" />
+                <span>{readTime}</span>
+              </div>
+            )
+          }
+        </div>
+
+        <!-- Featured Image -->
+        {
+          featuredImage && (
+            <div class="rounded-2xl overflow-hidden shadow-sm">
+              <Image
+                src={featuredImage.url}
+                alt={
+                  featuredImage.alt === undefined ? title : featuredImage.alt
+                }
+                class="w-full h-auto"
+                widths={[800, 1200, 1600]}
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                quality={90}
+              />
+            </div>
+          )
+        }
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Article Content -->
+  <Section size="sm" background="white">
+    <Container>
+      <article class="max-w-4xl mx-auto">
+        <!-- Prose Content -->
+        <div
+          class="prose prose-lg prose-slate max-w-none
+          prose-headings:font-bold prose-headings:text-slate-900 prose-headings:tracking-tight
+          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:scroll-mt-20
+          prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:scroll-mt-20
+          prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+          prose-a:text-blue-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-slate-900 prose-strong:font-semibold
+          prose-code:text-blue-600 prose-code:bg-slate-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-code:before:content-[''] prose-code:after:content-['']
+          prose-pre:bg-slate-900 prose-pre:text-slate-100 prose-pre:rounded-xl prose-pre:p-6 prose-pre:overflow-x-auto
+          prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+          prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
+          prose-li:text-slate-700 prose-li:mb-2 prose-li:leading-relaxed
+          prose-blockquote:border-l-4 prose-blockquote:border-blue-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-slate-700
+          prose-img:rounded-xl prose-img:ring-1 prose-img:ring-slate-200 prose-img:my-8">
+          <Content />
+        </div>
+
+        <!-- Tags Section -->
+        {
+          tags.length > 0 && (
+            <div class="mt-12 pt-8 border-t border-slate-200">
+              <h3 class="text-lg font-semibold text-slate-900 mb-4">
+                Tagged with
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                {tags.map((tag: string) => (
+                  <a
+                    href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
+                    class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700 transition-colors">
+                    #{tag}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )
+        }
+      </article>
+    </Container>
+  </Section>
+
+  <!-- Related Posts Section -->
+  {
+    relatedPosts.length > 0 && (
+      <Section
+        size="lg"
+        background="slate"
+        pattern={{ type: "dots", visibility: "light" }}>
+        <Container>
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">
+              Related Articles
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              {relatedPosts.map((relatedPost) => (
+                <article class="group flex flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-blue-200 transition-all duration-300">
+                  {relatedPost.data.featuredImage && (
+                    <a
+                      href={`/blog/${relatedPost.id}`}
+                      class="block overflow-hidden aspect-video">
+                      <Image
+                        src={relatedPost.data.featuredImage.url}
+                        alt={
+                          relatedPost.data.featuredImage.alt === undefined
+                            ? relatedPost.data.title
+                            : relatedPost.data.featuredImage.alt
+                        }
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        widths={[300, 400]}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        quality={80}
+                      />
+                    </a>
+                  )}
+
+                  <div class="flex flex-col flex-1 p-6">
+                    {relatedPost.data.categories.length > 0 && (
+                      <span class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-3">
+                        {relatedPost.data.categories[0]}
+                      </span>
+                    )}
+
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                      <a href={`/blog/${relatedPost.id}`}>
+                        {relatedPost.data.title}
+                      </a>
+                    </h3>
+
+                    <p class="text-sm text-slate-600 line-clamp-2 flex-1">
+                      {relatedPost.data.description}
+                    </p>
+
+                    <div class="flex items-center gap-2 text-xs text-slate-500 mt-4">
+                      <Calendar class="w-3 h-3" />
+                      <time
+                        datetime={relatedPost.data.publishDate.toISOString()}>
+                        {formatDate(relatedPost.data.publishDate, "short")}
+                      </time>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+    )
+  }
+
+  <!-- CTA Section -->
+  <Section size="xl" background="dark" pattern={{ type: "grid" }}>
+    <Container>
+      <div class="max-w-4xl mx-auto text-center py-16">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          Ready to Build Your Online Presence?
+        </h2>
+        <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+          Let's create a website that helps your business grow. Schedule a free
+          consultation to get started.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button variant="primary" href="/services/request">
+            Start Your Project
+            <ArrowRight class="w-5 h-5 ml-2" />
+          </Button>
+          <Button variant="outline" href="/services">
+            View Our Services
+          </Button>
+        </div>
+        <p class="text-sm text-blue-200 mt-6">
+          Free consultation • No commitment required
+        </p>
+      </div>
+    </Container>
+  </Section>
+</Layout>
