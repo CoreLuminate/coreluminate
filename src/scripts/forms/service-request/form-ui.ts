@@ -3,6 +3,8 @@
  * Responsible for: step visibility, progress indicators, button states, styling
  */
 
+import { STEPS } from '../../../lib/form/constants';
+
 // ===== STYLE CONSTANTS =====
 // Centralized styling for easy theme changes
 
@@ -50,40 +52,20 @@ const SERVICE_CARD_STYLES = {
 
 export class FormUI {
   private steps: HTMLElement[];
-  private indicators: HTMLElement[];
-  private labels: HTMLElement[];
-  private lines: HTMLElement[];
+  private progressIndicators: HTMLElement[];
+  
   private prevBtn: HTMLButtonElement;
   private nextBtn: HTMLButtonElement;
   private submitBtn: HTMLButtonElement;
 
   constructor() {
-    this.steps = [
-      document.getElementById('step-1') as HTMLElement,
-      document.getElementById('step-2') as HTMLElement,
-      document.getElementById('step-3') as HTMLElement,
-      document.getElementById('step-4') as HTMLElement,
-    ];
+    this.steps = [];
+    this.progressIndicators = [];
     
-    this.indicators = [
-      document.getElementById('indicator-1') as HTMLElement,
-      document.getElementById('indicator-2') as HTMLElement,
-      document.getElementById('indicator-3') as HTMLElement,
-      document.getElementById('indicator-4') as HTMLElement,
-    ];
-    
-    this.labels = [
-      document.getElementById('label-1') as HTMLElement,
-      document.getElementById('label-2') as HTMLElement,
-      document.getElementById('label-3') as HTMLElement,
-      document.getElementById('label-4') as HTMLElement,
-    ];
-    
-    this.lines = [
-      document.getElementById('line-1') as HTMLElement,
-      document.getElementById('line-2') as HTMLElement,
-      document.getElementById('line-3') as HTMLElement,
-    ];
+    STEPS.forEach((step) => {
+      this.steps.push(document.getElementById(`step-${step.id}`) as HTMLElement);
+      this.progressIndicators.push(document.getElementById(`step-indicator-${step.id}`) as HTMLElement);
+    });
 
     this.prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
     this.nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
@@ -211,9 +193,6 @@ export class FormUI {
     document.querySelectorAll('.service-checkbox').forEach((checkbox) => {
       const inputEl = checkbox as HTMLInputElement;
       
-      // 1. Initial Styling: Only apply styles if checked AND NOT the managed hosting checkbox.
-      // Managed hosting styling relies purely on the change event which fires after the 
-      // container is unhidden by the website-design-development change event.
       if (inputEl.checked && inputEl.id !== 'managed-hosting-checkbox') {
         this.updateServiceCardStyling(inputEl, true);
       }
@@ -237,16 +216,12 @@ export class FormUI {
 
     if(show) {
       container?.classList.remove('hidden');
-      // No need to explicitly call updateServiceCardStyling here anymore, 
-      // as the FormDataManager dispatches the 'change' event when it's preselected,
-      // and the listener attached in initServiceCardSelection will handle the styling.
     } else {
       container?.classList.add('hidden');
 
       if(checkbox && checkbox.checked) {
         checkbox.checked = false;
         
-        // Dispatching change event updates the styling via the listener attached in initServiceCardSelection
         checkbox.dispatchEvent(new Event('change', {bubbles: true}));
       }
     }

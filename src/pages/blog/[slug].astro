@@ -42,7 +42,7 @@ const formattedDate = formatDate(publishDate);
 
 <Layout title={title} description={description}>
   <!-- Article Header Section -->
-  <Section size="lg" background="white">
+  <Section size="sm" background="white">
     <Container>
       <div class="max-w-4xl mx-auto flex flex-col items-start">
         <!-- Back Link -->
@@ -120,7 +120,7 @@ const formattedDate = formatDate(publishDate);
   </Section>
 
   <!-- Article Content -->
-  <Section size="sm" background="white">
+  <Section size="xs" background="white">
     <Container>
       <article class="max-w-4xl mx-auto">
         <!-- Prose Content -->
@@ -146,16 +146,12 @@ const formattedDate = formatDate(publishDate);
         {
           tags.length > 0 && (
             <div class="mt-12 pt-8 border-t border-slate-200">
-              <h3 class="text-lg font-semibold text-slate-900 mb-4">
-                Tagged with
-              </h3>
+              <h3 class="text-lg font-semibold text-slate-900 mb-4">Tags</h3>
               <div class="flex flex-wrap gap-2">
                 {tags.map((tag: string) => (
-                  <a
-                    href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
-                    class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700 transition-colors">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-700 transition-colors">
                     #{tag}
-                  </a>
+                  </span>
                 ))}
               </div>
             </div>

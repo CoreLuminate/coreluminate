@@ -7,6 +7,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 import cloudflare from '@astrojs/cloudflare';
 
+import svelte from '@astrojs/svelte';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://coreluminate.com',
@@ -15,10 +17,11 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [mdx(),
-  sitemap(
+  integrations: [mdx(), sitemap(
     { changefreq: 'weekly', lastmod: new Date() }
-  )],
+  ), svelte()],
 
-  adapter: cloudflare()
+  adapter: cloudflare({
+    imageService: 'cloudflare',
+  })
 });

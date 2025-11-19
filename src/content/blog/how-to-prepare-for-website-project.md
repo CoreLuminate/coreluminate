@@ -1,7 +1,7 @@
 ---
 title: "How to Prepare for Your Website Project: A Small Business Guide"
 description: "Getting ready to build or redesign your website? Here's everything you need to prepare to ensure a smooth, successful project from start to finish."
-publishDate: 2025-01-15
+publishDate: 2025-11-1
 author: "CoreLuminate Team"
 readTime: 7
 featured: true

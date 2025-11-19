@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+#old mac os astro.config.dev.js file without adapter
+astro.config.dev.mjs

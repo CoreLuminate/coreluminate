@@ -21,7 +21,7 @@ testimonial:
   quote: "The branding and website perfectly captures what we're about—providing royal treatment to our customers. The professionalism shows through in everything CoreLuminate created for us."
   author: "AC Kings"
   role: "Owner"
-featured: true
+featured: false
 order: 2
 publishDate: 2024-02-20
 draft: false

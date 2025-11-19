@@ -1,24 +1,19 @@
 ---
 import {
-  ArrowRight,
   ArrowRightLeft,
   Check,
   Database,
   Gauge,
   Lock,
-  Mail,
-  Phone,
   Rocket,
   Search,
   Shield,
   Sparkles,
   TrendingUp,
-  User,
   Zap,
 } from "@lucide/astro";
 import { Image } from "astro:assets";
 import Badge from "../../components/ui/Badge.astro";
-import Button from "../../components/ui/Button.astro";
 import Container from "../../components/ui/Container.astro";
 import Section from "../../components/ui/Section.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -30,6 +25,7 @@ import migrationImage from "../../assets/images/duplicate.svg";
 import analyticsImage from "../../assets/images/real-time-analytics.svg";
 import testingImage from "../../assets/images/split-testing.svg";
 import trainingImage from "../../assets/images/teaching.svg";
+import Button from "../../components/ui/Button.astro";
 ---
 
 <Layout
@@ -51,7 +47,7 @@ import trainingImage from "../../assets/images/teaching.svg";
           class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
           Outgrown Your<br />
           <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            class="text-transparent bg-clip-text bg-linear-to-t from-blue-500 to-blue-300">
             Current Platform?
           </span>
         </h1>
@@ -733,159 +729,9 @@ import trainingImage from "../../assets/images/teaching.svg";
           </p>
         </div>
 
-        <!-- Simple Lead Form -->
-        <form
-          class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20 shadow-md">
-          <div class="space-y-6">
-            <!-- Name -->
-            <div>
-              <label
-                for="name"
-                class="block text-sm font-medium text-white mb-2">
-                Your Name *
-              </label>
-              <div class="relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <User class="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="John Smith"
-                />
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-medium text-white mb-2">
-                Email Address *
-              </label>
-              <div class="relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Mail class="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="john@example.com"
-                />
-              </div>
-            </div>
-
-            <!-- Phone -->
-            <div>
-              <label
-                for="phone"
-                class="block text-sm font-medium text-white mb-2">
-                Phone Number
-              </label>
-              <div class="relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Phone class="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="(555) 123-4567"
-                />
-              </div>
-            </div>
-
-            <!-- Current Platform -->
-            <div>
-              <label
-                for="current-platform"
-                class="block text-sm font-medium text-white mb-2">
-                Current Platform *
-              </label>
-              <select
-                id="current-platform"
-                name="current-platform"
-                required
-                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <option value="" class="bg-slate-900"
-                  >Select your current platform...</option
-                >
-                <option value="wix" class="bg-slate-900">Wix</option>
-                <option value="squarespace" class="bg-slate-900"
-                  >Squarespace</option
-                >
-                <option value="weebly" class="bg-slate-900">Weebly</option>
-                <option value="godaddy" class="bg-slate-900"
-                  >GoDaddy Website Builder</option
-                >
-                <option value="wordpress" class="bg-slate-900">WordPress</option
-                >
-                <option value="shopify" class="bg-slate-900">Shopify</option>
-                <option value="custom" class="bg-slate-900">Custom/Other</option
-                >
-              </select>
-            </div>
-
-            <!-- Website URL -->
-            <div>
-              <label
-                for="website"
-                class="block text-sm font-medium text-white mb-2">
-                Current Website URL *
-              </label>
-              <input
-                type="url"
-                id="website"
-                name="website"
-                required
-                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="https://yourwebsite.com"
-              />
-            </div>
-
-            <!-- Migration Reasons -->
-            <div>
-              <label
-                for="reasons"
-                class="block text-sm font-medium text-white mb-2">
-                Why Do You Want to Migrate? *
-              </label>
-              <textarea
-                id="reasons"
-                name="reasons"
-                required
-                rows="4"
-                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                placeholder="e.g., Need more features, slow performance, outgrown platform, SEO limitations..."
-              ></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <Button
-              type="submit"
-              variant="gradient"
-              size="lg"
-              icon={ArrowRight}
-              class="w-full group">
-              <span>Start My Migration</span>
-            </Button>
-
-            <p class="text-sm text-blue-200 text-center">
-              We'll review your site and get back to you within 24 hours with a
-              migration plan.
-            </p>
-          </div>
-        </form>
+        <Button href="/solutions/request?solution=platform-migration">
+          Get Your Custom Plan
+        </Button>
       </div>
     </Container>
   </Section>

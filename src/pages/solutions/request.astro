@@ -1,0 +1,311 @@
+---
+export const prerender = false;
+
+import Container from "../../components/ui/Container.astro";
+import Section from "../../components/ui/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import SolutionForm from "../../components/SolutionForm.astro";
+
+const { searchParams } = Astro.url;
+const solutionName = searchParams.get("solution") || "basic-solution";
+
+const solutionConfigs: Record<string, { title: string; description: string }> =
+  {
+    "basic-solution": {
+      title: "Let's Build Your",
+      description: "Custom Solution",
+    },
+    "complete-digital-launch": {
+      title: "Complete Digital Launch",
+      description:
+        "Launch your business online with everything you need in one package.",
+    },
+    "website-refresh-modernization": {
+      title: "Website Refresh & Modernization",
+      description:
+        "Transform your existing website into a modern, high-converting platform.",
+    },
+    "platform-migration": {
+      title: "Platform Migration",
+      description:
+        "Seamlessly migrate your website to a new platform with minimal downtime.",
+    },
+    "quick-launch-website": {
+      title: "Quick Launch Website",
+      description:
+        "Get your website up and running in no time with our quick launch service.",
+    },
+    "diy-website-support": {
+      title: "DIY Website Support",
+      description:
+        "Get expert guidance and support while building your own website.",
+    },
+  };
+
+const selectedSolution = solutionConfigs[solutionName] ?? solutionConfigs["basic-solution"];
+---
+
+<Layout
+  title="Request Services"
+  description="Tell us about your project. We'll create a custom proposal tailored to your goals and budget.">
+  <!-- Hero Section -->
+  <Section
+    background="dark"
+    pattern={{ type: "grid", visibility: "light" }}
+    size="sm">
+    <Container>
+      <div class="max-w-4xl mx-auto text-center">
+        <h1
+          class="text-5xl md:text-6xl text-transparent font-bold mb-6 leading-tight bg-clip-text bg-linear-to-t from-blue-500 to-blue-300">
+          {selectedSolution.title}
+        </h1>
+        <span
+            class="text-white text-3xl md:text-4xl ">
+            {selectedSolution.description}
+          </span>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Multi-Step Form Section -->
+  <Section size="sm" background="white">
+    <Container size="reading">
+      <SolutionForm solution={selectedSolution.title} buttonText="Request Proposal">
+        <input type="hidden" name="solution" value={solutionName} />
+
+        {(solutionName === "complete-digital-launch") && (
+          <div>
+            <label
+              for="description"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              Tell Us About Your Business *
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              required
+              rows="4"
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              placeholder="What does your business do? Who are your customers? What are your goals?"
+            ></textarea>
+          </div>
+
+          <div>
+            <label
+              for="timeline"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              When Do You Want to Launch? *
+            </label>
+            <select
+              id="timeline"
+              name="timeline"
+              required
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <option value="" class="bg-slate-900">Select a timeline...</option
+              >
+              <option value="asap" class="bg-slate-900"
+                >As soon as possible</option
+              >
+              <option value="1-2months" class="bg-slate-900">1-2 months</option>
+              <option value="2-3months" class="bg-slate-900">2-3 months</option>
+              <option value="flexible" class="bg-slate-900"
+                >Flexible / Just exploring</option
+              >
+            </select>
+          </div>
+        )}
+        {(solutionName === "diy-website-support") && (
+          <div>
+            <label
+              for="experience"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              Your Experience Level *
+            </label>
+            <select
+              id="experience"
+              name="experience"
+              required
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <option value="" class="bg-slate-900"
+                >Select your experience...</option
+              >
+              <option value="beginner" class="bg-slate-900"
+                >Complete Beginner</option
+              >
+              <option value="some" class="bg-slate-900"
+                >Some Website Experience</option
+              >
+              <option value="comfortable" class="bg-slate-900"
+                >Pretty Comfortable with Tech</option
+              >
+              <option value="experienced" class="bg-slate-900"
+                >Experienced but Want Help</option
+              >
+            </select>
+          </div>
+          <div>
+            <label
+              for="platform"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              Platform Preference (if any)
+            </label>
+            <input
+              type="text"
+              id="platform"
+              name="platform"
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="e.g., WordPress, Wix, Squarespace, or 'Not sure yet'"
+            />
+          </div>
+          <div>
+            <label
+              for="help-needed"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              What Do You Need Help With? *
+            </label>
+            <textarea
+              id="help-needed"
+              name="help-needed"
+              required
+              rows="4"
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              placeholder="e.g., Choosing a platform, technical setup, design feedback, troubleshooting..."
+            ></textarea>
+          </div>
+        )}
+        {(solutionName === "platform-migration") && (
+          <div>
+            <label
+              for="current-platform"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              Current Platform *
+            </label>
+            <select
+              id="current-platform"
+              name="current-platform"
+              required
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <option value="" class="bg-slate-900">
+                Select your current platform...
+              </option>
+              <option value="wix" class="bg-slate-900">Wix</option>
+              <option value="squarespace" class="bg-slate-900">
+                Squarespace
+              </option>
+              <option value="weebly" class="bg-slate-900">Weebly</option>
+              <option value="webflow" class="bg-slate-900">Webflow</option>
+              <option value="godaddy" class="bg-slate-900">
+                GoDaddy Website Builder
+              </option>
+              <option value="wordpress" class="bg-slate-900">WordPress</option>
+              <option value="shopify" class="bg-slate-900">Shopify</option>
+              <option value="custom" class="bg-slate-900">Custom/Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              for="website"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              Current Website URL *
+            </label>
+            <input
+              type="url"
+              id="website"
+              name="website"
+              required
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="https://yourwebsite.com"
+            />
+          </div>
+
+          <div>
+            <label
+              for="reasons"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              Why Do You Want to Migrate? *
+            </label>
+            <textarea
+              id="reasons"
+              name="reasons"
+              required
+              rows="4"
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              placeholder="e.g., Need more features, slow performance, outgrown platform, SEO limitations..."
+            ></textarea>
+          </div>
+        )}
+        {(solutionName === "website-refresh-modernization") && (
+          <div>
+            <label
+              for="website"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              Your Current Website URL *
+            </label>
+            <input
+              type="url"
+              id="website"
+              name="website"
+              required
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="https://yourwebsite.com"
+            />
+          </div>
+
+          <div>
+            <label
+              for="concerns"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              What Are Your Main Concerns? *
+            </label>
+            <textarea
+              id="concerns"
+              name="concerns"
+              required
+              rows="4"
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              placeholder="e.g., Not mobile-friendly, looks outdated, too slow, need better SEO..."
+            ></textarea>
+          </div>
+        )}
+        {(solutionName === "quick-launch-website") && (
+          <div>
+            <label
+              for="business"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              What Type of Business? *
+            </label>
+            <input
+              type="text"
+              id="business"
+              name="business"
+              required
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="e.g., Plumbing, Consulting, Coaching"
+            />
+          </div>
+
+          <div>
+            <label
+              for="description"
+              class="block text-sm font-medium text-blue-800 mb-2">
+              Anything Else We Should Know?
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              rows="3"
+              class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              placeholder="Optional: Any specific features you need or questions you have?"
+            ></textarea>
+          </div>
+        )}
+      </SolutionForm>
+      </Container>  
+  </Section>
+  <script
+  is:inline
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer></script>
+</Layout>

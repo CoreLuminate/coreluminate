@@ -1,0 +1,41 @@
+---
+import { getSecret } from "astro:env/server";
+
+interface Props {
+  theme?: "light" | "dark" | "auto";
+  size?: "normal" | "compact" | "invisible" | "flexible";
+  responseFieldName?: string;
+  onSuccess?: string;
+  onError?: string;
+  class?: string;
+}
+
+const {
+  theme = "light",
+  size = "normal",
+  responseFieldName = "cf_turnstile_response",
+  onSuccess,
+  onError,
+  class: className = "",
+} = Astro.props;
+
+const turnstileSiteKey = getSecret("PUBLIC_TURNSTILE_SITE_KEY");
+---
+
+<div class={className}>
+  <div
+    class="cf-turnstile"
+    data-sitekey={turnstileSiteKey}
+    data-theme={theme}
+    data-size={size}
+    data-response-field-name={responseFieldName}
+    {...onSuccess ? { "data-callback": onSuccess } : {}}
+    {...onError ? { "data-error-callback": onError } : {}}>
+  </div>
+</div>
+
+<script
+  is:inline
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer></script>

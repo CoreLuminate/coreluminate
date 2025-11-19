@@ -1,11 +1,10 @@
-/**
- * Contact Form Handler
- * Simple single-page contact form with validation
- */
+import type { FormSubmissionResult } from '../../lib/formSubmission';
+import { submitFormData } from '../../lib/formSubmission';
 
 class ContactForm {
   private form: HTMLFormElement;
   private submitBtn: HTMLButtonElement;
+  private turnstileToken: string | null = null;
 
   constructor() {
     this.form = document.getElementById('contact-form') as HTMLFormElement;
@@ -19,8 +18,19 @@ class ContactForm {
    */
   private init(): void {
     this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+
+    (window as any).onTurnstileSuccess = this.onTurnstileSuccess.bind(this);
+    (window as any).onTurnstileError = this.onTurnstileError.bind(this);
   }
 
+  private onTurnstileSuccess(token: string): void {
+    this.turnstileToken = token;
+  }
+
+  private onTurnstileError(): void {
+    this.turnstileToken = null;
+    this.showToast('There was an error with the verification. Please try again.', true, false);
+  } 
   /**
    * Validate form fields
    */
@@ -115,7 +125,7 @@ class ContactForm {
     if (isSuccess) {
       setTimeout(() => {
         toast.classList.add('hidden');
-      }, 5000);
+      }, 8000);
     }
   }
 
@@ -141,33 +151,30 @@ class ContactForm {
       return;
     }
 
-    // Disable submit button
-    this.submitBtn.disabled = true;
-    const originalText = this.submitBtn.textContent;
-    this.submitBtn.textContent = 'Sending...';
-
     try {
+      // Disable submit button
+      this.submitBtn.disabled = true;
+
       // Get form data
-      const formData = new FormData(this.form);
-      
-      // TODO: Integrate with Netlify Forms API
-      console.log('Contact form submitted:', Object.fromEntries(formData));
+      const rawData = new FormData(this.form);
 
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const result: FormSubmissionResult = await submitFormData(rawData, 'contact');
 
-      // Show success message
-      this.showToast(
-        'Thank you for your message! We\'ll get back to you within 24 hours.',
-        false,
-        true
-      );
+      if (!result.success) {
+        this.showToast(result.message, true, false);
+        return;
+      }
+
+      this.showToast('Thank you for reaching out! We will get back to you shortly.', false, true);
 
       // Reset form
       this.form.reset();
 
+      if((window as any).turnstile) {
+        (window as any).turnstile.reset();
+      }
+
     } catch (error) {
-      console.error('Form submission error:', error);
       this.showToast(
         'There was an error sending your message. Please try again or contact us directly via email.',
         true,
@@ -176,7 +183,6 @@ class ContactForm {
     } finally {
       // Re-enable submit button
       this.submitBtn.disabled = false;
-      this.submitBtn.textContent = originalText;
     }
   }
 }

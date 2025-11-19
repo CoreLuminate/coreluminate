@@ -1,19 +1,15 @@
 ---
 import {
-  ArrowRight,
   Check,
   DollarSign,
   Gauge,
   Headphones,
   Lightbulb,
-  Mail,
   MessageSquare,
-  Phone,
   Rocket,
   Sparkles,
   Target,
   ThumbsUp,
-  User,
   Video,
   Wrench,
 } from "@lucide/astro";
@@ -44,7 +40,7 @@ import Layout from "../../layouts/Layout.astro";
           class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
           Build It Yourself,<br />
           <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            class="text-transparent bg-clip-text bg-linear-to-t from-blue-500 to-blue-300">
             We've Got Your Back
           </span>
         </h1>
@@ -543,157 +539,9 @@ import Layout from "../../layouts/Layout.astro";
           </p>
         </div>
 
-        <!-- Simple Lead Form -->
-        <form
-          class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20 shadow-md">
-          <div class="space-y-6">
-            <!-- Name -->
-            <div>
-              <label
-                for="name"
-                class="block text-sm font-medium text-white mb-2">
-                Your Name *
-              </label>
-              <div class="relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <User class="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="John Smith"
-                />
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-medium text-white mb-2">
-                Email Address *
-              </label>
-              <div class="relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Mail class="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="john@example.com"
-                />
-              </div>
-            </div>
-
-            <!-- Phone -->
-            <div>
-              <label
-                for="phone"
-                class="block text-sm font-medium text-white mb-2">
-                Phone Number
-              </label>
-              <div class="relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Phone class="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="(555) 123-4567"
-                />
-              </div>
-            </div>
-
-            <!-- Experience Level -->
-            <div>
-              <label
-                for="experience"
-                class="block text-sm font-medium text-white mb-2">
-                Your Experience Level *
-              </label>
-              <select
-                id="experience"
-                name="experience"
-                required
-                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <option value="" class="bg-slate-900"
-                  >Select your experience...</option
-                >
-                <option value="beginner" class="bg-slate-900"
-                  >Complete Beginner</option
-                >
-                <option value="some" class="bg-slate-900"
-                  >Some Website Experience</option
-                >
-                <option value="comfortable" class="bg-slate-900"
-                  >Pretty Comfortable with Tech</option
-                >
-                <option value="experienced" class="bg-slate-900"
-                  >Experienced but Want Help</option
-                >
-              </select>
-            </div>
-
-            <!-- Platform Preference -->
-            <div>
-              <label
-                for="platform"
-                class="block text-sm font-medium text-white mb-2">
-                Platform Preference (if any)
-              </label>
-              <input
-                type="text"
-                id="platform"
-                name="platform"
-                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="e.g., WordPress, Wix, Squarespace, or 'Not sure yet'"
-              />
-            </div>
-
-            <!-- What They Need Help With -->
-            <div>
-              <label
-                for="help-needed"
-                class="block text-sm font-medium text-white mb-2">
-                What Do You Need Help With? *
-              </label>
-              <textarea
-                id="help-needed"
-                name="help-needed"
-                required
-                rows="4"
-                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                placeholder="e.g., Choosing a platform, technical setup, design feedback, troubleshooting..."
-              ></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <Button
-              type="submit"
-              variant="gradient"
-              size="lg"
-              icon={ArrowRight}
-              class="w-full group">
-              <span>Get Started with Support</span>
-            </Button>
-
-            <p class="text-sm text-blue-200 text-center">
-              We'll get back to you within 24 hours to discuss the best support
-              plan for your needs.
-            </p>
-          </div>
-        </form>
+        <Button href="/solutions/request?solution=diy-website-support">
+          Get Your Custom Plan
+        </Button>
       </div>
     </Container>
   </Section>

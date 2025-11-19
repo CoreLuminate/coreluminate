@@ -14,13 +14,13 @@ export const siteConfig = {
   
   // Pagination settings
   pagination: {
-    itemsPerPage: 2,
+    itemsPerPage: 6,
     blog: {
-      postsPerPage: 2,
+      postsPerPage: 6,
       initialPage: 1,
     },
     work: {
-      postsPerPage: 2,
+      postsPerPage: 6,
       initialPage: 1,
     },
   },

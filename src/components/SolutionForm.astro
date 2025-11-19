@@ -1,0 +1,128 @@
+---
+import { Mail, Phone, User } from "@lucide/astro";
+import TurnstileWidget from "./TurnstileWidget.astro";
+import Button from "./ui/Button.astro";
+
+const { solutionName, buttonText = "Submit" } = Astro.props;
+---
+
+<form
+  id="solution-form"
+  class="bg-slate-50 backdrop-blur-lg rounded-xl p-8 md:p-10 border border-slate-200 shadow-md">
+  <input
+    type="hidden"
+    name="cf_turnstile_response"
+    id="cf_turnstile_response"
+    value="test"
+  />
+  <div class="space-y-6">
+    <!-- Name -->
+    <div>
+      <label for="name" class="block text-sm font-medium text-blue-800 mb-2">
+        Your Name *
+      </label>
+      <div class="relative">
+        <div
+          class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <User class="h-5 w-5 text-slate-400" />
+        </div>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="block w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          placeholder="John Smith"
+        />
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-sm font-medium text-blue-800 mb-2">
+        Email Address *
+      </label>
+      <div class="relative">
+        <div
+          class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <Mail class="h-5 w-5 text-slate-400" />
+        </div>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          class="block w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          placeholder="john@example.com"
+        />
+      </div>
+    </div>
+
+    <!-- Phone -->
+    <div>
+      <label for="phone" class="block text-sm font-medium text-blue-800 mb-2">
+        Phone Number
+      </label>
+      <div class="relative">
+        <div
+          class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <Phone class="h-5 w-5 text-slate-400" />
+        </div>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          class="block w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          placeholder="(555) 123-4567"
+        />
+      </div>
+    </div>
+
+    <!-- Business Name -->
+    <div>
+      <label
+        for="business"
+        class="block text-sm font-medium text-blue-800 mb-2">
+        Business Name *
+      </label>
+      <input
+        type="text"
+        id="business"
+        name="business"
+        required
+        class="block w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        placeholder="Your Business Name"
+      />
+    </div>
+
+    <slot />
+
+    <!-- Submit Button -->
+    <div class="my-8">
+      <Button type="submit" id="submit-btn">
+        <span>{buttonText}</span>
+      </Button>
+    </div>
+
+    <p class="text-sm text-slate-400 text-center">
+      We'll review your information and get back to you within 24 hours with
+      next steps.
+    </p>
+
+    <div id="form-toast" class="mt-10 rounded-lg p-6 border-2 hidden">
+      <span id="form-toast-message" class="text-sm text-center tracking-wide">
+        There was an error processing your request. Please try again later.
+      </span>
+    </div>
+
+    <!-- Cloudflare Turnstile -->
+    <div>
+      <TurnstileWidget
+        onSuccess="onTurnstileSuccess"
+        onError="onTurnstileError"
+      />
+    </div>
+  </div>
+</form>
+
+<script src="../scripts/forms/solution.ts"></script>

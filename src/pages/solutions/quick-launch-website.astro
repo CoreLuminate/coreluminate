@@ -1,6 +1,5 @@
 ---
 import {
-  ArrowRight,
   Car,
   Check,
   Clock,
@@ -10,7 +9,6 @@ import {
   Gauge,
   Mail,
   MessageCircle,
-  Phone,
   PiggyBank,
   Rocket,
   Sparkles,
@@ -45,7 +43,7 @@ import Layout from "../../layouts/Layout.astro";
           class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
           Get Online<br />
           <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            class="text-transparent bg-clip-text bg-linear-to-t from-blue-500 to-blue-300">
             This Week
           </span>
         </h1>
@@ -557,128 +555,11 @@ import Layout from "../../layouts/Layout.astro";
             Tell us about your business and we'll have you online in 1-2 weeks.
           </p>
         </div>
-
-        <!-- Simple Lead Form -->
-        <form
-          class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-10 border border-white/20 shadow-md">
-          <div class="space-y-6">
-            <!-- Name -->
-            <div>
-              <label
-                for="name"
-                class="block text-sm font-medium text-white mb-2">
-                Your Name *
-              </label>
-              <div class="relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <User class="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="John Smith"
-                />
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-medium text-white mb-2">
-                Email Address *
-              </label>
-              <div class="relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Mail class="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="john@example.com"
-                />
-              </div>
-            </div>
-
-            <!-- Phone -->
-            <div>
-              <label
-                for="phone"
-                class="block text-sm font-medium text-white mb-2">
-                Phone Number
-              </label>
-              <div class="relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Phone class="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  class="block w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="(555) 123-4567"
-                />
-              </div>
-            </div>
-
-            <!-- Business Type -->
-            <div>
-              <label
-                for="business"
-                class="block text-sm font-medium text-white mb-2">
-                What Type of Business? *
-              </label>
-              <input
-                type="text"
-                id="business"
-                name="business"
-                required
-                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="e.g., Plumbing, Consulting, Coaching"
-              />
-            </div>
-
-            <!-- Brief Description -->
-            <div>
-              <label
-                for="description"
-                class="block text-sm font-medium text-white mb-2">
-                Anything Else We Should Know?
-              </label>
-              <textarea
-                id="description"
-                name="description"
-                rows="3"
-                class="block w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                placeholder="Optional: Any specific features you need or questions you have?"
-              ></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <Button
-              type="submit"
-              variant="gradient"
-              size="lg"
-              icon={ArrowRight}
-              class="w-full group">
-              <span>Get My Quick Website</span>
-            </Button>
-
-            <p class="text-sm text-blue-200 text-center">
-              We'll get back to you within 24 hours to discuss your project and
-              timeline.
-            </p>
-          </div>
-        </form>
+        <Button
+          href="/solutions/request?solution=quick-launch-website"
+          size="lg">
+          Get Your Custom Plan
+        </Button>
       </div>
     </Container>
   </Section>
