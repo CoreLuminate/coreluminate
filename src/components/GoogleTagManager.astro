@@ -1,0 +1,84 @@
+---
+// src/components/GoogleTagManager.astro
+// Google Tag Manager with Cookie Consent
+
+interface GoogleTagManagerProps {
+  containerId: string;
+}
+
+const { containerId } = Astro.props;
+---
+
+<!-- GTM Head Script -->
+<script is:inline define:vars={{ containerId }}>
+  // Initialize dataLayer immediately
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  window.gtag = gtag;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Check for existing valid consent FIRST
+    const consent = localStorage.getItem("cookie-consent");
+    const timestamp = localStorage.getItem("cookie-consent-timestamp");
+
+    let initialConsent = "denied";
+    if (consent === "accepted" && timestamp) {
+      const consentDate = new Date(parseInt(timestamp));
+      const expiryDate = new Date(consentDate);
+      expiryDate.setDate(expiryDate.getDate() + 365);
+
+      if (new Date() < expiryDate) {
+        initialConsent = "granted";
+      }
+    }
+
+    // 2. Set default consent state BEFORE GTM loads
+    gtag("consent", "default", {
+      ad_storage: initialConsent,
+      analytics_storage: initialConsent,
+      ad_user_data: initialConsent,
+      ad_personalization: initialConsent,
+    });
+
+    // 3. Load GTM
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", containerId);
+  });
+
+  // 4. Listen for consent changes from banner
+  function updateConsent(accepted) {
+    const consentStatus = accepted ? "granted" : "denied";
+    gtag("consent", "update", {
+      ad_storage: consentStatus,
+      analytics_storage: consentStatus,
+      ad_user_data: consentStatus,
+      ad_personalization: consentStatus,
+    });
+    console.log(`GTM consent updated to: ${consentStatus}`);
+  }
+
+  window.addEventListener("cookieConsentChange", (event) => {
+    updateConsent(event.detail.accepted);
+  });
+</script>
+
+<!-- GTM noscript fallback - place in body -->
+<noscript>
+  <iframe
+    src={`https://www.googletagmanager.com/ns.html?id=${containerId}`}
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+  </iframe>
+</noscript>

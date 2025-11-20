@@ -165,7 +165,12 @@
     <ProgressIndicator {currentStep} />
 
     <!-- Form -->
-    <form bind:this={form} onsubmit={handleSubmit} class="space-y-8 mt-12">
+    <form
+      id="service-request-form"
+      bind:this={form}
+      onsubmit={handleSubmit}
+      class="space-y-8 mt-12"
+    >
       {#if currentStep === 1}
         <Step1 />
       {:else if currentStep === 2}

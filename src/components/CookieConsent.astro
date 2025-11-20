@@ -7,13 +7,25 @@ import cookieImg from "../assets/cookie.svg";
 <div
   id="cookie-consent-banner"
   class="fixed bottom-0 left-0 z-50 flex justify-center p-4 pointer-events-none"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cookie-consent-banner-title"
+  aria-describedby="cookie-consent-banner-description"
   style="display: none;">
   <div
     class="bg-blue-950 w-full sm:max-w-md rounded-xl shadow-lg px-6 py-4 sm:px-8 sm:py-5 flex flex-col gap-6 pointer-events-auto">
     <div class="flex flex-row items-start gap-6">
-      <Image src={cookieImg} alt="Cookie" class="w-10 h-10" />
+      <Image
+        src={cookieImg}
+        alt="Cookie"
+        class="w-10 h-10"
+        aria-hidden="true"
+      />
       <div class="flex flex-col gap-3">
-        <p class="text-sm text-slate-50 leading-relaxed">
+        <h2 id="cookie-consent-banner-title" class="sr-only">Cookie Consent</h2>
+        <p
+          id="cookie-consent-banner-description"
+          class="text-sm text-slate-50 leading-relaxed">
           We use cookies to improve your browsing experience on CoreLuminate, we
           use cookies for analytics, personalization, and secure transactions.
         </p>
@@ -111,13 +123,6 @@ import cookieImg from "../assets/cookie.svg";
     if (consent === null) {
       // No valid consent, show banner
       showBanner();
-    } else if (consent === "accepted") {
-      // Trigger GA initialization
-      window.dispatchEvent(
-        new CustomEvent("cookieConsentChange", {
-          detail: { accepted: true },
-        })
-      );
     }
 
     // Button handlers
