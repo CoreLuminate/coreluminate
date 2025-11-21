@@ -1,9 +1,9 @@
 
 export function getAccessKey(formType: string): string {
   const keyMap: Record<string, string> = {
-    'contact': '9fb2a2c2-9fba-43a8-bfe5-7d189bb01b39',
-    'service-request': '6c5a7d66-8d81-445f-a6c9-dfa61350da93',
-    'solution-request': '48af0525-c7d2-4227-a882-68088cb18708',
+    'contact': import.meta.env.PUBLIC_WEB3FORMS_CONTACT_ACCESS_KEY,
+    'service-request': import.meta.env.PUBLIC_WEB3FORMS_SERVICE_REQUEST_ACCESS_KEY,
+    'solution-request': import.meta.env.PUBLIC_WEB3FORMS_SOLUTION_REQUEST_ACCESS_KEY,
   };
 
   const key = keyMap[formType];
@@ -20,6 +20,15 @@ export async function submitFormToWeb3Forms(formData: FormData, formKey: string)
   
   const accessKey = getAccessKey(formKey);
   formData.append('access_key', accessKey);
+
+  if (!accessKey) {
+    return new Response(JSON.stringify({ message: 'Web3Forms access key is missing' }), {
+      status: 500,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  }
 
   try {
     const json = JSON.stringify(Object.fromEntries(formData));
