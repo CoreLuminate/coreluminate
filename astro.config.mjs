@@ -22,6 +22,6 @@ export default defineConfig({
   ), svelte()],
 
   adapter: cloudflare({
-    imageService: 'cloudflare',
+    imageService: 'compile',
   })
 });
