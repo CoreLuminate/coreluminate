@@ -171,6 +171,11 @@
       onsubmit={handleSubmit}
       class="space-y-8 mt-12"
     >
+      <input
+        type="hidden"
+        name="subject"
+        value="New Service Request Submission"
+      />
       {#if currentStep === 1}
         <Step1 />
       {:else if currentStep === 2}

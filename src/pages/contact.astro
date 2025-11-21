@@ -1,12 +1,5 @@
 ---
-import {
-  Clock,
-  Mail,
-  MapPin,
-  MessageCircle,
-  MessageCircleMore,
-  Send,
-} from "@lucide/astro";
+import { Clock, Mail, MapPin, MessageCircle, Send } from "@lucide/astro";
 import TurnstileWidget from "../components/TurnstileWidget.astro";
 import Badge from "../components/ui/Badge.astro";
 import Button from "../components/ui/Button.astro";
@@ -75,19 +68,6 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
 
-          <!-- Phone -->
-          <div class="flex items-start gap-4">
-            <MessageCircleMore class="w-6 h-6 text-blue-600" />
-            <div>
-              <h3 class="font-semibold text-slate-900 mb-1">Text</h3>
-              <a
-                href="tel:+1234567890"
-                class="text-blue-600 hover:text-blue-700 transition-colors">
-                (480) 818-5759
-              </a>
-            </div>
-          </div>
-
           <!-- Location -->
           <div class="flex items-start gap-4">
             <MapPin class="w-6 h-6 text-blue-600" />
@@ -125,6 +105,11 @@ import Layout from "../layouts/Layout.astro";
             </p>
 
             <form id="contact-form" class="space-y-6">
+              <input
+                type="hidden"
+                name="subject"
+                value="New Contact Form Submission"
+              />
               <!-- Name -->
               <div>
                 <label
@@ -201,7 +186,7 @@ import Layout from "../layouts/Layout.astro";
                 </label>
                 <select
                   id="subject"
-                  name="subject"
+                  name="inquiry_type"
                   required
                   class="w-full px-4 py-3 border-2 bg-white border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 transition-colors text-slate-900">
                   <option value="">Select a subject</option>
