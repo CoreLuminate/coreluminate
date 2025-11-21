@@ -1,5 +1,7 @@
+import { getSecret } from "astro:env/server";
+
 export async function verifyToken(token: string): Promise<boolean> {
-  const secretKey = '0x4AAAAAACAyOqr58Q-vjuE6wW4-iE59KNs';
+  const secretKey = getSecret('CF_TURNSTILE_SECRET_KEY');
 
   try {
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
