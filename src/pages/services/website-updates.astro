@@ -17,6 +17,7 @@ import {
 } from "@lucide/astro";
 import { Image } from "astro:assets";
 import heroImage from "../../assets/images/website-updates-hero.jpg"; // You'll need an appropriate image
+import CTADivided from "../../components/CTADivided.astro";
 import Accordion from "../../components/ui/Accordion.astro";
 import Badge from "../../components/ui/Badge.astro";
 import Button from "../../components/ui/Button.astro";
@@ -212,7 +213,13 @@ const faqs = [
                 <span>Form integration</span>
               </div>
             </div>
-            <Badge variant="blue">1-2 Weeks</Badge>
+            <Badge variant="blue" class="mb-4">1-2 Weeks</Badge>
+            <Button
+              size="sm"
+              href="/services/request?service=website-updates-add-ons&package=landing-pages"
+              variant="secondary">
+              Request Service
+            </Button>
           </div>
         </div>
 
@@ -245,7 +252,13 @@ const faqs = [
                 <span>Content migration</span>
               </div>
             </div>
-            <Badge variant="blue">1-2 Weeks</Badge>
+            <Badge variant="blue" class="mb-4">1-2 Weeks</Badge>
+            <Button
+              size="sm"
+              href="/services/request?service=website-updates-add-ons&package=blog-setup"
+              variant="secondary">
+              Request Service
+            </Button>
           </div>
         </div>
 
@@ -278,7 +291,13 @@ const faqs = [
                 <span>Schema markup</span>
               </div>
             </div>
-            <Badge variant="blue">2-3 Weeks</Badge>
+            <Badge variant="blue" class="mb-4">2-3 Weeks</Badge>
+            <Button
+              size="sm"
+              href="/services/request?service=website-updates-add-ons&package=seo-optimization"
+              variant="secondary">
+              Request Service
+            </Button>
           </div>
         </div>
 
@@ -311,7 +330,13 @@ const faqs = [
                 <span>Caching setup</span>
               </div>
             </div>
-            <Badge variant="blue">1 Week</Badge>
+            <Badge variant="blue" class="mb-4">1 Week</Badge>
+            <Button
+              size="sm"
+              href="/services/request?service=website-updates-add-ons&package=speed-performance"
+              variant="secondary">
+              Request Service
+            </Button>
           </div>
         </div>
 
@@ -344,7 +369,13 @@ const faqs = [
                 <span>Email notifications</span>
               </div>
             </div>
-            <Badge variant="blue">1-2 Weeks</Badge>
+            <Badge variant="blue" class="mb-4">1-2 Weeks</Badge>
+            <Button
+              size="sm"
+              href="/services/request?service=website-updates-add-ons&package=custom-forms-features"
+              variant="secondary">
+              Request Service
+            </Button>
           </div>
         </div>
 
@@ -377,7 +408,13 @@ const faqs = [
                 <span>List segmentation</span>
               </div>
             </div>
-            <Badge variant="blue">1 Week</Badge>
+            <Badge variant="blue" class="mb-4">1 Week</Badge>
+            <Button
+              size="sm"
+              href="/services/request?service=website-updates-add-ons&package=email-marketing-setup"
+              variant="secondary">
+              Request Service
+            </Button>
           </div>
         </div>
 
@@ -410,7 +447,13 @@ const faqs = [
                 <span>Payment gateway setup</span>
               </div>
             </div>
-            <Badge variant="blue">2-4 Weeks</Badge>
+            <Badge variant="blue" class="mb-4">2-4 Weeks</Badge>
+            <Button
+              size="sm"
+              href="/services/request?service=website-updates-add-ons&package=e-commerce-features"
+              variant="secondary">
+              Request Service
+            </Button>
           </div>
         </div>
 
@@ -443,7 +486,13 @@ const faqs = [
                 <span>Conversion tracking</span>
               </div>
             </div>
-            <Badge variant="blue">1 Week</Badge>
+            <Badge variant="blue" class="mb-4">1 Week</Badge>
+            <Button
+              size="sm"
+              href="/services/request?service=website-updates-add-ons&package=analytics-tracking"
+              variant="secondary">
+              Request Service
+            </Button>
           </div>
         </div>
 
@@ -476,7 +525,13 @@ const faqs = [
                 <span>Layout adjustments</span>
               </div>
             </div>
-            <Badge variant="blue">Varies</Badge>
+            <Badge variant="blue" class="mb-4">Varies</Badge>
+            <Button
+              size="sm"
+              href="/services/request?service=website-updates-add-ons&package=content-design-updates"
+              variant="secondary">
+              Request Service
+            </Button>
           </div>
         </div>
       </div>
@@ -484,7 +539,7 @@ const faqs = [
   </Section>
 
   <!-- How It Works -->
-  <Section size="xl" background="slate" pattern={{ type: "circuit" }}>
+  <Section size="xl" background="slate">
     <Container>
       <div class="max-w-3xl mx-auto text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -644,36 +699,20 @@ const faqs = [
   <!-- Final CTA -->
   <Section size="xl" background="blue" pattern={{ type: "grid" }}>
     <Container size="reading">
-      <div
-        class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-xl text-center">
-        <h2
-          class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-          Ready to Improve Your Website?
-        </h2>
-
-        <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-          Tell us what you need and we'll provide a custom quote with a clear
-          timeline and fixed price.
+      <CTADivided
+        title="Ready to Improve Your Website?"
+        body="Tell us what you need and we'll provide a custom quote with a clear timeline and fixed price."
+        primaryButtonText="Request a Quote"
+        primaryButtonUrl="/services/request?service=website-updates-add-ons"
+        secondaryButtonText="View All Services"
+        secondaryButtonUrl="/services">
+        <p class="text-sm text-slate-600">
+          <strong>Need a full website redesign?</strong> Check out our
+          <a href="/solutions" class="text-blue-600 hover:underline"
+            >complete solutions</a
+          >.
         </p>
-
-        <div class="flex flex-wrap justify-center gap-4">
-          <Button
-            variant="primary"
-            href="/services/request?service=website-updates-add-ons"
-            icon={ArrowRight}>
-            Request a Quote
-          </Button>
-        </div>
-
-        <div class="mt-8 pt-8 border-t border-slate-200">
-          <p class="text-sm text-slate-600">
-            <strong>Need a full website redesign?</strong> Check out our
-            <a href="/solutions" class="text-blue-600 hover:underline"
-              >complete solutions</a
-            >.
-          </p>
-        </div>
-      </div>
+      </CTADivided>
     </Container>
   </Section>
 </Layout>

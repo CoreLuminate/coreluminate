@@ -27,7 +27,7 @@ import Layout from "../layouts/Layout.astro";
           class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
           Let's Start a<br />
           <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            class="text-transparent bg-clip-text bg-linear-to-t from-blue-400 to-cyan-400">
             Conversation
           </span>
         </h1>
@@ -249,47 +249,57 @@ import Layout from "../layouts/Layout.astro";
   <!-- Alternative CTAs -->
   <Section size="2xl" background="slate">
     <Container>
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-slate-900 mb-4">
-            Not sure where to start?
-          </h2>
-          <p class="text-lg text-slate-600">
-            We have resources to help you find the right solution.
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">
+          Not sure where to start?
+        </h2>
+        <p class="text-lg text-slate-600">
+          We have resources to help you find the right solution.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <a
+          href="/services/request"
+          class="flex flex-col group bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all">
+          <h3 class="text-xl font-bold text-slate-900 mb-2">
+            Request Services
+          </h3>
+          <p class="text-slate-600 mb-4 grow">
+            Know what you need? Fill out our detailed service request form for a
+            custom proposal.
           </p>
-        </div>
+          <span class="text-blue-600 font-semibold group-hover:underline">
+            Get Started →
+          </span>
+        </a>
 
-        <div class="grid md:grid-cols-2 gap-6">
-          <a
-            href="/services/request"
-            class="group bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all">
-            <h3 class="text-xl font-bold text-slate-900 mb-2">
-              Request Services
-            </h3>
-            <p class="text-slate-600 mb-4">
-              Know what you need? Fill out our detailed service request form for
-              a custom proposal.
-            </p>
-            <span class="text-blue-600 font-semibold group-hover:underline">
-              Get Started →
-            </span>
-          </a>
-
-          <a
-            href="/solutions"
-            class="group bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all">
-            <h3 class="text-xl font-bold text-slate-900 mb-2">
-              Browse Solutions
-            </h3>
-            <p class="text-slate-600 mb-4">
-              Explore our pre-packaged solutions designed for specific business
-              needs and timelines.
-            </p>
-            <span class="text-blue-600 font-semibold group-hover:underline">
-              View Solutions →
-            </span>
-          </a>
-        </div>
+        <a
+          href="/solutions"
+          class="flex flex-col group bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all">
+          <h3 class="text-xl font-bold text-slate-900 mb-2">
+            Browse Solutions
+          </h3>
+          <p class="text-slate-600 mb-4 grow">
+            Explore our pre-packaged solutions designed for specific business
+            needs and timelines.
+          </p>
+          <span class="text-blue-600 font-semibold group-hover:underline">
+            View Solutions →
+          </span>
+        </a>
+        <a
+          href="/services"
+          class="flex flex-col group bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all">
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Browse Services</h3>
+          <p class="text-slate-600 mb-4 grow">
+            Discover our full range of services to see how we can help your
+            business grow.
+          </p>
+          <span class="text-blue-600 font-semibold group-hover:underline">
+            View Services →
+          </span>
+        </a>
       </div>
     </Container>
   </Section>

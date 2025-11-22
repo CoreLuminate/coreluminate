@@ -21,6 +21,7 @@ import Section from "../../components/ui/Section.astro";
 import Layout from "../../layouts/Layout.astro";
 
 import heroImage from "../../assets/images/logo-design-sketching.jpg";
+import CTADivided from "../../components/CTADivided.astro";
 
 // FAQ data
 const faqs = [
@@ -188,7 +189,7 @@ const faqs = [
   <!-- Problem/Solution Section -->
   <Section background="white">
     <Container>
-      <div class="max-w-3xl mx-auto text-center mb-12">
+      <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Your Brand Is Your First Impression
         </h2>
@@ -198,12 +199,12 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-10">
         <!-- Problem 1 -->
         <div class="text-center">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <Target class="w-8 h-8 text-blue-600" />
+            <Target class="w-8 h-8 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             Looking Unprofessional
@@ -218,7 +219,7 @@ const faqs = [
         <div class="text-center">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <Clock class="w-8 h-8 text-blue-600" />
+            <Clock class="w-8 h-8 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             No Time or Skills
@@ -233,7 +234,7 @@ const faqs = [
         <div class="text-center">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <Zap class="w-8 h-8 text-blue-600" />
+            <Zap class="w-8 h-8 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             Agency Sticker Shock
@@ -266,7 +267,7 @@ const faqs = [
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         <!-- Service 1: Logo Design -->
         <div
-          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          class="flex flex-col bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
             <Sparkles class="w-8 h-8 text-blue-600" />
@@ -279,7 +280,7 @@ const faqs = [
             everywhere—from business cards to billboards.
           </p>
 
-          <ul class="space-y-3 mb-6">
+          <ul class="space-y-3 mb-8 grow">
             <li class="flex items-start gap-2">
               <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
               <span class="text-sm text-slate-700">2-3 initial concepts</span>
@@ -299,11 +300,17 @@ const faqs = [
               <span class="text-sm text-slate-700">Color & B&W versions</span>
             </li>
           </ul>
+          <Button
+            variant="secondary"
+            size="sm"
+            href="/services/request?service=brand-logo-design&package=logo-design">
+            Choose Logo Design
+          </Button>
         </div>
 
         <!-- Service 2: Brand Identity -->
         <div
-          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-blue-600 relative">
+          class="flex flex-col bg-white rounded-2xl p-8 shadow-sm border-2 border-blue-600 relative">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2">
             <Badge class="shadow-md bg-blue-600 text-white">Most Popular</Badge>
           </div>
@@ -320,7 +327,7 @@ const faqs = [
             guidelines for consistent branding.
           </p>
 
-          <ul class="space-y-3 mb-6">
+          <ul class="space-y-3 mb-8 grow">
             <li class="flex items-start gap-2">
               <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
               <span class="text-sm text-slate-700"
@@ -344,11 +351,17 @@ const faqs = [
               <span class="text-sm text-slate-700">Usage guidelines</span>
             </li>
           </ul>
+          <Button
+            variant="primary"
+            size="sm"
+            href="/services/request?service=brand-logo-design&package=brand-identity">
+            Choose Brand Identity
+          </Button>
         </div>
 
         <!-- Service 3: Brand Materials -->
         <div
-          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          class="flex flex-col bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
             <Layers class="w-8 h-8 text-blue-600" />
@@ -363,7 +376,7 @@ const faqs = [
             social templates, and more.
           </p>
 
-          <ul class="space-y-3 mb-6">
+          <ul class="space-y-3 mb-8 grow">
             <li class="flex items-start gap-2">
               <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
               <span class="text-sm text-slate-700">Business card design</span>
@@ -387,25 +400,13 @@ const faqs = [
               <span class="text-sm text-slate-700">Custom as needed</span>
             </li>
           </ul>
+          <Button
+            variant="secondary"
+            size="sm"
+            href="/services/request?service=brand-logo-design&package=brand-materials">
+            Get Brand Materials
+          </Button>
         </div>
-      </div>
-
-      <!-- CTA -->
-      <div
-        class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8 text-center max-w-3xl mx-auto">
-        <h3 class="text-2xl font-bold text-slate-900 mb-2">
-          Every Project Is Custom
-        </h3>
-        <p class="text-slate-600 mb-6">
-          I don't believe in one-size-fits-all pricing. Let's discuss your needs
-          and I'll create a custom quote that fits your budget and timeline.
-        </p>
-        <Button
-          variant="dark"
-          size="lg"
-          href="/services/request?service=brand-logo-design">
-          Get Your Custom Quote
-        </Button>
       </div>
     </Container>
   </Section>
@@ -423,7 +424,7 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         <!-- Benefit 1 -->
         <div class="text-center">
           <div
@@ -514,9 +515,7 @@ const faqs = [
   </Section>
 
   <!-- Process Section -->
-  <Section
-    background="light"
-    pattern={{ type: "topography", visibility: "subtle" }}>
+  <Section background="slate" pattern={{ type: "grid", visibility: "subtle" }}>
     <Container>
       <div class="max-w-3xl mx-auto text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -613,103 +612,101 @@ const faqs = [
 
   <!-- Comparison Section -->
   <Section>
-    <Container>
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            How I'm Different
-          </h2>
-          <p class="text-lg text-slate-600">
-            The quality you want, without the downsides of other options.
-          </p>
-        </div>
+    <Container size="wide">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          How I'm Different
+        </h2>
+        <p class="text-lg text-slate-600">
+          The quality you want, without the downsides of other options.
+        </p>
+      </div>
 
-        <!-- Comparison Table -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
-          <div class="grid md:grid-cols-4 gap-px bg-slate-200">
-            <!-- Header Row -->
-            <div class="bg-slate-50 p-4 md:p-6">
-              <div class="font-bold text-slate-900"></div>
-            </div>
-            <div class="bg-blue-50 p-4 md:p-6 text-center">
-              <div class="font-bold text-blue-900">CoreLuminate</div>
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <div class="font-bold text-slate-700">Design Agency</div>
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <div class="font-bold text-slate-700">Fiverr/99designs</div>
-            </div>
+      <!-- Comparison Table -->
+      <div class="bg-white rounded-2xl overflow-hidden shadow-md">
+        <div class="grid md:grid-cols-4 gap-px bg-slate-200">
+          <!-- Header Row -->
+          <div class="bg-slate-50 p-4 md:p-6">
+            <div class="font-bold text-slate-900"></div>
+          </div>
+          <div class="bg-blue-50 p-4 md:p-6 text-center">
+            <div class="font-bold text-blue-900">CoreLuminate</div>
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <div class="font-bold text-slate-700">Design Agency</div>
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <div class="font-bold text-slate-700">Fiverr/99designs</div>
+          </div>
 
-            <!-- Price Row -->
-            <div class="bg-slate-50 p-4 md:p-6">
-              <div class="font-semibold text-slate-700">Price</div>
-            </div>
-            <div class="bg-blue-50 p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-700">Affordable</div>
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-700">$3,000-10,000+</div>
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-700">$5-500</div>
-            </div>
+          <!-- Price Row -->
+          <div class="bg-slate-50 p-4 md:p-6">
+            <div class="font-semibold text-slate-700">Price</div>
+          </div>
+          <div class="bg-blue-50 p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-700">Affordable</div>
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-700">$3,000-10,000+</div>
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-700">$5-500</div>
+          </div>
 
-            <!-- Timeline Row -->
-            <div class="bg-slate-50 p-4 md:p-6">
-              <div class="font-semibold text-slate-700">Timeline</div>
-            </div>
-            <div class="bg-blue-50 p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-700">2-4 weeks</div>
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-700">4-12 weeks</div>
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-700">1-7 days</div>
-            </div>
+          <!-- Timeline Row -->
+          <div class="bg-slate-50 p-4 md:p-6">
+            <div class="font-semibold text-slate-700">Timeline</div>
+          </div>
+          <div class="bg-blue-50 p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-700">2-4 weeks</div>
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-700">4-12 weeks</div>
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-700">1-7 days</div>
+          </div>
 
-            <!-- Quality Row -->
-            <div class="bg-slate-50 p-4 md:p-6">
-              <div class="font-semibold text-slate-700">Quality</div>
-            </div>
-            <div class="bg-blue-50 p-4 md:p-6 text-center">
-              <Check class="w-6 h-6 text-green-600 mx-auto" />
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <Check class="w-6 h-6 text-green-600 mx-auto" />
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-500">Hit or miss</div>
-            </div>
+          <!-- Quality Row -->
+          <div class="bg-slate-50 p-4 md:p-6">
+            <div class="font-semibold text-slate-700">Quality</div>
+          </div>
+          <div class="bg-blue-50 p-4 md:p-6 text-center">
+            <Check class="w-6 h-6 text-green-600 mx-auto" />
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <Check class="w-6 h-6 text-green-600 mx-auto" />
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-500">Hit or miss</div>
+          </div>
 
-            <!-- Communication Row -->
-            <div class="bg-slate-50 p-4 md:p-6">
-              <div class="font-semibold text-slate-700">Communication</div>
-            </div>
-            <div class="bg-blue-50 p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-700">Direct & fast</div>
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-700">Through reps</div>
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <div class="text-sm text-slate-700">Minimal</div>
-            </div>
+          <!-- Communication Row -->
+          <div class="bg-slate-50 p-4 md:p-6">
+            <div class="font-semibold text-slate-700">Communication</div>
+          </div>
+          <div class="bg-blue-50 p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-700">Direct & fast</div>
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-700">Through reps</div>
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <div class="text-sm text-slate-700">Minimal</div>
+          </div>
 
-            <!-- Strategy Row -->
-            <div class="bg-slate-50 p-4 md:p-6">
-              <div class="font-semibold text-slate-700">Strategic Input</div>
-            </div>
-            <div class="bg-blue-50 p-4 md:p-6 text-center">
-              <Check class="w-6 h-6 text-green-600 mx-auto" />
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <Check class="w-6 h-6 text-green-600 mx-auto" />
-            </div>
-            <div class="bg-white p-4 md:p-6 text-center">
-              <span class="text-slate-400">—</span>
-            </div>
+          <!-- Strategy Row -->
+          <div class="bg-slate-50 p-4 md:p-6">
+            <div class="font-semibold text-slate-700">Strategic Input</div>
+          </div>
+          <div class="bg-blue-50 p-4 md:p-6 text-center">
+            <Check class="w-6 h-6 text-green-600 mx-auto" />
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <Check class="w-6 h-6 text-green-600 mx-auto" />
+          </div>
+          <div class="bg-white p-4 md:p-6 text-center">
+            <span class="text-slate-400">—</span>
           </div>
         </div>
       </div>
@@ -718,78 +715,48 @@ const faqs = [
 
   <!-- FAQ Section -->
   <Section size="xl" background="white">
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Frequently Asked Questions
-          </h2>
-        </div>
-
-        <Accordion items={faqs} />
+    <Container size="reading">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Frequently Asked Questions
+        </h2>
       </div>
+
+      <Accordion items={faqs} />
     </Container>
   </Section>
 
   <!-- Final CTA -->
-  <Section background="blue" pattern={{ type: "mesh", visibility: "light" }}>
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div
-          class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl text-center">
-          <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Ready to Build Your Brand?
-          </h2>
-
-          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-            Let's create a professional brand identity that helps your business
-            stand out and attract the right customers.
-          </p>
-
-          <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <Button
-              variant="primary"
-              size="lg"
-              icon={ArrowRight}
-              href="/services/request?service=brand-logo-design">
-              Get Your Custom Quote
-            </Button>
-            <Button
-              variant="secondary"
-              size="lg"
-              href="/services/website-design-development">
-              View Website Services
-            </Button>
+  <Section background="blue">
+    <Container size="reading">
+      <CTADivided
+        title="Ready to Build Your Brand?"
+        body="Let's create a professional brand identity that helps your business stand out and attract the right customers."
+        primaryButtonText="Get Your Custom Quote"
+        primaryButtonUrl="/services/request?service=brand-logo-design"
+        secondaryButtonText="View Website Services"
+        secondaryButtonUrl="/services/website-design-development">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="flex items-center justify-center gap-2 text-slate-700">
+              <Clock class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold">2-4 Week Turnaround</span>
+            </div>
           </div>
-
-          <div class="pt-8 border-t border-slate-200">
-            <div class="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div
-                  class="flex items-center justify-center gap-2 text-slate-700">
-                  <Clock class="w-5 h-5 text-blue-600" />
-                  <span class="font-semibold">2-4 Week Turnaround</span>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="flex items-center justify-center gap-2 text-slate-700">
-                  <Sparkles class="w-5 h-5 text-blue-600" />
-                  <span class="font-semibold">100% Custom Designs</span>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="flex items-center justify-center gap-2 text-slate-700">
-                  <FileText class="w-5 h-5 text-blue-600" />
-                  <span class="font-semibold">All Rights Included</span>
-                </div>
-              </div>
+          <div>
+            <div class="flex items-center justify-center gap-2 text-slate-700">
+              <Sparkles class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold">100% Custom Designs</span>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-center gap-2 text-slate-700">
+              <FileText class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold">All Rights Included</span>
             </div>
           </div>
         </div>
-      </div>
+      </CTADivided>
     </Container>
   </Section>
 </Layout>

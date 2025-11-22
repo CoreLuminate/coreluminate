@@ -4,6 +4,7 @@ import {
   Calendar,
   ChartBarIncreasing,
   Check,
+  CirclePlus,
   Clock,
   FileText,
   Mail,
@@ -13,6 +14,7 @@ import {
   Settings,
   Sparkles,
   Target,
+  Terminal,
   TrendingUp,
   Users,
   Wrench,
@@ -27,6 +29,7 @@ import Section from "../../components/ui/Section.astro";
 import Layout from "../../layouts/Layout.astro";
 
 import heroImage from "../../assets/images/team-working-at-table-with-laptops.jpg"; // Replace with your actual image
+import CTADivided from "../../components/CTADivided.astro";
 
 // FAQ data
 const faqs = [
@@ -206,12 +209,12 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-10">
         <!-- Problem 1 -->
         <div class="text-center">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <Settings class="w-8 h-8 text-blue-600" />
+            <Settings class="w-8 h-8 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">Setup Overwhelm</h3>
           <p class="text-slate-600">
@@ -224,7 +227,7 @@ const faqs = [
         <div class="text-center">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <Puzzle class="w-8 h-8 text-blue-600" />
+            <Puzzle class="w-8 h-8 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             Disconnected Tools
@@ -239,7 +242,7 @@ const faqs = [
         <div class="text-center">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <Clock class="w-8 h-8 text-blue-600" />
+            <Clock class="w-8 h-8 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">Wasted Time</h3>
           <p class="text-slate-600">
@@ -267,12 +270,12 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
         <!-- CRM & Sales -->
         <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <Users class="w-6 h-6 text-blue-600" />
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <Users class="w-6 h-6 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             CRM & Sales Tools
@@ -289,8 +292,8 @@ const faqs = [
         <!-- Accounting & Invoicing -->
         <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <FileText class="w-6 h-6 text-blue-600" />
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <FileText class="w-6 h-6 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             Accounting & Invoicing
@@ -307,8 +310,8 @@ const faqs = [
         <!-- Email Marketing -->
         <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <Mail class="w-6 h-6 text-blue-600" />
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <Mail class="w-6 h-6 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">Email Marketing</h3>
           <p class="text-sm text-slate-600 mb-3">
@@ -322,8 +325,8 @@ const faqs = [
         <!-- Project Management -->
         <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <ChartBarIncreasing class="w-6 h-6 text-blue-600" />
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <ChartBarIncreasing class="w-6 h-6 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             Project Management
@@ -339,8 +342,8 @@ const faqs = [
         <!-- Communication Tools -->
         <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <MessageSquare class="w-6 h-6 text-blue-600" />
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <MessageSquare class="w-6 h-6 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             Team Communication
@@ -356,8 +359,8 @@ const faqs = [
         <!-- Scheduling & Calendar -->
         <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <Calendar class="w-6 h-6 text-blue-600" />
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <Calendar class="w-6 h-6 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             Scheduling & Calendar
@@ -373,11 +376,14 @@ const faqs = [
 
       <!-- Additional Services -->
       <div
-        class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8 max-w-4xl mx-auto">
-        <h3 class="text-xl font-bold text-slate-900 mb-4 text-center">
-          Plus More...
-        </h3>
-        <div class="grid md:grid-cols-2 gap-6">
+        class="flex flex-col items-start gap-6 bg-blue-50 border-2 border-blue-200 rounded-2xl p-8">
+        <div class="flex flex-row gap-4">
+          <CirclePlus class="h-7 w-7 text-blue-600 mx-auto mb-4" />
+          <h3 class="text-xl font-bold text-slate-900 mb-4 text-center">
+            Plus More...
+          </h3>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
           <ul class="space-y-2 text-slate-700">
             <li class="flex items-start gap-2">
               <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
@@ -406,6 +412,20 @@ const faqs = [
               <span>Custom system recommendations</span>
             </li>
           </ul>
+          <ul class="space-y-2 text-slate-700">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Helpdesk ticketing system setup</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>Internal document & knowledge base</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span>HR systems setup</span>
+            </li>
+          </ul>
         </div>
         <p class="text-center text-sm text-slate-600 mt-6">
           <strong>Don't see what you need?</strong> If I haven't used a specific
@@ -428,11 +448,11 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Item 1 -->
         <div class="bg-slate-50 rounded-xl p-6">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
             <Target class="w-6 h-6 text-blue-600" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
@@ -447,7 +467,7 @@ const faqs = [
         <!-- Item 2 -->
         <div class="bg-slate-50 rounded-xl p-6">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
             <Settings class="w-6 h-6 text-blue-600" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
@@ -462,7 +482,7 @@ const faqs = [
         <!-- Item 3 -->
         <div class="bg-slate-50 rounded-xl p-6">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
             <Puzzle class="w-6 h-6 text-blue-600" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
@@ -477,7 +497,7 @@ const faqs = [
         <!-- Item 4 -->
         <div class="bg-slate-50 rounded-xl p-6">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
             <Repeat class="w-6 h-6 text-blue-600" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
@@ -492,7 +512,7 @@ const faqs = [
         <!-- Item 5 -->
         <div class="bg-slate-50 rounded-xl p-6">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
             <Users class="w-6 h-6 text-blue-600" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">Team Training</h3>
@@ -505,7 +525,7 @@ const faqs = [
         <!-- Item 6 -->
         <div class="bg-slate-50 rounded-xl p-6">
           <div
-            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
             <Check class="w-6 h-6 text-blue-600" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
@@ -521,9 +541,7 @@ const faqs = [
   </Section>
 
   <!-- Why Me Section -->
-  <Section
-    background="light"
-    pattern={{ type: "topography", visibility: "subtle" }}>
+  <Section background="slate" pattern={{ type: "dots", visibility: "subtle" }}>
     <Container>
       <div class="max-w-3xl mx-auto text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -534,7 +552,7 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Benefit 1 -->
         <div class="text-center">
           <div
@@ -722,82 +740,78 @@ const faqs = [
   </Section>
 
   <!-- À La Carte Approach Section -->
-  <Section background="slate" pattern={{ type: "waves", visibility: "subtle" }}>
-    <Container>
-      <div class="max-w-4xl mx-auto">
+  <Section background="slate">
+    <Container size="wide">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          À La Carte Services
+        </h2>
+        <p class="text-lg text-slate-600">
+          Only pay for what you need. No packages, no forced bundles.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 md:p-10">
         <div class="text-center mb-8">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            À La Carte Services
-          </h2>
-          <p class="text-lg text-slate-600">
-            Only pay for what you need. No packages, no forced bundles.
+          <p class="text-slate-700 text-lg">
+            Tell me what you need, and I'll provide a custom quote based on
+            complexity and effort.
           </p>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 md:p-10">
-          <div class="text-center mb-8">
-            <p class="text-slate-700 text-lg">
-              Tell me what you need, and I'll provide a custom quote based on
-              complexity and effort.
-            </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Example Requests -->
+          <div>
+            <h3 class="font-bold text-slate-900 mb-4">Example Requests:</h3>
+            <ul class="space-y-4 text-slate-700">
+              <li class="flex items-start gap-2">
+                <Terminal class="w-5 h-5 text-blue-600" />
+                <span>"Set up HubSpot CRM for my team"</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Terminal class="w-5 h-5 text-blue-600" />
+                <span>"Configure QuickBooks + connect to my bank"</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Terminal class="w-5 h-5 text-blue-600" />
+                <span>"Set up business email with custom domain"</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Terminal class="w-5 h-5 text-blue-600" />
+                <span>"Connect Mailchimp to my website forms"</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Terminal class="w-5 h-5 text-blue-600" />
+                <span>"Automate leads from CRM to email marketing"</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="grid md:grid-cols-2 gap-6">
-            <!-- Example Requests -->
-            <div>
-              <h3 class="font-bold text-slate-900 mb-4">Example Requests:</h3>
-              <ul class="space-y-3 text-slate-700">
-                <li class="flex items-start gap-2">
-                  <span class="text-blue-600 mt-1">→</span>
-                  <span>"Set up HubSpot CRM for my team"</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-blue-600 mt-1">→</span>
-                  <span>"Configure QuickBooks + connect to my bank"</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-blue-600 mt-1">→</span>
-                  <span>"Set up business email with custom domain"</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-blue-600 mt-1">→</span>
-                  <span>"Connect Mailchimp to my website forms"</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-blue-600 mt-1">→</span>
-                  <span>"Automate leads from CRM to email marketing"</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- What Affects Price -->
-            <div>
-              <h3 class="font-bold text-slate-900 mb-4">
-                What Affects Pricing:
-              </h3>
-              <ul class="space-y-3 text-slate-700">
-                <li class="flex items-start gap-2">
-                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Number of systems to configure</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Complexity of workflows/automations</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Number of integrations needed</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Data migration requirements</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Training needs for your team</span>
-                </li>
-              </ul>
-            </div>
+          <!-- What Affects Price -->
+          <div>
+            <h3 class="font-bold text-slate-900 mb-4">What Affects Pricing:</h3>
+            <ul class="space-y-4 text-slate-700">
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Number of systems to configure</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Complexity of workflows/automations</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Number of integrations needed</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Data migration requirements</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Training needs for your team</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -805,7 +819,7 @@ const faqs = [
   </Section>
 
   <!-- Perfect For Section -->
-  <Section background="dark" pattern={{ type: "mesh", visibility: "light" }}>
+  <Section background="dark" pattern={{ type: "mesh", visibility: "subtle" }}>
     <Container>
       <div class="max-w-3xl mx-auto text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-50 mb-4">
@@ -813,7 +827,7 @@ const faqs = [
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Persona 1 -->
         <div
           class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
@@ -860,78 +874,48 @@ const faqs = [
 
   <!-- FAQ Section -->
   <Section size="xl" background="white">
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Frequently Asked Questions
-          </h2>
-        </div>
-
-        <Accordion items={faqs} />
+    <Container size="reading">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Frequently Asked Questions
+        </h2>
       </div>
+
+      <Accordion items={faqs} />
     </Container>
   </Section>
 
   <!-- Final CTA -->
-  <Section background="blue" pattern={{ type: "circuit", visibility: "light" }}>
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div
-          class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl text-center">
-          <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Ready to Get Your Systems Working?
-          </h2>
-
-          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-            Stop struggling with software setup. Let's get your business tools
-            configured, connected, and working for you.
-          </p>
-
-          <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <Button
-              variant="primary"
-              size="lg"
-              icon={ArrowRight}
-              href="/services/request?service=business-systems-setup">
-              Schedule Consultation
-            </Button>
-            <Button
-              variant="secondary"
-              size="lg"
-              href="/services/website-design-development">
-              View Other Services
-            </Button>
+  <Section background="blue">
+    <Container size="reading">
+      <CTADivided
+        title="Ready to Get Your Systems Working?"
+        body="Stop struggling with software setup. Let's get your business tools configured, connected, and working for you."
+        primaryButtonText="Schedule Consultation"
+        primaryButtonUrl="/services/request?service=business-systems-setup"
+        secondaryButtonText="View Other Services"
+        secondaryButtonUrl="/services/website-design-development">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="flex items-center justify-center gap-2 text-slate-700">
+              <Zap class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold">Fast Setup</span>
+            </div>
           </div>
-
-          <div class="pt-8 border-t border-slate-200">
-            <div class="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div
-                  class="flex items-center justify-center gap-2 text-slate-700">
-                  <Zap class="w-5 h-5 text-blue-600" />
-                  <span class="font-semibold">Fast Setup</span>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="flex items-center justify-center gap-2 text-slate-700">
-                  <Check class="w-5 h-5 text-blue-600" />
-                  <span class="font-semibold">No Retainers</span>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="flex items-center justify-center gap-2 text-slate-700">
-                  <FileText class="w-5 h-5 text-blue-600" />
-                  <span class="font-semibold">Full Training Included</span>
-                </div>
-              </div>
+          <div>
+            <div class="flex items-center justify-center gap-2 text-slate-700">
+              <Check class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold">No Retainers</span>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-center gap-2 text-slate-700">
+              <FileText class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold">Full Training Included</span>
             </div>
           </div>
         </div>
-      </div>
+      </CTADivided>
     </Container>
   </Section>
 </Layout>

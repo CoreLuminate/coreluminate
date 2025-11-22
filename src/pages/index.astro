@@ -76,7 +76,7 @@ const description =
     <Container>
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Left Content -->
-        <div>
+        <div class="flex flex-col items-start">
           <!-- Pill Badge -->
           <Badge variant="blue" class="mb-4">
             <Vote class="w-4 h-4" />
@@ -159,7 +159,9 @@ const description =
             </div>
           </div>
 
-          <Button variant="primary" href="/about"> Learn More About Us </Button>
+          <Button variant="secondary" href="/about">
+            Learn More About Us
+          </Button>
         </div>
 
         <!-- Right Image -->
@@ -790,10 +792,7 @@ const description =
               advice tailored to your business needs.
             </p>
 
-            <Button
-              variant="secondary"
-              icon={ArrowRight}
-              href="/services/request">
+            <Button variant="secondary" href="/services/request">
               Get Started
             </Button>
           </div>

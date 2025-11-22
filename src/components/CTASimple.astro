@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  buttonText: string;
+  buttonUrl: string;
+  class?: string;
+}
+const {
+  title = "Ready to Launch Digital Presence?",
+  body = "Tell us about your project, and let's get started on building a website that drives results.",
+  buttonText = "Get Started Now",
+  buttonUrl = "/contact",
+  class: className = "",
+  ...rest
+} = Astro.props;
+import Button from "./ui/Button.astro";
+---
+
+<div class={`flex flex-col items-center ${className}`} {...rest}>
+  <div class="text-center mb-12">
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+      {title}
+    </h2>
+    <p class="text-xl text-blue-100">
+      {body}
+    </p>
+  </div>
+  <Button href={buttonUrl}>
+    {buttonText}
+  </Button>
+</div>

@@ -1,5 +1,5 @@
 ---
-import { ArrowRight, Signature } from '@lucide/astro';
+import { Signature } from '@lucide/astro';
 import type { CollectionEntry } from 'astro:content';
 import Badge from './ui/Badge.astro';
 import Button from './ui/Button.astro';
@@ -45,7 +45,7 @@ const sortedFeatured = sortWorkProjects(featuredWork, 'publishDate', 'desc');
   <!-- View All Button -->
   {showViewAll && (
     <div class="flex justify-center">
-      <Button variant="primary" icon={ArrowRight} href="/work">
+      <Button variant="primary" href="/work">
         View All Projects
       </Button>
     </div>

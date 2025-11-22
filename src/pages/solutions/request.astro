@@ -8,6 +8,7 @@ import SolutionForm from "../../components/SolutionForm.astro";
 
 const { searchParams } = Astro.url;
 const solutionName = searchParams.get("solution") || "basic-solution";
+const planName = searchParams.get("plan") || "standard";
 
 const solutionConfigs: Record<string, { title: string; description: string }> =
   {
@@ -72,7 +73,7 @@ const selectedSolution = solutionConfigs[solutionName] ?? solutionConfigs["basic
     <Container size="reading">
       <SolutionForm solution={selectedSolution.title} buttonText="Request Proposal">
         <input type="hidden" name="solution" value={solutionName} />
-
+        <input type="hidden" name="plan" value={planName} />
         {(solutionName === "complete-digital-launch") && (
           <div>
             <label

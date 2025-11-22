@@ -1,6 +1,5 @@
 ---
 import {
-  ArrowRight,
   CircleCheck,
   Clock,
   Code,
@@ -11,8 +10,8 @@ import {
   Users,
   Zap,
 } from "@lucide/astro";
+import CTADualAction from "../components/CTADualAction.astro";
 import Badge from "../components/ui/Badge.astro";
-import Button from "../components/ui/Button.astro";
 import Container from "../components/ui/Container.astro";
 import Section from "../components/ui/Section.astro";
 import Layout from "../layouts/Layout.astro";
@@ -37,7 +36,7 @@ import Layout from "../layouts/Layout.astro";
           class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
           Digital Solutions for<br />
           <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
+            class="text-transparent bg-clip-text bg-linear-to-t from-blue-400 to-cyan-400">
             Real Businesses
           </span>
         </h1>
@@ -102,89 +101,87 @@ import Layout from "../layouts/Layout.astro";
   <!-- Why CoreLuminate -->
   <Section size="3xl" background="slate">
     <Container>
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold text-slate-900 mb-4">
-            Why Choose CoreLuminate?
-          </h2>
-          <p class="text-lg text-slate-600">
-            We do things differently—and it shows in the results.
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 mb-4">
+          Why Choose CoreLuminate?
+        </h2>
+        <p class="text-lg text-slate-600">
+          We do things differently—and it shows in the results.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Small Team Advantage -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
+          <Users class="w-7 h-7 mb-4 text-blue-600" />
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Small Team, Big Results
+          </h3>
+          <p class="text-slate-600">
+            Work directly with experienced professionals—no middlemen, no junior
+            developers learning on your project. Just expertise and
+            accountability.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Small Team Advantage -->
-          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
-            <Users class="w-7 h-7 mb-4 text-blue-600" />
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              Small Team, Big Results
-            </h3>
-            <p class="text-slate-600">
-              Work directly with experienced professionals—no middlemen, no
-              junior developers learning on your project. Just expertise and
-              accountability.
-            </p>
-          </div>
+        <!-- No Agency Overhead -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
+          <DollarSign class="w-7 h-7 mb-4 text-emerald-600" />
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            No Agency Overhead
+          </h3>
+          <p class="text-slate-600">
+            You're not paying for fancy offices, large teams, or expensive sales
+            processes. You get quality work at fair prices.
+          </p>
+        </div>
 
-          <!-- No Agency Overhead -->
-          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
-            <DollarSign class="w-7 h-7 mb-4 text-emerald-600" />
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              No Agency Overhead
-            </h3>
-            <p class="text-slate-600">
-              You're not paying for fancy offices, large teams, or expensive
-              sales processes. You get quality work at fair prices.
-            </p>
-          </div>
+        <!-- Direct Communication -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
+          <MessageCircle class="w-7 h-7 mb-4 text-indigo-600" />
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Direct Communication
+          </h3>
+          <p class="text-slate-600">
+            No account managers playing telephone. You work directly with the
+            person building your project from day one.
+          </p>
+        </div>
 
-          <!-- Direct Communication -->
-          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
-            <MessageCircle class="w-7 h-7 mb-4 text-indigo-600" />
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              Direct Communication
-            </h3>
-            <p class="text-slate-600">
-              No account managers playing telephone. You work directly with the
-              person building your project from day one.
-            </p>
-          </div>
+        <!-- Fast & Efficient -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
+          <Zap class="w-7 h-7 mb-4 text-orange-600" />
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Fast & Efficient
+          </h3>
+          <p class="text-slate-600">
+            Smaller teams move faster. We get your project done without
+            unnecessary delays or bureaucracy.
+          </p>
+        </div>
 
-          <!-- Fast & Efficient -->
-          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
-            <Zap class="w-7 h-7 mb-4 text-orange-600" />
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              Fast & Efficient
-            </h3>
-            <p class="text-slate-600">
-              Smaller teams move faster. We get your project done without
-              unnecessary delays or bureaucracy.
-            </p>
-          </div>
+        <!-- No Long-Term Contracts -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
+          <Clock class="w-7 h-7 mb-4 text-teal-600" />
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            No Long-Term Contracts
+          </h3>
+          <p class="text-slate-600">
+            One-time projects, clear deliverables, transparent pricing. No
+            surprise fees or commitments you don't need.
+          </p>
+        </div>
 
-          <!-- No Long-Term Contracts -->
-          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
-            <Clock class="w-7 h-7 mb-4 text-teal-600" />
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              No Long-Term Contracts
-            </h3>
-            <p class="text-slate-600">
-              One-time projects, clear deliverables, transparent pricing. No
-              surprise fees or commitments you don't need.
-            </p>
-          </div>
-
-          <!-- Technical Expertise -->
-          <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
-            <Code class="w-7 h-7 mb-4 text-rose-600" />
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              Real Technical Expertise
-            </h3>
-            <p class="text-slate-600">
-              18+ years of hands-on experience from internet infrastructure to
-              enterprise software development and management.
-            </p>
-          </div>
+        <!-- Technical Expertise -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-slate-200">
+          <Code class="w-7 h-7 mb-4 text-rose-600" />
+          <h3 class="text-xl font-bold text-slate-900 mb-3">
+            Real Technical Expertise
+          </h3>
+          <p class="text-slate-600">
+            18+ years of hands-on experience from internet infrastructure to
+            enterprise software development and management.
+          </p>
         </div>
       </div>
     </Container>
@@ -193,93 +190,87 @@ import Layout from "../layouts/Layout.astro";
   <!-- Our Background -->
   <Section size="2xl" background="white">
     <Container>
-      <div class="max-w-5xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <Badge class="mb-6">
-              <Code class="w-4 h-4" />
-              <span>Experience</span>
-            </Badge>
-            <h2 class="text-4xl font-bold text-slate-900 mb-6">
-              Built on Real-World Experience
-            </h2>
-            <p class="text-lg text-slate-600 mb-6">
-              CoreLuminate isn't run by marketers or salespeople. It's built on
-              nearly two decades of hands-on technical experience across the
-              entire technology stack.
-            </p>
-            <p class="text-slate-600 mb-8">
-              From installing internet infrastructure and troubleshooting
-              networks, to building enterprise applications and managing
-              development teams—we've done it all. This breadth of experience
-              means we understand technology from the ground up and know how to
-              build solutions that actually work.
-            </p>
-          </div>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <Badge class="mb-6">
+            <Code class="w-4 h-4" />
+            <span>Experience</span>
+          </Badge>
+          <h2 class="text-4xl font-bold text-slate-900 mb-6">
+            Built on Real-World Experience
+          </h2>
+          <p class="text-lg text-slate-600 mb-6">
+            CoreLuminate isn't run by marketers or salespeople. It's built on
+            nearly two decades of hands-on technical experience across the
+            entire technology stack.
+          </p>
+          <p class="text-slate-600 mb-8">
+            From installing internet infrastructure and troubleshooting
+            networks, to building enterprise applications and managing
+            development teams—we've done it all. This breadth of experience
+            means we understand technology from the ground up and know how to
+            build solutions that actually work.
+          </p>
+        </div>
 
-          <div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200">
-            <h3 class="font-bold text-slate-900 mb-6">Our Journey</h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-3">
-                <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <div>
-                  <p class="font-semibold text-slate-900">
-                    Started in Tech Infrastructure
-                  </p>
-                  <p class="text-sm text-slate-600">
-                    Internet provider installations, troubleshooting, and
-                    operations
-                  </p>
-                </div>
+        <div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200">
+          <h3 class="font-bold text-slate-900 mb-6">Our Journey</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <div>
+                <p class="font-semibold text-slate-900">
+                  Started in Tech Infrastructure
+                </p>
+                <p class="text-sm text-slate-600">
+                  Internet provider installations, troubleshooting, and
+                  operations
+                </p>
               </div>
+            </div>
 
-              <div class="flex items-start gap-3">
-                <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <div>
-                  <p class="font-semibold text-slate-900">
-                    Technical Support & Systems
-                  </p>
-                  <p class="text-sm text-slate-600">
-                    DSL support and server engineering
-                  </p>
-                </div>
+            <div class="flex items-start gap-3">
+              <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <div>
+                <p class="font-semibold text-slate-900">
+                  Technical Support & Systems
+                </p>
+                <p class="text-sm text-slate-600">
+                  DSL support and server engineering
+                </p>
               </div>
+            </div>
 
-              <div class="flex items-start gap-3">
-                <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <div>
-                  <p class="font-semibold text-slate-900">
-                    Software Development
-                  </p>
-                  <p class="text-sm text-slate-600">
-                    10 years building desktop apps, web applications, APIs, and
-                    integrations
-                  </p>
-                </div>
+            <div class="flex items-start gap-3">
+              <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <div>
+                <p class="font-semibold text-slate-900">Software Development</p>
+                <p class="text-sm text-slate-600">
+                  10 years building desktop apps, web applications, APIs, and
+                  integrations
+                </p>
               </div>
+            </div>
 
-              <div class="flex items-start gap-3">
-                <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <div>
-                  <p class="font-semibold text-slate-900">
-                    Engineering Management
-                  </p>
-                  <p class="text-sm text-slate-600">
-                    10 years leading web development teams
-                  </p>
-                </div>
+            <div class="flex items-start gap-3">
+              <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <div>
+                <p class="font-semibold text-slate-900">
+                  Engineering Management
+                </p>
+                <p class="text-sm text-slate-600">
+                  10 years leading web development teams
+                </p>
               </div>
+            </div>
 
-              <div class="flex items-start gap-3">
-                <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <div>
-                  <p class="font-semibold text-slate-900">
-                    Founded CoreLuminate
-                  </p>
-                  <p class="text-sm text-slate-600">
-                    Helping small businesses with affordable digital solutions
-                  </p>
-                </div>
+            <div class="flex items-start gap-3">
+              <CircleCheck class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <div>
+                <p class="font-semibold text-slate-900">Founded CoreLuminate</p>
+                <p class="text-sm text-slate-600">
+                  Helping small businesses with affordable digital solutions
+                </p>
               </div>
             </div>
           </div>
@@ -290,41 +281,39 @@ import Layout from "../layouts/Layout.astro";
 
   <!-- Our Commitment -->
   <Section size="2xl" background="slate">
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-white rounded-3xl p-8 md:p-12 border-2 border-slate-200">
-          <div class="text-center mb-8">
-            <Badge class="mb-6">
-              <Heart class="w-4 h-4" />
-              <span>Our Commitment</span>
-            </Badge>
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              We're Here for Small Businesses
-            </h2>
-          </div>
+    <Container size="wide">
+      <div class="bg-white rounded-3xl p-8 md:p-12 border-2 border-slate-200">
+        <div class="text-center mb-8">
+          <Badge class="mb-6">
+            <Heart class="w-4 h-4" />
+            <span>Our Commitment</span>
+          </Badge>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            We're Here for Small Businesses
+          </h2>
+        </div>
 
-          <div class="prose prose-lg max-w-none">
-            <p class="text-lg text-slate-600 text-center leading-relaxed mb-6">
-              We're not trying to grow into a massive agency or take on
-              enterprise clients. Our focus is and will always be on helping
-              small businesses succeed.
-            </p>
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-slate-600 text-center leading-relaxed mb-6">
+            We're not trying to grow into a massive agency or take on enterprise
+            clients. Our focus is and will always be on helping small businesses
+            succeed.
+          </p>
 
-            <p class="text-slate-600 text-center leading-relaxed">
-              Whether you're a startup launching your first website, a local
-              business looking to modernize your online presence, or an
-              established company needing better digital tools, we're here to
-              help you get it done right, without the corporate runaround or
-              inflated prices.
-            </p>
-          </div>
+          <p class="text-slate-600 text-center leading-relaxed">
+            Whether you're a startup launching your first website, a local
+            business looking to modernize your online presence, or an
+            established company needing better digital tools, we're here to help
+            you get it done right, without the corporate runaround or inflated
+            prices.
+          </p>
+        </div>
 
-          <div class="mt-8 p-6 bg-blue-50 rounded-xl border-2 border-blue-200">
-            <p class="text-center text-slate-700 font-medium">
-              <strong>6 businesses launched</strong> and counting. Let's build something
-              great together.
-            </p>
-          </div>
+        <div class="mt-8 p-6 bg-blue-50 rounded-xl border-2 border-blue-200">
+          <p class="text-center text-slate-700 font-medium">
+            <strong>6 businesses launched</strong> and counting. Let's build something
+            great together.
+          </p>
         </div>
       </div>
     </Container>
@@ -336,24 +325,14 @@ import Layout from "../layouts/Layout.astro";
     background="slate-blue"
     pattern={{ type: "grid", visibility: "light" }}>
     <Container>
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-          Ready to Work Together?
-        </h2>
-        <p class="text-xl text-blue-100 mb-8">
-          Let's talk about your project and see how we can help your business
-          grow.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            href="/services/request"
-            variant="secondary"
-            icon={ArrowRight}>
-            Request Services
-          </Button>
-          <Button href="/contact" variant="outline"> Get in Touch </Button>
-        </div>
-      </div>
+      <CTADualAction
+        title="Ready to Work Together?"
+        body="Let's talk about your project and see how we can help your business grow."
+        primaryButtonText="Request Services"
+        primaryButtonUrl="/services/request"
+        secondaryButtonText="Get in Touch"
+        secondaryButtonUrl="/contact"
+      />
     </Container>
   </Section>
 </Layout>

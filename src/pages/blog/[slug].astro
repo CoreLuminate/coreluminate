@@ -1,10 +1,10 @@
 ---
-import { ArrowLeft, ArrowRight, Calendar, Clock, User } from "@lucide/astro";
+import { ArrowLeft, Calendar, Clock, User } from "@lucide/astro";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
+import CTADualAction from "../../components/CTADualAction.astro";
 import Badge from "../../components/ui/Badge.astro";
-import Button from "../../components/ui/Button.astro";
 import Container from "../../components/ui/Container.astro";
 import Section from "../../components/ui/Section.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -232,28 +232,15 @@ const formattedDate = formatDate(publishDate);
 
   <!-- CTA Section -->
   <Section size="xl" background="dark" pattern={{ type: "grid" }}>
-    <Container>
-      <div class="max-w-4xl mx-auto text-center py-16">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-          Ready to Build Your Online Presence?
-        </h2>
-        <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-          Let's create a website that helps your business grow. Schedule a free
-          consultation to get started.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <Button variant="primary" href="/services/request">
-            Start Your Project
-            <ArrowRight class="w-5 h-5 ml-2" />
-          </Button>
-          <Button variant="outline" href="/services">
-            View Our Services
-          </Button>
-        </div>
-        <p class="text-sm text-blue-200 mt-6">
-          Free consultation • No commitment required
-        </p>
-      </div>
+    <Container size="wide">
+      <CTADualAction
+        title="Ready to Build Your Online Presence?"
+        body="Let's create a website that helps your business grow. Schedule a free consultation to get started."
+        primaryButtonText="Start Your Project"
+        primaryButtonUrl="/services/request"
+        secondaryButtonText="View Our Services"
+        secondaryButtonUrl="/services"
+      />
     </Container>
   </Section>
 </Layout>

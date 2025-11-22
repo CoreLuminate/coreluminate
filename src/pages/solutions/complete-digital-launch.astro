@@ -19,8 +19,8 @@ import emailImage from "../../assets/images/email.svg";
 import analyticsImage from "../../assets/images/real-time-analytics.svg";
 import signImage from "../../assets/images/road-sign.svg";
 import trainingImage from "../../assets/images/teaching.svg";
+import CTASimple from "../../components/CTASimple.astro";
 import Badge from "../../components/ui/Badge.astro";
-import Button from "../../components/ui/Button.astro";
 import Container from "../../components/ui/Container.astro";
 import Section from "../../components/ui/Section.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -90,67 +90,62 @@ import Layout from "../../layouts/Layout.astro";
 
   <!-- The Problem -->
   <Section size="2xl" background="white">
-    <Container id="learn-more">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Starting a Business Is Hard Enough
-          </h2>
-          <p class="text-xl text-slate-600 leading-relaxed">
-            You shouldn't have to become a brand designer, web developer, and IT
-            specialist just to get online.
+    <Container id="learn-more" size="wide">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          Starting a Business Is Hard Enough
+        </h2>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          You shouldn't have to become a brand designer, web developer, and IT
+          specialist just to get online.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-20">
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-blue-100 p-4 rounded-xl mb-4">
+            <Frown class="h-10 w-10 text-blue-900" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Overwhelming Choices
+          </h3>
+          <p class="text-slate-600">
+            Logo designers, web developers, hosting companies—where do you even
+            start?
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-20">
-          <div class="flex flex-col items-center text-center p-6">
-            <div class="bg-red-100 p-4 rounded-2xl mb-4">
-              <Frown class="h-10 w-10 text-blue-800" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">
-              Overwhelming Choices
-            </h3>
-            <p class="text-slate-600">
-              Logo designers, web developers, hosting companies—where do you
-              even start?
-            </p>
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-blue-100 p-4 rounded-xl mb-4">
+            <AlarmClock class="h-10 w-10 text-blue-900" />
           </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            No Time to Learn
+          </h3>
+          <p class="text-slate-600">
+            You're starting a business, not training for a career in web
+            development.
+          </p>
+        </div>
 
-          <div class="flex flex-col items-center text-center p-6">
-            <div class="bg-red-100 p-4 rounded-2xl mb-4">
-              <AlarmClock class="h-10 w-10 text-blue-800" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">
-              No Time to Learn
-            </h3>
-            <p class="text-slate-600">
-              You're starting a business, not training for a career in web
-              development.
-            </p>
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-blue-100 p-4 rounded-xl mb-4">
+            <PiggyBank class="h-10 w-10 text-blue-900" />
           </div>
-
-          <div class="flex flex-col items-center text-center p-6">
-            <div class="bg-red-100 p-4 rounded-2xl mb-4">
-              <PiggyBank class="h-10 w-10 text-blue-800" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">
-              Expensive & Inconsistent
-            </h3>
-            <p class="text-slate-600">
-              Hiring different people for each piece means nothing looks
-              cohesive.
-            </p>
-          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Expensive</h3>
+          <p class="text-slate-600">
+            Hiring different people for each piece means nothing looks cohesive.
+          </p>
         </div>
       </div>
 
       <!-- Transition -->
-      <div class="text-center py-12">
+      <div class="text-center py-20">
         <div class="inline-flex items-center gap-3 text-blue-600">
-          <div class="h-px w-12 bg-linear-to-r from-transparent to-blue-600">
+          <div class="h-px w-40 bg-linear-to-r from-transparent to-blue-600">
           </div>
           <Sparkles class="w-6 h-6" />
-          <div class="h-px w-12 bg-linear-to-l from-transparent to-blue-600">
+          <div class="h-px w-40 bg-linear-to-l from-transparent to-blue-600">
           </div>
         </div>
       </div>
@@ -646,12 +641,12 @@ import Layout from "../../layouts/Layout.astro";
         </div>
 
         <!-- Transition -->
-        <div class="text-center my-20">
+        <div class="text-center py-20">
           <div class="inline-flex items-center gap-3 text-blue-600">
-            <div class="h-px w-12 bg-linear-to-r from-transparent to-blue-600">
+            <div class="h-px w-40 bg-linear-to-r from-transparent to-blue-600">
             </div>
             <Sparkles class="w-6 h-6" />
-            <div class="h-px w-12 bg-linear-to-l from-transparent to-blue-600">
+            <div class="h-px w-40 bg-linear-to-l from-transparent to-blue-600">
             </div>
           </div>
         </div>
@@ -748,14 +743,13 @@ import Layout from "../../layouts/Layout.astro";
           Here's the truth: You don't need to figure this out alone.
         </p>
         <p class="text-lg text-blue-100 mb-8">
-          In 4-6 weeks, you'll have everything you need to launch confidently—no
-          stress, no overwhelm, no expensive mistakes.
+          In 4-6 weeks, you'll have everything you need to launch confidently
+          with no stress, no overwhelm, no expensive mistakes.
         </p>
 
         <!-- Key Points Inside CTA -->
         <div class="grid md:grid-cols-3 gap-6 mt-8">
-          <div
-            class="flex flex-col items-center bg-slate-900/60 rounded-xl p-6">
+          <div class="flex flex-col items-center bg-blue-900 rounded-xl p-6">
             <Target stroke-width="1.5" class="h-10 w-10 mb-3" />
             <h4 class="font-bold text-white mb-2">Done Right</h4>
             <p class="text-sm text-blue-100">
@@ -763,8 +757,7 @@ import Layout from "../../layouts/Layout.astro";
             </p>
           </div>
 
-          <div
-            class="flex flex-col items-center bg-slate-900/60 rounded-xl p-6">
+          <div class="flex flex-col items-center bg-blue-900 rounded-xl p-6">
             <Handshake stroke-width="1.5" class="h-10 w-10 mb-3" />
             <h4 class="font-bold text-white mb-2">One Person</h4>
             <p class="text-sm text-blue-100">
@@ -772,8 +765,7 @@ import Layout from "../../layouts/Layout.astro";
             </p>
           </div>
 
-          <div
-            class="flex flex-col items-center bg-slate-900/60 rounded-xl p-6">
+          <div class="flex flex-col items-center bg-blue-900 rounded-xl p-6">
             <Sparkles stroke-width="1.5" class="h-10 w-10 mb-3" />
             <h4 class="font-bold text-white mb-2">Professional</h4>
             <p class="text-sm text-blue-100">
@@ -809,19 +801,12 @@ import Layout from "../../layouts/Layout.astro";
     </div>
 
     <Container>
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Launch?
-          </h2>
-          <p class="text-xl text-blue-100">
-            Tell us about your business and we'll create a plan just for you.
-          </p>
-        </div>
-        <Button href="/solutions/request?solution=complete-digital-launch">
-          Get Your Custom Plan
-        </Button>
-      </div>
+      <CTASimple
+        title="Ready to Launch?"
+        body="Tell us about your business and we'll create a plan just for you."
+        buttonText="Get Your Custom Plan"
+        buttonUrl="/solutions/request?solution=complete-digital-launch"
+      />
     </Container>
   </Section>
 </Layout>

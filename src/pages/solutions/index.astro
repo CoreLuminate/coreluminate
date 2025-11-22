@@ -12,6 +12,7 @@ import {
   Sparkles,
   Zap,
 } from "@lucide/astro";
+import CTASimple from "../../components/CTASimple.astro";
 import Badge from "../../components/ui/Badge.astro";
 import Button from "../../components/ui/Button.astro";
 import Container from "../../components/ui/Container.astro";
@@ -379,18 +380,12 @@ const solutions = [
     background="slate-blue"
     pattern={{ type: "grid", visibility: "light" }}>
     <Container>
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-          Ready to Get Started?
-        </h2>
-        <p class="text-xl text-blue-100 mb-8">
-          Let's discuss your project and find the perfect solution for your
-          business.
-        </p>
-        <Button href="/contact" variant="secondary" icon={ArrowRight}>
-          Schedule Your Free Consultation
-        </Button>
-      </div>
+      <CTASimple
+        title="Ready to Get Started?"
+        body="Let's discuss your project and find the perfect solution for your business."
+        buttonText="Schedule Your Free Consultation"
+        buttonUrl="/contact"
+      />
     </Container>
   </Section>
 </Layout>
