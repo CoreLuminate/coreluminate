@@ -16,6 +16,7 @@ import {
   Wrench,
   Zap,
 } from "@lucide/astro";
+import CTASimple from "../../components/CTASimple.astro";
 import Badge from "../../components/ui/Badge.astro";
 import Button from "../../components/ui/Button.astro";
 import Container from "../../components/ui/Container.astro";
@@ -87,67 +88,63 @@ import Layout from "../../layouts/Layout.astro";
 
   <!-- The Problem -->
   <Section size="2xl" background="white">
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            You Need a Website Now, Not Later
-          </h2>
-          <p class="text-xl text-slate-600">
-            Sometimes you don't need perfect, you just need something online so
-            people can find you.
+    <Container size="wide">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          You Need a Website Now, Not Later
+        </h2>
+        <p class="text-xl text-slate-600">
+          Sometimes you don't need perfect, you just need something online so
+          people can find you.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-20">
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-green-100 p-4 rounded-2xl mb-4">
+            <Clock class="h-10 w-10 text-green-700" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Need It Yesterday
+          </h3>
+          <p class="text-slate-600">
+            You're getting customers through word-of-mouth but they keep asking
+            "Do you have a website?"
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-20">
-          <div class="flex flex-col items-center text-center p-6">
-            <div class="bg-green-100 p-4 rounded-2xl mb-4">
-              <Clock class="h-10 w-10 text-green-700" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">
-              Need It Yesterday
-            </h3>
-            <p class="text-slate-600">
-              You're getting customers through word-of-mouth but they keep
-              asking "Do you have a website?"
-            </p>
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-green-100 p-4 rounded-2xl mb-4">
+            <DollarSign class="h-10 w-10 text-green-700" />
           </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Budget is Tight</h3>
+          <p class="text-slate-600">
+            You need to save money for other parts of your business. A $10k
+            website isn't in the cards right now.
+          </p>
+        </div>
 
-          <div class="flex flex-col items-center text-center p-6">
-            <div class="bg-green-100 p-4 rounded-2xl mb-4">
-              <DollarSign class="h-10 w-10 text-green-700" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">
-              Budget is Tight
-            </h3>
-            <p class="text-slate-600">
-              You need to save money for other parts of your business. A $10k
-              website isn't in the cards right now.
-            </p>
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-green-100 p-4 rounded-2xl mb-4">
+            <Zap class="h-10 w-10 text-green-700" />
           </div>
-
-          <div class="flex flex-col items-center text-center p-6">
-            <div class="bg-green-100 p-4 rounded-2xl mb-4">
-              <Zap class="h-10 w-10 text-green-700" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">
-              Just Need Basics
-            </h3>
-            <p class="text-slate-600">
-              You don't need e-commerce or fancy features. Just a place to send
-              people with your info and contact form.
-            </p>
-          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Just Need Basics
+          </h3>
+          <p class="text-slate-600">
+            You don't need e-commerce or fancy features. Just a place to send
+            people with your info and contact form.
+          </p>
         </div>
       </div>
 
       <!-- Transition -->
-      <div class="text-center py-12">
-        <div class="inline-flex items-center gap-3 text-green-600">
-          <div class="h-px w-12 bg-linear-to-r from-transparent to-green-600">
+      <div class="text-center py-20">
+        <div class="inline-flex items-center gap-3 text-blue-600">
+          <div class="h-px w-40 bg-linear-to-r from-transparent to-blue-600">
           </div>
           <Sparkles class="w-6 h-6" />
-          <div class="h-px w-12 bg-linear-to-l from-transparent to-green-600">
+          <div class="h-px w-40 bg-linear-to-l from-transparent to-blue-600">
           </div>
         </div>
       </div>
@@ -324,73 +321,7 @@ import Layout from "../../layouts/Layout.astro";
   </Section>
 
   <!-- Who This Is For -->
-  <Section>
-    <Container>
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Perfect For
-          </h2>
-          <p class="text-xl text-slate-600">
-            This is ideal if you need a basic online presence without breaking
-            the bank or waiting months.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-          <!-- Word-of-Mouth Businesses -->
-          <div class="relative bg-white rounded-2xl p-8 shadow-sm">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              Word-of-Mouth Businesses
-            </h3>
-            <p class="text-slate-600">
-              You get most customers through referrals, but they keep asking for
-              your website. You just need something to point them to.
-            </p>
-          </div>
-
-          <!-- Tight Budget -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              Budget-Conscious Startups
-            </h3>
-            <p class="text-slate-600">
-              You need to save money for inventory, equipment, or other
-              essential costs. A fancy website can wait—you just need the basics
-              now.
-            </p>
-          </div>
-
-          <!-- Testing Ideas -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              Testing the Waters
-            </h3>
-            <p class="text-slate-600">
-              You're validating your business idea and don't want to invest
-              heavily in a website until you know it'll work. Start simple,
-              upgrade later.
-            </p>
-          </div>
-
-          <!-- Service Providers -->
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              Local Service Providers
-            </h3>
-            <p class="text-slate-600">
-              Contractors, consultants, coaches—you do great work but your
-              business doesn't depend on a fancy website. You just need contact
-              info online.
-            </p>
-          </div>
-        </div>
-      </div>
-    </Container>
-  </Section>
-
-  <!-- Who This Is For -->
-  <Section size="2xl" background="slate">
+  <Section size="2xl" background="white">
     <Container>
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
@@ -435,7 +366,7 @@ import Layout from "../../layouts/Layout.astro";
               </h3>
               <p class="text-slate-600">
                 You need to save money for inventory, equipment, or other
-                essential costs. A fancy website can wait—you just need the
+                essential costs. A fancy website can wait, you just need the
                 basics now.
               </p>
             </div>
@@ -469,8 +400,8 @@ import Layout from "../../layouts/Layout.astro";
                 Local Service Providers
               </h3>
               <p class="text-slate-600">
-                Contractors, consultants, coaches—you do great work but your
-                business doesn't depend on a fancy website. You just need
+                Contractors, consultants, and coaches, you do great work but
+                your business doesn't depend on a fancy website. You just need
                 contact info online.
               </p>
             </div>
@@ -479,13 +410,13 @@ import Layout from "../../layouts/Layout.astro";
 
         <!-- Upgrade Path -->
         <div
-          class="bg-linear-to-br from-blue-700 to-indigo-900 rounded-3xl p-8 md:p-12 text-white text-center">
+          class="flex flex-col items-center bg-linear-to-br from-blue-700 to-indigo-900 rounded-3xl p-8 md:p-12 text-white text-center">
           <Sparkles
             stroke-width="1.33"
             class="w-16 h-16 mx-auto mb-6 text-blue-400"
           />
           <h3 class="text-2xl font-bold mb-4">Want to Upgrade Later?</h3>
-          <p class="text-lg text-blue-100 mb-6">
+          <p class="text-lg text-blue-100 mb-8">
             Start here and upgrade to our Complete Digital Launch when you're
             ready for custom branding, advanced features, and a full digital
             strategy.
@@ -546,21 +477,12 @@ import Layout from "../../layouts/Layout.astro";
     </div>
 
     <Container>
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Get Online Fast?
-          </h2>
-          <p class="text-xl text-blue-100">
-            Tell us about your business and we'll have you online in 1-2 weeks.
-          </p>
-        </div>
-        <Button
-          href="/solutions/request?solution=quick-launch-website"
-          size="lg">
-          Get Your Custom Plan
-        </Button>
-      </div>
+      <CTASimple
+        title="Ready to Get Online Fast?"
+        body="Tell us about your business and we'll have you online in 1-2 weeks."
+        buttonText="Get Your Custom Plan"
+        buttonUrl="/solutions/request?solution=quick-launch-website"
+      />
     </Container>
   </Section>
 </Layout>

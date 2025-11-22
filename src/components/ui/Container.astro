@@ -1,6 +1,6 @@
 ---
 interface Props {
-  size?: "narrow" | "reading" | "content" | "full";
+  size?: "narrow" | "reading" | "wide" | "content" | "full";
   class?: string;
   [key: string]: any;
 }
@@ -11,6 +11,7 @@ const { size = "content", class: className = "", ...rest } = Astro.props;
 const widthStyles = {
   narrow: "max-w-3xl",
   reading: "max-w-4xl",
+  wide: "max-w-5xl",
   content: "max-w-7xl",
   full: "max-w-full",
 };

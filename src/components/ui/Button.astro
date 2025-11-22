@@ -10,7 +10,7 @@ interface CustomProps {
     | "text"
     | "outline"
     | "gradient";
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
   icon?: any;
   iconPosition?: "left" | "right";
   disabled?: boolean;
@@ -59,23 +59,33 @@ const variantStyles = {
 };
 
 const sizeConfig = {
+  xs: {
+    padding: "px-2 py-1",
+    iconOnlyPadding: "p-2",
+    iconSize: "w-2 h-2",
+    gap: "gap-1",
+    textSize: "text-xs",
+  },
   sm: {
     padding: "px-4 py-2",
     iconOnlyPadding: "p-3",
     iconSize: "w-4 h-4",
     gap: "gap-2",
+    textSize: "text-sm",
   },
   md: {
     padding: "px-6 py-3",
     iconOnlyPadding: "p-4",
     iconSize: "w-4 h-4",
     gap: "gap-3",
+    textSize: "text-sm",
   },
   lg: {
     padding: "px-10 py-4",
     iconOnlyPadding: "p-5",
     iconSize: "w-4 h-4",
     gap: "gap-4",
+    textSize: "text-base",
   },
 };
 
@@ -98,9 +108,11 @@ const shadowClasses = isText ? "shadow-none" : "shadow-sm hover:shadow-md";
 const roundedClasses = isText ? "rounded-none" : "rounded-full";
 const disabledClasses = disabled ? "opacity-50 pointer-events-none" : "";
 const gapClasses = Icon && hasContent ? sizeConfig[size].gap : "";
+const textSizeClass = sizeConfig[size].textSize;
 
 // Classes for element
 const classes = [
+  textSizeClass,
   baseStyles,
   variantStyles[variant],
   paddingClasses,

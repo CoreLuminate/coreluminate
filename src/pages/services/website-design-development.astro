@@ -26,6 +26,7 @@ import squarespaceLogo from "../../assets/images/squarespace-logo.svg";
 import webflowLogo from "../../assets/images/webflow-logo.svg";
 import wixLogo from "../../assets/images/wix-logo.svg";
 import wordpressLogo from "../../assets/images/wordpress-logo.svg";
+import CTADivided from "../../components/CTADivided.astro";
 
 // FAQ data
 const faqs = [
@@ -183,7 +184,7 @@ const faqs = [
       </div>
 
       <!-- Platform Grid - 2 Rows of 3 -->
-      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
         <!-- WordPress -->
         <div class="group relative h-full">
           <div
@@ -191,7 +192,7 @@ const faqs = [
             <div class="flex items-start gap-4 flex-1">
               <!-- Logo - WordPress Blue -->
               <div
-                class="w-16 h-16 rounded-lg bg-[#21759b] p-3 flex items-center justify-center shrink-0">
+                class="w-16 h-16 rounded-full bg-[#21759b] p-3 flex items-center justify-center shrink-0">
                 <Image
                   src={wordpressLogo}
                   alt="WordPress"
@@ -228,7 +229,7 @@ const faqs = [
             <div class="flex items-start gap-4 flex-1">
               <!-- Logo - Webflow Blue -->
               <div
-                class="w-16 h-16 rounded-lg bg-[#4353ff] p-3 flex items-center justify-center shrink-0">
+                class="w-16 h-16 rounded-full bg-[#4353ff] p-3 flex items-center justify-center shrink-0">
                 <Image
                   src={webflowLogo}
                   alt="Webflow"
@@ -265,7 +266,7 @@ const faqs = [
             <div class="flex items-start gap-4 flex-1">
               <!-- Logo - Framer Black -->
               <div
-                class="w-16 h-16 rounded-lg bg-[#0055ff] p-3 flex items-center justify-center shrink-0">
+                class="w-16 h-16 rounded-full bg-[#0055ff] p-3 flex items-center justify-center shrink-0">
                 <Image
                   src={framerLogo}
                   alt="Framer"
@@ -302,7 +303,7 @@ const faqs = [
             <div class="flex items-start gap-4 flex-1">
               <!-- Logo - Wix Black -->
               <div
-                class="w-16 h-16 rounded-lg bg-[#0c6ebd] p-3 flex items-center justify-center shrink-0">
+                class="w-16 h-16 rounded-full bg-[#0c6ebd] p-3 flex items-center justify-center shrink-0">
                 <Image
                   src={wixLogo}
                   alt="Wix"
@@ -339,7 +340,7 @@ const faqs = [
             <div class="flex items-start gap-4 flex-1">
               <!-- Logo - Squarespace Black -->
               <div
-                class="w-16 h-16 rounded-lg bg-[#000000] p-3 flex items-center justify-center shrink-0">
+                class="w-16 h-16 rounded-full bg-[#000000] p-3 flex items-center justify-center shrink-0">
                 <Image
                   src={squarespaceLogo}
                   alt="Squarespace"
@@ -378,7 +379,7 @@ const faqs = [
             <div class="flex items-start gap-4 flex-1">
               <!-- Logo - Shopify Green -->
               <div
-                class="w-16 h-16 rounded-lg bg-[#95bf47] p-3 flex items-center justify-center shrink-0">
+                class="w-16 h-16 rounded-full bg-[#95bf47] p-3 flex items-center justify-center shrink-0">
                 <Image
                   src={shopifyLogo}
                   alt="Shopify"
@@ -410,7 +411,8 @@ const faqs = [
       </div>
 
       <!-- Platform Comparison CTA -->
-      <div class="text-center bg-blue-50 rounded-2xl p-8 max-w-6xl mx-auto">
+      <div
+        class="flex flex-col items-center text-center bg-blue-50 rounded-2xl p-8 max-w-3xl mx-auto">
         <h3 class="text-xl font-bold text-slate-900 mb-2">
           Not sure which platform is right for you?
         </h3>
@@ -418,10 +420,7 @@ const faqs = [
           I'll help you choose based on your needs, budget, and goals during our
           free consultation.
         </p>
-        <Button
-          variant="primary"
-          size="md"
-          href="/services/request?service=website-design-development">
+        <Button href="/services/request?service=website-design-development">
           Schedule Free Consultation
         </Button>
       </div>
@@ -431,270 +430,260 @@ const faqs = [
   <!-- Investment Section -->
   <Section size="xl" background="slate" pattern={{ type: "circuit" }}>
     <Container>
-      <div class="max-w-6xl mx-auto">
-        <!-- Section Header -->
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Invest in Your Business Growth
-          </h2>
-          <p class="text-lg text-slate-600">
-            A professional website isn't an expense, it's an investment that
-            pays for itself by attracting customers and growing your business.
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Invest in Your Business Growth
+        </h2>
+        <p class="text-lg text-slate-600">
+          A professional website isn't an expense, it's an investment that pays
+          for itself by attracting customers and growing your business.
+        </p>
+      </div>
+
+      <!-- Starting From Callout -->
+      <div
+        class="bg-linear-to-br from-blue-700 to-blue-800 rounded-3xl p-8 md:p-12 text-center text-white mb-12">
+        <div class="mb-4">
+          <div class="text-sm font-semibold text-blue-200 mb-2">
+            STARTING FROM
+          </div>
+          <div class="text-5xl md:text-6xl font-bold mb-2">$500</div>
+          <p class="text-blue-100 text-lg">
+            For a professional 5-page WordPress website
           </p>
         </div>
+        <p class="text-blue-100 max-w-2xl mx-auto">
+          Final pricing depends on your specific needs, platform choice, and
+          features. Get your custom quote during our free consultation.
+        </p>
+      </div>
 
-        <!-- Starting From Callout -->
+      <!-- Package Types -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <!-- Starter Package -->
         <div
-          class="bg-linear-to-br from-blue-700 to-blue-800 rounded-3xl p-8 md:p-12 text-center text-white mb-12">
-          <div class="mb-4">
-            <div class="text-sm font-semibold text-blue-200 mb-2">
-              STARTING FROM
-            </div>
-            <div class="text-5xl md:text-6xl font-bold mb-2">$500</div>
-            <p class="text-blue-100 text-lg">
-              For a professional 5-page WordPress website
-            </p>
-          </div>
-          <p class="text-blue-100 max-w-2xl mx-auto">
-            Final pricing depends on your specific needs, platform choice, and
-            features. Get your custom quote during our free consultation.
-          </p>
-        </div>
-
-        <!-- Package Types -->
-        <div class="grid md:grid-cols-3 gap-6 mb-12">
-          <!-- Starter Package -->
-          <div
-            class="flex flex-col bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 transition-colors">
-            <div class="text-sm font-semibold text-blue-600 mb-2">STARTER</div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-4">
-              Perfect for New Businesses
-            </h3>
-
-            <ul class="space-y-3 mb-8 flex-1">
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700">Up to 5 pages</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700"
-                  >Mobile responsive design</span
-                >
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700"
-                  >Contact form integration</span
-                >
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700">Basic SEO setup</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700">30 days support</span>
-              </li>
-            </ul>
-
-            <Button
-              variant="secondary"
-              href="/services/request?service=website-design-development&package=starter"
-              class="w-full">
-              Let's Discuss
-            </Button>
-          </div>
-
-          <!-- Professional Package (Popular) -->
-          <div
-            class="flex flex-col bg-white rounded-2xl p-8 border-2 border-blue-600 relative shadow-lg">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-              <Badge class="shadow-md bg-blue-600 text-white"
-                >Most Popular</Badge
-              >
-            </div>
-
-            <div class="text-sm font-semibold text-blue-600 mb-2">
-              PROFESSIONAL
-            </div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-4">
-              For Growing Businesses
-            </h3>
-
-            <ul class="space-y-3 mb-8 flex-1">
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700">Up to 10 pages</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700"
-                  >Advanced SEO optimization</span
-                >
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700"
-                  >Google Analytics setup</span
-                >
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700">Email integration</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700"
-                  >Content management training</span
-                >
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700">60 days support</span>
-              </li>
-            </ul>
-
-            <Button
-              variant="primary"
-              size="md"
-              href="/services/request?service=website-design-development&package=pro"
-              class="w-full">
-              Get Your Quote
-            </Button>
-          </div>
-
-          <!-- Custom Package -->
-          <div
-            class="flex flex-col bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 transition-colors">
-            <div class="text-sm font-semibold text-blue-600 mb-2">CUSTOM</div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-4">
-              Tailored to Your Needs
-            </h3>
-
-            <ul class="space-y-3 mb-8 flex-1">
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700">Unlimited pages</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700"
-                  >Custom features & functionality</span
-                >
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700">Advanced integrations</span
-                >
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700"
-                  >E-commerce capabilities</span
-                >
-              </li>
-              <li class="flex items-start gap-2">
-                <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                <span class="text-sm text-slate-700">Priority support</span>
-              </li>
-            </ul>
-
-            <Button
-              variant="secondary"
-              href="/services/request?service=website-design-development&package=custom"
-              class="w-full">
-              Let's Discuss
-            </Button>
-          </div>
-        </div>
-
-        <!-- What Affects Pricing -->
-        <div class="p-8 md:p-10 mb-8">
-          <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">
-            What Affects the Final Price?
+          class="flex flex-col bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 transition-colors">
+          <div class="text-sm font-semibold text-blue-600 mb-2">STARTER</div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            Perfect for New Businesses
           </h3>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Factor 1 -->
-            <div class="text-center">
-              <div
-                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <LayoutPanelLeft class="w-6 h-6 text-blue-600" />
-              </div>
-              <h4 class="font-bold text-slate-900 mb-2">Project Scope</h4>
-              <p class="text-sm text-slate-600">
-                Number of pages and complexity of design
-              </p>
-            </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Up to 5 pages</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Mobile responsive design</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Contact form integration</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Basic SEO setup</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">30 days support</span>
+            </li>
+          </ul>
 
-            <!-- Factor 2 -->
-            <div class="text-center">
-              <div
-                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <Zap class="w-6 h-6 text-blue-600" />
-              </div>
-              <h4 class="font-bold text-slate-900 mb-2">Platform Choice</h4>
-              <p class="text-sm text-slate-600">
-                Some platforms take longer to build than others
-              </p>
-            </div>
-
-            <!-- Factor 3 -->
-            <div class="text-center">
-              <div
-                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <Settings class="w-6 h-6 text-blue-600" />
-              </div>
-              <h4 class="font-bold text-slate-900 mb-2">Custom Features</h4>
-              <p class="text-sm text-slate-600">
-                Special functionality or third-party integrations
-              </p>
-            </div>
-
-            <!-- Factor 4 -->
-            <div class="text-center">
-              <div
-                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <TrendingUp class="w-6 h-6 text-blue-600" />
-              </div>
-              <h4 class="font-bold text-slate-900 mb-2">Additional Services</h4>
-              <p class="text-sm text-slate-600">
-                Branding, copywriting, or advanced SEO
-              </p>
-            </div>
-          </div>
+          <Button
+            variant="secondary"
+            href="/services/request?service=website-design-development&package=starter"
+            class="w-full">
+            Let's Discuss
+          </Button>
         </div>
 
-        <!-- Payment & Guarantee Info -->
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Payment Options -->
-          <div class="bg-blue-50 rounded-2xl p-6 text-center">
+        <!-- Professional Package (Popular) -->
+        <div
+          class="flex flex-col bg-white rounded-2xl p-8 border-2 border-blue-600 relative shadow-lg">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <Badge class="shadow-md bg-blue-600 text-white">Most Popular</Badge>
+          </div>
+
+          <div class="text-sm font-semibold text-blue-600 mb-2">
+            PROFESSIONAL
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            For Growing Businesses
+          </h3>
+
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Up to 10 pages</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Advanced SEO optimization</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Google Analytics setup</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Email integration</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Content management training</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">60 days support</span>
+            </li>
+          </ul>
+
+          <Button
+            variant="primary"
+            size="md"
+            href="/services/request?service=website-design-development&package=pro"
+            class="w-full">
+            Get Your Quote
+          </Button>
+        </div>
+
+        <!-- Custom Package -->
+        <div
+          class="flex flex-col bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-300 transition-colors">
+          <div class="text-sm font-semibold text-blue-600 mb-2">CUSTOM</div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">
+            Tailored to Your Needs
+          </h3>
+
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Unlimited pages</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700"
+                >Custom features & functionality</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Advanced integrations</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">E-commerce capabilities</span
+              >
+            </li>
+            <li class="flex items-start gap-2">
+              <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+              <span class="text-sm text-slate-700">Priority support</span>
+            </li>
+          </ul>
+
+          <Button
+            variant="secondary"
+            href="/services/request?service=website-design-development&package=custom"
+            class="w-full">
+            Let's Discuss
+          </Button>
+        </div>
+      </div>
+
+      <!-- What Affects Pricing -->
+      <div class="py-8 md:py-10 mb-8">
+        <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">
+          What Affects the Final Price?
+        </h3>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Factor 1 -->
+          <div class="text-center">
             <div
-              class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <DollarSign class="w-6 h-6 text-white" />
+              class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <LayoutPanelLeft class="w-6 h-6 text-blue-600" />
             </div>
-            <h4 class="font-bold text-slate-900 mb-2">
-              Flexible Payment Plans
-            </h4>
+            <h4 class="font-bold text-slate-900 mb-2">Project Scope</h4>
             <p class="text-sm text-slate-600">
-              Pay 50% upfront, 50% at launch. Or ask about our monthly payment
-              options to make your investment more manageable.
+              Number of pages and complexity of design
             </p>
           </div>
 
-          <!-- No Obligation -->
-          <div class="bg-blue-50 rounded-2xl p-6 text-center">
+          <!-- Factor 2 -->
+          <div class="text-center">
             <div
-              class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Shield class="w-6 h-6 text-white" />
+              class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <Zap class="w-6 h-6 text-blue-600" />
             </div>
-            <h4 class="font-bold text-slate-900 mb-2">No Obligation Quote</h4>
+            <h4 class="font-bold text-slate-900 mb-2">Platform Choice</h4>
             <p class="text-sm text-slate-600">
-              Get a detailed, transparent quote with no hidden fees. You'll know
-              exactly what you're paying for before we start.
+              Some platforms take longer to build than others
             </p>
           </div>
+
+          <!-- Factor 3 -->
+          <div class="text-center">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <Settings class="w-6 h-6 text-blue-600" />
+            </div>
+            <h4 class="font-bold text-slate-900 mb-2">Custom Features</h4>
+            <p class="text-sm text-slate-600">
+              Special functionality or third-party integrations
+            </p>
+          </div>
+
+          <!-- Factor 4 -->
+          <div class="text-center">
+            <div
+              class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <TrendingUp class="w-6 h-6 text-blue-600" />
+            </div>
+            <h4 class="font-bold text-slate-900 mb-2">Additional Services</h4>
+            <p class="text-sm text-slate-600">
+              Branding, copywriting, or advanced SEO
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment & Guarantee Info -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Payment Options -->
+        <div class="bg-blue-50 rounded-2xl p-6 text-center">
+          <div
+            class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <DollarSign class="w-6 h-6 text-white" />
+          </div>
+          <h4 class="font-bold text-slate-900 mb-2">Flexible Payment Plans</h4>
+          <p class="text-sm text-slate-600">
+            Pay 50% upfront, 50% at launch. Or ask about our monthly payment
+            options to make your investment more manageable.
+          </p>
+        </div>
+
+        <!-- No Obligation -->
+        <div class="bg-blue-50 rounded-2xl p-6 text-center">
+          <div
+            class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <Shield class="w-6 h-6 text-white" />
+          </div>
+          <h4 class="font-bold text-slate-900 mb-2">No Obligation Quote</h4>
+          <p class="text-sm text-slate-600">
+            Get a detailed, transparent quote with no hidden fees. You'll know
+            exactly what you're paying for before we start.
+          </p>
         </div>
       </div>
     </Container>
@@ -907,7 +896,7 @@ const faqs = [
         </div>
 
         <!-- Two-Column Layout -->
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
           <!-- What's Included -->
           <div class="bg-white rounded-2xl p-8">
             <h3 class="text-xl font-bold text-slate-900 mb-6">
@@ -920,7 +909,7 @@ const faqs = [
                   <Check class="w-3 h-3 text-blue-600" />
                 </div>
                 <div>
-                  <strong class="text-slate-900">99.9% Uptime Guarantee</strong>
+                  <strong class="text-slate-900">99.9% Uptime</strong>
                   <p class="text-sm text-slate-600 mt-1">
                     Your site stays online, always.
                   </p>
@@ -990,7 +979,7 @@ const faqs = [
           </div>
 
           <!-- Pricing & Platforms -->
-          <div class="space-y-6">
+          <div class="space-y-8">
             <!-- Pricing Card -->
             <div
               class="bg-linear-to-br from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
@@ -1018,7 +1007,7 @@ const faqs = [
               <div class="space-y-3">
                 <div class="flex items-center gap-3">
                   <div
-                    class="w-10 h-10 rounded-lg bg-slate-800 p-2 flex items-center justify-center">
+                    class="w-10 h-10 rounded-lg bg-blue-900 p-2 flex items-center justify-center">
                     <Image
                       src={wordpressLogo}
                       alt="WordPress"
@@ -1031,7 +1020,7 @@ const faqs = [
                 </div>
                 <div class="flex items-center gap-3">
                   <div
-                    class="w-10 h-10 rounded-lg bg-slate-800 p-2 flex items-center justify-center">
+                    class="w-10 h-10 rounded-lg bg-blue-900 p-2 flex items-center justify-center">
                     <Image
                       src={webflowLogo}
                       alt="Webflow"
@@ -1044,7 +1033,7 @@ const faqs = [
                 </div>
                 <div class="flex items-center gap-3">
                   <div
-                    class="w-10 h-10 rounded-lg bg-slate-800 p-1 flex items-center justify-center">
+                    class="w-10 h-10 rounded-lg bg-blue-900 p-1 flex items-center justify-center">
                     <Image
                       src={framerLogo}
                       alt="Framer"
@@ -1107,56 +1096,30 @@ const faqs = [
 
   <!-- FAQ Section -->
   <Section size="xl" background="white">
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-4xl font-bold text-slate-900 mb-4">
-            Frequently Asked Questions
-          </h2>
-        </div>
-
-        <Accordion items={faqs} />
+    <Container size="reading">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-4xl font-bold text-slate-900 mb-4">
+          Frequently Asked Questions
+        </h2>
       </div>
+
+      <Accordion items={faqs} />
     </Container>
   </Section>
 
   <!-- Final CTA -->
   <Section size="xl" background="blue" pattern={{ type: "grid" }}>
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div
-          class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-xl text-center">
-          <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Ready to Get Started?
-          </h2>
-
-          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-            Let's create a website that helps your business grow. Schedule a
-            free consultation to discuss your project.
-          </p>
-
-          <div class="flex flex-wrap justify-center gap-4">
-            <Button
-              variant="primary"
-              size="lg"
-              href="/services/request?service=website-design-development">
-              Schedule Free Consultation
-              <ArrowRight class="w-5 h-5 ml-2" />
-            </Button>
-            <Button variant="secondary" size="lg" href="/work">
-              View Portfolio
-            </Button>
-          </div>
-
-          <div class="mt-8 pt-8 border-t border-slate-200">
-            <p class="text-sm text-slate-600">
-              <strong>No pressure, no obligation.</strong> Just a friendly conversation
-              about your goals.
-            </p>
-          </div>
-        </div>
-      </div>
+    <Container size="wide">
+      <CTADivided
+        title="Ready to Get Started?"
+        body="Let's create a website that helps your business grow. Schedule a free consultation to discuss your project."
+        primaryButtonText="Schedule Free Consultation"
+        primaryButtonUrl="/services/request?service=website-design-development"
+        secondaryButtonText="View Portfolio"
+        secondaryButtonUrl="/work">
+        <strong>No pressure, no obligation.</strong> Just a friendly conversation
+        about your goals.
+      </CTADivided>
     </Container>
   </Section>
 </Layout>

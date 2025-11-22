@@ -1,9 +1,10 @@
 ---
-import { ArrowRight, Calendar, ExternalLink } from "@lucide/astro";
+import { Calendar, ExternalLink } from "@lucide/astro";
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
+import CTADualAction from "../../components/CTADualAction.astro";
 import Badge from "../../components/ui/Badge.astro";
 import Button from "../../components/ui/Button.astro";
 import Container from "../../components/ui/Container.astro";
@@ -50,7 +51,7 @@ const formattedDate = formatDate(publishDate);
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         
         <!-- Left Column: Content -->
-        <div>
+        <div class="flex flex-col items-start">
           <!-- Meta Info -->
           <div class="flex flex-wrap items-center gap-4 mb-6">
             <!-- Service Tags -->
@@ -77,11 +78,19 @@ const formattedDate = formatDate(publishDate);
           <p class="text-xl text-slate-600 leading-relaxed mb-8">
             {description}
           </p>
+          <!-- View Live Site Button (Circular, Overlaid) -->
+          {projectUrl && (
+            <div>
+              <Button variant="primary" size="sm" target="_blank" href={projectUrl} icon={ExternalLink} iconPosition="right">
+                View Live Site
+              </Button>
+            </div>
+          )}
         </div>
 
         <!-- Right Column: Featured Image with Button Overlay -->
         <div class="relative">
-          <div class="rounded-2xl overflow-hidden shadow-xs">
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-xs">
             <Image
               src={featuredImage}
               alt={`${title} website screenshot`}
@@ -92,19 +101,7 @@ const formattedDate = formatDate(publishDate);
             />
           </div>
           
-          <!-- View Live Site Button (Circular, Overlaid) -->
-          {projectUrl && (
-            <a
-              href={projectUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="View Live Site"
-              class="absolute bottom-4 left-4 w-18 h-18 bg-blue-600 hover:bg-blue-700 text-white rounded-full ring-1 ring-blue-500 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
-              aria-label="View Live Site"
-            >
-              <ExternalLink class="w-7 h-7 group-hover:scale-105 transition-transform" />
-            </a>
-          )}
+          
         </div>
       </div>
     </Container>
@@ -154,7 +151,7 @@ const formattedDate = formatDate(publishDate);
             <h2 class="text-3xl font-bold text-slate-900 mb-8">Project Gallery</h2>
             <div class="grid md:grid-cols-2 gap-6">
               {images.map((image: ImageMetadata) => (
-                <div class="rounded-xl overflow-hidden shadow-lg bg-slate-100 group">
+                <div class="rounded-xl border border-slate-200 overflow-hidden shadow-sm bg-slate-100 group">
                   <Image
                     src={image}
                     alt={`${title} screenshot`}
@@ -203,34 +200,15 @@ const formattedDate = formatDate(publishDate);
 
   <!-- CTA Section - Dark Blue with Graphics -->
   <Section size="xl" background="dark" pattern={{type: 'grid'}}>
-    <Container>
-      <div class="max-w-4xl mx-auto text-center py-16">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-          Ready for Similar Results?
-        </h2>
-        <p class="text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-          Let's discuss how we can help your business grow online with a custom solution tailored to your needs.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <Button 
-            variant="primary" 
-            size="lg" 
-            href="/services/request"
-          >
-            Start Your Project
-            <ArrowRight class="w-5 h-5 ml-2" />
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            href="/work">
-            View More Work
-          </Button>
-        </div>
-        <p class="text-sm text-blue-200 mt-6">
-          Free consultation available.
-        </p>
-      </div>
+    <Container size="wide">
+      <CTADualAction
+        title="Ready for Similar Results?"
+        body="Let's discuss how we can help your business grow online with a custom solution tailored to your needs."
+        primaryButtonText="Start Your Project"
+        primaryButtonUrl="/services/request"
+        secondaryButtonText="View More Work"
+        secondaryButtonUrl="/work"
+      />
     </Container>
   </Section>
 

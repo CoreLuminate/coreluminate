@@ -10,7 +10,6 @@ import {
 } from "@lucide/astro";
 import { Image } from "astro:assets";
 import Badge from "../../components/ui/Badge.astro";
-import Button from "../../components/ui/Button.astro";
 import Container from "../../components/ui/Container.astro";
 import Section from "../../components/ui/Section.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -22,6 +21,7 @@ import mobileOptimizedImage from "../../assets/images/mobile-design-stats.svg";
 import analyticsImage from "../../assets/images/real-time-analytics.svg";
 import trainingImage from "../../assets/images/teaching.svg";
 import modernDesignImage from "../../assets/images/web-design-showcase.svg";
+import CTASimple from "../../components/CTASimple.astro";
 ---
 
 <Layout
@@ -93,66 +93,62 @@ import modernDesignImage from "../../assets/images/web-design-showcase.svg";
 
   <!-- The Problem -->
   <Section size="2xl" background="white">
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Your Website Is Costing You Customers
-          </h2>
-          <p class="text-xl text-slate-600 leading-relaxed">
-            An outdated website sends the wrong message about your business.
+    <Container size="wide">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          Your Website Is Costing You Customers
+        </h2>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          An outdated website sends the wrong message about your business.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-20">
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+            <Smartphone class="h-10 w-10 text-blue-900" />
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Not Mobile-Friendly
+          </h3>
+          <p class="text-slate-600">
+            Over 60% of web traffic is mobile. If your site doesn't work on
+            phones, you're losing customers every day.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-20">
-          <div class="flex flex-col items-center text-center p-6">
-            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
-              <Smartphone class="h-10 w-10 text-blue-700" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">
-              Not Mobile-Friendly
-            </h3>
-            <p class="text-slate-600">
-              Over 60% of web traffic is mobile. If your site doesn't work on
-              phones, you're losing customers every day.
-            </p>
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+            <Gauge class="h-10 w-10 text-blue-900" />
           </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Slow & Outdated</h3>
+          <p class="text-slate-600">
+            Built years ago with old technology. Slow loading times and clunky
+            navigation frustrate visitors.
+          </p>
+        </div>
 
-          <div class="flex flex-col items-center text-center p-6">
-            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
-              <Gauge class="h-10 w-10 text-blue-700" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">
-              Slow & Outdated
-            </h3>
-            <p class="text-slate-600">
-              Built years ago with old technology. Slow loading times and clunky
-              navigation frustrate visitors.
-            </p>
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-blue-100 p-4 rounded-2xl mb-4">
+            <TrendingUp class="h-10 w-10 text-blue-900" />
           </div>
-
-          <div class="flex flex-col items-center text-center p-6">
-            <div class="bg-blue-100 p-4 rounded-2xl mb-4">
-              <TrendingUp class="h-10 w-10 text-blue-700" />
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">
-              Hurting Your Brand
-            </h3>
-            <p class="text-slate-600">
-              Your website looks unprofessional compared to competitors.
-              Customers judge your business by it.
-            </p>
-          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Hurting Your Brand
+          </h3>
+          <p class="text-slate-600">
+            Your website looks unprofessional compared to competitors. Customers
+            judge your business by it.
+          </p>
         </div>
       </div>
 
       <!-- Transition -->
-      <div class="text-center py-12">
+      <div class="text-center py-20">
         <div class="inline-flex items-center gap-3 text-blue-600">
-          <div class="h-px w-12 bg-linear-to-r from-transparent to-blue-600">
+          <div class="h-px w-40 bg-linear-to-r from-transparent to-blue-600">
           </div>
           <Sparkles class="w-6 h-6" />
-          <div class="h-px w-12 bg-linear-to-l from-transparent to-blue-600">
+          <div class="h-px w-40 bg-linear-to-l from-transparent to-blue-600">
           </div>
         </div>
       </div>
@@ -577,7 +573,7 @@ import modernDesignImage from "../../assets/images/web-design-showcase.svg";
         <div
           class="bg-linear-to-br from-slate-700 to-slate-900 rounded-3xl p-8 md:p-12 text-white text-center">
           <h3 class="text-2xl font-bold mb-3">Don't Start From Scratch</h3>
-          <p class="text-lg text-purple-100 mb-6">
+          <p class="text-lg mb-6">
             You've invested in your website. Let's modernize what you have
             instead of rebuilding everything from zero.
           </p>
@@ -614,36 +610,12 @@ import modernDesignImage from "../../assets/images/web-design-showcase.svg";
     </div>
 
     <Container>
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Modernize Your Website?
-          </h2>
-          <p class="text-xl text-blue-100">
-            Let's transform your outdated website into something you're proud to
-            share.
-          </p>
-        </div>
-        <Button
-          href="/solutions/request?solution=website-refresh-modernization">
-          Get Your Custom Plan
-        </Button>
-      </div>
+      <CTASimple
+        title="Ready to Modernize Your Website?"
+        body="Let's transform your outdated website into something you're proud to share."
+        buttonText="Get Your Custom Plan"
+        buttonUrl="/solutions/request?solution=website-refresh-modernization"
+      />
     </Container>
   </Section>
 </Layout>
-
-<style>
-  @keyframes spin-slow {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .animate-spin-slow {
-    animation: spin-slow 20s linear infinite;
-  }
-</style>

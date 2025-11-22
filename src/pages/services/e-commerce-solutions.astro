@@ -35,6 +35,7 @@ import shopifyLogo from "../../assets/images/shopify-logo.svg";
 import squarespaceLogo from "../../assets/images/squarespace-logo.svg";
 import wixLogo from "../../assets/images/wix-logo.svg";
 import wordpressLogo from "../../assets/images/wordpress-logo.svg";
+import CTADivided from "../../components/CTADivided.astro";
 
 // FAQ data
 const faqs = [
@@ -201,7 +202,7 @@ const faqs = [
   <!-- Problem/Solution Section -->
   <Section background="white">
     <Container>
-      <div class="max-w-3xl mx-auto text-center mb-12">
+      <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
           Ready to Sell Online But Don't Know Where to Start?
         </h2>
@@ -212,12 +213,12 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-10">
         <!-- Problem 1 -->
         <div class="text-center">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <DollarSign class="w-8 h-8 text-blue-600" />
+            <DollarSign class="w-8 h-8 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">
             High Platform Fees
@@ -232,7 +233,7 @@ const faqs = [
         <div class="text-center">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <Settings class="w-8 h-8 text-blue-600" />
+            <Settings class="w-8 h-8 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">Tech Overwhelm</h3>
           <p class="text-slate-600">
@@ -245,7 +246,7 @@ const faqs = [
         <div class="text-center">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <Palette class="w-8 h-8 text-blue-600" />
+            <Palette class="w-8 h-8 text-blue-900" />
           </div>
           <h3 class="text-lg font-bold text-slate-900 mb-2">Brand Control</h3>
           <p class="text-slate-600">
@@ -273,7 +274,7 @@ const faqs = [
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Simple Store -->
         <div
-          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          class="flex flex-col bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
             <ShoppingBag class="w-8 h-8 text-blue-600" />
@@ -291,7 +292,7 @@ const faqs = [
             line.
           </p>
 
-          <ul class="space-y-3 mb-6">
+          <ul class="space-y-3 mb-6 grow">
             <li class="flex items-start gap-2">
               <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
               <span class="text-sm text-slate-700">5-20 products</span>
@@ -323,11 +324,17 @@ const faqs = [
           <div class="text-sm text-slate-600 mb-4">
             <strong>Great for:</strong> Etsy sellers, craft makers, side hustles
           </div>
+          <Button
+            variant="secondary"
+            size="sm"
+            href="/services/request?service=ecommerce-solutions&package=simple-store">
+            Get Started
+          </Button>
         </div>
 
         <!-- Growing Store -->
         <div
-          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-blue-600 relative">
+          class="flex flex-col bg-white rounded-2xl p-8 shadow-sm border-2 border-blue-600 relative">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2">
             <Badge class="shadow-md bg-blue-600 text-white">Most Popular</Badge>
           </div>
@@ -349,7 +356,7 @@ const faqs = [
             product lines.
           </p>
 
-          <ul class="space-y-3 mb-6">
+          <ul class="space-y-3 mb-6 grow">
             <li class="flex items-start gap-2">
               <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
               <span class="text-sm text-slate-700">20-100 products</span>
@@ -386,11 +393,18 @@ const faqs = [
             <strong>Great for:</strong> Local retailers, established makers, growing
             brands
           </div>
+
+          <Button
+            variant="primary"
+            size="sm"
+            href="/services/request?service=ecommerce-solutions&package=growing-store">
+            Get Started
+          </Button>
         </div>
 
         <!-- Custom Store -->
         <div
-          class="bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
+          class="flex flex-col bg-white rounded-2xl p-8 shadow-sm border-2 border-slate-200 hover:border-blue-400 transition-colors">
           <div
             class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
             <Sparkles class="w-8 h-8 text-blue-600" />
@@ -407,7 +421,7 @@ const faqs = [
             Unique requirements? Let's discuss what you need and build it right.
           </p>
 
-          <ul class="space-y-3 mb-6">
+          <ul class="space-y-3 mb-6 grow">
             <li class="flex items-start gap-2">
               <Check class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
               <span class="text-sm text-slate-700">100+ products</span>
@@ -435,25 +449,14 @@ const faqs = [
           <div class="text-sm text-slate-600 mb-4">
             <strong>Great for:</strong> Unique business models, complex catalogs
           </div>
-        </div>
-      </div>
 
-      <!-- CTA -->
-      <div
-        class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8 text-center max-w-3xl mx-auto mt-12">
-        <h3 class="text-2xl font-bold text-slate-900 mb-2">
-          Not Sure Which Is Right for You?
-        </h3>
-        <p class="text-slate-600 mb-6">
-          Let's talk about your products and goals. I'll recommend the best
-          setup for your business and provide a custom quote.
-        </p>
-        <Button
-          variant="dark"
-          size="lg"
-          href="/services/request?service=ecommerce-solutions">
-          Schedule Free Consultation
-        </Button>
+          <Button
+            variant="secondary"
+            size="sm"
+            href="/services/request?service=ecommerce-solutions&package=custom-store">
+            Get Started
+          </Button>
+        </div>
       </div>
     </Container>
   </Section>
@@ -471,7 +474,7 @@ const faqs = [
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Feature 1 -->
         <div class="bg-slate-50 rounded-xl p-6">
           <div
@@ -669,136 +672,101 @@ const faqs = [
           </div>
         </div>
       </div>
-
-      <!-- Platform Help -->
-      <div class="bg-blue-50 rounded-2xl p-8 max-w-3xl mx-auto">
-        <h3 class="text-xl font-bold text-slate-900 mb-4 text-center">
-          Need Help Choosing?
-        </h3>
-        <p class="text-slate-700 mb-4 text-center">
-          During our consultation, I'll ask about your:
-        </p>
-        <div class="grid md:grid-cols-2 gap-4">
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li class="flex items-start gap-2">
-              <Check class="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-              <span>Product types and quantity</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <Check class="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-              <span>Technical comfort level</span>
-            </li>
-          </ul>
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li class="flex items-start gap-2">
-              <Check class="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-              <span>Budget and timeline</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <Check class="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-              <span>Future growth plans</span>
-            </li>
-          </ul>
-        </div>
-      </div>
     </Container>
   </Section>
 
   <!-- What You Provide Section -->
   <Section background="white">
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            What You'll Need to Provide
-          </h2>
-          <p class="text-lg text-slate-600">
-            I handle all the technical setup, but you'll need to provide the
-            business content.
-          </p>
+    <Container size="wide">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          What You'll Need to Provide
+        </h2>
+        <p class="text-lg text-slate-600">
+          I handle all the technical setup, but you'll need to provide the
+          business content.
+        </p>
+      </div>
+
+      <div class="bg-blue-50 rounded-2xl p-8 md:p-10 border-2 border-blue-200">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- You Provide -->
+          <div>
+            <h3
+              class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <span
+                class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center shrink-0 text-sm font-bold">
+                <Check class="w-5 h-5 text-white shrink-0 mt-0.5" />
+              </span>
+              <span>You Provide</span>
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Product photos (high quality)</span>
+              </li>
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Product descriptions & prices</span>
+              </li>
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Shipping rates & policies</span>
+              </li>
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Return/refund policies</span>
+              </li>
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <span>Business/legal info</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- I Handle -->
+          <div>
+            <h3
+              class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <span
+                class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center shrink-0 text-sm font-bold">
+                <Check class="w-5 h-5 text-white shrink-0 mt-0.5" />
+              </span>
+              <span>I Handle</span>
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                <span>All technical setup & configuration</span>
+              </li>
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                <span>Store design & product templates</span>
+              </li>
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                <span>Payment & shipping integration</span>
+              </li>
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                <span>Product uploads (optional)</span>
+              </li>
+              <li class="flex items-start gap-2 text-slate-700">
+                <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                <span>Testing & training</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div
-          class="bg-blue-50 rounded-2xl p-8 md:p-10 border-2 border-blue-200">
-          <div class="grid md:grid-cols-2 gap-8">
-            <!-- You Provide -->
-            <div>
-              <h3
-                class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <span
-                  class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center shrink-0 text-sm font-bold">
-                  <Check class="w-5 h-5 text-white shrink-0 mt-0.5" />
-                </span>
-                <span>You Provide</span>
-              </h3>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Product photos (high quality)</span>
-                </li>
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Product descriptions & prices</span>
-                </li>
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Shipping rates & policies</span>
-                </li>
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Return/refund policies</span>
-                </li>
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                  <span>Business/legal info</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- I Handle -->
-            <div>
-              <h3
-                class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <span
-                  class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center shrink-0 text-sm font-bold">
-                  <Check class="w-5 h-5 text-white shrink-0 mt-0.5" />
-                </span>
-                <span>I Handle</span>
-              </h3>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                  <span>All technical setup & configuration</span>
-                </li>
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                  <span>Store design & product templates</span>
-                </li>
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                  <span>Payment & shipping integration</span>
-                </li>
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                  <span>Product uploads (optional)</span>
-                </li>
-                <li class="flex items-start gap-2 text-slate-700">
-                  <Dot class="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                  <span>Testing & training</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-6 pt-6 border-t border-blue-200">
-            <p class="text-sm text-slate-600 flex items-start gap-2">
-              <span class="text-red-500 font-bold">Note:</span>
-              <span
-                >I don't provide tax setup or legal advice. Please consult with
-                an accountant or attorney for tax and compliance requirements.</span
-              >
-            </p>
-          </div>
+        <div class="mt-8 pt-8 border-t border-blue-200">
+          <p class="text-sm text-slate-600 flex items-start gap-2">
+            <span class="text-red-500 font-bold">Note:</span>
+            <span
+              >I don't provide tax setup or legal advice. Please consult with an
+              accountant or attorney for tax and compliance requirements.</span
+            >
+          </p>
         </div>
       </div>
     </Container>
@@ -815,7 +783,7 @@ const faqs = [
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Persona 1 -->
         <div
           class="flex flex-col items-center bg-white rounded-xl p-6 text-center">
@@ -959,76 +927,48 @@ const faqs = [
     size="xl"
     background="slate"
     pattern={{ type: "dots", visibility: "subtle" }}>
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Frequently Asked Questions
-          </h2>
-        </div>
-
-        <Accordion items={faqs} />
+    <Container size="reading">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Frequently Asked Questions
+        </h2>
       </div>
+
+      <Accordion items={faqs} />
     </Container>
   </Section>
 
   <!-- Final CTA -->
   <Section background="blue" pattern={{ type: "squares", visibility: "light" }}>
-    <Container>
-      <div class="max-w-4xl mx-auto">
-        <div
-          class="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl text-center">
-          <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Ready to Launch Your Online Store?
-          </h2>
-
-          <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-            Stop paying high marketplace fees. Get your own professional online
-            store and start keeping more of your profits.
-          </p>
-
-          <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <Button
-              variant="primary"
-              icon={ArrowRight}
-              href="/services/request?service=ecommerce-solutions">
-              Get Your Custom Quote
-            </Button>
-            <Button
-              variant="secondary"
-              href="/services/website-design-development">
-              View Website Services
-            </Button>
+    <Container size="reading">
+      <CTADivided
+        title="Ready to Launch Your Online Store?"
+        body="Stop paying high marketplace fees. Get your own professional online store and start keeping more of your profits."
+        primaryButtonText="Get Your Custom Quote"
+        primaryButtonUrl="/services/request?service=ecommerce-solutions"
+        secondaryButtonText="View Website Services"
+        secondaryButtonUrl="/services/website-design-development">
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="flex items-center justify-center gap-2 text-slate-700">
+              <Clock class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold">2-5 Week Launch</span>
+            </div>
           </div>
-
-          <div class="pt-8 border-t border-slate-200">
-            <div class="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div
-                  class="flex items-center justify-center gap-2 text-slate-700">
-                  <Clock class="w-5 h-5 text-blue-600" />
-                  <span class="font-semibold">2-5 Week Launch</span>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="flex items-center justify-center gap-2 text-slate-700">
-                  <Globe class="w-5 h-5 text-blue-600" />
-                  <span class="font-semibold">Sell 24/7</span>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="flex items-center justify-center gap-2 text-slate-700">
-                  <Zap class="w-5 h-5 text-blue-600" />
-                  <span class="font-semibold">Easy to Manage</span>
-                </div>
-              </div>
+          <div>
+            <div class="flex items-center justify-center gap-2 text-slate-700">
+              <Globe class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold">Sell 24/7</span>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-center gap-2 text-slate-700">
+              <Zap class="w-5 h-5 text-blue-600" />
+              <span class="font-semibold">Easy to Manage</span>
             </div>
           </div>
         </div>
-      </div>
+      </CTADivided>
     </Container>
   </Section>
 </Layout>
